@@ -1,0 +1,9 @@
+{
+  "name": "site-master-head",
+  "version": "0.1.0",
+  "description": "the media design site of the head—genève",
+  "main": "dist/index.html",
+  "repository": "https://github.com/azertypow/site-master-head.git",
+  "author": "azertypow <azertypow@gmail.com>",
+  "license": "MIT"
+}
