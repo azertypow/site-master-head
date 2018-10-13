@@ -8,5 +8,8 @@
   "license": "MIT",
   "devDependencies": {
     "parcel": "^1.10.3"
+  },
+  "scripts": {
+      "dev": "parcel ./src/index.html"
   }
 }
