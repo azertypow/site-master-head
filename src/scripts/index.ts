@@ -1,1 +1,0 @@
-console.log("%c=== head media design <3 ===", "color: hotpink")
