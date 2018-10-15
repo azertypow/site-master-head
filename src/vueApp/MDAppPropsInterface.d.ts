@@ -1,5 +1,5 @@
 import {ClassNames} from "../ClassNames"
 
 declare interface MDAppPropsInterface {
-    currentPageName: ClassNames
+    homeTitle: string
 }

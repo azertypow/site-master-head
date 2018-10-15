@@ -1,29 +1,25 @@
-<!--suppress HtmlFormInputWithoutLabel -->
 <template>
     <section id="md-app">
-        <app-header :name="name" :currentPageName="currentPageName"/>
-        Name: <input v-model="name" type="text">
-        <h1>Hello Component</h1>
-        <h1>Hello Decorator Component</h1>
-        <hello-decorator :name="name" :initialEnthusiasm="5" />
+        <app-menu initialSiteLang="fr"></app-menu>
+        <page-home :headerTitle="homeTitle"></page-home>
+        {{homeTitle}}
     </section>
 </template>
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
-    import AppHeader from "./components/AppHeader"
-    import HelloDecorator from "./components/HelloDecorator"
+    import AppMenu from "./components/AppMenu"
+    import PageHome from './components/PageHome'
     import {ClassNames} from "../ClassNames"
 
     @Component ({
         components: {
-            HelloDecorator,
-            AppHeader,
+            AppMenu,
+            PageHome,
         }
     })
     export default class MDApp extends Vue {
-        name = 'Coucou'
-        @Prop() currentPageName!: ClassNames
+        @Prop({default: "home title"}) homeTitle!: string
     }
 </script>
 

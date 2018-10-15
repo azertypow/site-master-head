@@ -1,6 +1,6 @@
 <template>
-    <section id="app-header" v-bind:class="currentPageName" class="hello">
-        <h2 class="title">{{name}}</h2>
+    <section id="app-header">
+        <h2 class="title">{{title}}</h2>
     </section>
 </template>
 
@@ -10,8 +10,7 @@
 
     @Component
     export default class AppHeader extends Vue {
-        @Prop() name!: string
-        @Prop() currentPageName!: ClassNames
+        @Prop({default: "page title"}) title!: string
     }
 </script>
 
