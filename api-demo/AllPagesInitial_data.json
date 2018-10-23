@@ -1,4 +1,7 @@
 {
+    "menu": {
+        "lang": "fr"
+    },
     "home": {
         "header": {
             "title": {
@@ -6,6 +9,26 @@
                 "en": "HEAD—geneva"
             }
         }
+    },
+    "projects": {
+        "header": {
+            "title": {
+                "fr": "HEAD—genève",
+                "en": "HEAD—geneva"
+            },
+            "subtitle": {
+                "fr": "projets",
+                "en": "projects"
+            },
+            "text": {
+                "fr": "La plupart des solutions professionnelles utilisent des formats non standardisées basés sur XML, mais il existe un certain nombre d'initiatives ouvertes (généralistes ou non) visant à encourager l'interopérabilité en matière de Rich Media:",
+                "en": "The analogue videodisc developed by NV Philips was the pioneering technology for interactive media. Additionally, there are several elements that encouraged the development of interactive media including the following."
+            }
+        },
+        "content": [
+            "premier text",
+            "second text"
+        ]
     },
     "contact": {
         "header": {
@@ -20,22 +43,6 @@
             "text": {
                 "fr": "Le terme Rich Media ne dispose aujourd’hui pas encore d'une définition standardisée, mais on le retrouve dans divers secteurs pour désigner le plus souvent un ou des contenus vidéo agrémentés de métadonnées, données et modalités d'Interactivité de tout type (d'où le terme Rich), par opposition au simple contenu vidéo dont la définition essentielle ne porte que sur l'objectif de retransmettre un contenu visuel (images).",
                 "en": "Interactive media is a method of communication in which the output from the media comes from the input of the users.[1][2] Interactive media works with the user's participation. The media still has the same purpose but the user's input adds interaction and brings interesting features to the system for better enjoyment."
-            }
-        }
-    },
-    "project": {
-        "header": {
-            "title": {
-                "fr": "HEAD—genève",
-                "en": "HEAD—geneva"
-            },
-            "subtitle": {
-                "fr": "projets",
-                "en": "projects"
-            },
-            "text": {
-                "fr": "La plupart des solutions professionnelles utilisent des formats non standardisées basés sur XML, mais il existe un certain nombre d'initiatives ouvertes (généralistes ou non) visant à encourager l'interopérabilité en matière de Rich Media:",
-                "en": "The analogue videodisc developed by NV Philips was the pioneering technology for interactive media. Additionally, there are several elements that encouraged the development of interactive media including the following."
             }
         }
     },

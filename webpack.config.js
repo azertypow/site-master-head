@@ -53,7 +53,7 @@ module.exports = {
         noInfo: false,
         contentBase: path.join(__dirname, './'),
         compress: true,
-        port: 9090,
+        port: 8080,
     },
     performance: {
         hints: false

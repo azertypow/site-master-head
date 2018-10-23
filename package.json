@@ -28,7 +28,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --mode development",
-    "api-demo": "http-server ./api-demo -p 8090 -c-1 -a localhost --cors='*'"
+    "dev": "npm run dev:serve-app & npm run dev:api-demo",
+    "dev:serve-app":  "webpack-dev-server --mode development",
+    "dev:api-demo": "http-server ./api-demo -p 8090 -c-1 -a localhost --cors='*'"
   }
 }

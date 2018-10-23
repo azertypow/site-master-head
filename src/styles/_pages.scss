@@ -1,0 +1,17 @@
+@import "_settings";
+
+@mixin _page {
+  overflow: hidden;
+}
+
+@mixin page-dark {
+  @include _page;
+  background-color: $color-dark;
+  color: $color-light;
+}
+
+@mixin page-light {
+  @include _page;
+  background-color: $color-light;
+  color: $color-dark;
+}
