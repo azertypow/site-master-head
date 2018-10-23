@@ -51,7 +51,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
 
 <style lang="scss">
     @import "../../../../styles/app-header";
-    @import "../../../../styles/_settings";
+    @import "../../../../styles/_params";
 
     #header-with-text {
         @include app-header;

@@ -1,4 +1,4 @@
-@import "_settings";
+@import "_params";
 
 @mixin _page {
   overflow: hidden;
@@ -6,12 +6,12 @@
 
 @mixin page-dark {
   @include _page;
-  background-color: $color-dark;
-  color: $color-light;
+  background-color: $color-main-dark;
+  color: $color-main-light;
 }
 
 @mixin page-light {
   @include _page;
-  background-color: $color-light;
-  color: $color-dark;
+  background-color: $color-main-light;
+  color: $color-main-dark;
 }

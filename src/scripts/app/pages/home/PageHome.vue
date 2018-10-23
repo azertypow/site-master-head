@@ -49,7 +49,7 @@
 </script>
 
 <style lang="scss">
-    @import "../../../../styles/_settings";
+    @import "../../../../styles/_params";
     @import "../../../../styles/pages";
 
     #page-home {

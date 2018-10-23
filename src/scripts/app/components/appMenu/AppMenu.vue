@@ -59,11 +59,11 @@
 </script>
 
 <style lang="scss">
-    @import "../../../../styles/_settings";
+    @import "../../../../styles/_params";
 
     #app-menu {
         &.bg-dark {
-            color: $color-light;
+            color: $color-main-light;
         }
 
         @mixin menuElements {

@@ -44,7 +44,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
 
 <style lang="scss">
     @import "../../../../styles/app-header";
-    @import "../../../../styles/_settings";
+    @import "../../../../styles/_params";
 
     #header-with-image {
         @include app-header;
@@ -54,7 +54,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: $color-dark;
+            background-color: $color-main-dark;
         }
 
         .text-content {

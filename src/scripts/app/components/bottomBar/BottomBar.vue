@@ -28,14 +28,15 @@
 </script>
 
 <style lang="scss">
-    @import "../../../../styles/_settings";
+    @import "../../../../styles/_params";
+    @import "../../../../styles/_grid";
 
     #bottom-bar {
         position: fixed;
         left: 0;
         bottom: 0;
-        color: $color-blue;
-        background-color: $color-light;
+        color: $color-main;
+        background-color: $color-main-light;
         width: 100%;
 
         .container {
@@ -45,16 +46,21 @@
     }
 
     #bottom-bar-btn {
+        @include gutter;
+        @include gutter-horizontal;
         position: absolute;
-        top: 0;
+        box-sizing: content-box;
+        top: 50%;
         right: 0;
-        width: 50px;
-        height: 100%;
         cursor: pointer;
+        transform: translate(0, -50%);
 
         > svg {
             fill: none;
-            stroke: $color-dark;
+            stroke: $color-main-dark;
+            position: relative;
+            top: 0;
+            left: 0;
         }
     }
 </style>
