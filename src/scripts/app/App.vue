@@ -10,6 +10,7 @@
                 :data="data.projects"></page-projects>
         <bottom-bar
                 :$bottomIsOpen="$BottomIsOpen"></bottom-bar>
+        <app-footer></app-footer>
     </section>
 </template>
 
@@ -23,13 +24,15 @@
     import {DEFAULT_SITE_LANG} from "../../SETTINGS"
     import {IAppData} from "./IAppData"
     import BottomBar from "./components/bottomBar/BottomBar"
+    import AppFooter from "./components/appFooter/AppFooter"
 
     @Component ({
         components: {
             AppMenu,
             PageHome,
             PageProjects,
-            BottomBar
+            BottomBar,
+            AppFooter,
         },
         created: function() {
             EventBus.$on(EVENT_BUS_LIST.LANG, (event: LANG_LIST) => {
