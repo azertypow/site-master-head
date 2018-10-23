@@ -1,7 +1,12 @@
 import {IAppData} from "./app/IAppData"
+import {ITagsData} from "./app/ITagsData"
 
 export async function getAppData(): Promise<IAppData> {
-    return await getJsonData("http://localhost:8090/AllPagesInitial_data.json") as IAppData
+    return await getJsonData("http://localhost:8090/appData.json") as IAppData
+}
+
+export async function getTags(): Promise<ITagsData> {
+    return await getJsonData("http://localhost:8090/tagsData.json") as ITagsData
 }
 
 export function getJsonData(url: string) {

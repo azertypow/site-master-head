@@ -8,6 +8,8 @@
                 :$siteLang="$siteLang"></page-home>
         <page-projects
                 :data="data.projects"></page-projects>
+        <page-alumni
+                :data="data.alumni"></page-alumni>
         <bottom-bar
                 :$bottomIsOpen="$BottomIsOpen"></bottom-bar>
         <app-footer></app-footer>
@@ -25,9 +27,11 @@
     import {IAppData} from "./IAppData"
     import BottomBar from "./components/bottomBar/BottomBar"
     import AppFooter from "./components/appFooter/AppFooter"
+    import PageAlumni from "./pages/alumni/PageAlumni"
 
     @Component ({
         components: {
+            PageAlumni,
             AppMenu,
             PageHome,
             PageProjects,

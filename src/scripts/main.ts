@@ -43,6 +43,25 @@ let app = createVueApplication({
         content: [
             ""
         ]
+    },
+    alumni: {
+        header: {
+            text: {
+                fr: "",
+                en: "",
+            },
+            subtitle: {
+                fr: "",
+                en: "",
+            },
+            title: {
+                fr: "",
+                en: "",
+            }
+        },
+        content: [
+            ""
+        ]
     }
 })
 
