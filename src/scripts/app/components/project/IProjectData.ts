@@ -1,7 +1,7 @@
 import {IImageData} from "../image/IImageData"
 
 export interface IProjectData {
-    author: string[]
+    authors: string[]
     title: string
     text: {
         fr: string
