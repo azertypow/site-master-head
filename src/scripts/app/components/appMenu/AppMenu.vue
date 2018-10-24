@@ -16,19 +16,17 @@
     import {Component, Prop, Vue} from "vue-property-decorator"
     import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
     import {EventBus} from "../../../event-bus"
-    import {IAppMenuData} from "./IAppMenuData"
-    import {PAGES_PATHNAME} from "../../../../SETTINGS"
+    import {DEFAULT_SITE_LANG, PAGES_PATHNAME} from "../../../../SETTINGS"
     import {getWindowPageInfo} from "../../../currentPageInfo"
 
     @Component
     export default class AppMenu extends Vue {
-        @Prop({required: true}) data!: IAppMenuData
         @Prop({required: true}) $bottomIsOpen!: boolean
 
         setSiteToFr() { this.$siteLang = LANG_LIST.FR }
         setSiteToEn() { this.$siteLang = LANG_LIST.EN }
 
-        private siteLang = this.data.lang
+        private siteLang = DEFAULT_SITE_LANG
 
         set $siteLang(lang: LANG_LIST) {
             EventBus.$emit(EVENT_BUS_LIST.LANG, lang)

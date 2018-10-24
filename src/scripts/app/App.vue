@@ -1,7 +1,6 @@
 <template>
     <section id="app">
         <app-menu
-                :data="data.menu"
                 :$bottomIsOpen="$BottomIsOpen"></app-menu>
         <page-home
                 :data="data.home"
