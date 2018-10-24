@@ -1,6 +1,9 @@
 <template>
     <section id="filterSetting">
-        <div>show</div>
+        <template>
+            <div v-if="siteIsEn">show</div>
+            <div v-else         >montrer les</div>
+        </template>
 
         <!--tag filter-->
         <ul class="" v-if="$hasTextInsteadTagList">
@@ -15,9 +18,10 @@
         </div>
 
         <!--data filter - from-->
-        <div>
-            from
-        </div>
+        <template>
+            <div v-if="siteIsEn">from</div>
+            <div v-else         >de</div>
+        </template>
         <ul>
             <template v-for="(date, index) in $dates" >
                 <li @click="$indexOf_Min_DateSelected = index" :class="{isSelected: this_Min_DateIsSelected(index)}">
@@ -27,9 +31,10 @@
         </ul>
 
         <!--data filter - to-->
-        <div>
-            to
-        </div>
+        <template>
+            <div v-if="siteIsEn">to</div>
+            <div v-else         >à</div>
+        </template>
         <ul>
             <template v-for="(date, index) in $dates" >
                 <li @click="$indexOf_Max_DateSelected = index" :class="{isSelected: this_Max_DateIsSelected(index)}">
@@ -42,18 +47,39 @@
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
+    import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
+    import {EventBus} from "../../../event-bus"
+    import {DEFAULT_SITE_LANG} from "../../../../SETTINGS"
 
     @Component({
         watch: {
             $dates: function() {
                 (this as FilterSetting).$indexOf_Max_DateSelected = (this as FilterSetting).$dates.length - 1
             }
+        },
+        created: function() {
+            EventBus.$on(EVENT_BUS_LIST.LANG, (event: LANG_LIST) => {
+                (this as FilterSetting).$siteLang = event
+            })
         }
     })
     export default class FilterSetting extends Vue {
         @Prop() $textInsteadTagList!: string
         @Prop({default: () => []}) $tags!: string[]
         @Prop({default: () => []}) $dates!: number[]
+
+        /*
+        * lang
+        * */
+        private siteLang = DEFAULT_SITE_LANG
+        set $siteLang(lang: LANG_LIST) {
+            this.siteLang = lang
+        }
+        get $siteLang() {
+            return this.siteLang
+        }
+
+        get siteIsEn() { return this.$siteLang === LANG_LIST.EN }
 
         /*
         * tags selection
