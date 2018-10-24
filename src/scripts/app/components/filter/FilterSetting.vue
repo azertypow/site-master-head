@@ -68,6 +68,10 @@
         @Prop({default: () => []}) $tags!: string[]
         @Prop({default: () => []}) $dates!: number[]
 
+        get $hasTextInsteadTagList() {
+            return this.$textInsteadTagList === void 0
+        }
+
         /*
         * lang
         * */
@@ -135,10 +139,6 @@
 
         this_Max_DateIsSelected(index: number) {
             return this.indexOf_Max_DateSelected === index
-        }
-        
-        get $hasTextInsteadTagList() {
-            return this.$textInsteadTagList === void 0
         }
     }
 </script>
