@@ -27,6 +27,24 @@ export async function getProjectsDataFromTo(): Promise<number[]> {
     })()
 }
 
+export async function getAlumniDataFromTo(): Promise<number[]> {
+
+    const alumniDataFromTo = await getJsonData("http://localhost:8090/datesData.json") as IDatesData
+
+    const from = parseInt(alumniDataFromTo.alumni.from)
+    const to   = parseInt(alumniDataFromTo.alumni.to)
+
+    return (() => {
+        const arrayOfDates: number[] = []
+        const diff = to - from
+        for(let i = 0; i <= diff; i++) {
+            arrayOfDates.push(from + i)
+        }
+        return arrayOfDates
+    })()
+}
+
+
 export function getJsonData(url: string) {
     return new Promise((resolve, reject) => {
 
