@@ -58,6 +58,11 @@
         * */
         indexOf_Min_DateSelected = 0
         set $indexOf_Min_DateSelected(index: number) {
+
+            if(index > this.$indexOf_Max_DateSelected) {
+                this.$indexOf_Max_DateSelected = index
+            }
+
             this.indexOf_Min_DateSelected = index
         }
         get $indexOf_Min_DateSelected() {
@@ -67,12 +72,17 @@
         this_Min_DateIsSelected(index: number) {
             return this.indexOf_Min_DateSelected === index
         }
-        
+
         /*
         *maximum date selection 
         * */
         indexOf_Max_DateSelected = this.$dates.length
         set $indexOf_Max_DateSelected(index: number) {
+
+            if(index < this.$indexOf_Min_DateSelected) {
+                this.$indexOf_Min_DateSelected = index
+            }
+
             this.indexOf_Max_DateSelected = index
         }
         get $indexOf_Max_DateSelected() {
