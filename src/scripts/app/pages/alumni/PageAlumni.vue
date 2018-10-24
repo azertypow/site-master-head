@@ -27,7 +27,9 @@
 </script>
 
 <style lang="scss">
-    #page-alumni {
+    @import "../../../../styles/pages";
 
+    #page-alumni {
+        @include page-dark;
     }
 </style>

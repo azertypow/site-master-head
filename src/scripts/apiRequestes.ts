@@ -1,12 +1,30 @@
 import {IAppData} from "./app/IAppData"
 import {ITagsData} from "./app/ITagsData"
+import {IDatesData} from "./app/IDatesData"
 
 export async function getAppData(): Promise<IAppData> {
     return await getJsonData("http://localhost:8090/appData.json") as IAppData
 }
 
-export async function getTags(): Promise<ITagsData> {
-    return await getJsonData("http://localhost:8090/tagsData.json") as ITagsData
+export async function getProjectsTags(): Promise<string[]> {
+    return (await getJsonData("http://localhost:8090/tagsData.json") as ITagsData).projects
+}
+
+export async function getProjectsDataFromTo(): Promise<number[]> {
+
+    const projectsDataFromTo = await getJsonData("http://localhost:8090/datesData.json") as IDatesData
+
+    const from = parseInt(projectsDataFromTo.projects.from)
+    const to   = parseInt(projectsDataFromTo.projects.to)
+
+    return (() => {
+        const arrayOfDates: number[] = []
+        const diff = to - from
+        for(let i = 0; i <= diff; i++) {
+            arrayOfDates.push(from + i)
+        }
+        return arrayOfDates
+    })()
 }
 
 export function getJsonData(url: string) {

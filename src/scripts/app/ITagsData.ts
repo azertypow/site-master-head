@@ -1,3 +1,3 @@
 export interface ITagsData {
-    "projects": string
+    projects: string[]
 }
