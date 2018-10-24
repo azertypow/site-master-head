@@ -1,6 +1,7 @@
 import {IAppData} from "./app/IAppData"
 import {ITagsData} from "./app/ITagsData"
 import {IDatesData} from "./app/IDatesData"
+import {IHomeProjectsData} from "./app/IHomeProjectsData"
 
 export async function getAppData(): Promise<IAppData> {
     return await getJsonData("http://localhost:8090/appData.json") as IAppData
@@ -44,6 +45,9 @@ export async function getAlumniDataFromTo(): Promise<number[]> {
     })()
 }
 
+export async function getHomeProjectsData(): Promise<IHomeProjectsData> {
+    return await getJsonData("http://localhost:8090/homeProjectsData.json") as IHomeProjectsData
+}
 
 export function getJsonData(url: string) {
     return new Promise((resolve, reject) => {

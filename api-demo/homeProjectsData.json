@@ -1,0 +1,44 @@
+{
+  "workshops": [
+    {
+      "position": "top",
+      "title": "workshops title 1"
+    },
+    {
+      "position": "middle",
+      "title": "workshops title 2"
+    },
+    {
+      "position": "bottom",
+      "title": "workshops title 3"
+    }
+  ],
+  "seminars": [
+    {
+      "position": "top",
+      "title": "sem title 1"
+    },
+    {
+      "position": "middle",
+      "title": "sem title 2"
+    },
+    {
+      "position": "bottom",
+      "title": "sem title 3"
+    }
+  ],
+  "events": [
+    {
+      "position": "top",
+      "title": "ev title 1"
+    },
+    {
+      "position": "middle",
+      "title": "ev title 2"
+    },
+    {
+      "position": "bottom",
+      "title": "ev title 3"
+    }
+  ]
+}
