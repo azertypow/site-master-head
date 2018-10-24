@@ -4,9 +4,11 @@
 
         <!--tag filter-->
         <ul class="" v-if="$hasTextInsteadTagList">
-            <li v-for="tag in $tags">
-                {{tag}}
-            </li>
+            <template v-for="(tag, index) in $tags" >
+                <li @click="$indexOf_Tag_Selected = index" :class="{isSelected: this_Tag_IsSelected(index)}">
+                    {{tag}}
+                </li>
+            </template>
         </ul>
         <div v-else>
             {{$textInsteadTagList}}
@@ -52,6 +54,22 @@
         @Prop() $textInsteadTagList!: string
         @Prop({default: () => []}) $tags!: string[]
         @Prop({default: () => []}) $dates!: number[]
+
+        /*
+        * tags selection
+        * */
+        indexOf_Tag_Selected = 0
+        set $indexOf_Tag_Selected(index: number) {
+            this.indexOf_Tag_Selected = index
+        }
+        get $indexOf_Tag_Selected() {
+            return this.indexOf_Tag_Selected
+        }
+
+        this_Tag_IsSelected(index: number) {
+            return this.indexOf_Tag_Selected === index
+        }
+
 
         /*
         * minimum date selection
@@ -101,6 +119,8 @@
 
 <style lang="scss">
     #filterSetting {
+        user-select: none;
+
         .isSelected {
             color: red;
         }
