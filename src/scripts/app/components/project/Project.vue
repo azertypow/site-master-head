@@ -4,6 +4,11 @@
         <div class="authors">
             <p v-for="author of this.$projectData.authors">{{author}}</p>
         </div>
+        <div class="description">
+            <p v-if="siteIsFr"  >{{this.$projectData.description.fr}}</p>
+            <p v-else           >{{this.$projectData.description.en}}</p>
+        </div>
+
         <div class="text">
             <p v-if="siteIsFr"  >{{this.$projectData.text.fr}}</p>
             <p v-else           >{{this.$projectData.text.en}}</p>

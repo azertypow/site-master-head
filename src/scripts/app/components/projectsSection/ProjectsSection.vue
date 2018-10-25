@@ -32,7 +32,9 @@
         @Prop({required: true}) data!: IProjectsSectionData
         get projectsSectionData() {return this.data}
 
-
+        /*
+        * site lang
+        * */
         @Prop({required: true}) $siteLang!: LANG_LIST
         get siteIsFr() { return this.$siteLang === LANG_LIST.FR }
 
