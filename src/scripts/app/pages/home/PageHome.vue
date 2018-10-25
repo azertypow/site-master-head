@@ -2,8 +2,7 @@
     <section id="page-home">
         <app-header-with-image
                 :data="data.header" />
-        <section class="main">
-
+        <main>
             <section id="page-home-workshop">
                 <header>
                     <h2 v-if="siteIsFr" >workshops</h2>
@@ -37,7 +36,7 @@
                 </template>
             </section>
 
-        </section>
+        </main>
     </section>
 </template>
 

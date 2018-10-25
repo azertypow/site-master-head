@@ -4,9 +4,9 @@
         <filter-setting
                 :$tags="$projectsTags"
                 :$dates="$projectsDates"></filter-setting>
-        <section class="main">
+        <main>
 
-        </section>
+        </main>
     </section>
 </template>
 
