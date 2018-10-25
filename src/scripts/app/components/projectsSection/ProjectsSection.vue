@@ -3,10 +3,8 @@
         <header>
             <h2 v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>
             <h2 v-else          >{{this.projectsSectionData.title.en}}</h2>
-            <button @click="btnDetailClicked()">
-                <span v-if="siteIsFr">détails</span>
-                <span v-else         >details</span>
-            </button>
+            <btn-show-details :$siteLang="$siteLang"
+                              v-on:clicked="btnDetailClicked()"></btn-show-details>
             <h3 v-if="siteIsFr && $showDetails" >{{this.projectsSectionData.description.fr}}</h3>
             <h3 v-else-if="$showDetails"          >{{this.projectsSectionData.description.en}}</h3>
         </header>
@@ -24,9 +22,10 @@
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import {IProjectsSectionData} from "./IProjectsSectionData"
     import Project from "../project/Project"
+    import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
 
     @Component({
-        components: {Project}
+        components: {BtnShowDetails, Project}
     })
     export default class ProjectsSection extends Vue {
         @Prop({required: true}) data!: IProjectsSectionData
