@@ -5,9 +5,6 @@ import {DEFAULT_SITE_LANG} from "../SETTINGS"
 console.log("%c=== head media design <3 ===", "color: hotpink")
 
 let app = createVueApplication({
-    menu: {
-        lang: DEFAULT_SITE_LANG,
-    },
     home: {
         header: {
             title: {
@@ -19,11 +16,6 @@ let app = createVueApplication({
                 ""
             ]
         },
-        content: {
-            event: [],
-            seminary: [],
-            workshop: []
-        }
     },
     projects: {
         header: {
@@ -40,9 +32,6 @@ let app = createVueApplication({
                 en: "",
             }
         },
-        content: [
-            ""
-        ]
     },
     alumni: {
         header: {
@@ -59,9 +48,6 @@ let app = createVueApplication({
                 en: "",
             }
         },
-        content: [
-            ""
-        ]
     }
 })
 

@@ -1,6 +1,6 @@
 <template>
     <section id="project">
-        <p>{{data.title}}</p>
+        <h3>{{data.title}}</h3>
     </section>
 </template>
 

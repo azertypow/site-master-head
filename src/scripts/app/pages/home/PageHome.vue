@@ -1,42 +1,22 @@
 <template>
     <section id="page-home">
         <app-header-with-image
-                :data="data.header" />
+                :data="pageHomeData.header" />
+
         <main>
-            <section id="page-home-workshop">
-                <header>
-                    <h2 v-if="siteIsFr" >workshops</h2>
-                    <h2 v-else          >workshops</h2>
-                </header>
+            <projects-section
+                    :data="$workshopsProjectsSectionData"
+                    :$siteLang="$siteLang"></projects-section>
 
-                <template v-for="workshop in $homeProjects.workshops">
-                    <project :data="workshop"></project>
-                </template>
-            </section>
+            <projects-section
+                    :data="$eventsProjectsSectionData"
+                    :$siteLang="$siteLang"></projects-section>
 
-            <section id="page-home-seminars">
-                <header>
-                    <h2 v-if="siteIsFr" >séminaires</h2>
-                    <h2 v-else          >seminars</h2>
-                </header>
-
-                <template v-for="seminars in $homeProjects.seminars">
-                    <project :data="seminars"></project>
-                </template>
-            </section>
-
-            <section id="page-home-events">
-                <header>
-                    <h2 v-if="siteIsFr" >évènements</h2>
-                    <h2 v-else          >events</h2>
-                </header>
-
-                <template v-for="events in $homeProjects.events">
-                    <project :data="events"></project>
-                </template>
-            </section>
-
+            <projects-section
+                    :data="$seminarsProjectsSectionData"
+                    :$siteLang="$siteLang"></projects-section>
         </main>
+
     </section>
 </template>
 
@@ -48,9 +28,12 @@
     import Project from "../../components/project/Project"
     import {getHomeProjectsData} from "../../../apiRequestes"
     import {IHomeProjectsData} from "../../IHomeProjectsData"
+    import ProjectsSection from "../../components/projectsSection/ProjectsSection"
+    import {IProjectsSectionData} from "../../components/projectsSection/IProjectsSectionData"
 
     @Component({
         components: {
+            ProjectsSection,
             Project,
             AppHeaderWithImage,
         }
@@ -64,10 +47,10 @@
         }
 
         @Prop({required: true}) data!: IPageHomeData
-        @Prop({required: true}) $siteLang!: LANG_LIST
+        get pageHomeData() {return this.data}
 
+        @Prop({required: true}) $siteLang!: LANG_LIST
         get siteIsFr() { return this.$siteLang === LANG_LIST.FR }
-        get siteIsEn() { return this.$siteLang === LANG_LIST.EN }
 
         /*
         * array of projects present in home page
@@ -78,15 +61,51 @@
             workshops: [],
         }
         set $homeProjects(value: IHomeProjectsData) {
-            this.pushArrayInArray(value.workshops, this.homeProjects.workshops)
-            this.pushArrayInArray(value.seminars, this.homeProjects.seminars)
-            this.pushArrayInArray(value.events, this.homeProjects.events)
+            PageHome.pushArrayInArray(value.workshops, this.homeProjects.workshops)
+            PageHome.pushArrayInArray(value.seminars, this.homeProjects.seminars)
+            PageHome.pushArrayInArray(value.events, this.homeProjects.events)
         }
         get $homeProjects() {
             return this.homeProjects
         }
 
-        pushArrayInArray(arrayToAdd: Array<any>, arrayToExtend: Array<any>) {
+        get $workshopsProjectsSectionData(): IProjectsSectionData {return {
+            title: {
+                en: "workshops",
+                fr: "workshops",
+            },
+            projects: this.$homeProjects.workshops,
+            description: {
+                fr: "Le designer crée ensuite les représentations, les formes faisant exister de façon identifiable l'esthétique du programme, du service ou d’un objet interactif connecté. Cette intervention nécessite la transformation de l'ensemble des éléments fonctionnels et des interactions du projet en objet appropriable par un utilisateur. Cette étape incarne l'existence et la raison du projet.",
+                en: "Usability answers the question \"can someone use this interface?\". Jacob Nielsen describes usability as the quality attribute [10] that describes how usable the interface is. Shneiderman proposes principles for designing more usable interfaces called \"Eight Golden Rules of Interface Design\"[11]—which are well-known heuristics for creating usable systems.",
+            }
+        }}
+
+        get $eventsProjectsSectionData(): IProjectsSectionData {return {
+            title: {
+                fr: "séminaires",
+                en: "seminars",
+            },
+            projects: this.$homeProjects.events,
+            description: {
+                fr: "Dans un projet numérique l'interface cristallise le potentiel, l'utilisation et la personnalité du produit, elle est à ce titre un enjeu de création et de différenciation qui est indissociable du produit dans son ensemble. L'interface est consubstantielle au produit numérique et l'aboutissement et l’agrégation du processus de design numérique. À ce titre, on peut avancer que le design interactif est aux actions interactives homme-machine-réseau-contenu, ce que le design produit est pour l'industrie manufacturière.",
+                en: "Alan Cooper argues in The Inmates Are Running the Asylum that we need a new approach to solving interactive software-based problems. The problems with designing computer interfaces are fundamentally different from those that do not include software (e.g., hammers). Cooper introduces the concept of cognitive friction, which is when the interface of a design is complex and difficult to use, and behaves inconsistently and unexpectedly, possessing different modes.",
+            }
+        }}
+
+        get $seminarsProjectsSectionData(): IProjectsSectionData {return {
+            title: {
+                fr: "évènements",
+                en: "events",
+            },
+            projects: this.$homeProjects.seminars,
+            description: {
+                fr: "La société de l'information et la communication numérique définissent une nouvelle industrie et de nouveaux paradigmes économiques qui ont un impact direct sur le rôle du designer. Dans ce contexte, la question de l'offre et de la conception des produits prend un rôle central.",
+                en: "A persona encapsulates critical behavioural data in a way that both designers and stakeholders can understand, remember, and relate to. Personas use storytelling to engage users' social and emotional aspects, which helps designers to either visualize the best product behaviour or see why the recommended design is successful.",
+            }
+        }}
+
+        static pushArrayInArray(arrayToAdd: Array<any>, arrayToExtend: Array<any>) {
             for(const value of arrayToAdd) {
                 console.log(value)
                 arrayToExtend.push(value);
