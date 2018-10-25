@@ -3,6 +3,7 @@
         <header>
             <h2 v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>
             <h2 v-else          >{{this.projectsSectionData.title.en}}</h2>
+
             <btn-show-details :$siteLang="$siteLang"
                               v-on:clicked="btnDetailClicked()"></btn-show-details>
             <h3 v-if="siteIsFr && $showDetails" >{{this.projectsSectionData.description.fr}}</h3>
