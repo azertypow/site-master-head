@@ -1,6 +1,9 @@
 <template>
-    <section id="project">
-        <h3>{{data.title}}</h3>
+    <section class="v-project">
+        <h3>{{this.$projectData.title}}</h3>
+        <div class="authors">
+            <p v-for="author of this.$projectData.authors">{{author}}</p>
+        </div>
     </section>
 </template>
 
@@ -11,11 +14,12 @@
     @Component
     export default class Project extends Vue {
         @Prop({required: true}) data!: IProjectData
+        get $projectData() {return this.data}
     }
 </script>
 
 <style lang="scss">
-    #project {
+    .v-project {
 
     }
 </style>

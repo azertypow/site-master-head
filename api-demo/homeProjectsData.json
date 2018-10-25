@@ -2,42 +2,75 @@
   "workshops": [
     {
       "position": "top",
+      "authors": [
+        "Taylor Edwards",
+        "Oliver Simon",
+        "Gerardo Ingram"
+      ],
       "title": "workshops title 1"
     },
     {
       "position": "middle",
+      "authors": [
+        "Jazmin Fowler",
+        "Heidi Jacobs"
+      ],
       "title": "workshops title 2"
     },
     {
       "position": "bottom",
+      "authors": [
+        "Karen Hamilton"
+      ],
       "title": "workshops title 3"
     }
   ],
   "seminars": [
     {
       "position": "top",
+      "authors": [
+        "Heidi Steele",
+        "Kyle Ford",
+        "Kendall Wolf"
+      ],
       "title": "sem title 1"
     },
     {
       "position": "middle",
+      "authors": [
+        "Clinton Jacobs"
+      ],
       "title": "sem title 2"
     },
     {
       "position": "bottom",
+      "authors": [
+        "Gerardo Ingram"
+      ],
       "title": "sem title 3"
     }
   ],
   "events": [
     {
       "position": "top",
+      "authors": [
+        "Sabrina Moody"
+      ],
       "title": "ev title 1"
     },
     {
       "position": "middle",
+      "authors": [
+        "Cheyanne Fuller",
+        "Jonah Yates"
+      ],
       "title": "ev title 2"
     },
     {
       "position": "bottom",
+      "authors": [
+        "Amelia King"
+      ],
       "title": "ev title 3"
     }
   ]
