@@ -7,7 +7,11 @@
         "Oliver Simon",
         "Gerardo Ingram"
       ],
-      "title": "workshops title 1"
+      "title": "workshops title 1",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     },
     {
       "position": "middle",
@@ -15,14 +19,22 @@
         "Jazmin Fowler",
         "Heidi Jacobs"
       ],
-      "title": "workshops title 2"
+      "title": "workshops title 2",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     },
     {
       "position": "bottom",
       "authors": [
         "Karen Hamilton"
       ],
-      "title": "workshops title 3"
+      "title": "workshops title 3",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     }
   ],
   "seminars": [
@@ -33,21 +45,33 @@
         "Kyle Ford",
         "Kendall Wolf"
       ],
-      "title": "sem title 1"
+      "title": "sem title 1",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     },
     {
       "position": "middle",
       "authors": [
         "Clinton Jacobs"
       ],
-      "title": "sem title 2"
+      "title": "sem title 2",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     },
     {
       "position": "bottom",
       "authors": [
         "Gerardo Ingram"
       ],
-      "title": "sem title 3"
+      "title": "sem title 3",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     }
   ],
   "events": [
@@ -56,7 +80,11 @@
       "authors": [
         "Sabrina Moody"
       ],
-      "title": "ev title 1"
+      "title": "ev title 1",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     },
     {
       "position": "middle",
@@ -64,14 +92,22 @@
         "Cheyanne Fuller",
         "Jonah Yates"
       ],
-      "title": "ev title 2"
+      "title": "ev title 2",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     },
     {
       "position": "bottom",
       "authors": [
         "Amelia King"
       ],
-      "title": "ev title 3"
+      "title": "ev title 3",
+      "text": {
+        "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
+        "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
+      }
     }
   ]
 }

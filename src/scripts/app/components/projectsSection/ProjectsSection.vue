@@ -12,7 +12,9 @@
         </header>
 
         <template v-for="project in projectsSectionData.projects">
-            <project :data="project"></project>
+            <project
+                    :data="project"
+                    :$siteLang="$siteLang"></project>
         </template>
     </section>
 </template>
