@@ -15,7 +15,14 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/200/300/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     },
     {
       "position": "middle",
@@ -31,7 +38,34 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/1000/500/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1280/720/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/550/1200/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1000/900/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1200/720/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     },
     {
       "position": "bottom",
@@ -46,7 +80,24 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/2200/1200/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1500/800/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/780/1280/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     }
   ],
   "seminars": [
@@ -65,7 +116,34 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/500/250/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1200/1000/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/720/1280/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/2100/1200/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1200/720/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     },
     {
       "position": "middle",
@@ -80,7 +158,14 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/200/300/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     },
     {
       "position": "bottom",
@@ -95,7 +180,29 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/1280/800/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/800/1200/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/2200/1300/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1300/2200/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     }
   ],
   "events": [
@@ -112,7 +219,14 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/200/300/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     },
     {
       "position": "middle",
@@ -128,7 +242,24 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/720/1280/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/2100/1200/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1200/720/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     },
     {
       "position": "bottom",
@@ -143,7 +274,24 @@
       "text": {
         "fr": "Le Massachusetts Institute of Technology (MIT), en français Institut de technologie du Massachusetts, est un institut de recherche américain et une université, spécialisé dans les domaines de la science et de la technologie. Situé à Cambridge, dans l'État du Massachusetts, à proximité immédiate de Boston, au nord-est des États-Unis, le MIT est souvent considéré comme une des meilleures universités mondiales.",
         "en": "The Massachusetts Institute of Technology (MIT) is a private research university located in Cambridge, Massachusetts, United States. Founded in 1861 in response to the increasing industrialization of the United States, MIT adopted a European polytechnic university model and stressed laboratory instruction in applied science and engineering. The Institute is traditionally known for its research and education in the physical sciences and engineering, but more recently in biology, economics, linguistics and management as well. MIT is often ranked among the world's top universities."
-      }
+      },
+      "images": [
+        {
+          "url": "https://picsum.photos/720/1280/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/2100/1200/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        },
+        {
+          "url": "https://picsum.photos/1200/720/?random",
+          "name": "image name",
+          "credit": "©head—genève photo de Paul Smith"
+        }
+      ]
     }
   ]
 }

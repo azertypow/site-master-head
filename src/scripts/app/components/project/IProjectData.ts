@@ -8,5 +8,5 @@ export interface IProjectData {
         fr: string
         en: string
     }
-    // images: IImageData[]
+    images: IImageData[]
 }

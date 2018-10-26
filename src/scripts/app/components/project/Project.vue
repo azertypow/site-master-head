@@ -17,6 +17,18 @@
             <p v-if="siteIsFr && $showDetails" >{{this.$projectData.text.fr}}</p>
             <p v-else-if="$showDetails"        >{{this.$projectData.text.en}}</p>
         </div>
+
+        <template v-for="image of $projectData.images">
+            <div class="img-container">
+                <div class="img" :style="{backgroundImage: 'url(' + image.url + ')'}"></div>
+                <div class="credit">
+                    {{image.credit}}
+                </div>
+                <div>
+                    {{image.name}}
+                </div>
+            </div>
+        </template>
     </section>
 </template>
 
@@ -53,6 +65,11 @@
 
 <style lang="scss">
     .v-project {
-
+        .img {
+            width: 500px;
+            height: 250px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
     }
 </style>
