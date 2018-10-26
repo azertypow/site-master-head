@@ -48,12 +48,43 @@ let app = createVueApplication({
                 en: "",
             }
         },
+    },
+    thesis: {
+        header: {
+            text: {
+                fr: "",
+                en: "",
+            },
+            subtitle: {
+                fr: "",
+                en: "",
+            },
+            title: {
+                fr: "",
+                en: "",
+            }
+        },
+    },
+    contact: {
+        header: {
+            text: {
+                fr: "",
+                en: "",
+            },
+            subtitle: {
+                fr: "",
+                en: "",
+            },
+            title: {
+                fr: "",
+                en: "",
+            }
+        },
     }
 })
 
 getAppData().then(
     (value) => {
-        console.log(value)
         app.data = value
     }
 );

@@ -4,9 +4,9 @@
         <filter-setting
                 $textInsteadTagList="alumni"
                 :$dates="$alumniDates"></filter-setting>
-        <section class="main">
+        <main>
 
-        </section>
+        </main>
     </section>
 </template>
 

@@ -3,12 +3,16 @@
         <app-menu
                 :$bottomIsOpen="$BottomIsOpen"></app-menu>
         <page-home
-                :data="data.home"
+                :data="appData.home"
                 :$siteLang="$siteLang"></page-home>
         <page-projects
-                :data="data.projects"></page-projects>
+                :data="appData.projects"></page-projects>
         <page-alumni
-                :data="data.alumni"></page-alumni>
+                :data="appData.alumni"></page-alumni>
+        <page-contact
+                :data="appData.contact"></page-contact>
+        <page-thesis
+                :data="appData.thesis"></page-thesis>
         <bottom-bar
                 :$siteLang="$siteLang"
                 :$bottomIsOpen="$BottomIsOpen"></bottom-bar>
@@ -28,9 +32,13 @@
     import BottomBar from "./components/bottomBar/BottomBar"
     import AppFooter from "./components/appFooter/AppFooter"
     import PageAlumni from "./pages/alumni/PageAlumni"
+    import PageThesis from "./pages/thesis/PageThesis"
+    import PageContact from "./pages/contact/PageContact"
 
     @Component ({
         components: {
+            PageContact,
+            PageThesis,
             PageAlumni,
             AppMenu,
             PageHome,
@@ -61,6 +69,8 @@
         private siteLang = DEFAULT_SITE_LANG
 
         @Prop({required: true}) data!: IAppData
+        get appData() {return this.data}
+
         @Prop({default: true})  $setBottomIsOpen!: boolean
 
         private BottomIsOpen = this.$setBottomIsOpen
