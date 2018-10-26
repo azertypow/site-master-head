@@ -1,14 +1,16 @@
+import {PAGES_PATHNAME} from "../../../../SETTINGS"
+import {PAGES_PATHNAME} from "../../../../SETTINGS"
 <template>
     <section id="app-menu" :class="{'bg-dark': backgroundIsDark, 'bottom-is-open': $bottomIsOpen}">
-        <div id="app-menu-lang">
-            <button @click="setSiteToFr" :class="{ active: siteIsFr}">fr</button>
-            <button @click="setSiteToEn" :class="{ active: siteIsEn}">en</button>
+        <div id="app-menu-lang" class="top-right">
+            <button @click="setSiteToFr" :class="{ 'lang-active': siteIsFr}">fr</button>
+            <button @click="setSiteToEn" :class="{ 'lang-active': siteIsEn}">en</button>
         </div>
-        <button id="app-menu-home"     @click="goToPageHome">home</button>
-        <button id="app-menu-contact"  @click="goToPageContact">contact / about</button>
-        <button id="app-menu-alumni"   @click="goToPageAlumni">alumni</button>
-        <button id="app-menu-projects" @click="goToPageProject">projects</button>
-        <button id="app-menu-thesis"   @click="goToPageThesis">thesis</button>
+        <button id="app-menu-contact"  @click="goToPageContact" :class="$contactBtnClassPosition" >contact / about</button>
+        <button id="app-menu-thesis"   @click="goToPageThesis"  :class="$thesisBtnClassPosition"  >thesis</button>
+        <button id="app-menu-home"     @click="goToPageHome"    :class="$homeBtnClassPosition"    >home</button>
+        <button id="app-menu-projects" @click="goToPageProject" :class="$projectBtnClassPosition" >projects</button>
+        <button id="app-menu-alumni"   @click="goToPageAlumni"  :class="$alumniBtnClassPosition"  >alumni</button>
     </section>
 </template>
 
@@ -46,13 +48,100 @@
 
         goToPage(pageName: PAGES_PATHNAME) {
             window.history.pushState(pageName, pageName, pageName)
-            console.log(this.backgroundIsDark())
+            this.currentPage = pageName
+            console.log(this.currentPage)
+        }
+
+        /*
+        * button class position
+        * */
+        private currentPage = getWindowPageInfo(window).pathname
+
+        private get $contactBtnClassPosition() {
+            switch (this.currentPage) {
+                case PAGES_PATHNAME.CONTACT :
+                    return BTN_POSITION.ACTIVE
+                case PAGES_PATHNAME.THESIS :
+                    return BTN_POSITION.TOP_MIDDLE
+                case PAGES_PATHNAME.HOME :
+                    return BTN_POSITION.TOP_MIDDLE
+                case PAGES_PATHNAME.PROJECT :
+                    return BTN_POSITION.TOP_MIDDLE
+                case PAGES_PATHNAME.ALUMNI :
+                    return BTN_POSITION.BOTTOM_MIDDLE
+            }
+        }
+        private get $thesisBtnClassPosition() {
+            switch (this.currentPage) {
+                case PAGES_PATHNAME.CONTACT :
+                    return BTN_POSITION.HIDDEN
+                case PAGES_PATHNAME.THESIS :
+                    return BTN_POSITION.ACTIVE
+                case PAGES_PATHNAME.HOME :
+                    return BTN_POSITION.MIDDLE_LEFT
+                case PAGES_PATHNAME.PROJECT :
+                    return BTN_POSITION.MIDDLE_RIGHT
+                case PAGES_PATHNAME.ALUMNI :
+                    return BTN_POSITION.HIDDEN
+            }
+        }
+        private get $homeBtnClassPosition() {
+            switch (this.currentPage) {
+                case PAGES_PATHNAME.CONTACT :
+                    return BTN_POSITION.BOTTOM_MIDDLE
+                case PAGES_PATHNAME.THESIS :
+                    return BTN_POSITION.MIDDLE_RIGHT
+                case PAGES_PATHNAME.HOME :
+                    return BTN_POSITION.ACTIVE
+                case PAGES_PATHNAME.PROJECT :
+                    return BTN_POSITION.MIDDLE_LEFT
+                case PAGES_PATHNAME.ALUMNI :
+                    return BTN_POSITION.TOP_MIDDLE
+            }
+        }
+        private get $projectBtnClassPosition() {
+            switch (this.currentPage) {
+                case PAGES_PATHNAME.CONTACT :
+                    return BTN_POSITION.HIDDEN
+                case PAGES_PATHNAME.THESIS :
+                    return BTN_POSITION.MIDDLE_LEFT
+                case PAGES_PATHNAME.HOME :
+                    return BTN_POSITION.MIDDLE_RIGHT
+                case PAGES_PATHNAME.PROJECT :
+                    return BTN_POSITION.ACTIVE
+                case PAGES_PATHNAME.ALUMNI :
+                    return BTN_POSITION.HIDDEN
+            }
+        }
+        private get $alumniBtnClassPosition() {
+            switch (this.currentPage) {
+                case PAGES_PATHNAME.CONTACT :
+                    return BTN_POSITION.TOP_MIDDLE
+                case PAGES_PATHNAME.THESIS :
+                    return BTN_POSITION.BOTTOM_MIDDLE
+                case PAGES_PATHNAME.HOME :
+                    return BTN_POSITION.BOTTOM_MIDDLE
+                case PAGES_PATHNAME.PROJECT :
+                    return BTN_POSITION.BOTTOM_MIDDLE
+                case PAGES_PATHNAME.ALUMNI :
+                    return BTN_POSITION.ACTIVE
+            }
         }
 
         // noinspection JSMethodCanBeStatic
-        backgroundIsDark() {
+        get backgroundIsDark() {
             return getWindowPageInfo(window).backgroundIsDark
         }
+    }
+
+    enum BTN_POSITION {
+        TOP_MIDDLE      = "top-middle",
+        TOP_RIGHT       = "top-right",
+        MIDDLE_LEFT     = "middle-left",
+        MIDDLE_RIGHT    = "middle-right",
+        BOTTOM_MIDDLE   = "bottom-middle",
+        ACTIVE          = "active",
+        HIDDEN          = "hidden"
     }
 </script>
 
@@ -69,50 +158,55 @@
             position: fixed;
         }
 
+        #app-menu-contact,
+        #app-menu-alumni,
+        #app-menu-projects,
+        #app-menu-thesis,
         #app-menu-home {
             @include menuElements;
         }
 
         #app-menu-lang {
             @include menuElements;
-            top: 0;
-            right: 0;
-            > *.active {
+            > *.lang-active {
                 color: red;
             }
         }
 
-        #app-menu-contact {
-            @include menuElements;
+        .top-middle {
             top: 0;
             left: 50%;
             transform: translate(-50%, 0);
         }
-
-        #app-menu-alumni {
-            @include menuElements;
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+        .middle-left {
             top: 50%;
             left: 0;
             transform: translate(0, -50%);
         }
-
-        #app-menu-projects {
-            @include menuElements;
+        .middle-right {
             top: 50%;
             right: 0;
             transform: translate(0, -50%);
         }
-
-        #app-menu-thesis {
-            @include menuElements;
+        .bottom-middle {
             bottom: 0;
             left: 50%;
             transform: translate(-50%, 0);
         }
+        .active {
+            display: none;
+        }
+        .hidden {
+            display: none;
+        }
     }
 
     #app-menu.bottom-is-open {
-        #app-menu-thesis {
+        .bottom-middle {
             bottom: 6em;
         }
     }

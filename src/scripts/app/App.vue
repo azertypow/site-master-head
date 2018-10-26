@@ -58,6 +58,7 @@
         },
         beforeDestroy: function () {
             EventBus.$off(EVENT_BUS_LIST.LANG)
+            EventBus.$off(EVENT_BUS_LIST.CLOSE_BOTTOM_BAR)
         }
     })
     export default class App extends Vue {
