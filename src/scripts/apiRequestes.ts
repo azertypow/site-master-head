@@ -2,6 +2,7 @@ import {IAppData} from "./app/IAppData"
 import {ITagsData} from "./app/ITagsData"
 import {IDatesData} from "./app/IDatesData"
 import {IHomeProjectsData} from "./app/IHomeProjectsData"
+import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
 
 export async function getAppData(): Promise<IAppData> {
     return await getJsonData("http://localhost:8090/appData.json") as IAppData
@@ -47,6 +48,10 @@ export async function getAlumniDataFromTo(): Promise<number[]> {
 
 export async function getHomeProjectsData(): Promise<IHomeProjectsData> {
     return await getJsonData("http://localhost:8090/homeProjectsData.json") as IHomeProjectsData
+}
+
+export async function getBottomBarData(): Promise<IBottomBarData> {
+    return await getJsonData("http://localhost:8090/bottomBarData.json") as IBottomBarData
 }
 
 export function getJsonData(url: string) {

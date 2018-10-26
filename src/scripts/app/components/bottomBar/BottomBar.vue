@@ -1,7 +1,28 @@
 <template>
     <section v-if="$bottomIsOpen" id="bottom-bar">
-        <div class="container">top</div>
-        <div class="container">bottom</div>
+
+        <template v-if="$barHasContent">
+            <div class="text-container">
+                <template v-for="bottomElement of $bottomBarData">
+                    <div
+                            v-if="siteIsFr"
+                            class="text">{{bottomElement.content.fr}}</div>
+                    <div
+                            v-else
+                            class="text">{{bottomElement.content.en}}</div>
+                </template>
+            </div>
+        </template>
+
+        <template v-else>
+            <div class="social-container">
+                <span>instagram</span>
+                <span>twitter</span>
+                <span>vimeo</span>
+                <span>github</span>
+            </div>
+        </template>
+
         <div id="bottom-bar-btn" @click="closeBottomBar()">
             <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path d="M0,0 L50,50" ></path>
@@ -14,11 +35,38 @@
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
     import {EventBus} from "../../../event-bus"
-    import {EVENT_BUS_LIST} from "../../../GLOBAL_ENUMS"
+    import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
+    import {IBottomBarData} from "./IBottomBarData"
+    import {getBottomBarData} from "../../../apiRequestes"
+    import {pushArrayInArray} from "../../../arrayPush"
 
     @Component
     export default class BottomBar extends Vue {
+        constructor() {
+            super()
+            getBottomBarData().then((data) => {
+                this.$bottomBarData = data
+            })
+        }
+
         @Prop({required: true}) $bottomIsOpen!: boolean
+
+        /*
+        * site lang
+        * */
+        @Prop({required: true}) $siteLang!: LANG_LIST
+        get siteIsFr() { return this.$siteLang === LANG_LIST.FR }
+
+        /*
+        * content of bottom bar
+        * */
+        bottomBarData: IBottomBarData = []
+        get $bottomBarData()        {return this.bottomBarData}
+        set $bottomBarData(value)   {
+            pushArrayInArray(value, this.bottomBarData)
+        }
+
+        get $barHasContent() {return this.$bottomBarData.length > 0}
 
         // noinspection JSMethodCanBeStatic
         closeBottomBar() {
@@ -39,9 +87,14 @@
         background-color: $color-main-light;
         width: 100%;
 
-        .container {
+        .text-container {
             width: 100%;
             height: 2em;
+        }
+
+        .social-container {
+            width: 100%;
+            height: 4em;
         }
     }
 

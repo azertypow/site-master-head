@@ -10,6 +10,7 @@
         <page-alumni
                 :data="data.alumni"></page-alumni>
         <bottom-bar
+                :$siteLang="$siteLang"
                 :$bottomIsOpen="$BottomIsOpen"></bottom-bar>
         <app-footer></app-footer>
     </section>

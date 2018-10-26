@@ -30,6 +30,7 @@
     import {IHomeProjectsData} from "../../IHomeProjectsData"
     import ProjectsSection from "../../components/projectsSection/ProjectsSection"
     import {IProjectsSectionData} from "../../components/projectsSection/IProjectsSectionData"
+    import {pushArrayInArray} from "../../../arrayPush"
 
     @Component({
         components: {
@@ -61,9 +62,9 @@
             workshops: [],
         }
         set $homeProjects(value: IHomeProjectsData) {
-            PageHome.pushArrayInArray(value.workshops, this.homeProjects.workshops)
-            PageHome.pushArrayInArray(value.seminars, this.homeProjects.seminars)
-            PageHome.pushArrayInArray(value.events, this.homeProjects.events)
+            pushArrayInArray(value.workshops, this.homeProjects.workshops)
+            pushArrayInArray(value.seminars, this.homeProjects.seminars)
+            pushArrayInArray(value.events, this.homeProjects.events)
         }
         get $homeProjects() {
             return this.homeProjects
@@ -104,13 +105,6 @@
                 en: "A persona encapsulates critical behavioural data in a way that both designers and stakeholders can understand, remember, and relate to. Personas use storytelling to engage users' social and emotional aspects, which helps designers to either visualize the best product behaviour or see why the recommended design is successful.",
             }
         }}
-
-        static pushArrayInArray(arrayToAdd: Array<any>, arrayToExtend: Array<any>) {
-            for(const value of arrayToAdd) {
-                console.log(value)
-                arrayToExtend.push(value);
-            }
-        }
     }
 </script>
 
