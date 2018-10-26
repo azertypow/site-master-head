@@ -61,6 +61,9 @@
             EventBus.$on(EVENT_BUS_LIST.LANG, (event: LANG_LIST) => {
                 (this as FilterSetting).$siteLang = event
             })
+        },
+        beforeDestroy: function () {
+            EventBus.$off(EVENT_BUS_LIST.LANG)
         }
     })
     export default class FilterSetting extends Vue {
