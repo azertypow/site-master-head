@@ -49,7 +49,7 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         goToPage(pageName: PAGES_PATHNAME) {
             window.history.pushState(pageName, pageName, pageName)
             this.currentPage = pageName
-            console.log(this.currentPage)
+            EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
         }
 
         /*
