@@ -8,6 +8,7 @@ export enum PAGES_PATHNAME {
     HOME = "/home",
     PROJECT = "/project",
     THESIS = "/thesis",
+    OTHER = "/other"
 }
 
 export const PAGE_SETTINGS: IPageSettings = {

@@ -15,6 +15,20 @@ export enum HOME_PROJECT_POSITIONS {
     BOTTOM = "bottom",
 }
 
+export enum APP_PAGE_ACTIVE_CLASS {
+    HOME    = "app-current-home",
+    PROJECT = "app-current-project",
+    ALUMNI  = "app-current-alumni",
+    CONTACT = "app-current-contact",
+    THESIS  = "app-current-thesis",
+}
+
+export enum APP_PAGE_HISTORIC_STATE {
+    CURRENT = "app-page-current",
+    BEFORE  = "app-page-before",
+    OTHER   = "app-page-other",
+}
+
 export enum PAGE_VERTICAL_POSITION {
     TOP     = "vertical-top",
     CENTER  = "vertical-center",

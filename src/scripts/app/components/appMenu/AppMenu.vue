@@ -23,6 +23,12 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
 
     @Component
     export default class AppMenu extends Vue {
+        constructor() {
+            super();
+
+            this.$currentPage = getWindowPageInfo(window).pathname
+        }
+
         @Prop({required: true}) $bottomIsOpen!: boolean
 
         setSiteToFr() { this.$siteLang = LANG_LIST.FR }
@@ -40,22 +46,23 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         get siteIsEn() { return this.$siteLang === LANG_LIST.EN }
 
 
-        goToPageAlumni()    {this.goToPage(PAGES_PATHNAME.ALUMNI)}
-        goToPageContact()   {this.goToPage(PAGES_PATHNAME.CONTACT)}
-        goToPageHome()      {this.goToPage(PAGES_PATHNAME.HOME)}
-        goToPageProject()   {this.goToPage(PAGES_PATHNAME.PROJECT)}
-        goToPageThesis()    {this.goToPage(PAGES_PATHNAME.THESIS)}
-
-        goToPage(pageName: PAGES_PATHNAME) {
-            window.history.pushState(pageName, pageName, pageName)
-            this.currentPage = pageName
-            EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
-        }
+        goToPageAlumni()    {this.$currentPage = PAGES_PATHNAME.ALUMNI}
+        goToPageContact()   {this.$currentPage = PAGES_PATHNAME.CONTACT}
+        goToPageHome()      {this.$currentPage = PAGES_PATHNAME.HOME}
+        goToPageProject()   {this.$currentPage = PAGES_PATHNAME.PROJECT}
+        goToPageThesis()    {this.$currentPage = PAGES_PATHNAME.THESIS}
 
         /*
         * button class position
         * */
-        private currentPage = getWindowPageInfo(window).pathname
+        private currentPage!: PAGES_PATHNAME
+        set $currentPage(pageName: PAGES_PATHNAME) {
+            EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
+            console.log("seeeeeet")
+            this.currentPage = pageName
+            window.history.pushState(pageName, pageName, pageName)
+        }
+        get $currentPage(): PAGES_PATHNAME {return this.currentPage}
 
         private get $contactBtnClassPosition() {
             switch (this.currentPage) {
