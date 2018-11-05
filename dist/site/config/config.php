@@ -120,7 +120,7 @@ c::set('routes', array(
      * front routes
      * */
     array(
-        'pattern' => array('alumni', 'contact', 'home', 'project', 'thesis', 'other'),
+        'pattern' => array('/', 'alumni', 'contact', 'home', 'project', 'thesis', 'other'),
         'action' => function () {
             echo VUEApplication::getApp();
         }

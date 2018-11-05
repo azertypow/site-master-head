@@ -1,7 +1,5 @@
 <?php snippet('header') ?>
 
-<h1>coucou</h1>
-
 <h1><?php echo $page->title_thesis_french()->html() ?></h1>
 <h1><?php echo $page->title_thesis_english()->html() ?></h1>
 <p><?php echo $page->year_thesis()->html() ?></p>
