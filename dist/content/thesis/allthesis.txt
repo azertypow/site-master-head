@@ -2,4 +2,8 @@ Title: Thesis
 
 ----
 
-Text: Présentation des mémoires.
+Text-description-francais: Voici tous les mémoires de la section !
+
+----
+
+Text-description-anglais: Here is all the thesis from the section !

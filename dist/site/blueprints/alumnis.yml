@@ -16,6 +16,11 @@ fields:
   title:
     label: Title
     type:  text
-  text:
-    label: Text
+
+  text_description_francais:
+    label: Description français
+    type:  textarea
+
+  text_description_anglais:
+    label: Description anglais
     type:  textarea

@@ -17,7 +17,8 @@ class Projects
 
         $json['info'] = array(
             'title' => (string)$info->title(),
-            'text' => (string)$info->text()
+            'text_description_french' => (string)$info->text_description_francais(),
+            'text_description_english' => (string)$info->text_description_anglais()
         );
 
         $json['project'] = array();
@@ -110,9 +111,17 @@ class Projects
             return 'not ok';
         };*/
         //$data = page('projects')->children()->visible()->group($callback);
-
-
+        $info = page('projects');
         $data = page('projects')->children()->visible()->filterBy('tags', urldecode($letag), '/');
+
+
+        $datatagedjson['info'] = array(
+            'title' => (string)$info->title(),
+            'text_description_french' => (string)$info->text_description_francais(),
+            'text_description_english' => (string)$info->text_description_anglais()
+        );
+
+
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
@@ -166,8 +175,18 @@ class Projects
 
     public static function getAllProjectsByTagYear($letag, $from, $to)
     {
+        $info = page('projects');
         $data = page('projects')->children()->visible()->filterBy('tags', urldecode($letag), '/')->filterBy('appears_projects', 'true');
         $collection = $data->filterBy('year', '>=', $from)->filterBy('year', '<=', $to);
+
+
+        $datatagedjson['info'] = array(
+            'title' => (string)$info->title(),
+            'text_description_french' => (string)$info->text_description_francais(),
+            'text_description_english' => (string)$info->text_description_anglais()
+        );
+
+
         $datatagedjson['project'] = array();
         foreach ($collection->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(

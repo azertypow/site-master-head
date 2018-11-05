@@ -2,4 +2,8 @@ Title: Alumnis
 
 ----
 
-Text: Page pour les alumnis
+Text-description-francais: Voici tous les Alumnis média design !
+
+----
+
+Text-description-anglais: Here is all the Alumnis of media design !

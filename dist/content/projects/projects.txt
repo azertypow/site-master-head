@@ -2,4 +2,8 @@ Title: Projects
 
 ----
 
-Text: All the projects from HEAD Media Design
+Text-description-francais: Voici tous les projets de la section !
+
+----
+
+Text-description-anglais: Here is all the projects from the section !

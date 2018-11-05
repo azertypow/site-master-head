@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
-  - home
   - alumnis
-  - >
-    thesis/le-design-d-interfaces-dans-les-jeux-videos
-  - alumnis/yann-longchamp
+  - thesis
+  - projects
+  - thesis/le-design-d-interfaces-dans-les-jeux-videos
+  - about

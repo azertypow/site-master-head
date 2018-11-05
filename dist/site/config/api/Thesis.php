@@ -11,7 +11,15 @@ class Thesis
 
     public static function getAllThesis()
     {
+        $info = page('thesis');
         $data = page('thesis')->children()->visible()->paginate(10);
+
+        $json['info'] = array(
+            'title' => (string)$info->title(),
+            'text_description_french' => (string)$info->text_description_francais(),
+            'text_description_english' => (string)$info->text_description_anglais()
+        );
+
         $json['thesis'] = array();
         $json['pages'] = $data->pagination()->countPages();
         $json['page'] = $data->pagination()->page();
