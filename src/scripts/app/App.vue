@@ -197,6 +197,12 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             &.app-page-before {
                 display: block;
             }
+
+            padding: 0 50px;
+
+            >* {
+
+            }
         }
 
         .app-cube-flip-home {

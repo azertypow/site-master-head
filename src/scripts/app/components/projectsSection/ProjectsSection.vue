@@ -1,13 +1,18 @@
 <template>
     <section id="projects-section">
         <header>
-            <h2 v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>
-            <h2 v-else          >{{this.projectsSectionData.title.en}}</h2>
-
-            <btn-show-details :$siteLang="$siteLang"
-                              v-on:clicked="btnDetailClicked()"></btn-show-details>
-            <h3 v-if="siteIsFr && $showDetails" >{{this.projectsSectionData.description.fr}}</h3>
-            <h3 v-else-if="$showDetails"          >{{this.projectsSectionData.description.en}}</h3>
+            <div class="title-container">
+                <h2 v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>
+                <h2 v-else          >{{this.projectsSectionData.title.en}}</h2>
+                <div class="details-btn-container">
+                    <btn-show-details :$siteLang="$siteLang"
+                                      v-on:clicked="btnDetailClicked()"></btn-show-details>
+                </div>
+            </div>
+            <div class="subtitle-container">
+                <h3 v-if="siteIsFr && $showDetails" >{{this.projectsSectionData.description.fr}}</h3>
+                <h3 v-else-if="$showDetails"          >{{this.projectsSectionData.description.en}}</h3>
+            </div>
         </header>
 
         <template v-for="project in projectsSectionData.projects">
@@ -53,6 +58,26 @@
 
 <style lang="scss">
     #projects-section {
+        .subtitle-container {
+            h3 {
+                font-size: 2em;
+            }
+        }
 
+        .title-container {
+            position: relative;
+            display: inline-block;
+
+            > * {
+                margin: 0;
+            }
+
+            .details-btn-container {
+                transform: translate(100%, 0);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
     }
 </style>

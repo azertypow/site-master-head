@@ -85,11 +85,13 @@
         bottom: 0;
         color: $color-main;
         background-color: $color-main-light;
+        box-sizing: border-box;
+        padding-right: 100px;
         width: 100%;
 
         .text-container {
             width: 100%;
-            height: 2em;
+            height: 5em;
         }
 
         .social-container {
