@@ -117,7 +117,7 @@ c::set('routes', array(
 
 
     /*
-     * front root
+     * front routes
      * */
     array(
         'pattern' => array('alumni', 'contact', 'home', 'project', 'thesis', 'other'),
