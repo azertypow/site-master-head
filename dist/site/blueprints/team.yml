@@ -1,0 +1,32 @@
+title: Team Member
+
+pages: false
+
+files: false
+
+icon: user
+
+preview: parent
+
+fields:
+  name_team:
+    label: Name
+    type: title
+
+  position_team:
+    label: Position
+    type: text
+
+  about_team:
+    label: About
+    type: textarea
+
+  external_link_team:
+    label: Lien externe
+    type: url
+    width: 1/2
+
+  email_team:
+    label: Email Address
+    type: email
+    width: 1/2

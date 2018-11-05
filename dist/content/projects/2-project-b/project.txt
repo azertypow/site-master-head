@@ -1,0 +1,66 @@
+Content: 
+
+----
+
+Title: Project B
+
+----
+
+Year: 2014
+
+----
+
+Description-french: Superbe projet !
+
+----
+
+Description-english: Incredible project !
+
+----
+
+Tags: creative coding/communication
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: true
+
+----
+
+Event-pertinence: header_position
+
+----
+
+Workshop-pertinence: middle_position
+
+----
+
+Seminar-pertinence: bottom_position
+
+----
+
+Appears-bandeau: true
+
+----
+
+Appears-projects: true
+
+----
+
+Students: 
+
+- 
+  students_name: Maxime Sallin
+- 
+  students_name: Lauren Bill
+
+----
+
+Text-bandeau-french: francais ok
+
+----
+
+Text-bandeau-english: english ok

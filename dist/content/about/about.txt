@@ -1,0 +1,35 @@
+Title: Contact & About
+
+----
+
+General-presentation-french: Présentation du master média design en français :)
+
+----
+
+General-presentation-english: Presentation of the master media design in english !
+
+----
+
+Etude-plan-french: Voici le plan d'étude en français
+
+----
+
+Etude-plan-english: Here is the student plan in english
+
+----
+
+General-informations-french: 
+
+Contactez nous : 
+Nous sommes cool
+
+----
+
+General-informations-english: 
+
+Contact us : 
+we are cool
+
+----
+
+External-link-about: (link: http://google.ch text: Google is your friend)

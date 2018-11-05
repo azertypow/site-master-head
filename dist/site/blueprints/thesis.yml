@@ -1,0 +1,67 @@
+title: Thesis
+
+pages: false
+
+files:
+  sortable: true
+  fields:
+      caption:
+        label: Document description
+        type: textarea
+        placeholder: Mémoire de master, Félicien Goguey
+
+options:
+  preview: true
+  status: true
+  template: false
+  url: true
+  delete: false
+
+fields:
+  title_thesis_french:
+    label: Titre du mémoire - français
+    type:  text
+    required: true
+    width: 3/4
+
+  title_thesis_english:
+    label: Titre du mémoire - anglais
+    type:  text
+    required: true
+    width: 3/4
+
+  year_thesis:
+    label: Année
+    type:  text
+    required: true
+    width: 1/4
+
+  description_thesis_french:
+    label: Résumé / question de recherche - francais
+    type:  textarea
+
+  description_thesis_english:
+    label: Résumé / question de recherche - anglais
+    type:  textarea
+    required: true
+
+  students_thesis:
+    label: Etudiant(s)
+    type:  text
+    required: true
+    help: Nom de l'étudiant, si plusieurs étudiants, séparé par une virgule (Nicolas Baldran, Yann Longchamp)
+
+  tuteurs_thesis:
+    label: Tuteur(s)
+    type:  text
+    required: true
+    help: Nom du tuteur, si plusieurs tuteurs, séparé par une virgule (Dominic Robson, Alexia Mathieu)
+
+  tags_thesis:
+    label: Tags
+    type: tags
+    required: true
+    lower: true
+    separator: /
+    index: template
+    help: Tags du projet (min 1, max 5)

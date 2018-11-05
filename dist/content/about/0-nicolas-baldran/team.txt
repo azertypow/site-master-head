@@ -1,0 +1,21 @@
+Name-team: Nicolas Baldran
+
+----
+
+Position-team: Assistant
+
+----
+
+About-team: Nouvel assistant
+
+----
+
+External-link-team: http://nico.com
+
+----
+
+Email-team: nico@gmail.com
+
+----
+
+Title: Nicolas Baldran

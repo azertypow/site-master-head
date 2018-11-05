@@ -1,0 +1,68 @@
+Content: 
+
+----
+
+Title: Project C
+
+----
+
+Year: 2010
+
+----
+
+Description-french: Super projet français
+
+----
+
+Description-english: Amazing project english
+
+----
+
+Students: 
+
+- 
+  students_name: Alexia Mathieu
+- 
+  students_name: Benjamin Ruffieux
+- 
+  students_name: Nicolas Baldran
+
+----
+
+Tags: creative coding/design fiction/communication
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: true
+
+----
+
+Event-pertinence: header_position
+
+----
+
+Workshop-pertinence: header_position
+
+----
+
+Seminar-pertinence: header_position
+
+----
+
+Appears-bandeau: true
+
+----
+
+Appears-projects: true
+
+----
+
+Text-bandeau-french: Ce bandeau est magique !
+
+----
+
+Text-bandeau-english: This bandeau is magical !

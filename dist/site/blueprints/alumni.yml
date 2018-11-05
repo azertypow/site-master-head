@@ -1,0 +1,61 @@
+title: Alumni
+
+pages: false
+
+files: false
+
+options:
+  preview: true
+  status: true
+  template: false
+  url: true
+  delete: true
+
+fields:
+  prenom_alumni:
+    label: Prénom de l'alumni
+    type:  text
+    required: true
+    width: 1/3
+
+  nom_alumni:
+    label: Nom de l'alumni
+    type:  text
+    required: true
+    width: 1/3
+
+  date_end_alumni:
+    label: Date de fin
+    type:  text
+    required: true
+    width: 1/3
+
+  actual_post_alumni:
+    label: Poste actuel, agence, studio,...
+    type: textarea
+
+  related_pp_alumni:
+    label: Projet pratique lié
+    type: page
+    width: 1/2
+    help: Commencer par taper le mot "projects"
+
+  related_thesis_alumni:
+    label: Mémoire lié
+    type: page
+    width: 1/2
+    help: Commencer par taper le mot "thesis"
+
+  website_alumni:
+    label: Website perso
+    type: url
+    width: 1/2
+
+  email_alumni:
+    label: Email perso
+    type: email
+    width: 1/2
+
+  external_link_alumni:
+    label: Liens externes supplémentaires
+    type: textarea

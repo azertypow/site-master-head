@@ -1,0 +1,37 @@
+Title: Home
+
+----
+
+Text: Bienvenue sur le site média design
+
+----
+
+Text-introduction-french: intro français
+
+----
+
+Text-introduction-english: intro english
+
+----
+
+Text-events-french: évènement français
+
+----
+
+Text-events-english: évènement english
+
+----
+
+Text-workshop-french: workshop français
+
+----
+
+Text-workshop-english: workshop english
+
+----
+
+Text-seminaire-french: séminaire français
+
+----
+
+Text-seminaire-english: séminaire english

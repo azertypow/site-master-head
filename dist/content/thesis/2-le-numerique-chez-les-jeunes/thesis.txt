@@ -1,0 +1,33 @@
+Title-thesis-french: Le numérique chez les jeunes
+
+----
+
+Title-thesis-english: Digital and young people
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: Super mémoire en français
+
+----
+
+Description-thesis-english: Amazing thesis in english
+
+----
+
+Students-thesis: Yann Longchamp
+
+----
+
+Tuteurs-thesis: Alexia Mathieu
+
+----
+
+Tags-thesis: digital/young people
+
+----
+
+Title: Le numérique chez les jeunes

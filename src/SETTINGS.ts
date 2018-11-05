@@ -3,12 +3,12 @@ import {LANG_LIST} from "./scripts/GLOBAL_ENUMS"
 export const DEFAULT_SITE_LANG = LANG_LIST.FR
 
 export enum PAGES_PATHNAME {
-    ALUMNI = "/alumni",
+    ALUMNI  = "/alumni",
     CONTACT = "/contact",
-    HOME = "/home",
+    HOME    = "/home",
     PROJECT = "/project",
-    THESIS = "/thesis",
-    OTHER = "/other"
+    THESIS  = "/thesis",
+    OTHER   = "/other"
 }
 
 export const PAGE_SETTINGS: IPageSettings = {

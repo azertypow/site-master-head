@@ -1,0 +1,33 @@
+Title-thesis-french: Le design d'interfaces dans les jeux vidéos
+
+----
+
+Title-thesis-english: Interface design in video games
+
+----
+
+Year-thesis: 2012
+
+----
+
+Description-thesis-french: Super mémoire en francais
+
+----
+
+Description-thesis-english: Amazing thesis in english
+
+----
+
+Students-thesis: Nicolas Baldran
+
+----
+
+Tuteurs-thesis: Alexia Mathieu
+
+----
+
+Tags-thesis: videogames/interfaces
+
+----
+
+Title: Le design d'interfaces dans les jeux vidéos

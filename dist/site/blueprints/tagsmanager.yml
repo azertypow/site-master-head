@@ -1,0 +1,17 @@
+title: Tags manager
+pages:
+  template: project
+files: false
+options:
+  preview: false
+  template: false
+  status: true
+  url: false
+  delete: true
+fields:
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  textarea

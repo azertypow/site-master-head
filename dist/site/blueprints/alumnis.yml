@@ -1,0 +1,21 @@
+title: Alumnis
+
+pages:
+  template: alumni
+
+files: false
+
+options:
+  preview: true
+  status: false
+  template: false
+  url: true
+  delete: false
+
+fields:
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  textarea
