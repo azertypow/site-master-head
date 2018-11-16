@@ -27,10 +27,12 @@
     "webpack-dev-server": "^3.1.9"
   },
   "scripts": {
-    "build": "webpack --mode production",
-    "dev": "npm run dev:kirby & npm run dev:serve-app & npm run dev:api-demo",
-    "dev:serve-app": "webpack --mode development --watch",
-    "dev:api-demo": "http-server ./api-demo -p 8090 -c-1 -a localhost --cors='*'",
-    "dev:kirby": "cd dist/ && php -S localhost:8000"
+    "build":        "webpack --mode production",
+    "dev":          "npm run dev:webpack & npm run dev:kirby",
+    "dev:webpack":  "webpack --mode development --watch",
+    "dev:kirby":    "cd dist/ && php -S localhost:8000",
+
+    "dev:old": "npm run dev:kirby & npm run dev:serve-app & npm run dev:api-demo",
+    "dev:api-demo": "http-server ./api-demo -p 8090 -c-1 -a localhost --cors='*'"
   }
 }
