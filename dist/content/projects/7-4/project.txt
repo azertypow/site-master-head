@@ -1,0 +1,64 @@
+Content: 
+
+----
+
+Title: 4
+
+----
+
+Year: zer
+
+----
+
+Description-french: zer
+
+----
+
+Description-english: zer
+
+----
+
+Students: 
+
+- 
+  students_name: zer
+
+----
+
+Tags: zer
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: false
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: false
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true
