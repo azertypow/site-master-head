@@ -34,11 +34,11 @@ Event-pertinence: header_position
 
 ----
 
-Workshop-pertinence: middle_position
+Workshop-pertinence: false
 
 ----
 
-Seminar-pertinence: bottom_position
+Seminar-pertinence: false
 
 ----
 

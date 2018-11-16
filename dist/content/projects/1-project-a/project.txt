@@ -30,7 +30,7 @@ Seminar-pertinence: false
 
 ----
 
-Event-pertinence: header_position
+Event-pertinence: bottom_position
 
 ----
 
