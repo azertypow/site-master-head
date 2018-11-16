@@ -16,7 +16,6 @@
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageProjectsData} from "./IPageProjectsData"
     import {getProjectsDataFromTo, getProjectsTags} from "../../../apiRequestes"
-    import {ITagsData} from "../../ITagsData"
 
     @Component({
         components: {

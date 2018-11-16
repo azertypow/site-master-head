@@ -1,5 +1,4 @@
 import {IAppData} from "./app/IAppData"
-import {ITagsData} from "./app/ITagsData"
 import {IDatesData} from "./app/IDatesData"
 import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
 import {getArrayOfNumbersBetweenTwoNumbers} from "./getArrayIntBetweenTwoNumbers"
@@ -10,7 +9,7 @@ export async function getAppData(): Promise<IAppData> {
 }
 
 export async function getProjectsTags(): Promise<string[]> {
-    return (await getJsonData("http://localhost:8090/tagsData.json") as ITagsData).projects
+    return await getJsonData("api/projects/alltags") as string[]
 }
 
 export async function getProjectsDataFromTo(): Promise<number[]> {
