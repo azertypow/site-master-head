@@ -15,11 +15,21 @@
             </div>
         </header>
 
-        <template v-for="project in projectsSectionData.projects">
-            <project
-                    :data="project"
-                    :$siteLang="$siteLang"></project>
-        </template>
+        <project
+                v-if="projectsSectionData.projects.header_position"
+                :data="projectsSectionData.projects.header_position"
+                :$siteLang="$siteLang"></project>
+
+        <project
+                v-if="projectsSectionData.projects.middle_position"
+                :data="projectsSectionData.projects.middle_position"
+                :$siteLang="$siteLang"></project>
+
+        <project
+                v-if="projectsSectionData.projects.bottom_position"
+                :data="projectsSectionData.projects.bottom_position"
+                :$siteLang="$siteLang"></project>
+
     </section>
 </template>
 

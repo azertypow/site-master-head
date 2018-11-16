@@ -1,4 +1,4 @@
-import {IProjectData} from "../project/IProjectData"
+import {IProjectItem} from "../../../api/IProjectsAppearhome"
 
 export interface IProjectsSectionData {
     title: {
@@ -9,5 +9,11 @@ export interface IProjectsSectionData {
         fr: string,
         en: string,
     }
-    projects: IProjectData[]
+    projects: IProjectsPositionInSection
+}
+
+export interface IProjectsPositionInSection {
+    header_position: IProjectItem | null,
+    middle_position: IProjectItem | null,
+    bottom_position: IProjectItem | null,
 }

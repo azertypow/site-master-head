@@ -1,49 +1,44 @@
 <template>
     <section class="v-project">
         <div class="img-container">
-            <template v-for="image of $projectData.images">
-                <div class="img-container">
-                    <div class="img" :style="{backgroundImage: 'url(' + image.url + ')'}"></div>
-                    <div class="credit">
-                        {{image.credit}}
-                    </div>
-                    <div>
-                        {{image.name}}
-                    </div>
-                </div>
+            <template v-for="imageData of this.$imagesData">
+                <MediaImage :data="imageData"/>
             </template>
         </div>
 
         <h3 class="title">{{this.$projectData.title}}</h3>
 
         <div class="authors">
-            <p v-for="author of this.$projectData.authors">{{author}}</p>
+            <p v-for="students of this.$projectData.students">{{students.students_name}}</p>
         </div>
 
         <div class="description">
-            <p v-if="siteIsFr"  >{{this.$projectData.description.fr}}</p>
-            <p v-else           >{{this.$projectData.description.en}}</p>
+            <p v-if="siteIsFr"  >{{this.$projectData.description_french}}</p>
+            <p v-else           >{{this.$projectData.description_english}}</p>
         </div>
 
         <btn-show-details :$siteLang="$siteLang"
                           v-on:clicked="btnDetailClicked()"></btn-show-details>
         <div class="text">
-            <p v-if="siteIsFr && $showDetails" >{{this.$projectData.text.fr}}</p>
-            <p v-else-if="$showDetails"        >{{this.$projectData.text.en}}</p>
+            <!--todo text content ?-->
+            <p v-if="siteIsFr && $showDetails" >contenu text francais ?</p>
+            <p v-else-if="$showDetails"        >english content text ?</p>
         </div>
     </section>
 </template>
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
-    import {IProjectData} from "./IProjectData"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
+    import {IMediaItem, IProjectItem} from "../../../api/IProjectsAppearhome"
+    import {MediaType} from "../../../api/genericsApiTypesIntefaces"
+    import MediaImage from "../image/MediaImage"
     @Component({
-        components: {BtnShowDetails}
+        components: {MediaImage, BtnShowDetails}
     })
     export default class Project extends Vue {
-        @Prop({required: true}) data!: IProjectData
+        @Prop({required: true}) data!: IProjectItem
         get $projectData() {return this.data}
 
         /*
@@ -62,6 +57,18 @@
         btnDetailClicked() {
             this.$showDetails = !this.$showDetails
         }
+
+        get $imagesData(): IMediaItem[] {
+            const arrayOfImageMedia: IMediaItem[] = []
+
+            for(const media of this.$projectData.media) {
+                if(media.type === "image") {
+                    arrayOfImageMedia.push(media)
+                }
+            }
+
+            return arrayOfImageMedia
+        }
     }
 </script>
 
@@ -69,21 +76,6 @@
     .v-project {
         position: relative;
         margin-top: 10em;
-
-        .img-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-
-            .img {
-                width: 500px;
-                height: 250px;
-                background-size: cover;
-                background-repeat: no-repeat;
-                margin: auto;
-            }
-        }
 
         .title {
             margin: 0;

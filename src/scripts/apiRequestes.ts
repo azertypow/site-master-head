@@ -1,9 +1,9 @@
 import {IAppData} from "./app/IAppData"
 import {ITagsData} from "./app/ITagsData"
 import {IDatesData} from "./app/IDatesData"
-import {IHomeProjectsData} from "./app/IHomeProjectsData"
 import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
 import {getArrayOfNumbersBetweenTwoNumbers} from "./getArrayIntBetweenTwoNumbers"
+import {IProjectsAppearhome} from "./api/IProjectsAppearhome"
 
 export async function getAppData(): Promise<IAppData> {
     return await getJsonData("http://localhost:8090/appData.json") as IAppData
@@ -41,8 +41,8 @@ export async function getThesisDataFromTo(): Promise<number[]> {
 
     return getArrayOfNumbersBetweenTwoNumbers(from, to)}
 
-export async function getHomeProjectsData(): Promise<IHomeProjectsData> {
-    return await getJsonData("http://localhost:8090/homeProjectsData.json") as IHomeProjectsData
+export async function getHomeProjectsData(): Promise<IProjectsAppearhome> {
+    return await getJsonData("api/projects/appearhome") as IProjectsAppearhome
 }
 
 export async function getBottomBarData(): Promise<IBottomBarData> {
