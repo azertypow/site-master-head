@@ -28,7 +28,7 @@ class Thesis
                 'url' => (string)$oneproject->url(),
                 'title_thesis_french' => (string)$oneproject->title_thesis_french(),
                 'title_thesis_english' => (string)$oneproject->title_thesis_english(),
-                'year_thesis' => (string)$oneproject->year_thesis(),
+                'year' => (string)$oneproject->year_thesis(),
                 'description_thesis_french' => (string)$oneproject->description_thesis_french(),
                 'description_thesis_english' => (string)$oneproject->description_thesis_english(),
                 'students_thesis' => (string)$oneproject->students_thesis(),
