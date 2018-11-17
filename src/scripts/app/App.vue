@@ -11,24 +11,25 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         <div class="app-cube-container" :class="$appPageActiveClassName">
             <div class="app-cube-flip-home"     :class="[this.getClassNamePageHistoryState('/home')]">
                 <page-home
-                        :data="appData.home"
+                        :data="appData.allPagesData.home"
                         :$siteLang="$siteLang"></page-home>
             </div>
             <div class="app-cube-flip-projects" :class="[this.getClassNamePageHistoryState('/project')]">
                 <page-projects
-                        :data="appData.projects"></page-projects>
+                        :data="appData.allPagesData.projects"
+                        :allProjects="appData.allProjects"></page-projects>
             </div>
             <div class="app-cube-flip-alumni"   :class="[this.getClassNamePageHistoryState('/alumni')]">
                 <page-alumni
-                        :data="appData.alumni"></page-alumni>
+                        :data="appData.allPagesData.alumni"></page-alumni>
             </div>
             <div class="app-cube-flip-contact"  :class="[this.getClassNamePageHistoryState('/contact')]">
                 <page-contact
-                        :data="appData.contact"></page-contact>
+                        :data="appData.allPagesData.contact"></page-contact>
             </div>
             <div class="app-cube-flip-thesis"   :class="[this.getClassNamePageHistoryState('/thesis')]">
                 <page-thesis
-                        :data="appData.thesis"></page-thesis>
+                        :data="appData.allPagesData.thesis"></page-thesis>
             </div>
         </div>
         <bottom-bar

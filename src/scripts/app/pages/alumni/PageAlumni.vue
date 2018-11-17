@@ -24,14 +24,6 @@
         }
     })
     export default class PageAlumni extends Vue {
-        constructor() {
-            super()
-
-            getAlumniDataFromTo().then((dates) => {
-                (this as PageAlumni).$alumniDates = dates
-            })
-        }
-
         @Prop({required: true}) data!: IPageAlumniData
 
         /*

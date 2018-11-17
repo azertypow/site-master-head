@@ -1,90 +1,108 @@
-import {getAppData} from "./apiRequestes"
-import {createVueApplication} from "./app/createVueApplication"
+import {getAllPagesData, getAllProjects} from "./apiRequestes"
+import {createVueApplication, IMainVue} from "./app/createVueApplication"
 import {DEFAULT_SITE_LANG} from "../SETTINGS"
 
 console.log("%c=== head media design <3 ===", "color: hotpink")
 
 let app = createVueApplication({
-    home: {
-        header: {
-            title: {
-                en: "",
-                fr: ""
+    allPagesData: {
+        home: {
+            header: {
+                title: {
+                    en: "",
+                    fr: ""
+                },
+                images: [
+                    "",
+                    ""
+                ]
             },
-            images: [
-                "",
-                ""
-            ]
         },
+        projects: {
+            header: {
+                text: {
+                    fr: "",
+                    en: "",
+                },
+                subtitle: {
+                    fr: "",
+                    en: "",
+                },
+                title: {
+                    fr: "",
+                    en: "",
+                }
+            },
+        },
+        alumni: {
+            header: {
+                text: {
+                    fr: "",
+                    en: "",
+                },
+                subtitle: {
+                    fr: "",
+                    en: "",
+                },
+                title: {
+                    fr: "",
+                    en: "",
+                }
+            },
+        },
+        thesis: {
+            header: {
+                text: {
+                    fr: "",
+                    en: "",
+                },
+                subtitle: {
+                    fr: "",
+                    en: "",
+                },
+                title: {
+                    fr: "",
+                    en: "",
+                }
+            },
+        },
+        contact: {
+            header: {
+                text: {
+                    fr: "",
+                    en: "",
+                },
+                subtitle: {
+                    fr: "",
+                    en: "",
+                },
+                title: {
+                    fr: "",
+                    en: "",
+                }
+            },
+        }
     },
-    projects: {
-        header: {
-            text: {
-                fr: "",
-                en: "",
-            },
-            subtitle: {
-                fr: "",
-                en: "",
-            },
-            title: {
-                fr: "",
-                en: "",
-            }
+    allProjects: {
+        info: {
+            text_description_english: "",
+            text_description_french: "",
+            title: "",
         },
-    },
-    alumni: {
-        header: {
-            text: {
-                fr: "",
-                en: "",
-            },
-            subtitle: {
-                fr: "",
-                en: "",
-            },
-            title: {
-                fr: "",
-                en: "",
-            }
-        },
-    },
-    thesis: {
-        header: {
-            text: {
-                fr: "",
-                en: "",
-            },
-            subtitle: {
-                fr: "",
-                en: "",
-            },
-            title: {
-                fr: "",
-                en: "",
-            }
-        },
-    },
-    contact: {
-        header: {
-            text: {
-                fr: "",
-                en: "",
-            },
-            subtitle: {
-                fr: "",
-                en: "",
-            },
-            title: {
-                fr: "",
-                en: "",
-            }
-        },
+        project: [],
     }
 })
 
-getAppData().then(
-    (value) => {
-        app.data = value
-    }
-);
+loadApplicationData(app)
+
+function loadApplicationData(vueApplication: IMainVue) {
+
+    getAllPagesData().then(value => {
+            vueApplication.data.allPagesData = value
+        }
+    );
+
+    getAllProjects().then(value => {
+        vueApplication.data.allProjects = value
+    })
+}

@@ -40,3 +40,8 @@ export enum PAGE_HORIZONTAL_POSITION {
     CENTER  = "horizontal-center",
     RIGHT   = "horizontal-right",
 }
+
+export enum YEAR {
+    MIN_FROM    = 2010,
+    MAX_TO      = 2050,
+}

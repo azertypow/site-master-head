@@ -1,25 +1,22 @@
-import {IAppData} from "./app/IAppData"
+import {IAllPagesData} from "./app/IAppData"
 import {IDatesData} from "./app/IDatesData"
 import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
 import {getArrayOfNumbersBetweenTwoNumbers} from "./getArrayIntBetweenTwoNumbers"
 import {IProjectsAppearhome} from "./api/IProjectsAppearhome"
+import {IAllProjects} from "./api/IAllProjects"
 
-export async function getAppData(): Promise<IAppData> {
-    return await getJsonData("http://localhost:8090/appData.json") as IAppData
+export async function getAllPagesData(): Promise<IAllPagesData> {
+    return await getJsonData("http://localhost:8090/allPagesData.json") as IAllPagesData
 }
+
+export async function getAllProjects(): Promise<IAllProjects> {
+    return await getJsonData("api/projects/") as IAllProjects
+}
+
 
 export async function getProjectsTags(): Promise<string[]> {
     return await getJsonData("api/projects/alltags") as string[]
 }
-
-export async function getProjectsDataFromTo(): Promise<number[]> {
-
-    const dataFromTo = await getJsonData("http://localhost:8090/datesData.json") as IDatesData
-
-    const from = parseInt(dataFromTo.projects.from)
-    const to   = parseInt(dataFromTo.projects.to)
-
-    return getArrayOfNumbersBetweenTwoNumbers(from, to)}
 
 export async function getAlumniDataFromTo(): Promise<number[]> {
 

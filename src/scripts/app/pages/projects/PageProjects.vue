@@ -1,6 +1,6 @@
 <template>
     <section id="page-projects">
-        <header-with-text :data="data.header"></header-with-text>
+        <header-with-text :data="this.$pageProjectsDate.header"></header-with-text>
         <filter-setting
                 :$tags="$projectsTags"
                 :$dates="$projectsDates"></filter-setting>
@@ -15,7 +15,9 @@
     import HeaderWithText from "../../components/header/HeaderWithText"
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageProjectsData} from "./IPageProjectsData"
-    import {getProjectsDataFromTo, getProjectsTags} from "../../../apiRequestes"
+    import {getProjectsTags} from "../../../apiRequestes"
+    import {generateDateFromTo} from "../../generateDateFromTo"
+    import {IAllProjects} from "../../../api/IAllProjects"
 
     @Component({
         components: {
@@ -29,13 +31,13 @@
             getProjectsTags().then((tags) => {
                 (this as PageProjects).$projectsTags = tags
             })
-
-            getProjectsDataFromTo().then((dates) => {
-                (this as PageProjects).$projectsDates = dates
-            })
         }
 
         @Prop({required: true}) data!: IPageProjectsData
+        get $pageProjectsDate() { return this.data }
+
+        @Prop({required: true}) allProjects!: IAllProjects
+        get $allProjects() { return this.allProjects }
 
         private projectsTags: string[] = []
         set $projectsTags(tags) {
@@ -47,14 +49,8 @@
             return this.projectsTags
         }
 
-        private projectsDates: number[] = []
-        set $projectsDates(tags) {
-            for(const tag of tags) {
-                this.projectsDates.push(tag);
-            }
-        }
         get $projectsDates() {
-            return this.projectsDates
+            return generateDateFromTo(this.$allProjects.project)
         }
     }
 </script>
