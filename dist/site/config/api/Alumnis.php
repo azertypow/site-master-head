@@ -28,7 +28,7 @@ class Alumnis
                 'url' => (string)$oneproject->url(),
                 'prenom_alumni' => (string)$oneproject->prenom_alumni(),
                 'nom_alumni' => (string)$oneproject->nom_alumni(),
-                'date_end_alumni' => (string)$oneproject->date_end_alumni(),
+                'year' => (string)$oneproject->date_end_alumni(),
                 'actual_post_alumni' => (string)$oneproject->actual_post_alumni(),
                 'related_pp_alumni' => (string)$oneproject->related_pp_alumni(),
                 'related_thesis_alumni' => (string)$oneproject->related_thesis_alumni(),
