@@ -16,6 +16,8 @@
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageAlumniData} from "./IPageAlumniData"
     import {getAlumniDataFromTo} from "../../../apiRequestes"
+    import {generateDateFromTo} from "../../generateDateFromTo"
+    import {IAllAlumni} from "../../../api/genericsApiTypesIntefaces"
 
     @Component({
         components: {
@@ -26,17 +28,12 @@
     export default class PageAlumni extends Vue {
         @Prop({required: true}) data!: IPageAlumniData
 
-        /*
-        * dates
-        * */
-        private alumniDates: number[] = []
-        set $alumniDates(tags) {
-            for(const tag of tags) {
-                this.alumniDates.push(tag);
-            }
-        }
+        @Prop({required: true}) allAlumni!: IAllAlumni
+        get $allAlumni() { return this.allAlumni }
+
         get $alumniDates() {
-            return this.alumniDates
+            //todo use api/other/minmaxdates
+            return generateDateFromTo(this.$allAlumni.alumnis)
         }
     }
 </script>

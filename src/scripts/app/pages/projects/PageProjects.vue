@@ -17,7 +17,7 @@
     import {IPageProjectsData} from "./IPageProjectsData"
     import {getProjectsTags} from "../../../apiRequestes"
     import {generateDateFromTo} from "../../generateDateFromTo"
-    import {IAllProjects} from "../../../api/IAllProjects"
+    import {IAllProjects} from "../../../api/genericsApiTypesIntefaces"
 
     @Component({
         components: {
@@ -50,6 +50,7 @@
         }
 
         get $projectsDates() {
+            //todo use api/other/minmaxdates
             return generateDateFromTo(this.$allProjects.project)
         }
     }

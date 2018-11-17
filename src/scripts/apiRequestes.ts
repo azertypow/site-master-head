@@ -3,7 +3,7 @@ import {IDatesData} from "./app/IDatesData"
 import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
 import {getArrayOfNumbersBetweenTwoNumbers} from "./getArrayIntBetweenTwoNumbers"
 import {IProjectsAppearhome} from "./api/IProjectsAppearhome"
-import {IAllProjects} from "./api/IAllProjects"
+import {IAllAlumni, IAllProjects} from "./api/genericsApiTypesIntefaces"
 
 export async function getAllPagesData(): Promise<IAllPagesData> {
     return await getJsonData("http://localhost:8090/allPagesData.json") as IAllPagesData
@@ -13,9 +13,12 @@ export async function getAllProjects(): Promise<IAllProjects> {
     return await getJsonData("api/projects/") as IAllProjects
 }
 
-
 export async function getProjectsTags(): Promise<string[]> {
     return await getJsonData("api/projects/alltags") as string[]
+}
+
+export async function getAllAlumni(): Promise<IAllAlumni> {
+    return await getJsonData("api/alumnis") as IAllAlumni
 }
 
 export async function getAlumniDataFromTo(): Promise<number[]> {

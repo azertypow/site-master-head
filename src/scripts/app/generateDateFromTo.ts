@@ -1,8 +1,8 @@
 import {getArrayOfNumbersBetweenTwoNumbers} from "../getArrayIntBetweenTwoNumbers"
 import {YEAR} from "../GLOBAL_ENUMS"
-import {IProjectItem} from "../api/genericsApiTypesIntefaces"
+import {IGenericItem} from "../api/genericsApiTypesIntefaces"
 
-export function generateDateFromTo(projects: IProjectItem[]): number[] {
+export function generateDateFromTo(projects: IGenericItem[]): number[] {
 
     let from: number | undefined
     let to:   number | undefined

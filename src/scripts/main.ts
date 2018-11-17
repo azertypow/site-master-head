@@ -1,4 +1,4 @@
-import {getAllPagesData, getAllProjects} from "./apiRequestes"
+import {getAllAlumni, getAllPagesData, getAllProjects} from "./apiRequestes"
 import {createVueApplication, IMainVue} from "./app/createVueApplication"
 import {DEFAULT_SITE_LANG} from "../SETTINGS"
 
@@ -90,6 +90,15 @@ let app = createVueApplication({
             title: "",
         },
         project: [],
+    },
+    allAlumni: {
+        info: {
+            text_description_english: "",
+            text_description_french: "",
+            title: "",
+            url: "",
+        },
+        alumnis: [],
     }
 })
 
@@ -104,5 +113,9 @@ function loadApplicationData(vueApplication: IMainVue) {
 
     getAllProjects().then(value => {
         vueApplication.data.allProjects = value
+    })
+
+    getAllAlumni().then(value => {
+        vueApplication.data.allAlumni = value
     })
 }

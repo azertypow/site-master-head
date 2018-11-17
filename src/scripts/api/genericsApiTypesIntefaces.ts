@@ -12,25 +12,6 @@ export enum PERTINENCE_SECTION_NAME {
     SEMINAR  = "seminar_pertinence",
 }
 
-export interface IProjectItem {
-    url: string;
-    title: string;
-    year: string;
-    description_french: string;
-    description_english: string;
-    students: IStudentsItem[];
-    tags: string;
-    appear_homepage: BooleanInString;
-    [PERTINENCE_SECTION_NAME.EVENT]: PertinenceStatue;
-    [PERTINENCE_SECTION_NAME.WORKSHOP]: PertinenceStatue;
-    [PERTINENCE_SECTION_NAME.SEMINAR]: PertinenceStatue;
-    appear_bandeau: BooleanInString;
-    text_bandeau_french: string;
-    text_bandeau_english: string;
-    appears_projects: BooleanInString;
-    media: IMediaItem[];
-}
-
 export interface IStudentsItem {
     students_name: string;
 }
@@ -69,4 +50,66 @@ export interface IMeta {
     copyright: string;
     sort?: string;
     imagedescription?: string;
+}
+
+export interface IAllContentInfo {
+    title: string;
+    text_description_french: string;
+    text_description_english: string;
+}
+
+export interface IGenericItem {
+    year: "string",
+}
+
+/*
+* ALUMNI
+* */
+
+export interface IAllAlumni {
+    info: IAllAlumniInfos;
+    alumnis: IAlumnisItem[];
+}
+
+export interface IAllAlumniInfos extends IAllContentInfo{
+    url: string;
+}
+
+export interface IAlumnisItem extends IGenericItem {
+    url: string;
+    prenom_alumni: string;
+    nom_alumni: string;
+    actual_post_alumni: string;
+    related_pp_alumni: string;
+    related_thesis_alumni: string;
+    website_perso_alumni: string;
+    email_perso_alumni: string;
+    external_link_alumni: string;
+}
+
+/*
+* PROJECTS
+* */
+
+export interface IAllProjects {
+    info: IAllContentInfo;
+    project: IProjectItem[];
+}
+
+export interface IProjectItem extends IGenericItem {
+    url: string;
+    title: string;
+    description_french: string;
+    description_english: string;
+    students: IStudentsItem[];
+    tags: string;
+    appear_homepage: BooleanInString;
+    [PERTINENCE_SECTION_NAME.EVENT]: PertinenceStatue;
+    [PERTINENCE_SECTION_NAME.WORKSHOP]: PertinenceStatue;
+    [PERTINENCE_SECTION_NAME.SEMINAR]: PertinenceStatue;
+    appear_bandeau: BooleanInString;
+    text_bandeau_french: string;
+    text_bandeau_english: string;
+    appears_projects: BooleanInString;
+    media: IMediaItem[];
 }
