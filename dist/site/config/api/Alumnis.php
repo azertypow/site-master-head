@@ -15,7 +15,7 @@ class Alumnis
         $data = page('alumnis')->children()->visible();
 
 
-        $json['infos'] = array(
+        $json['info'] = array(
             'url' => (string)$dataalumnis->url(),
             'title' => (string)$dataalumnis->title(),
             'text_description_french' => (string)$dataalumnis->text_description_francais(),
