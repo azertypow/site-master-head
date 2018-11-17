@@ -12,7 +12,7 @@
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
-    import {IMediaItem} from "../../../api/IProjectsAppearhome"
+    import {IMediaItem} from "../../../api/genericsApiTypesIntefaces"
 
     @Component
     export default class MediaImage extends Vue {

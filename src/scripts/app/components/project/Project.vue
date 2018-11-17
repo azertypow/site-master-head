@@ -31,8 +31,7 @@
     import {Vue, Component, Prop} from "vue-property-decorator"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
-    import {IMediaItem, IProjectItem} from "../../../api/IProjectsAppearhome"
-    import {MediaType} from "../../../api/genericsApiTypesIntefaces"
+    import {IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import MediaImage from "../image/MediaImage"
     @Component({
         components: {MediaImage, BtnShowDetails}

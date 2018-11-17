@@ -1,4 +1,4 @@
-import {IProjectItem} from "../../../api/IProjectsAppearhome"
+import {IProjectItem} from "../../../api/genericsApiTypesIntefaces"
 
 export interface IProjectsSectionData {
     title: {

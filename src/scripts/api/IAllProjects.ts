@@ -1,4 +1,4 @@
-import {IProjectItem} from "./IProjectsAppearhome"
+import {IProjectItem} from "./genericsApiTypesIntefaces"
 
 export interface IAllProjects {
     info: IAllProjectsInfo;

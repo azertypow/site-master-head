@@ -41,8 +41,7 @@ import {PERTINENCE_SECTION_NAME} from "../../../api/IProjectsAppearhome"
         IProjectsSectionData
     } from "../../components/projectsSection/IProjectsSectionData"
     import {pushArrayInArray} from "../../../arrayPush"
-    import {IProjectItem, PERTINENCE_SECTION_NAME} from "../../../api/IProjectsAppearhome"
-    import {PertinenceStatue} from "../../../api/genericsApiTypesIntefaces"
+    import {IProjectItem, PERTINENCE_SECTION_NAME, PertinenceStatue} from "../../../api/genericsApiTypesIntefaces"
 
     @Component({
         components: {
