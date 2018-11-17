@@ -1,7 +1,6 @@
 import {IAllPagesData} from "./app/IAppData"
 import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
-import {IProjectsAppearhome} from "./api/IProjectsAppearhome"
-import {IAllAlumni, IAllProjects, IAllThesis} from "./api/genericsApiTypesIntefaces"
+import {IAllAlumni, IAllProjects, IAllThesis, IProjectsAppearhome} from "./api/genericsApiTypesIntefaces"
 
 export async function getAllPagesData(): Promise<IAllPagesData> {
     return await getJsonData("http://localhost:8090/allPagesData.json") as IAllPagesData

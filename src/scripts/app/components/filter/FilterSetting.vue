@@ -24,7 +24,8 @@
         </template>
         <ul>
             <template v-for="(date, index) in $dates" >
-                <li @click="$indexOf_Min_DateSelected = index" :class="{isSelected: this_Min_DateIsSelected(index)}">
+                <li @click="$indexOf_Min_DateSelected = index"
+                    :class="{isSelected: $thisIs_min_dateSelected(index)}" >
                     {{date}}
                 </li>
             </template>
@@ -37,7 +38,8 @@
         </template>
         <ul>
             <template v-for="(date, index) in $dates" >
-                <li @click="$indexOf_Max_DateSelected = index" :class="{isSelected: this_Max_DateIsSelected(index)}">
+                <li @click="$indexOf_Max_DateSelected = index"
+                    :class="{isSelected: $thisIs_max_dateSelected(index)}" >
                     {{date}}
                 </li>
             </template>
@@ -54,6 +56,7 @@
     @Component({
         watch: {
             $dates: function() {
+                // if the list of dates changes, select the largest date for the value "to" and ensure that we see all the projects
                 (this as FilterSetting).$indexOf_Max_DateSelected = (this as FilterSetting).$dates.length - 1
             }
         },
@@ -108,6 +111,7 @@
         * minimum date selection
         * */
         indexOf_Min_DateSelected = 0
+        get $indexOf_Min_DateSelected() { return this.indexOf_Min_DateSelected }
         set $indexOf_Min_DateSelected(index: number) {
 
             if(index > this.$indexOf_Max_DateSelected) {
@@ -115,12 +119,15 @@
             }
 
             this.indexOf_Min_DateSelected = index
-        }
-        get $indexOf_Min_DateSelected() {
-            return this.indexOf_Min_DateSelected
+
+            this.$emitNewFilterValues()
         }
 
-        this_Min_DateIsSelected(index: number) {
+        get $min_dateSelected() {
+            return this.$dates[this.$indexOf_Min_DateSelected]
+        }
+
+        $thisIs_min_dateSelected(index: number) {
             return this.indexOf_Min_DateSelected === index
         }
 
@@ -128,6 +135,7 @@
         *maximum date selection 
         * */
         indexOf_Max_DateSelected = this.$dates.length
+        get $indexOf_Max_DateSelected() { return this.indexOf_Max_DateSelected }
         set $indexOf_Max_DateSelected(index: number) {
 
             if(index < this.$indexOf_Min_DateSelected) {
@@ -135,13 +143,26 @@
             }
 
             this.indexOf_Max_DateSelected = index
-        }
-        get $indexOf_Max_DateSelected() {
-            return this.indexOf_Max_DateSelected
+
+            this.$emitNewFilterValues()
         }
 
-        this_Max_DateIsSelected(index: number) {
+        get $max_dateSelected() {
+            return this.$dates[this.$indexOf_Max_DateSelected]
+        }
+
+        $thisIs_max_dateSelected(index: number) {
             return this.indexOf_Max_DateSelected === index
+        }
+
+        /*
+        * emit
+        * */
+        $emitNewFilterValues() {
+            this.$emit("change", {
+                from: this.$min_dateSelected,
+                to  : this.$max_dateSelected,
+            })
         }
     }
 </script>

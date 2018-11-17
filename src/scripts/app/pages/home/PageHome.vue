@@ -1,8 +1,3 @@
-import {PERTINENCE_SECTION_NAME} from "../../../api/IProjectsAppearhome"
-import {PERTINENCE_SECTION_NAME} from "../../../api/IProjectsAppearhome"
-import {PERTINENCE_SECTION_NAME} from "../../../api/IProjectsAppearhome"
-import {PERTINENCE_SECTION_NAME} from "../../../api/IProjectsAppearhome"
-import {PERTINENCE_SECTION_NAME} from "../../../api/IProjectsAppearhome"
 <template>
     <section id="page-home">
         <app-header-with-image

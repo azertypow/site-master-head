@@ -13,7 +13,7 @@
         </div>
 
         <div class="description">
-            <p v-if="siteIsFr"  >{{this.$projectData.description_french}}</p>
+            <p v-if="$siteIsFr"  >{{this.$projectData.description_french}}</p>
             <p v-else           >{{this.$projectData.description_english}}</p>
         </div>
 
@@ -21,7 +21,7 @@
                           v-on:clicked="btnDetailClicked()"></btn-show-details>
         <div class="text">
             <!--todo text content ?-->
-            <p v-if="siteIsFr && $showDetails" >contenu text francais ?</p>
+            <p v-if="$siteIsFr && $showDetails" >contenu text francais ?</p>
             <p v-else-if="$showDetails"        >english content text ?</p>
         </div>
     </section>
@@ -44,7 +44,9 @@
         * site lang
         * */
         @Prop({required: true}) $siteLang!: LANG_LIST
-        get siteIsFr() { return this.$siteLang === LANG_LIST.FR }
+        get $siteIsFr() { return this.$siteLang === LANG_LIST.FR }
+
+        /**/
 
         /*
         * details sections

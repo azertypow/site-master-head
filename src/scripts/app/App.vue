@@ -21,7 +21,8 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             <div class="app-cube-flip-projects" :class="[this.getClassNamePageHistoryState('/project')]">
                 <page-projects
                         :data="appData.allPagesData.projects"
-                        :allProjects="appData.allProjects"  ></page-projects>
+                        :allProjects="appData.allProjects"
+                        :$siteLang="$siteLang" ></page-projects>
             </div>
 
 

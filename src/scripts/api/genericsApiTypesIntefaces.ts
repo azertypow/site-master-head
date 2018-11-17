@@ -55,28 +55,10 @@ export interface IGenericItem {
 }
 
 /*
-* ALUMNI
+* HOME and BOTTOM BAR
 * */
-
-export interface IAllAlumni {
-    info: IAllAlumniInfos;
-    alumnis: IAlumnisItem[];
-}
-
-export interface IAllAlumniInfos extends IAllContentInfo{
-    url: string;
-}
-
-export interface IAlumnisItem extends IGenericItem {
-    url: string;
-    prenom_alumni: string;
-    nom_alumni: string;
-    actual_post_alumni: string;
-    related_pp_alumni: string;
-    related_thesis_alumni: string;
-    website_perso_alumni: string;
-    email_perso_alumni: string;
-    external_link_alumni: string;
+export interface IProjectsAppearhome {
+    project: IProjectItem[];
 }
 
 /*
@@ -118,6 +100,31 @@ export interface IMetaProject {
 }
 
 /*
+* ALUMNI
+* */
+
+export interface IAllAlumni {
+    info: IAllAlumniInfos;
+    alumnis: IAlumnisItem[];
+}
+
+export interface IAllAlumniInfos extends IAllContentInfo{
+    url: string;
+}
+
+export interface IAlumnisItem extends IGenericItem {
+    url: string;
+    prenom_alumni: string;
+    nom_alumni: string;
+    actual_post_alumni: string;
+    related_pp_alumni: string;
+    related_thesis_alumni: string;
+    website_perso_alumni: string;
+    email_perso_alumni: string;
+    external_link_alumni: string;
+}
+
+/*
 * THESIS
 * */
 
@@ -137,7 +144,7 @@ interface IThesisItem extends IGenericItem {
     students_thesis: string;
     tuteurs_thesis: string;
     tags_thesis: string;
-    media: IMediaItem[];
+    media: IMediaItemThesis[];
 }
 interface IMediaItemThesis extends IMediaItem{
     meta: IMetaThesis;
