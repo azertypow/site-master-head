@@ -35,7 +35,6 @@ export interface IMediaItem {
     isReadable: boolean;
     isExecutable: boolean;
     header: string;
-    meta: IMeta;
 }
 
 export interface IMediaDimensions {
@@ -43,13 +42,6 @@ export interface IMediaDimensions {
     height: number;
     ratio: number;
     orientation: ImageOrientation;
-}
-
-export interface IMeta {
-    image_description: string;
-    copyright: string;
-    sort?: string;
-    imagedescription?: string;
 }
 
 export interface IAllContentInfo {
@@ -111,5 +103,45 @@ export interface IProjectItem extends IGenericItem {
     text_bandeau_french: string;
     text_bandeau_english: string;
     appears_projects: BooleanInString;
+    media: IMediaItemProject[];
+}
+
+export interface IMediaItemProject extends IMediaItem {
+    meta: IMetaProject;
+}
+
+export interface IMetaProject {
+    image_description: string;
+    copyright: string;
+    sort?: string;
+    imagedescription?: string;
+}
+
+/*
+* THESIS
+* */
+
+export interface IAllThesis {
+    info: IAllContentInfo;
+    thesis: IThesisItem[];
+    pages: number;
+    page: number;
+}
+
+interface IThesisItem extends IGenericItem {
+    url: string;
+    title_thesis_french: string;
+    title_thesis_english: string;
+    description_thesis_french: string;
+    description_thesis_english: string;
+    students_thesis: string;
+    tuteurs_thesis: string;
+    tags_thesis: string;
     media: IMediaItem[];
+}
+interface IMediaItemThesis extends IMediaItem{
+    meta: IMetaThesis;
+}
+interface IMetaThesis {
+    caption: string;
 }

@@ -15,7 +15,6 @@
     import HeaderWithText from "../../components/header/HeaderWithText"
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageAlumniData} from "./IPageAlumniData"
-    import {getAlumniDataFromTo} from "../../../apiRequestes"
     import {generateDateFromTo} from "../../generateDateFromTo"
     import {IAllAlumni} from "../../../api/genericsApiTypesIntefaces"
 

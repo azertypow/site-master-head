@@ -15,30 +15,21 @@
     import HeaderWithText from "../../components/header/HeaderWithText"
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageThesisData} from "./IPageThesisData"
-    import {getThesisDataFromTo} from "../../../apiRequestes"
+    import {IAllThesis} from "../../../api/genericsApiTypesIntefaces"
+    import {generateDateFromTo} from "../../generateDateFromTo"
 
     @Component({
         components: {FilterSetting, HeaderWithText}
     })
     export default class PageThesis extends Vue {
-        constructor() {
-            super()
-            getThesisDataFromTo().then((dates) => {
-                (this as PageThesis).$projectsDates = dates
-            })
-        }
-
         @Prop({required: true}) data!: IPageThesisData
         get pageThesisData() {return this.data}
 
-        private projectsDates: number[] = []
-        set $projectsDates(tags) {
-            for(const tag of tags) {
-                this.projectsDates.push(tag);
-            }
-        }
+        @Prop({required: true}) allThesis!: IAllThesis
+        get $allThesis() { return this.allThesis }
+
         get $projectsDates() {
-            return this.projectsDates
+            return generateDateFromTo(this.$allThesis.thesis)
         }
     }
 </script>
