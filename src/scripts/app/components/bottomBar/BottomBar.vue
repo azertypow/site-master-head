@@ -36,7 +36,6 @@
     import {Vue, Component, Prop} from "vue-property-decorator"
     import {EventBus} from "../../../event-bus"
     import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
-    import {IBottomBarData} from "./IBottomBarData"
     import {getBottomBarData} from "../../../apiRequestes"
     import {pushArrayInArray} from "../../../arrayPush"
     import {IProjectItem, IProjectsAppearBottomBar, IProjectsAppearhome} from "../../../api/genericsApiTypesIntefaces"
