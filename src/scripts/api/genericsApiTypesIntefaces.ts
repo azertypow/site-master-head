@@ -61,6 +61,10 @@ export interface IProjectsAppearhome {
     project: IProjectItem[];
 }
 
+export interface IProjectsAppearBottomBar {
+    project: IProjectItem[];
+}
+
 /*
 * PROJECTS
 * */

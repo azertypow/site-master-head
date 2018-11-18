@@ -3,13 +3,13 @@
 
         <template v-if="$barHasContent">
             <div class="text-container">
-                <template v-for="bottomElement of $bottomBarData">
+                <template v-for="bottomElement of $projectsInBottomBar">
                     <div
                             v-if="siteIsFr"
-                            class="text">{{bottomElement.content.fr}}</div>
+                            class="text">{{bottomElement.text_bandeau_french}}</div>
                     <div
                             v-else
-                            class="text">{{bottomElement.content.en}}</div>
+                            class="text">{{bottomElement.text_bandeau_english}}</div>
                 </template>
             </div>
         </template>
@@ -39,13 +39,14 @@
     import {IBottomBarData} from "./IBottomBarData"
     import {getBottomBarData} from "../../../apiRequestes"
     import {pushArrayInArray} from "../../../arrayPush"
+    import {IProjectItem, IProjectsAppearBottomBar, IProjectsAppearhome} from "../../../api/genericsApiTypesIntefaces"
 
     @Component
     export default class BottomBar extends Vue {
         constructor() {
             super()
             getBottomBarData().then((data) => {
-                this.$bottomBarData = data
+                this.$projectsAppearBottomBar = data
             })
         }
 
@@ -60,13 +61,20 @@
         /*
         * content of bottom bar
         * */
-        bottomBarData: IBottomBarData = []
-        get $bottomBarData()        {return this.bottomBarData}
-        set $bottomBarData(value)   {
-            pushArrayInArray(value, this.bottomBarData)
+        private projectsAppearBottomBar!: IProjectsAppearBottomBar
+        get $projectsAppearBottomBar() {return this.projectsAppearBottomBar}
+        set $projectsAppearBottomBar(value: IProjectsAppearBottomBar) {
+            this.$projectsInBottomBar = value.project
+            this.projectsAppearBottomBar = value
         }
 
-        get $barHasContent() {return this.$bottomBarData.length > 0}
+        private projectsInBottomBar: IProjectItem[] = []
+        get $projectsInBottomBar()        {return this.projectsInBottomBar}
+        set $projectsInBottomBar(value)   {
+            pushArrayInArray(value, this.projectsInBottomBar)
+        }
+
+        get $barHasContent() {return this.$projectsInBottomBar.length > 0}
 
         // noinspection JSMethodCanBeStatic
         closeBottomBar() {

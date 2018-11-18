@@ -1,6 +1,12 @@
 import {IAllPagesData} from "./app/IAppData"
 import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
-import {IAllAlumni, IAllProjects, IAllThesis, IProjectsAppearhome} from "./api/genericsApiTypesIntefaces"
+import {
+    IAllAlumni,
+    IAllProjects,
+    IAllThesis,
+    IProjectsAppearBottomBar,
+    IProjectsAppearhome
+} from "./api/genericsApiTypesIntefaces"
 
 export async function getAllPagesData(): Promise<IAllPagesData> {
     return await getJsonData("http://localhost:8090/allPagesData.json") as IAllPagesData
@@ -13,8 +19,8 @@ export async function getHomeProjectsData(): Promise<IProjectsAppearhome> {
     return await getJsonData("api/projects/appearhome") as IProjectsAppearhome
 }
 
-export async function getBottomBarData(): Promise<IBottomBarData> {
-    return await getJsonData("http://localhost:8090/bottomBarData.json") as IBottomBarData
+export async function getBottomBarData(): Promise<IProjectsAppearBottomBar> {
+    return await getJsonData("api/projects/appearbandeau") as IProjectsAppearBottomBar
 }
 
 /*
