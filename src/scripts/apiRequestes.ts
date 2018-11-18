@@ -1,5 +1,4 @@
 import {IAllPagesData} from "./app/IAppData"
-import {IBottomBarData} from "./app/components/bottomBar/IBottomBarData"
 import {
     IAllAlumni,
     IAllProjects,
