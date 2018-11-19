@@ -4,13 +4,12 @@
         <h4>{{this.$alumniData.actual_post_alumni}}</h4>
         <ul>
             <li>
-                <a>{{this.$alumniData.website_perso_alumni}}</a>
+                <a :href="cleanUrl(this.$alumniData.website_perso_alumni)" target="_blank">{{cleanUrl(this.$alumniData.website_perso_alumni)}}</a>
             </li>
             <li>
-                <a>{{this.$alumniData.email_perso_alumni}}</a>
+                <a :href="'mailto:' + this.$alumniData.email_perso_alumni">{{this.$alumniData.email_perso_alumni}}</a>
             </li>
-            <li>
-                <a>{{this.$alumniData.external_link_alumni}}</a>
+            <li v-html="this.$alumniData.external_link_alumni">
             </li>
         </ul>
     </section>
@@ -25,7 +24,8 @@
         @Prop({required: true}) data!: IAlumnisItem
         get $alumniData() {return this.data}
 
-
+        // noinspection JSMethodCanBeStatic
+        cleanUrl(url: string) { return url.replace(/^https?:\/\//,'')}
     }
 </script>
 
