@@ -5,7 +5,7 @@
         <main>
 
         </main>
-        <app-footer></app-footer>
+        <app-footer :$backgroundIsDark=false></app-footer>
     </section>
 </template>
 
@@ -27,7 +27,9 @@
 </script>
 
 <style lang="scss">
-    .v-page-contact {
+    @import "../../../../styles/pages";
 
+    .v-page-contact {
+        @include page-light;
     }
 </style>

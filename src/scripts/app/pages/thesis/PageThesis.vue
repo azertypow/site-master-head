@@ -7,7 +7,7 @@
         <main>
 
         </main>
-        <app-footer></app-footer>
+        <app-footer :$backgroundIsDark=true></app-footer>
     </section>
 </template>
 

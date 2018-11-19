@@ -201,15 +201,9 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 </script>
 
 <style lang="scss">
-    #app {
+    @import "../../styles/_params";
 
-        h1 {
-            color: white;
-            position: relative;
-            top: 25vh;
-            left: 25vw;
-            z-index: 1000000;
-        }
+    #app {
 
         .app-cube-container {
             position: relative;
@@ -244,11 +238,26 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             width: 100vw;
             height: 100vh;
             overflow: scroll;
-            border: solid 2px white;
-            background-color: black;
+            //border: solid 2px $color-main-light;
 
             &.app-page-current {
                 display: block;
+            }
+
+            &.app-cube-flip-home {
+                background-color: $color-main-dark;
+            }
+            &.app-cube-flip-project {
+                background-color: $color-main-dark;
+            }
+            &.app-cube-flip-thesis {
+                background-color: $color-main-dark;
+            }
+            &.app-cube-flip-alumni {
+                background-color: $color-main-light;
+            }
+            &.app-cube-flip-contact {
+                background-color: $color-main-light;
             }
         }
 

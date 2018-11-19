@@ -13,7 +13,7 @@ export enum PAGES_PATHNAME {
 
 export const PAGE_SETTINGS: IPageSettings = {
     [PAGES_PATHNAME.ALUMNI]: {
-        backgroundIsDark: true,
+        backgroundIsDark: false,
         pathname: PAGES_PATHNAME.ALUMNI,
     },
     [PAGES_PATHNAME.CONTACT]: {

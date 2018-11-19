@@ -7,7 +7,7 @@
         <main>
 
         </main>
-        <app-footer></app-footer>
+        <app-footer :$backgroundIsDark=false></app-footer>
     </section>
 </template>
 
@@ -44,6 +44,6 @@
     @import "../../../../styles/pages";
 
     #page-alumni {
-        @include page-dark;
+        @include page-light;
     }
 </style>

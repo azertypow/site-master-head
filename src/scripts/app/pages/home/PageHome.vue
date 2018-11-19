@@ -19,7 +19,7 @@
                     :data="$eventsProjectsSectionData"
                     :$siteLang="$siteLang"></projects-section>
         </main>
-        <app-footer></app-footer>
+        <app-footer :$backgroundIsDark=true></app-footer>
 
     </section>
 </template>

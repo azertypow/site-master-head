@@ -1,7 +1,7 @@
 import {PAGES_PATHNAME} from "../../../../SETTINGS"
 import {PAGES_PATHNAME} from "../../../../SETTINGS"
 <template>
-    <section id="app-menu" :class="{'bg-dark': backgroundIsDark, 'bottom-is-open': $bottomIsOpen}">
+    <section id="app-menu" :class="{'bg-dark': $backgroundIsDark, 'bottom-is-open': $bottomIsOpen}">
         <div id="app-menu-lang" class="top-right">
             <button @click="setSiteToFr" :class="{ 'lang-active': siteIsFr}">fr</button>
             <button @click="setSiteToEn" :class="{ 'lang-active': siteIsEn}">en</button>
@@ -18,7 +18,7 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
     import {Component, Prop, Vue} from "vue-property-decorator"
     import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
     import {EventBus} from "../../../event-bus"
-    import {DEFAULT_SITE_LANG, PAGES_PATHNAME} from "../../../../SETTINGS"
+    import {DEFAULT_SITE_LANG, PAGE_SETTINGS, PAGES_PATHNAME} from "../../../../SETTINGS"
     import {getWindowPageInfo} from "../../../currentPageInfo"
 
     @Component
@@ -141,9 +141,8 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
             }
         }
 
-        // noinspection JSMethodCanBeStatic
-        get backgroundIsDark() {
-            return getWindowPageInfo(window).backgroundIsDark
+        get $backgroundIsDark() {
+            return PAGE_SETTINGS[this.$currentPage].backgroundIsDark
         }
     }
 
