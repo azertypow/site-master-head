@@ -6,11 +6,7 @@ Nom-alumni: Longchamp
 
 ----
 
-Actual-post-alumni: 
-
-Freelance dev @ 
-
-(link: superstudio.com text: super studio)
+Actual-post-alumni: Freelance dev
 
 ----
 

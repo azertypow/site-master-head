@@ -32,7 +32,7 @@ fields:
 
   actual_post_alumni:
     label: Poste actuel, agence, studio,...
-    type: textarea
+    type: text
 
   related_pp_alumni:
     label: Projet pratique lié

@@ -8,7 +8,7 @@ language: en
 role: admin
 history:
   - alumnis/yann-longchamp
+  - alumnis/nicolas-baldran
   - about
   - projects/project-a
   - projects/project-b
-  - projects/project-c
