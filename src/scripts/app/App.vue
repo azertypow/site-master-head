@@ -29,7 +29,8 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             <div class="app-cube-flip-alumni"   :class="[this.getClassNamePageHistoryState('/alumni')]">
                 <page-alumni
                         :data="appData.allPagesData.alumni"
-                        :allAlumni="appData.allAlumni"  ></page-alumni>
+                        :allAlumni="appData.allAlumni"
+                        :$siteLang="$siteLang" ></page-alumni>
             </div>
 
 
