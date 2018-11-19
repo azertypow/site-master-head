@@ -57,10 +57,12 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         * */
         private currentPage!: PAGES_PATHNAME
         set $currentPage(pageName: PAGES_PATHNAME) {
-            EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
-            console.log("seeeeeet")
-            this.currentPage = pageName
-            window.history.pushState(pageName, pageName, pageName)
+            if(pageName !== this.currentPage) {
+                EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
+                console.log("seeeeeet")
+                this.currentPage = pageName
+                window.history.pushState(pageName, pageName, pageName)
+            }
         }
         get $currentPage(): PAGES_PATHNAME {return this.currentPage}
 

@@ -8,10 +8,11 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
     <section id="app">
         <app-menu
                 :$bottomIsOpen="$BottomIsOpen"></app-menu>
-        <div class="app-cube-container" :class="$appPageActiveClassName">
+        <div class="app-cube-container" :class="[$appPageActiveClassName, {'page-transition-playing': pageTransitionRun}]">
 
 
             <div class="app-cube-flip-home"     :class="[this.getClassNamePageHistoryState('/home')]">
+                <h1>HOME</h1>
                 <page-home
                         :data="appData.allPagesData.home"
                         :$siteLang="$siteLang"></page-home>
@@ -19,6 +20,7 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 
             <div class="app-cube-flip-projects" :class="[this.getClassNamePageHistoryState('/project')]">
+                <h1>PROJECT</h1>
                 <page-projects
                         :data="appData.allPagesData.projects"
                         :allProjects="appData.allProjects"
@@ -27,6 +29,7 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 
             <div class="app-cube-flip-alumni"   :class="[this.getClassNamePageHistoryState('/alumni')]">
+                <h1>ALUMNI</h1>
                 <page-alumni
                         :data="appData.allPagesData.alumni"
                         :allAlumni="appData.allAlumni"  ></page-alumni>
@@ -34,12 +37,14 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 
             <div class="app-cube-flip-contact"  :class="[this.getClassNamePageHistoryState('/contact')]">
+                <h1>CONTACT</h1>
                 <page-contact
                         :data="appData.allPagesData.contact"></page-contact>
             </div>
 
 
             <div class="app-cube-flip-thesis"   :class="[this.getClassNamePageHistoryState('/thesis')]">
+                <h1>THESIS</h1>
                 <page-thesis
                         :data="appData.allPagesData.thesis"
                         :allThesis="appData.allThesis"></page-thesis>
@@ -91,12 +96,31 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             })
 
             EventBus.$on(EVENT_BUS_LIST.PAGE_CHANGED, (pageName: string[]) => {
+
+                (this as App).pageTransitionRun = true;
+
                 (this as App).$currentPageActive = pageName[0] as PAGES_PATHNAME
             })
+        },
+        mounted: function () {
+
+            (this as App).$appHtmlElement = (this as App).$el as HTMLDivElement
+
+            // todo event compatibility: https://developer.mozilla.org/en-US/docs/Web/Events/transitionend#Browser_compatibility
+            ((this as App).$appHtmlElement as HTMLElement).addEventListener("transitionend", () => {
+                ((this as App).$el.querySelector(".app-cube-container") as HTMLElement).style.transition = "none";
+                ((this as App).$el.querySelector(".app-cube-container") as HTMLElement).style.transform = "none";
+
+                (this as App).pageTransitionRun = false;
+            });
+
+            (this as App).pageTransitionRun = false;
         },
         beforeDestroy: function () {
             EventBus.$off(EVENT_BUS_LIST.LANG)
             EventBus.$off(EVENT_BUS_LIST.CLOSE_BOTTOM_BAR)
+
+            //todo remove transition eventLister
         }
     })
     export default class App extends Vue {
@@ -129,14 +153,29 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             this.siteLang = lang
         }
 
+        pageTransitionRun = false
+
         beforePage: PAGES_PATHNAME = PAGES_PATHNAME.OTHER
         set $beforePage(value) { this.beforePage = value}
         get $beforePage() { return this.beforePage}
 
+        $appHtmlElement: HTMLElement | null = null
+
         currentPageActive: PAGES_PATHNAME = PAGES_PATHNAME.OTHER
         set $currentPageActive(value: PAGES_PATHNAME) {
-            this.$beforePage = this.$currentPageActive
-            this.currentPageActive = value
+            if(this.$appHtmlElement) {
+                const cubeContainer = (this.$appHtmlElement.querySelector(".app-cube-container") as HTMLElement);
+
+                cubeContainer.style.transform = "";
+                cubeContainer.style.transform = getComputedStyle(cubeContainer).transform;
+                (this.$appHtmlElement.querySelector(".app-cube-container") as HTMLElement).style.transition = "";
+                cubeContainer.style.transform = "";
+
+                console.log("transition");
+            }
+
+            this.$beforePage = this.$currentPageActive;
+            this.currentPageActive = value;
         }
         get $currentPageActive(): PAGES_PATHNAME {return this.currentPageActive}
 
@@ -171,12 +210,20 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 <style lang="scss">
     #app {
+
+        h1 {
+            color: white;
+            position: relative;
+            top: 25vh;
+            left: 25vw;
+            z-index: 1000000;
+        }
+
         .app-cube-container {
-            position: absolute;
-            width: 0;
-            height: 0;
-            top: 50vh;
-            left: 50vw;
+            position: relative;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
             transform-style: preserve-3d;
             transform: rotateX(0deg) rotateY(0deg);
             transition: transform 1000ms ease-in-out;
@@ -199,43 +246,58 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         }
 
         [class*=app-cube-flip] {
-            position: absolute;
-            top: -50vh;
-            left: -50vw;
+            display: none;
+            box-sizing: border-box;
+            padding: 0 50px;
             width: 100vw;
             height: 100vh;
-            display: none;
-            transform-style: preserve-3d;
-            /*backface-visibility: hidden;*/
-            /*overflow: hidden;*/
             overflow: scroll;
-            &.app-page-current,
-            &.app-page-before {
+            border: solid 2px white;
+            background-color: black;
+
+            &.app-page-current {
                 display: block;
             }
+        }
 
-            padding: 0 50px;
-
-            >* {
-
+        .page-transition-playing {
+            &.app-cube-container {
+                overflow: visible;
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 50vh;
+                left: 50vw;
             }
-        }
 
-        .app-cube-flip-home {
-            /*transform: rotateY(0deg);*/
-            /*will-change: transform;*/
-        }
-        .app-cube-flip-projects {
-            transform: rotateY(90deg);
-        }
-        .app-cube-flip-thesis {
-            transform: rotateY(-90deg);
-        }
-        .app-cube-flip-alumni {
-            transform: rotateX(90deg);
-        }
-        .app-cube-flip-contact {
-            transform: rotateX(-90deg);
+            [class*=app-cube-flip] {
+                display: block;
+                position: absolute;
+                top: -50vh;
+                left: -50vw;
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                overflow: hidden;
+            }
+
+            .app-cube-flip-home {
+                /*transform: rotateY(0deg);*/
+                /*will-change: transform;*/
+            }
+            .app-cube-flip-projects {
+                transform: rotateY(90deg);
+            }
+            .app-cube-flip-thesis {
+                transform: rotateY(-90deg);
+            }
+            .app-cube-flip-alumni {
+                transform: rotateX(90deg);
+            }
+            .app-cube-flip-contact {
+                transform: rotateX(-90deg);
+            }
         }
     }
 </style>
