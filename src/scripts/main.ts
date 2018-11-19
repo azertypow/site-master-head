@@ -1,6 +1,5 @@
-import {getAllAlumni, getAllPagesData, getAllProjects, getAllThesis} from "./apiRequestes"
+import {getAllAlumni, getAllProjects, getAllThesis} from "./apiRequestes"
 import {createVueApplication, IMainVue} from "./app/createVueApplication"
-import {DEFAULT_SITE_LANG} from "../SETTINGS"
 
 console.log("%c=== head media design <3 ===", "color: hotpink")
 
@@ -9,8 +8,8 @@ let app = createVueApplication({
         home: {
             header: {
                 title: {
+                    fr: "",
                     en: "",
-                    fr: ""
                 },
                 images: [
                     "",
@@ -20,50 +19,50 @@ let app = createVueApplication({
         },
         projects: {
             header: {
+                title: {
+                    fr: "HEAD—genève",
+                    en: "HEAD—geneva"
+                },
+                subtitle: {
+                    fr: "projets",
+                    en: "projects"
+                },
                 text: {
                     fr: "",
                     en: "",
                 },
-                subtitle: {
-                    fr: "",
-                    en: "",
-                },
-                title: {
-                    fr: "",
-                    en: "",
-                }
             },
         },
         alumni: {
             header: {
+                title: {
+                    fr: "HEAD—genève",
+                    en: "HEAD—geneva"
+                },
+                subtitle: {
+                    fr: "alumni",
+                    en: "alumni"
+                },
                 text: {
                     fr: "",
                     en: "",
                 },
-                subtitle: {
-                    fr: "",
-                    en: "",
-                },
-                title: {
-                    fr: "",
-                    en: "",
-                }
             },
         },
         thesis: {
             header: {
+                title: {
+                    fr: "HEAD—genève",
+                    en: "HEAD—geneva"
+                },
+                subtitle: {
+                    fr: "mémoires",
+                    en: "thesis"
+                },
                 text: {
                     fr: "",
                     en: "",
                 },
-                subtitle: {
-                    fr: "",
-                    en: "",
-                },
-                title: {
-                    fr: "",
-                    en: "",
-                }
             },
         },
         contact: {
@@ -116,20 +115,27 @@ loadApplicationData(app)
 
 function loadApplicationData(vueApplication: IMainVue) {
 
-    getAllPagesData().then(value => {
-            vueApplication.data.allPagesData = value
-        }
-    );
-
     getAllProjects().then(value => {
         vueApplication.data.allProjects = value
+        vueApplication.data.allPagesData.projects.header.text = {
+            fr: value.info.text_description_french,
+            en: value.info.text_description_english,
+        }
     })
 
     getAllAlumni().then(value => {
         vueApplication.data.allAlumni = value
+        vueApplication.data.allPagesData.alumni.header.text = {
+            fr: value.info.text_description_french,
+            en: value.info.text_description_english,
+        }
     })
 
     getAllThesis().then(value => {
         vueApplication.data.allThesis = value
+        vueApplication.data.allPagesData.thesis.header.text = {
+            fr: value.info.text_description_french,
+            en: value.info.text_description_english,
+        }
     })
 }

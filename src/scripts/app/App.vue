@@ -12,7 +12,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 
             <div class="app-cube-flip-home"     :class="[this.getClassNamePageHistoryState('/home')]">
-                <h1>HOME</h1>
                 <page-home
                         :data="appData.allPagesData.home"
                         :$siteLang="$siteLang"></page-home>
@@ -20,7 +19,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 
             <div class="app-cube-flip-projects" :class="[this.getClassNamePageHistoryState('/project')]">
-                <h1>PROJECT</h1>
                 <page-projects
                         :data="appData.allPagesData.projects"
                         :allProjects="appData.allProjects"
@@ -29,7 +27,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 
             <div class="app-cube-flip-alumni"   :class="[this.getClassNamePageHistoryState('/alumni')]">
-                <h1>ALUMNI</h1>
                 <page-alumni
                         :data="appData.allPagesData.alumni"
                         :allAlumni="appData.allAlumni"  ></page-alumni>
@@ -37,14 +34,12 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
 
             <div class="app-cube-flip-contact"  :class="[this.getClassNamePageHistoryState('/contact')]">
-                <h1>CONTACT</h1>
                 <page-contact
                         :data="appData.allPagesData.contact"></page-contact>
             </div>
 
 
             <div class="app-cube-flip-thesis"   :class="[this.getClassNamePageHistoryState('/thesis')]">
-                <h1>THESIS</h1>
                 <page-thesis
                         :data="appData.allPagesData.thesis"
                         :allThesis="appData.allThesis"></page-thesis>

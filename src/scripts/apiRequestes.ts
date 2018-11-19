@@ -1,4 +1,3 @@
-import {IAllPagesData} from "./app/IAppData"
 import {
     IAllAlumni,
     IAllProjects,
@@ -6,10 +5,6 @@ import {
     IProjectsAppearBottomBar,
     IProjectsAppearhome
 } from "./api/genericsApiTypesIntefaces"
-
-export async function getAllPagesData(): Promise<IAllPagesData> {
-    return await getJsonData("http://localhost:8090/allPagesData.json") as IAllPagesData
-}
 
 /*
 * HOME and BOTTOM BAR
