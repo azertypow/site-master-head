@@ -83,7 +83,8 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         private get $thesisBtnClassPosition() {
             switch (this.currentPage) {
                 case PAGES_PATHNAME.CONTACT :
-                    return BTN_POSITION.HIDDEN
+                    // return BTN_POSITION.HIDDEN
+                    return BTN_POSITION.MIDDLE_LEFT
                 case PAGES_PATHNAME.THESIS :
                     return BTN_POSITION.ACTIVE
                 case PAGES_PATHNAME.HOME :
@@ -91,7 +92,8 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
                 case PAGES_PATHNAME.PROJECT :
                     return BTN_POSITION.MIDDLE_RIGHT
                 case PAGES_PATHNAME.ALUMNI :
-                    return BTN_POSITION.HIDDEN
+                    // return BTN_POSITION.HIDDEN
+                    return BTN_POSITION.MIDDLE_LEFT
             }
         }
         private get $homeBtnClassPosition() {
@@ -111,7 +113,8 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         private get $projectBtnClassPosition() {
             switch (this.currentPage) {
                 case PAGES_PATHNAME.CONTACT :
-                    return BTN_POSITION.HIDDEN
+                    // return BTN_POSITION.HIDDEN
+                    return BTN_POSITION.MIDDLE_RIGHT
                 case PAGES_PATHNAME.THESIS :
                     return BTN_POSITION.MIDDLE_LEFT
                 case PAGES_PATHNAME.HOME :
@@ -119,7 +122,8 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
                 case PAGES_PATHNAME.PROJECT :
                     return BTN_POSITION.ACTIVE
                 case PAGES_PATHNAME.ALUMNI :
-                    return BTN_POSITION.HIDDEN
+                    // return BTN_POSITION.HIDDEN
+                    return BTN_POSITION.MIDDLE_RIGHT
             }
         }
         private get $alumniBtnClassPosition() {
