@@ -8,8 +8,8 @@ let app = createVueApplication({
         home: {
             header: {
                 title: {
-                    fr: "",
-                    en: "",
+                    fr: "HEAD—genève",
+                    en: "HEAD—geneva"
                 },
                 images: [
                     "",
@@ -67,18 +67,18 @@ let app = createVueApplication({
         },
         contact: {
             header: {
+                title: {
+                    fr: "HEAD—genève",
+                    en: "HEAD—geneva"
+                },
+                subtitle: {
+                    fr: "contacte",
+                    en: "contact"
+                },
                 text: {
                     fr: "",
                     en: "",
                 },
-                subtitle: {
-                    fr: "",
-                    en: "",
-                },
-                title: {
-                    fr: "",
-                    en: "",
-                }
             },
         }
     },

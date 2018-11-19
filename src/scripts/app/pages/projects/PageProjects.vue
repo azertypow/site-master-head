@@ -12,6 +12,7 @@
                         :data="project"/>
             </template>
         </main>
+        <app-footer></app-footer>
     </section>
 </template>
 
@@ -25,9 +26,11 @@
     import {IAllProjects, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import Project from "../../components/project/Project"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
+    import AppFooter from "../../components/appFooter/AppFooter.vue"
 
     @Component({
         components: {
+            AppFooter,
             Project,
             HeaderWithText,
             FilterSetting,

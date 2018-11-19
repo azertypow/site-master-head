@@ -7,6 +7,7 @@
         <main>
 
         </main>
+        <app-footer></app-footer>
     </section>
 </template>
 
@@ -17,9 +18,11 @@
     import {IPageAlumniData} from "./IPageAlumniData"
     import {generateDateFromTo} from "../../generateDateFromTo"
     import {IAllAlumni} from "../../../api/genericsApiTypesIntefaces"
+    import AppFooter from "../../components/appFooter/AppFooter.vue"
 
     @Component({
         components: {
+            AppFooter,
             HeaderWithText,
             FilterSetting,
         }

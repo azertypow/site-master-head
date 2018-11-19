@@ -50,7 +50,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         <bottom-bar
                 :$siteLang="$siteLang"
                 :$bottomIsOpen="$BottomIsOpen"></bottom-bar>
-        <app-footer></app-footer>
     </section>
 </template>
 
@@ -64,7 +63,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
     import {DEFAULT_SITE_LANG, PAGES_PATHNAME} from "../../SETTINGS"
     import {IAppData} from "./IAppData"
     import BottomBar from "./components/bottomBar/BottomBar"
-    import AppFooter from "./components/appFooter/AppFooter"
     import PageAlumni from "./pages/alumni/PageAlumni"
     import PageThesis from "./pages/thesis/PageThesis"
     import PageContact from "./pages/contact/PageContact"
@@ -78,7 +76,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             PageHome,
             PageProjects,
             BottomBar,
-            AppFooter,
         },
         created: function() {
             EventBus.$on(EVENT_BUS_LIST.LANG, (event: LANG_LIST) => {

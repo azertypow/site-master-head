@@ -1,6 +1,11 @@
 <template>
     <section class="v-page-contact">
         <header-with-text :data="pageContactData.header"></header-with-text>
+
+        <main>
+
+        </main>
+        <app-footer></app-footer>
     </section>
 </template>
 
@@ -8,8 +13,12 @@
     import {Vue, Component, Prop} from "vue-property-decorator"
     import HeaderWithText from "../../components/header/HeaderWithText"
     import {IPageContactData} from "./IPageContactData"
+    import AppFooter from "../../components/appFooter/AppFooter.vue"
     @Component({
-        components: {HeaderWithText}
+        components: {
+            AppFooter,
+            HeaderWithText,
+        }
     })
     export default class PageContact extends Vue {
         @Prop({required: true}) data!: IPageContactData

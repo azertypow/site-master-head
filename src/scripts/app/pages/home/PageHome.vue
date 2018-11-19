@@ -19,11 +19,13 @@
                     :data="$eventsProjectsSectionData"
                     :$siteLang="$siteLang"></projects-section>
         </main>
+        <app-footer></app-footer>
 
     </section>
 </template>
 
 <script lang="ts">
+    import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {Component, Prop, Vue} from "vue-property-decorator"
     import AppHeaderWithImage from '../../components/header/HeaderWithImage'
     import {IPageHomeData} from "./IPageHomeData"
@@ -40,6 +42,7 @@
 
     @Component({
         components: {
+            AppFooter,
             ProjectsSection,
             Project,
             AppHeaderWithImage,

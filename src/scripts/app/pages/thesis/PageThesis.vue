@@ -7,6 +7,7 @@
         <main>
 
         </main>
+        <app-footer></app-footer>
     </section>
 </template>
 
@@ -17,9 +18,10 @@
     import {IPageThesisData} from "./IPageThesisData"
     import {IAllThesis} from "../../../api/genericsApiTypesIntefaces"
     import {generateDateFromTo} from "../../generateDateFromTo"
+    import AppFooter from "../../components/appFooter/AppFooter.vue"
 
     @Component({
-        components: {FilterSetting, HeaderWithText}
+        components: {AppFooter, FilterSetting, HeaderWithText}
     })
     export default class PageThesis extends Vue {
         @Prop({required: true}) data!: IPageThesisData
