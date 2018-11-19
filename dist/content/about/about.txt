@@ -2,11 +2,19 @@ Title: Contact & About
 
 ----
 
-General-presentation-french: Présentation du master média design en français :) coucou
+General-presentation-french: 
+
+Le **design** est la création d’un projet en vue de la réalisation et de la production d’un objet (produit, espace, service) ou d’un système, qui se situe à la croisée de l’art, de la technique et de la société.
+
+Le design est une activité de création souvent à vocation industrielle ou commerciale, pouvant s’orienter vers les milieux sociaux, politiques, scientifiques et environnementaux. Le but premier du design est d’inventer, d’améliorer ou de faciliter l’usage ou le processus d’un élément ayant à interagir avec un produit ou un service matériel ou virtuel. Un des rôles du design est de répondre à des besoins, de résoudre des problèmes, de proposer des solutions nouvelles ou d’explorer des possibilités pour améliorer la qualité de vie des êtres humains, que ce soit dans les sociétés industrielles occidentales (où le design est né) ou dans les pays en voie de développement (design humanitaire). La pluridisciplinarité est au cœur du travail du designer, dont la culture se nourrit aussi bien des arts, des techniques, des sciences humaines ou des (link: https://fr.wikipedia.org/wiki/Science_de_la_nature text: sciences de la nature popup: yes).
 
 ----
 
-General-presentation-english: Presentation of the master media design in english !
+General-presentation-english: 
+
+Design is the creation of a plan or convention for the construction of an object, system or measurable human interaction. Design has different connotations in different fields (see design disciplines below). In some cases, the direct construction of an object (as in pottery, engineering, management, coding, and graphic design) is also considered to use design thinking.
+
+Designing often necessitates considering the aesthetic, functional, economic, and sociopolitical dimensions of both the design object and design process. It may involve considerable research, thought, modeling, interactive adjustment, and re-design. Meanwhile, diverse kinds of objects may be designed, including clothing, graphical user interfaces, products, skyscrapers, corporate identities, business processes, and even methods or processes of designing.
 
 ----
 
@@ -32,4 +40,8 @@ we are cool
 
 ----
 
-External-link-about: (link: http://google.ch text: Google is your friend)
+External-link-about: 
+
+(link: https://www.instagram.com/headmediadesign/ text: instagram popup: yes)
+(link: https://www.hesge.ch/head/formations-recherche/master-en-media-design text: head master popup: yes)
+(link: https://www.instagram.com/headgeneve/?hl=fr text: head instagram popup: yes)

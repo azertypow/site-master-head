@@ -1,5 +1,5 @@
 import {
-    IAllAlumni,
+    IAllAlumni, IAllContacts,
     IAllProjects,
     IAllThesis,
     IProjectsAppearBottomBar,
@@ -40,6 +40,13 @@ export async function getAllAlumni(): Promise<IAllAlumni> {
 * */
 export async function getAllThesis(): Promise<IAllThesis> {
     return await getJsonData("api/thesis") as IAllThesis
+}
+
+/*
+* ALL CONTACT
+* */
+export async function getAllContact(): Promise<IAllContacts> {
+    return await getJsonData("api/contact/about") as IAllContacts
 }
 
 /*

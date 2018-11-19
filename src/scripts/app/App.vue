@@ -35,7 +35,9 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
             <div class="app-cube-flip-contact"  :class="[this.getClassNamePageHistoryState('/contact')]">
                 <page-contact
-                        :data="appData.allPagesData.contact"></page-contact>
+                        :data="appData.allPagesData.contact"
+                        :allContacts="appData.allContacts"
+                        :$siteLang="$siteLang" ></page-contact>
             </div>
 
 

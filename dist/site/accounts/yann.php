@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
+  - about
   - projects/project-a
   - projects/project-b
   - projects/project-c
   - alumnis
-  - thesis

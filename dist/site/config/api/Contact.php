@@ -16,13 +16,13 @@ class Contact
 
         $json['about'] = array(
             'url' => (string)$data->url(),
-            'general_presentation_french' => (string)$data->general_presentation_french(),
-            'general_presentation_english' => (string)$data->general_presentation_english(),
-            'etude_plan_french' => (string)$data->etude_plan_french(),
-            'etude_plan_english' => (string)$data->etude_plan_english(),
-            'general_informations_french' => (string)$data->general_informations_french(),
-            'general_informations_english' => (string)$data->general_informations_english(),
-            'external_link_about' => (string)$data->external_link_about()
+            'general_presentation_french'   => (string)$data->general_presentation_french()->kirbytext(),
+            'general_presentation_english'  => (string)$data->general_presentation_english()->kirbytext(),
+            'etude_plan_french'             => (string)$data->etude_plan_french()->kirbytext(),
+            'etude_plan_english'            => (string)$data->etude_plan_english()->kirbytext(),
+            'general_informations_french'   => (string)$data->general_informations_french()->kirbytext(),
+            'general_informations_english'  => (string)$data->general_informations_english()->kirbytext(),
+            'external_link_about'           => (string)$data->external_link_about()->kirbytext(),
         );
         $json['team'] = array();
         foreach ($team as $onemember) {
