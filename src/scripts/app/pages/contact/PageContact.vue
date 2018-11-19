@@ -71,8 +71,8 @@
                         <h4>{{team.position_team}}</h4>
                         <p>{{team.about_team}}</p>
                         <div class="v-page-contact__team-contact">
-                            <a :href="team.external_link_team">link</a>
-                            <a :href="team.email_team">mail</a>
+                            <a :href="team.external_link_team"  >{{cleanUrl(team.external_link_team)}}</a>
+                            <a :href="team.email_team"          >{{team.email_team}}</a>
                         </div>
                     </div>
                 </div>
@@ -108,6 +108,9 @@
         get $listOfTeam(): ITeamItem[] {
             return this.$allContacts.team
         }
+
+        // noinspection JSMethodCanBeStatic
+        cleanUrl(url: string) { return url.replace(/^https?:\/\//,'')}
     }
 </script>
 
