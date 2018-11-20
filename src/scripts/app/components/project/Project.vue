@@ -79,14 +79,18 @@
         margin-top: 10em;
 
         .title {
+            font-size: 3em;
             margin: 0;
             position: relative;
             mix-blend-mode: difference;
         }
 
         .authors {
-            font-size: 1.5em;
+            font-size: 1.1em;
             font-weight: 600;
+            mix-blend-mode: difference;
+
+
             > * {
                 margin: 0;
             }

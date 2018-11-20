@@ -78,6 +78,11 @@
                 position: relative;
                 display: inline-block;
 
+                h2 {
+                    font-size: 4em;
+                    margin-top: 2em;
+                }
+
                 > * {
                     margin: 0;
                 }

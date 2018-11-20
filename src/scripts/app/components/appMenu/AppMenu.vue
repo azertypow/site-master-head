@@ -2,15 +2,23 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
 import {PAGES_PATHNAME} from "../../../../SETTINGS"
 <template>
     <section id="app-menu" :class="{'bg-dark': $backgroundIsDark, 'bottom-is-open': $bottomIsOpen}">
-        <div id="app-menu-lang" class="top-right">
-            <button @click="setSiteToFr" :class="{ 'lang-active': siteIsFr}">fr</button>
-            <button @click="setSiteToEn" :class="{ 'lang-active': siteIsEn}">en</button>
+
+        <div class="app-menu__top">
+            <div id="app-menu-lang" class="top-right">
+                <button @click="setSiteToFr" :class="{ 'lang-active': siteIsFr}">fr</button>
+                <button @click="setSiteToEn" :class="{ 'lang-active': siteIsEn}">en</button>
+            </div>
         </div>
-        <button id="app-menu-contact"  @click="goToPageContact" :class="$contactBtnClassPosition" >contact / about</button>
-        <button id="app-menu-thesis"   @click="goToPageThesis"  :class="$thesisBtnClassPosition"  >thesis</button>
-        <button id="app-menu-home"     @click="goToPageHome"    :class="$homeBtnClassPosition"    >home</button>
-        <button id="app-menu-projects" @click="goToPageProject" :class="$projectBtnClassPosition" >projects</button>
-        <button id="app-menu-alumni"   @click="goToPageAlumni"  :class="$alumniBtnClassPosition"  >alumni</button>
+
+        <div class="app-menu__bottom">
+            <div class="app-menu__bottom__wrap">
+                <button id="app-menu-contact"  @click="goToPageContact" :class="$contactBtnClassPosition" >contact / about</button>
+                <button id="app-menu-thesis"   @click="goToPageThesis"  :class="$thesisBtnClassPosition"  >thesis</button>
+                <button id="app-menu-home"     @click="goToPageHome"    :class="$homeBtnClassPosition"    >home</button>
+                <button id="app-menu-projects" @click="goToPageProject" :class="$projectBtnClassPosition" >projects</button>
+                <button id="app-menu-alumni"   @click="goToPageAlumni"  :class="$alumniBtnClassPosition"  >alumni</button>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -159,13 +167,14 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
 
 <style lang="scss">
     @import "../../../../styles/_params";
+    @import "../../../../styles/_grid";
 
     #app-menu {
         &.bg-dark {
             color: $color-main-light;
         }
 
-        @mixin menuElements {
+        /*@mixin menuElements {
             z-index: 1000;
             position: fixed;
         }
@@ -176,16 +185,57 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         #app-menu-thesis,
         #app-menu-home {
             @include menuElements;
+        }*/
+
+        .app-menu__top {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 2em;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        }
+
+        .app-menu__bottom {
+            @include gutter;
+            box-sizing: border-box;
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            //bottom: $gutter-width;
+            bottom: 0;
+            left: 0;
+            height: 2em;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+            &__wrap {
+                position: relative;
+                width: 100%;
+                @include column-container;
+                @include container-content-justified;
+
+                .active {
+                    position: fixed;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border: none;
+                }
+            }
         }
 
         #app-menu-lang {
-            @include menuElements;
+            //@include menuElements;
+            position: absolute;
+            right: $gutter-width / 2;
+
             > *.lang-active {
                 color: red;
             }
         }
 
-        .top-middle {
+        /*.top-middle {
             top: 0;
             left: 50%;
             transform: translate(-50%, 0);
@@ -214,12 +264,16 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         }
         .hidden {
             display: none;
-        }
+        }*/
     }
 
     #app-menu.bottom-is-open {
-        .bottom-middle {
+        /*.bottom-middle {
             bottom: 6em;
+        }*/
+
+        .app-menu__bottom {
+            bottom: 5em;
         }
     }
 </style>

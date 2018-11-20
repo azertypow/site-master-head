@@ -10,7 +10,7 @@ Year: 2010
 
 ----
 
-Description-french: Super projet français
+Description-french: text en changé francais
 
 ----
 
@@ -41,11 +41,11 @@ Appears-homepage: true
 
 ----
 
-Event-pertinence: header_position
+Event-pertinence: middle_position
 
 ----
 
-Workshop-pertinence: header_position
+Workshop-pertinence: false
 
 ----
 

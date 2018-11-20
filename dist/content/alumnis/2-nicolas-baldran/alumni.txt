@@ -22,7 +22,7 @@ Related-thesis-alumni: thesis/le-design-d-interfaces-dans-les-jeux-videos
 
 ----
 
-Website-alumni: http://nico.com
+Website-alumni: http://coucou.com
 
 ----
 
@@ -30,7 +30,10 @@ Email-alumni: nico@gmail.com
 
 ----
 
-External-link-alumni: (link: http://google.ch text: Google is your friend)
+External-link-alumni: 
+
+(link: http://google.ch text: Google is your friend)
+(link: http://coucou.ch text: autre is your friend)
 
 ----
 
