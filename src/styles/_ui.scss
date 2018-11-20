@@ -1,0 +1,5 @@
+@mixin link {
+  cursor: pointer;
+  user-select: none;
+  border-bottom: solid 1px;
+}

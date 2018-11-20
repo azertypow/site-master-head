@@ -1,0 +1,64 @@
+Content: 
+
+----
+
+Title: autre projet
+
+----
+
+Year: 2010
+
+----
+
+Description-french: descrition francais
+
+----
+
+Description-english: description anglais
+
+----
+
+Students: 
+
+- 
+  students_name: nico
+
+----
+
+Tags: design fiction
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: true
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: header_position
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true

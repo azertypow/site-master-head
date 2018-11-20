@@ -1,0 +1,64 @@
+Content: 
+
+----
+
+Title: 2
+
+----
+
+Year: 2010
+
+----
+
+Description-french: fr
+
+----
+
+Description-english: englais
+
+----
+
+Students: 
+
+- 
+  students_name: a
+
+----
+
+Tags: aaa
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: false
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: false
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true
