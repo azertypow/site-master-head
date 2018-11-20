@@ -6,7 +6,7 @@ Nom-alumni: Longchamp
 
 ----
 
-Actual-post-alumni: Freelance dev
+Actual-post-alumni: Freelance dev de ouf
 
 ----
 
