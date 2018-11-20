@@ -1,7 +1,29 @@
 @import "_params";
+@import "_grid";
 
 @mixin _page {
   overflow: hidden;
+  @include column-container;
+  @include container-content-centred;
+  @include site-max-width;
+
+  &__filter {
+    @include column(10, 12);
+    @include gutter;
+    overflow: visible;
+  }
+
+  &__main {
+    @include column(10, 12);
+    @include gutter;
+  }
+
+  &__footer {
+    @include column(10, 12);
+    @include gutter;
+    @include gutter-horizontal;
+    padding-bottom: 10em;
+  }
 }
 
 @mixin page-dark {

@@ -1,18 +1,29 @@
 <template>
-    <section id="filterSetting">
+    <section class="v-filter-setting" >
         <template>
             <div v-if="siteIsEn">show</div>
             <div v-else         >montrer les</div>
         </template>
 
         <!--tag filter-->
-        <ul class="" v-if="$hasTextInsteadTagList">
-            <template v-for="(tag, index) in $tags" >
-                <li @click="$indexOf_Tag_Selected = index" :class="{isSelected: this_Tag_IsSelected(index)}">
-                    {{tag}}
-                </li>
-            </template>
-        </ul>
+        <div class="v-filter-setting__tags"
+             :class="{'open' : this.$tagsIsOpen}"
+             v-if="$hasTextInsteadTagList">
+
+            <span   class="v-filter-setting__tags__value"
+                    @click="$toggleOpenTags()"
+                    >{{$tagSelected}}</span>
+
+            <ul class="v-filter-setting__tags__list">
+                <template v-for="(tag, index) in $tags" >
+                    <li @click="$indexOf_Tag_Selected = index" :class="{'is-selected': this_Tag_IsSelected(index)}">
+                        {{tag}}
+                    </li>
+                </template>
+            </ul>
+
+            <div class="v-filter-setting__tags__cache"></div>
+        </div>
         <div v-else>
             {{$textInsteadTagList}}
         </div>
@@ -22,28 +33,51 @@
             <div v-if="siteIsEn">from</div>
             <div v-else         >de</div>
         </template>
-        <ul>
-            <template v-for="(date, index) in $dates" >
-                <li @click="$indexOf_Min_DateSelected = index"
-                    :class="{isSelected: $thisIs_min_dateSelected(index)}" >
-                    {{date}}
-                </li>
-            </template>
-        </ul>
+
+        <div class="v-filter-setting__from"
+             :class="{'open' : this.$min_dateIsOpen}">
+
+            <span   class="v-filter-setting__from__value"
+                    @click="$toggleOpen_min_date()"
+                    >{{this.$min_dateSelected}}</span>
+
+            <ul class="v-filter-setting__from__list">
+                <template v-for="(date, index) in $dates" >
+                    <li @click="$indexOf_Min_DateSelected = index"
+                        :class="{'is-selected': $thisIs_min_dateSelected(index)}">
+                        {{date}}
+                    </li>
+                </template>
+            </ul>
+
+            <div class="v-filter-setting__from__cache"></div>
+        </div>
 
         <!--data filter - to-->
         <template>
             <div v-if="siteIsEn">to</div>
             <div v-else         >à</div>
         </template>
-        <ul>
-            <template v-for="(date, index) in $dates" >
-                <li @click="$indexOf_Max_DateSelected = index"
-                    :class="{isSelected: $thisIs_max_dateSelected(index)}" >
-                    {{date}}
-                </li>
-            </template>
-        </ul>
+
+        <div class="v-filter-setting__to"
+             :class="{'open' : this.$max_DateIsOpen}">
+
+            <span class="v-filter-setting__to__value"
+                  @click="$toggleOpen_max_date()"
+                  >{{this.$max_dateSelected}}</span>
+
+            <ul class="v-filter-setting__to__list">
+                <template v-for="(date, index) in $dates" >
+                    <li @click="$indexOf_Max_DateSelected = index"
+                        :class="{'is-selected': $thisIs_max_dateSelected(index)}" >
+                        {{date}}
+                    </li>
+                </template>
+            </ul>
+
+            <div class="v-filter-setting__to__cache"></div>
+        </div>
+
     </section>
 </template>
 
@@ -95,17 +129,26 @@
         * tags selection
         * */
         indexOf_Tag_Selected = 0
+        get $indexOf_Tag_Selected() { return this.indexOf_Tag_Selected }
         set $indexOf_Tag_Selected(index: number) {
             this.indexOf_Tag_Selected = index
+
+            this.$tagsIsOpen = false
         }
-        get $indexOf_Tag_Selected() {
-            return this.indexOf_Tag_Selected
+
+        get $tagSelected() {
+            return this.$tags[this.$indexOf_Tag_Selected]
         }
 
         this_Tag_IsSelected(index: number) {
             return this.indexOf_Tag_Selected === index
         }
 
+        tagsIsOpen = false
+        get $tagsIsOpen() {return this.tagsIsOpen}
+        set $tagsIsOpen(value: boolean) { this.tagsIsOpen = value}
+
+        $toggleOpenTags() { this.$tagsIsOpen = !this.$tagsIsOpen}
 
         /*
         * minimum date selection
@@ -120,6 +163,8 @@
 
             this.indexOf_Min_DateSelected = index
 
+            this.$min_dateIsOpen = false
+
             this.$emitNewFilterValues()
         }
 
@@ -130,6 +175,12 @@
         $thisIs_min_dateSelected(index: number) {
             return this.indexOf_Min_DateSelected === index
         }
+
+        min_dateIsOpen = false
+        get $min_dateIsOpen() {return this.min_dateIsOpen}
+        set $min_dateIsOpen(value: boolean) { this.min_dateIsOpen = value}
+
+        $toggleOpen_min_date() { this.$min_dateIsOpen = !this.$min_dateIsOpen}
 
         /*
         *maximum date selection 
@@ -144,6 +195,8 @@
 
             this.indexOf_Max_DateSelected = index
 
+            this.$max_DateIsOpen = false
+
             this.$emitNewFilterValues()
         }
 
@@ -154,6 +207,12 @@
         $thisIs_max_dateSelected(index: number) {
             return this.indexOf_Max_DateSelected === index
         }
+
+        private max_DateIsOpen = false
+        get $max_DateIsOpen() { return this.max_DateIsOpen }
+        set $max_DateIsOpen(value: boolean) { this.max_DateIsOpen = value }
+
+        $toggleOpen_max_date() { this.$max_DateIsOpen = !this.$max_DateIsOpen}
 
         /*
         * emit
@@ -168,11 +227,78 @@
 </script>
 
 <style lang="scss">
-    #filterSetting {
-        user-select: none;
+    @import "../../../../styles/ui";
 
-        .isSelected {
-            color: red;
+    .v-filter-setting {
+        user-select: none;
+        overflow: visible;
+
+        > * {
+            display: inline-block;
+            padding: 0;
         }
+
+        &__tags,
+        &__from,
+        &__to {
+            @include link;
+            position: relative;
+
+            &__value {
+                display: inline-block;
+            }
+
+            &__list {
+                position: absolute;
+                padding: 0;
+                margin: 0;
+                top: 100%;
+                left: 0;
+                display: none;
+
+                li {
+                    list-style: none;
+                    position: relative;
+                    z-index: 10;
+                    display: block;
+                }
+                .is-selected {
+                    color: red;
+                }
+            }
+
+            &__cache {
+                width: 0;
+                height: 0;
+                background: black;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                transition: opacity 500ms;
+                position: fixed;
+                opacity: 0;
+            }
+        }
+
+        &__tags.open,
+        &__from.open,
+        &__to.open {
+            .v-filter-setting__tags__list,
+            .v-filter-setting__from__list,
+            .v-filter-setting__to__list {
+                display: block;
+                z-index: 1000000;
+                overflow: hidden;
+            }
+
+            .v-filter-setting__tags__cache,
+            .v-filter-setting__from__cache,
+            .v-filter-setting__to__cache {
+                width: 100%;
+                height: 100%;
+                opacity: 0.9;
+            }
+        }
+
     }
 </style>

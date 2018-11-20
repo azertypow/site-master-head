@@ -26,6 +26,5 @@
             color: $color-main-light;
         }
 
-        height: 10em;
     }
 </style>

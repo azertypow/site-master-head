@@ -1,18 +1,25 @@
 <template>
-    <section id="page-projects">
+    <section class="v-page-projects">
         <header-with-text :data="this.$pageProjectsDate.header"></header-with-text>
-        <filter-setting
-                :$tags="$projectsTags"
-                :$dates="$projectsDates"
-                v-on:change="$filterDate = $event"></filter-setting>
-        <main>
+
+        <div class="v-page-projects__filter" >
+            <filter-setting
+                    :$tags="$projectsTags"
+                    :$dates="$projectsDates"
+                    v-on:change="$filterDate = $event"></filter-setting>
+        </div>
+
+        <main class="v-page-projects__main">
             <template v-for="project of $projectsToShow">
                 <project
                         :$siteLang="$siteLang"
                         :data="project"/>
             </template>
         </main>
-        <app-footer :$backgroundIsDark=true></app-footer>
+
+        <footer class="v-page-projects__footer">
+            <app-footer :$backgroundIsDark=true></app-footer>
+        </footer>
     </section>
 </template>
 
@@ -105,7 +112,7 @@
 <style lang="scss">
     @import "../../../../styles/pages";
 
-    #page-projects {
+    .v-page-projects {
         @include page-dark;
     }
 </style>

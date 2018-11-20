@@ -237,7 +237,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         [class*=app-cube-flip] {
             display: none;
             box-sizing: border-box;
-            padding: 0 50px;
             width: 100vw;
             height: 100vh;
             overflow: scroll;

@@ -1,19 +1,25 @@
 <template>
-    <section id="page-alumni">
+    <section class="v-page-alumni">
         <header-with-text :data="data.header"></header-with-text>
-        <filter-setting
-                $textInsteadTagList="alumni"
-                :$dates="$alumniDates"
-                v-on:change="$filterDate = $event"></filter-setting>
 
-        <main>
+        <div class="v-page-projects__filter" >
+            <filter-setting
+                    class="v-page-alumni__filter"
+                    $textInsteadTagList="alumni"
+                    :$dates="$alumniDates"
+                    v-on:change="$filterDate = $event"></filter-setting>
+        </div>
+
+        <main class="v-page-alumni__main">
             <template v-for="alumni of this.$alumniToShow">
                 <alumni
                         :data="alumni"/>
             </template>
         </main>
 
-        <app-footer :$backgroundIsDark=false></app-footer>
+        <footer class="v-page-alumni__footer">
+            <app-footer :$backgroundIsDark=false></app-footer>
+        </footer>
     </section>
 </template>
 
@@ -87,7 +93,7 @@
 <style lang="scss">
     @import "../../../../styles/pages";
 
-    #page-alumni {
+    .v-page-alumni {
         @include page-light;
     }
 </style>

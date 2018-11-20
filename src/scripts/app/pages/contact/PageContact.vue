@@ -2,7 +2,7 @@
     <section class="v-page-contact">
         <header-with-text :data="pageContactData.header"></header-with-text>
 
-        <main>
+        <main class="v-page-contact__main">
             <div class="v-page-contact__wrap-content">
                 <div class="v-page-contact__links">
                     <h3 class="v-page-contact__links__title" v-if="siteIsFr">liens</h3>
@@ -78,7 +78,10 @@
                 </div>
             </div>
         </main>
-        <app-footer :$backgroundIsDark=false></app-footer>
+
+        <footer class="v-page-contact__footer">
+            <app-footer :$backgroundIsDark=false></app-footer>
+        </footer>
     </section>
 </template>
 

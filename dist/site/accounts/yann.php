@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
+  - projects/3
+  - projects/4
   - alumnis/yann-longchamp
   - alumnis/nicolas-baldran
   - about
-  - projects/project-a
-  - projects/project-b

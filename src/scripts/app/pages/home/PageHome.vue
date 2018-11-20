@@ -1,9 +1,9 @@
 <template>
-    <section id="page-home">
+    <section class="v-page-home">
         <app-header-with-image
                 :data="pageHomeData.header" />
 
-        <main>
+        <main class="v-page-home__main">
             <projects-section
                     v-if="this.$workshopSectionHasProjectsToShow"
                     :data="$workshopsProjectsSectionData"
@@ -19,8 +19,10 @@
                     :data="$eventsProjectsSectionData"
                     :$siteLang="$siteLang"></projects-section>
         </main>
-        <app-footer :$backgroundIsDark=true></app-footer>
 
+        <footer class="v-page-home__footer">
+            <app-footer class="test" :$backgroundIsDark=true></app-footer>
+        </footer>
     </section>
 </template>
 
@@ -145,7 +147,7 @@
     @import "../../../../styles/_params";
     @import "../../../../styles/pages";
 
-    #page-home {
+    .v-page-home {
         @include page-dark;
     }
 </style>

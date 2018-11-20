@@ -1,13 +1,21 @@
 <template>
     <section class="v-page-thesis">
         <header-with-text :data="pageThesisData.header"></header-with-text>
-        <filter-setting
-                $textInsteadTagList="thesis"
-                :$dates="$projectsDates"></filter-setting>
-        <main>
+
+        <div class="v-page-projects__filter" >
+            <filter-setting
+                    class="v-page-thesis__filter"
+                    $textInsteadTagList="thesis"
+                    :$dates="$projectsDates"></filter-setting>
+        </div>
+
+        <main class="v-page-thesis__main">
 
         </main>
-        <app-footer :$backgroundIsDark=true></app-footer>
+
+        <footer class="v-page-thesis__footer">
+            <app-footer :$backgroundIsDark=true></app-footer>
+        </footer>
     </section>
 </template>
 
