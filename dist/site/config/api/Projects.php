@@ -38,8 +38,8 @@ class Projects
                 'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
                 'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
                 'appear_bandeau' => (string)$oneproject->appears_bandeau(),
-                'text_bandeau_french' => (string)$oneproject->text_bandeau_french(),
-                'text_bandeau_english' => (string)$oneproject->text_bandeau_english(),
+                'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
+                'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects' => (string)$oneproject->appears_projects(),
                 'media' => $oneproject->files()->toArray($callback = null)
             );
@@ -65,8 +65,8 @@ class Projects
                 'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
                 'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
                 'appear_bandeau' => (string)$oneproject->appears_bandeau(),
-                'text_bandeau_french' => (string)$oneproject->text_bandeau_french(),
-                'text_bandeau_english' => (string)$oneproject->text_bandeau_english(),
+                'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
+                'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects' => (string)$oneproject->appears_projects(),
                 'media' => $oneproject->files()->toArray($callback = null)
             );
@@ -92,8 +92,8 @@ class Projects
                 'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
                 'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
                 'appear_bandeau' => (string)$oneproject->appears_bandeau(),
-                'text_bandeau_french' => (string)$oneproject->text_bandeau_french(),
-                'text_bandeau_english' => (string)$oneproject->text_bandeau_english(),
+                'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
+                'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects' => (string)$oneproject->appears_projects(),
                 'media' => $oneproject->files()->toArray($callback = null)
             );
@@ -137,8 +137,8 @@ class Projects
                 'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
                 'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
                 'appear_bandeau' => (string)$oneproject->appears_bandeau(),
-                'text_bandeau_french' => (string)$oneproject->text_bandeau_french(),
-                'text_bandeau_english' => (string)$oneproject->text_bandeau_english(),
+                'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
+                'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects' => (string)$oneproject->appears_projects(),
                 'media' => $oneproject->files()->toArray($callback = null)
             );
@@ -202,10 +202,10 @@ class Projects
                 'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
                 'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
                 'appear_bandeau' => (string)$oneproject->appears_bandeau(),
-                'text_bandeau_french' => (string)$oneproject->text_bandeau_french(),
-                'text_bandeau_english' => (string)$oneproject->text_bandeau_english(),
-                'appears_projects' => (string)$oneproject->appears_projects(),
-                'media' => $oneproject->files()->toArray($callback = null)
+                'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
+                'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
+                'appears_projects'      => (string)$oneproject->appears_projects(),
+                'media'                 => $oneproject->files()->toArray($callback = null)
             );
         }
         return response::json($datatagedjson);

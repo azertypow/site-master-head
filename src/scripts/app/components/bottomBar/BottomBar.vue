@@ -6,10 +6,10 @@
                 <template v-for="bottomElement of $projectsInBottomBar">
                     <div
                             v-if="siteIsFr"
-                            class="text">{{bottomElement.text_bandeau_french}}</div>
+                            class="text" v-html="bottomElement.text_bandeau_french"></div>
                     <div
                             v-else
-                            class="text">{{bottomElement.text_bandeau_english}}</div>
+                            class="text" v-html="bottomElement.text_bandeau_english"></div>
                 </template>
             </div>
         </template>
