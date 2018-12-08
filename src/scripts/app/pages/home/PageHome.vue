@@ -78,9 +78,9 @@
 
         $getProjectsPlacedInSection(sectionName: PERTINENCE_SECTION_NAME): IProjectsPositionInSection {
             return {
-                header_position: this.getProjectAtPosition(sectionName, "header_position", this.$homeProjects),
-                middle_position: this.getProjectAtPosition(sectionName, "middle_position", this.$homeProjects),
-                bottom_position: this.getProjectAtPosition(sectionName, "bottom_position", this.$homeProjects),
+                header_position: this.getProjectAtPosition(sectionName, "header_position"),
+                middle_position: this.getProjectAtPosition(sectionName, "middle_position"),
+                bottom_position: this.getProjectAtPosition(sectionName, "bottom_position"),
             }
         }
 
@@ -132,8 +132,8 @@
             return !!projectsPotion.bottom_position;
         }
 
-        private getProjectAtPosition(sectionName: PERTINENCE_SECTION_NAME, positionName: PertinenceStatue, arrayOfProject: IProjectItem[]): IProjectItem | null {
-            for(const project of arrayOfProject) {
+        private getProjectAtPosition(sectionName: PERTINENCE_SECTION_NAME, positionName: PertinenceStatue): IProjectItem | null {
+            for(const project of this.$homeProjects) {
                 if (project[sectionName] === positionName) {
                     return project
                 }
