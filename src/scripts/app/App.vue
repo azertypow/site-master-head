@@ -88,11 +88,9 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
             EventBus.$on(EVENT_BUS_LIST.CLOSE_BOTTOM_BAR, () => {
                 (this as App).$BottomIsOpen = false
-                console.log("close clicked")
             })
 
             EventBus.$on(EVENT_BUS_LIST.PAGE_CHANGED, (pageName: string[]) => {
-
                 (this as App).pageTransitionRun = true;
 
                 (this as App).$currentPageActive = pageName[0] as PAGES_PATHNAME
@@ -100,12 +98,16 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         },
         mounted: function () {
 
-            (this as App).$appHtmlElement = (this as App).$el as HTMLDivElement
+            const appHTMLElement = (this as App).$el as HTMLDivElement
+
+            (this as App).$appHTMLElement = appHTMLElement;
+
+            (this as App).initAppCubePosition();
 
             // todo event compatibility: https://developer.mozilla.org/en-US/docs/Web/Events/transitionend#Browser_compatibility
-            ((this as App).$appHtmlElement as HTMLElement).addEventListener("transitionend", () => {
-                ((this as App).$el.querySelector(".app-cube-container") as HTMLElement).style.transition = "none";
-                ((this as App).$el.querySelector(".app-cube-container") as HTMLElement).style.transform = "none";
+            appHTMLElement.addEventListener("transitionend", () => {
+
+                (this as App).initAppCubePosition();
 
                 (this as App).pageTransitionRun = false;
             });
@@ -133,7 +135,6 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         @Prop({default: true})  $setBottomIsOpen!: boolean
 
         private BottomIsOpen = this.$setBottomIsOpen
-
         get $BottomIsOpen() {
             return this.BottomIsOpen
         }
@@ -155,19 +156,17 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         set $beforePage(value) { this.beforePage = value}
         get $beforePage() { return this.beforePage}
 
-        $appHtmlElement: HTMLElement | null = null
+        $appHTMLElement: HTMLElement | null = null
 
         currentPageActive: PAGES_PATHNAME = PAGES_PATHNAME.OTHER
         set $currentPageActive(value: PAGES_PATHNAME) {
-            if(this.$appHtmlElement) {
-                const cubeContainer = (this.$appHtmlElement.querySelector(".app-cube-container") as HTMLElement);
+            if(this.$appHTMLElement) {
+                const cubeContainer = (this.$appHTMLElement.querySelector(".app-cube-container") as HTMLElement);
 
                 cubeContainer.style.transform = "";
                 cubeContainer.style.transform = getComputedStyle(cubeContainer).transform;
-                (this.$appHtmlElement.querySelector(".app-cube-container") as HTMLElement).style.transition = "";
+                (this.$appHTMLElement.querySelector(".app-cube-container") as HTMLElement).style.transition = "";
                 cubeContainer.style.transform = "";
-
-                console.log("transition");
             }
 
             this.$beforePage = this.$currentPageActive;
@@ -191,6 +190,13 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
                 case this.$currentPageActive: return APP_PAGE_HISTORIC_STATE.CURRENT
                 case this.$beforePage:        return APP_PAGE_HISTORIC_STATE.BEFORE
                 default:                      return APP_PAGE_HISTORIC_STATE.OTHER
+            }
+        }
+
+        initAppCubePosition() {
+            if(this.$appHTMLElement) {
+                (this.$appHTMLElement.querySelector(".app-cube-container") as HTMLElement).style.transition = "none";
+                (this.$appHTMLElement.querySelector(".app-cube-container") as HTMLElement).style.transform = "none";
             }
         }
 

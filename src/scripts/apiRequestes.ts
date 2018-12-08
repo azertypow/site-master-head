@@ -9,7 +9,7 @@ import {
 /*
 * HOME and BOTTOM BAR
 * */
-export async function getHomeProjectsData(): Promise<IProjectsAppearhome> {
+export async function getProjectsAppearHome(): Promise<IProjectsAppearhome> {
     return await getJsonData("api/projects/appearhome") as IProjectsAppearhome
 }
 

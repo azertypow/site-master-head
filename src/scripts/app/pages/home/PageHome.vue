@@ -33,7 +33,7 @@
     import {IPageHomeData} from "./IPageHomeData"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Project from "../../components/project/Project"
-    import {getHomeProjectsData} from "../../../apiRequestes"
+    import {getProjectsAppearHome} from "../../../apiRequestes"
     import ProjectsSection from "../../components/projectsSection/ProjectsSection"
     import {
         IProjectsPositionInSection,
@@ -53,7 +53,7 @@
     export default class PageHome extends Vue {
         constructor() {
             super()
-            getHomeProjectsData().then((homeProjectsData) => {
+            getProjectsAppearHome().then((homeProjectsData) => {
                 this.$homeProjects = homeProjectsData.project
             })
         }

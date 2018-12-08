@@ -67,7 +67,6 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         set $currentPage(pageName: PAGES_PATHNAME) {
             if(pageName !== this.currentPage) {
                 EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
-                console.log("seeeeeet")
                 this.currentPage = pageName
                 window.history.pushState(pageName, pageName, pageName)
             }
