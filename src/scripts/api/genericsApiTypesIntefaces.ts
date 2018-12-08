@@ -139,7 +139,7 @@ export interface IAllThesis {
     page: number;
 }
 
-interface IThesisItem extends IGenericItem {
+export interface IThesisItem extends IGenericItem {
     url: string;
     title_thesis_french: string;
     title_thesis_english: string;
@@ -150,10 +150,10 @@ interface IThesisItem extends IGenericItem {
     tags_thesis: string;
     media: IMediaItemThesis[];
 }
-interface IMediaItemThesis extends IMediaItem{
+export interface IMediaItemThesis extends IMediaItem{
     meta: IMetaThesis;
 }
-interface IMetaThesis {
+export interface IMetaThesis {
     caption: string;
 }
 

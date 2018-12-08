@@ -10,10 +10,10 @@
         </div>
 
         <main class="v-page-projects__main">
-            <template v-for="project of $projectsToShow">
+            <template v-for="item of $itemsToShow">
                 <project
                         :$siteLang="$siteLang"
-                        :data="project"/>
+                        :data="item"/>
             </template>
         </main>
 
@@ -34,6 +34,7 @@
     import Project from "../../components/project/Project"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
+    import {getItemsFilterByDates, IFilterDate} from "../../itemsFilters"
 
     @Component({
         components: {
@@ -80,25 +81,14 @@
             return generateDateFromTo(this.$allProjects.project)
         }
 
-        get $projectsToShow(): IProjectItem[] {
-            const listToReturn: IProjectItem[] = []
-
-            for(const project of this.$allProjects.project) {
-                let projectYear = parseInt(project.year)
-                if(Number.isNaN(projectYear)) projectYear = this.$filterDate.from
-
-                const projectYearIsInSelection = projectYear >= this.$filterDate.from && projectYear <= this.$filterDate.to
-
-                if(projectYearIsInSelection) listToReturn.push(project)
-            }
-
-            return listToReturn
+        get $itemsToShow(): IProjectItem[] {
+            return getItemsFilterByDates(this.$allProjects.project, this.$filterDate)
         }
 
         /*
         * FILTER
         * */
-        private filterDate = {
+        private filterDate: IFilterDate = {
             from:   0,
             to:     0,
         }

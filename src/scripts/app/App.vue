@@ -45,7 +45,8 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             <div class="app-cube-flip-thesis"   :class="[this.getClassNamePageHistoryState('/thesis')]">
                 <page-thesis
                         :data="appData.allPagesData.thesis"
-                        :allThesis="appData.allThesis"></page-thesis>
+                        :allThesis="appData.allThesis"
+                        :$siteLang="$siteLang" ></page-thesis>
             </div>
 
 

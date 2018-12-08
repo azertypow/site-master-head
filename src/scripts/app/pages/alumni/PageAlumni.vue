@@ -33,6 +33,7 @@
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Alumni from "../../components/alumni/Alumni"
+    import {IFilterDate} from "../../itemsFilters"
 
     @Component({
         components: {
@@ -79,7 +80,7 @@
         /*
         * FILTER
         * */
-        private filterDate = {
+        private filterDate: IFilterDate = {
             from:   0,
             to:     0,
         }

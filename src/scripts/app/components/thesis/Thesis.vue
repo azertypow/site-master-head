@@ -1,20 +1,17 @@
 <template>
-    <section class="v-project">
-        <div class="img-container">
-            <template v-for="imageData of this.$imagesData">
-                <MediaImage :data="imageData"/>
-            </template>
-        </div>
+    <section class="v-thesis">
 
-        <h3 class="title">{{this.$projectData.title}}</h3>
+        <h3 v-if="$siteIsFr" class="title">{{this.$thesisData.title_thesis_french }}</h3>
+        <h3 v-else           class="title">{{this.$thesisData.title_thesis_english}}</h3>
 
         <div class="authors">
-            <p v-for="students of this.$projectData.students">{{students.students_name}}</p>
+            <p>{{this.$thesisData.students_thesis}} </p>
+            <p>{{this.$thesisData.tuteurs_thesis}}  </p>
         </div>
 
         <div class="description">
-            <p v-if="$siteIsFr"  >{{this.$projectData.description_french}}</p>
-            <p v-else           >{{this.$projectData.description_english}}</p>
+            <p v-if="$siteIsFr"  >{{this.$thesisData.description_thesis_french }}</p>
+            <p v-else            >{{this.$thesisData.description_thesis_english}}</p>
         </div>
 
         <btn-show-details :$siteLang="$siteLang"
@@ -31,14 +28,13 @@
     import {Vue, Component, Prop} from "vue-property-decorator"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
-    import {IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
-    import MediaImage from "../image/MediaImage"
+    import {IMediaItem, IThesisItem} from "../../../api/genericsApiTypesIntefaces"
     @Component({
-        components: {MediaImage, BtnShowDetails}
+        components: {BtnShowDetails}
     })
-    export default class Project extends Vue {
-        @Prop({required: true}) data!: IProjectItem
-        get $projectData() {return this.data}
+    export default class Thesis extends Vue {
+        @Prop({required: true}) data!: IThesisItem
+        get $thesisData() {return this.data}
 
         /*
         * site lang
@@ -62,7 +58,7 @@
         get $imagesData(): IMediaItem[] {
             const arrayOfImageMedia: IMediaItem[] = []
 
-            for(const media of this.$projectData.media) {
+            for(const media of this.$thesisData.media) {
                 if(media.type === "image") {
                     arrayOfImageMedia.push(media)
                 }
@@ -74,8 +70,31 @@
 </script>
 
 <style lang="scss">
-    @import "../../../../styles/items";
-    .v-project {
-        @include items;
+    .v-thesis {
+        position: relative;
+        margin-top: 10em;
+
+        .title {
+            font-size: 3em;
+            margin: 0;
+            position: relative;
+            mix-blend-mode: difference;
+        }
+
+        .authors {
+            font-size: 1.1em;
+            font-weight: 600;
+            mix-blend-mode: difference;
+
+
+            > * {
+                margin: 0;
+            }
+        }
+
+        .description {
+            max-width: 50em;
+            margin-top: 10em;
+        }
     }
 </style>
