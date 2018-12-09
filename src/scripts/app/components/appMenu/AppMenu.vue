@@ -12,11 +12,21 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
 
         <div class="app-menu__bottom">
             <div class="app-menu__bottom__wrap">
-                <button id="app-menu-contact"  @click="goToPageContact" :class="$contactBtnClassPosition" >contact / about</button>
-                <button id="app-menu-thesis"   @click="goToPageThesis"  :class="$thesisBtnClassPosition"  >thesis</button>
-                <button id="app-menu-home"     @click="goToPageHome"    :class="$homeBtnClassPosition"    >home</button>
-                <button id="app-menu-projects" @click="goToPageProject" :class="$projectBtnClassPosition" >projects</button>
-                <button id="app-menu-alumni"   @click="goToPageAlumni"  :class="$alumniBtnClassPosition"  >alumni</button>
+                <div class="app-menu__bottom__wrap__button">
+                    <button id="app-menu-contact"  @click="goToPageContact" :class="$contactBtnClassPosition" >contact / about</button>
+                </div>
+                <div class="app-menu__bottom__wrap__button">
+                    <button id="app-menu-thesis"   @click="goToPageThesis"  :class="$thesisBtnClassPosition"  >thesis</button>
+                </div>
+                <div class="app-menu__bottom__wrap__button">
+                    <button id="app-menu-home"     @click="goToPageHome"    :class="$homeBtnClassPosition"    >home</button>
+                </div>
+                <div class="app-menu__bottom__wrap__button">
+                    <button id="app-menu-projects" @click="goToPageProject" :class="$projectBtnClassPosition" >projects</button>
+                </div>
+                <div class="app-menu__bottom__wrap__button">
+                    <button id="app-menu-alumni"   @click="goToPageAlumni"  :class="$alumniBtnClassPosition"  >alumni</button>
+                </div>
             </div>
         </div>
     </section>
@@ -226,13 +236,32 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
                 @include column-container;
                 @include container-content-justified;
 
-                .active {
+                &__button {
+                    > * {
+                        all: unset;
+                        display: inline;
+                        cursor: pointer;
+                        position: relative;
+                        line-height: 1ex;
+                        padding-top: 1ex;
+                        padding-bottom: 1ex;
+                        border-bottom: solid 1px;
+
+                        &.active {
+                            cursor: default;
+                            line-height: 0;
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+
+                /*.active {
                     position: fixed;
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%);
                     border: none;
-                }
+                }*/
             }
         }
 
@@ -241,8 +270,21 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
             position: absolute;
             right: $gutter-width / 2;
 
-            > *.lang-active {
-                color: red;
+            > * {
+                all: unset;
+                display: inline;
+                cursor: pointer;
+                position: relative;
+                line-height: 1ex;
+                padding-top: 1ex;
+                padding-bottom: 1ex;
+                border-bottom: solid 1px;
+
+                &.lang-active {
+                    cursor: default;
+                    line-height: 0;
+                    padding-bottom: 0;
+                }
             }
         }
 
