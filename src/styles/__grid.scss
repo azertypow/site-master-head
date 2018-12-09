@@ -6,6 +6,17 @@
   margin: auto;
 }
 
+@mixin remove-first-and-last-vertical-margin {
+  > * {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 /* wrapper */
 @mixin column-container() {
   overflow: hidden;

@@ -169,8 +169,19 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
     @import "../../../../styles/_grid";
 
     #app-menu {
+        $transition-color-timing: 500ms 500ms;
+
+        transition: color $transition-color-timing;
+
         &.bg-dark {
             color: $color-main-light;
+
+            .app-menu__top {
+                box-shadow: inset 0 25px 30px black;
+            }
+            .app-menu__bottom {
+                box-shadow: inset 0 -25px 30px black;
+            }
         }
 
         /*@mixin menuElements {
@@ -193,7 +204,8 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
             top: 0;
             left: 0;
             height: 2em;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            transition: box-shadow $transition-color-timing;
+            box-shadow: inset 0 25px 30px white;
         }
 
         .app-menu__bottom {
@@ -202,11 +214,11 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
             position: fixed;
             z-index: 1000;
             width: 100%;
-            //bottom: $gutter-width;
             bottom: 0;
             left: 0;
             height: 2em;
-            background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            transition: box-shadow $transition-color-timing;
+            box-shadow: inset 0 -25px 30px white;
 
             &__wrap {
                 position: relative;

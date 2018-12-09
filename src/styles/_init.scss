@@ -17,11 +17,21 @@ h2 {
 }
 
 h2 {
-  //font-size: 120px;
-  //line-height: 1em;
 }
 
 h3 {
+}
+
+h4 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+a {
+  color: inherit;
+  border-bottom: solid 1px;
+  text-decoration: none;
+  overflow-wrap: break-word;
 }
 
 button {

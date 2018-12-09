@@ -2,34 +2,28 @@
     <section class="v-projects-section">
         <header class="v-projects-section__header">
             <div class="v-projects-section__header__top">
-                <h2 v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>
-                <h2 v-else          >{{this.projectsSectionData.title.en}}</h2>
-                <div class="v-projects-section__header__collapse">
-                    <btn-show-details :$siteLang="$siteLang"
-                                      v-on:clicked="btnDetailClicked()"></btn-show-details>
-                </div>
-            </div>
-            <div class="v-projects-section__subtitle">
-                <h3 v-if="siteIsFr && $showDetails" >{{this.projectsSectionData.description.fr}}</h3>
-                <h3 v-else-if="$showDetails"          >{{this.projectsSectionData.description.en}}</h3>
+                <h2 class="v-projects-section__title" v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>
+                <h2 class="v-projects-section__title" v-else          >{{this.projectsSectionData.title.en}}</h2>
             </div>
         </header>
 
         <div class="v-projects-section__content">
-            <project
-                    v-if="projectsSectionData.projects.header_position"
-                    :data="projectsSectionData.projects.header_position"
-                    :$siteLang="$siteLang"></project>
+            <div class="v-projects-section__content__projects">
+                <project
+                        v-if="projectsSectionData.projects.header_position"
+                        :data="projectsSectionData.projects.header_position"
+                        :$siteLang="$siteLang"></project>
 
-            <project
-                    v-if="projectsSectionData.projects.middle_position"
-                    :data="projectsSectionData.projects.middle_position"
-                    :$siteLang="$siteLang"></project>
+                <project
+                        v-if="projectsSectionData.projects.middle_position"
+                        :data="projectsSectionData.projects.middle_position"
+                        :$siteLang="$siteLang"></project>
 
-            <project
-                    v-if="projectsSectionData.projects.bottom_position"
-                    :data="projectsSectionData.projects.bottom_position"
-                    :$siteLang="$siteLang"></project>
+                <project
+                        v-if="projectsSectionData.projects.bottom_position"
+                        :data="projectsSectionData.projects.bottom_position"
+                        :$siteLang="$siteLang"></project>
+            </div>
         </div>
 
     </section>
@@ -72,30 +66,32 @@
     @import "../../../../styles/_grid";
 
     .v-projects-section {
+        margin-top: 12em;
+        margin-bottom: 8em;
+
+        &__title {
+            font-size: 6em;
+        }
 
         &__header {
+            @include column-container;
+
             &__top {
-                position: relative;
-                display: inline-block;
+                @include column(1, 1);
 
-                h2 {
-                    font-size: 4em;
-                    margin-top: 2em;
-                }
+                @include remove-first-and-last-vertical-margin;
 
-                > * {
-                    margin: 0;
-                }
-            }
-            &__collapse {
-                transform: translate(100%, 0);
-                position: absolute;
-                bottom: 0;
-                right: 0;
             }
         }
 
         &__content {
+            @include column-container;
+            margin-top: 4em;
+
+            &__projects {
+                @include column(1, 1);
+                @include remove-first-and-last-vertical-margin;
+            }
         }
 
     }

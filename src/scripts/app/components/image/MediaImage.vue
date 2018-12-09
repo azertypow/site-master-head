@@ -44,11 +44,11 @@
         }
 
         &__copyright{
-
+            margin-top: 0.2em;
         }
 
         &__description{
-
+            margin-top: 1.2em;
         }
     }
 </style>

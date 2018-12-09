@@ -2,19 +2,21 @@
     <section class="v-page-alumni">
         <header-with-text :data="data.header"></header-with-text>
 
-        <div class="v-page-projects__filter" >
+        <div class="v-page-alumni__filter" >
             <filter-setting
-                    class="v-page-alumni__filter"
                     $textInsteadTagList="alumni"
                     :$dates="$alumniDates"
                     v-on:change="$filterDate = $event"></filter-setting>
         </div>
 
         <main class="v-page-alumni__main">
-            <template v-for="alumni of this.$alumniToShow">
-                <alumni
-                        :data="alumni"/>
-            </template>
+            <div class="v-page-alumni__main__alumni">
+                <template v-for="alumni of this.$alumniToShow">
+                    <div class="v-page-alumni__main__alumni__item">
+                        <alumni :data="alumni"/>
+                    </div>
+                </template>
+            </div>
         </main>
 
         <footer class="v-page-alumni__footer">
@@ -96,5 +98,20 @@
 
     .v-page-alumni {
         @include page-light;
+
+        &__main {
+            @include column(12, 12);
+            padding: 0;
+
+            &__alumni {
+                @include column-container;
+
+                &__item {
+                    @include column(4, 12);
+                    @include gutter;
+                    margin-top: 5em;
+                }
+            }
+        }
     }
 </style>

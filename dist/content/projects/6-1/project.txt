@@ -1,0 +1,64 @@
+Content: 
+
+----
+
+Title: 1
+
+----
+
+Year: 2010
+
+----
+
+Description-french: Contrairement à une idée répandue, le faux-texte ne donne même pas un aperçu réaliste du gris typographique, en particulier dans le cas des textes justifiés : en effet, les mots fictifs employés dans le faux-texte ne faisant évidemment pas partie des dictionnaires des logiciels de PAO, les programmes de césure ne peuvent pas effectuer leur travail habituel sur de tels textes. Par conséquent, l'interlettrage du faux-texte sera toujours quelque peu supérieur à ce qu'il aurait été avec un texte réel, qui présentera donc un aspect plus sombre et moins lisible que le faux-texte avec lequel le graphiste a effectué ses essais. Un vrai texte pose aussi des problèmes de lisibilité spécifiques (noms propres, numéros de téléphone, retours à la ligne fréquents, composition des citations en italiques, intertitres de plus de deux lignes...) qu'on n'observe jamais dans le faux-texte.
+
+----
+
+Description-english: Contrary to popular belief, the false text does not even give a realistic overview of the typographic gray, especially in the case of justified texts: indeed, the fictitious words used in the false text are obviously not part of the dictionaries of the texts. DTP software, hyphenation programs can not do their usual work on such texts. As a result, the misleading wording will always be somewhat larger than it would have been with a real text, which will therefore have a darker and less readable appearance than the false text with which the graphic artist has performed his tests. . A real text also poses specific problems of readability (names proper, telephone numbers, frequent returns to the line, composition of citations in italics, intertitles of more than two lines ...) that one never observes in the false text.
+
+----
+
+Students: 
+
+- 
+  students_name: Viktor East
+
+----
+
+Tags: &
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: true
+
+----
+
+Event-pertinence: bottom_position
+
+----
+
+Workshop-pertinence: false
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true

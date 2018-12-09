@@ -1,0 +1,40 @@
+Prenom-alumni: Kush
+
+----
+
+Nom-alumni: French
+
+----
+
+Date-end-alumni: 2010
+
+----
+
+Actual-post-alumni: Pentagram
+
+----
+
+Related-pp-alumni: projects
+
+----
+
+Related-thesis-alumni: 
+
+----
+
+Website-alumni: http://KushFrench.ch
+
+----
+
+Email-alumni: info@KushFrench.ch
+
+----
+
+External-link-alumni: 
+
+(link: www.pentagram.com text: www.pentagram.com)
+assistante post: (link: www.google.com text: media design assistante page)
+
+----
+
+Title: Kush French

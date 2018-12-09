@@ -10,22 +10,28 @@ Year: 2010
 
 ----
 
-Description-french: text en changé francais
+Description-french: 
+
+Le design est une activité de création souvent à vocation industrielle ou commerciale, pouvant s’orienter vers les milieux sociaux, politiques, scientifiques et environnementaux. Le but premier du design est d’inventer, d’améliorer ou de faciliter l’usage ou le processus d’un élément ayant à interagir avec un produit ou un service matériel ou virtuel. Un des rôles du design est de répondre à des besoins, de résoudre des problèmes, de proposer des solutions nouvelles ou d’explorer des possibilités pour améliorer la qualité de vie des êtres humains, que ce soit dans les sociétés industrielles occidentales (où le design est né) ou dans les pays en voie de développement (design humanitaire). La pluridisciplinarité est au cœur du travail du designer, dont la culture se nourrit aussi bien des arts, des techniques, des sciences humaines ou des sciences de la nature.
+
+Le design est à distinguer des arts décoratifs, expression apparue dans les années 1870 comme pendant aux beaux-arts dans la création d'objets d'art. Le design est lié à l'innovation technique, à la production en série, et à l'esthétique contemporaine, tandis que les arts décoratifs relèvent de l'artisanat d'art, c'est-à-dire de techniques traditionnelles, à l'esthétique souvent ornementale et figurative et d'une production à l'unité ou en petite série. Cependant, les frontières ne sont pas étanches : un réverbère parisien en fonte du xixe siècle relève du même processus que le design car même s'il présente des ornements, il est issu d'une technique innovante pour l'époque et il est produit en nombre ; de même, certains designers signent des pièces en petite série, pour le marché de l'art notamment, surtout depuis les années soixante-dix. Sollicité par le marketing depuis les années 2000, le design est peu à peu devenu un argument publicitaire. Design est devenu, à tort, un adjectif qualifiant un style aux formes simples et d'une apparence épurée. Il succède ainsi à l'aspect traditionnel des modèles de style.
 
 ----
 
-Description-english: Amazing project english
+Description-english: 
+
+Design is an activity of creation often with industrial or commercial vocation, being able to move towards the social, political, scientific and environmental environments. The primary purpose of design is to invent, improve, or facilitate the use or process of an element that has to interact with a hardware or virtual product or service. One of the roles of design is to respond to needs, to solve problems, to propose new solutions or to explore possibilities to improve the quality of life of human beings, whether in Western industrial societies (where the design is born) or in developing countries (humanitarian design). Multidisciplinarity is at the heart of the designer's work, whose culture feeds on the arts, techniques, humanities and natural sciences.
+
+The design is distinguished from the decorative arts, an expression that appeared in the 1870s as a counterpart to the fine arts in the creation of objets d'art. Design is linked to technical innovation, mass production, and contemporary aesthetics, while the decorative arts are craftsmanship, that is, traditional techniques. aesthetic often ornamental and figurative and a production unit or small series. However, the borders are not watertight: a nineteenth century cast iron Parisian lamppost is the same process as the design because even if it presents ornaments, it comes from an innovative technique for the time and it is produced in number; in the same way, some designers are signing small series pieces, especially for the art market, especially since the seventies. Solicited by marketing since the 2000s, design has gradually become an advertising argument. Design has become, incorrectly, an adjective qualifying a style with simple shapes and a refined appearance. It succeeds the traditional look of style models.
 
 ----
 
 Students: 
 
 - 
-  students_name: Alexia Mathieu
-- 
   students_name: Benjamin Ruffieux
 - 
-  students_name: Nicolas Baldran
+  students_name: Elliot Paul
 
 ----
 

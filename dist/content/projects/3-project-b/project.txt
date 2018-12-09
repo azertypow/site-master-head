@@ -10,11 +10,11 @@ Year: 2014
 
 ----
 
-Description-french: Superbe projet !coucou
+Description-french: Le texte est dérivé de De Finibus Bonorum et Malorum de Cicéron (Sur les fins des biens et des maux, ou encore [À propos] des buts du bien et du mal). Le passage original commençait: Neque porro quisquam est dolorem ipsum quia dolor as amet, consectetur, adipisci velit (Traduction: "Il n’existe pas non plus de personne qui aime le chagrin puisqu'il s'agit de chagrin et veut donc l'obtenir"). On ne sait pas exactement quand le texte a acquis sa forme standard actuelle; c'était peut-être aussi tard que les années 1960. Le passage a été découvert par Richard McClintock, spécialiste des lettres en latin et directeur des publications au Hampden-Sydney College en Virginie, en cherchant des citations du mot rarement utilisé «consectetur» dans la littérature classique.
 
 ----
 
-Description-english: Incredible project coucou!
+Description-english: The text is derived from Cicero's De Finibus Bonorum et Malorum (On the Ends of Goods and Evils, or alternatively [About] The Purposes of Good and Evil ). The original passage began: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit (Translation: "Neither is there anyone who loves grief itself since it is grief and thus wants to obtain it"). It is not known exactly when the text acquired its current standard form; it may have been as late as the 1960s. The passage was discovered by Richard McClintock, a Latin scholar who is the publications director at Hampden-Sydney College in Virginia, by searching for citings of the rarely used word 'consectetur' in classical literature.
 
 ----
 

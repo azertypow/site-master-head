@@ -1,0 +1,66 @@
+Content: 
+
+----
+
+Title: 2
+
+----
+
+Year: 2010
+
+----
+
+Description-french: Expert en utilisabilité des sites web et des logiciels, Jakob Nielsen souligne que l'une des limites de l'utilisation du faux-texte dans la conception de sites web est que ce texte n'étant jamais lu, il ne permet pas de vérifier sa lisibilité effective. La lecture à l'écran étant plus difficile, cet aspect est pourtant essentiel. Nielsen préconise donc l'utilisation de textes représentatifs plutôt que du lorem ipsum. On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l'espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l'espace imparti.
+
+----
+
+Description-english: Expert in the usability of websites and software, Jakob Nielsen points out that one of the limitations of the use of false text in the design of websites is that this text is never read, it does not allow to verify its effective readability. Reading on the screen is more difficult, this aspect is essential. Nielsen therefore advocates the use of representative texts rather than lorem ipsum. It can also be pointed out that formulas devised with false text tend to underestimate the space required for an immediately intelligible title, which forces editors to formulate titles that are simplistic or even inaccurate, so as not to exceed space available.
+
+----
+
+Students: 
+
+- 
+  students_name: Aalia Odom
+- 
+  students_name: Brad Farrow
+
+----
+
+Tags: aaa
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: false
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: false
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true

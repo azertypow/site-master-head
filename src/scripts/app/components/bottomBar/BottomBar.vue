@@ -98,7 +98,7 @@
 
         .text-container {
             width: 100%;
-            height: 5em;
+            height: 4em;
         }
 
         .social-container {

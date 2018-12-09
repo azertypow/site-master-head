@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
-  - projects/project-a
-  - projects/project-b
-  - thesis
-  - alumnis/yann-longchamp
-  - projects/autre-projet
+  - alumnis/franciszek-rooney
+  - alumnis/diego-kaiser
+  - alumnis/kush-french
+  - alumnis/emelia-martin
+  - alumnis
