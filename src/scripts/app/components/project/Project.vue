@@ -22,6 +22,17 @@
                 <p v-if="$siteIsFr"  >{{this.$projectData.description_french}}</p>
                 <p v-else           >{{this.$projectData.description_english}}</p>
             </div>
+
+            <div class="v-project__description__images">
+                <template v-for="imageData of this.$imagesData">
+                    <div class="v-project__description__images__item">
+                        <MediaImage
+                                :inImageElement=true
+                                :showDetails=true
+                                :data="imageData"/>
+                    </div>
+                </template>
+            </div>
         </div>
 
         <btn-show-details :$siteLang="$siteLang"
