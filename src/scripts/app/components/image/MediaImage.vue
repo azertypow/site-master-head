@@ -1,12 +1,14 @@
 <template>
     <div class="v-media-image">
         <div class="v-m-i-img" :style="{backgroundImage: 'url(' + this.$projectData.url + ')'}"></div>
-        <div class="v-m-i-copyright">
-            {{this.$projectData.meta.copyright}}
-        </div>
-        <div class="v-m-i-description">
-            {{this.$projectData.meta.image_description}}
-        </div>
+        <template v-if="$showDetails">
+            <div class="v-m-i-copyright">
+                {{this.$projectData.meta.copyright}}
+            </div>
+            <div class="v-m-i-description">
+                {{this.$projectData.meta.image_description}}
+            </div>
+        </template>
     </div>
 </template>
 
@@ -18,20 +20,22 @@
     export default class MediaImage extends Vue {
         @Prop({required: true}) data!: IMediaItem
         get $projectData() {return this.data}
+
+        @Prop({required: true, type: Boolean}) showDetails!: boolean
+        get $showDetails() {return this.showDetails}
     }
 </script>
 
 <style lang="scss">
     .v-media-image {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
+        height: 100%;
 
         .v-m-i-img {
-            width: 500px;
-            height: 250px;
-            background-size: cover;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
             background-repeat: no-repeat;
             margin: auto;
         }

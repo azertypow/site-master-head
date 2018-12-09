@@ -1,29 +1,31 @@
 <template>
     <section class="v-project">
-        <div class="img-container">
-            <template v-for="imageData of this.$imagesData">
-                <MediaImage :data="imageData"/>
-            </template>
-        </div>
+        <header class="v-project__header">
+            <div class="v-project__header__images">
+                <template v-for="imageData of this.$imagesData">
+                    <MediaImage
+                            :showDetails=false
+                            :data="imageData"/>
+                </template>
+            </div>
+            <div class="v-project__header__texts">
+                <h3 class="title">{{this.$projectData.title}}</h3>
 
-        <h3 class="title">{{this.$projectData.title}}</h3>
+                <div class="authors">
+                    <p v-for="students of this.$projectData.students">{{students.students_name}}</p>
+                </div>
+            </div>
+        </header>
 
-        <div class="authors">
-            <p v-for="students of this.$projectData.students">{{students.students_name}}</p>
-        </div>
-
-        <div class="description">
-            <p v-if="$siteIsFr"  >{{this.$projectData.description_french}}</p>
-            <p v-else           >{{this.$projectData.description_english}}</p>
+        <div class="v-project__description" :class="{'show-details': showDetails}">
+            <div class="v-project__description__texts">
+                <p v-if="$siteIsFr"  >{{this.$projectData.description_french}}</p>
+                <p v-else           >{{this.$projectData.description_english}}</p>
+            </div>
         </div>
 
         <btn-show-details :$siteLang="$siteLang"
                           v-on:clicked="btnDetailClicked()"></btn-show-details>
-        <div class="text">
-            <!--todo text content ?-->
-            <p v-if="$siteIsFr && $showDetails" >contenu text francais ?</p>
-            <p v-else-if="$showDetails"        >english content text ?</p>
-        </div>
     </section>
 </template>
 

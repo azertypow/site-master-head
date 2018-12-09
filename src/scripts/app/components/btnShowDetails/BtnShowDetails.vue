@@ -1,7 +1,13 @@
 <template>
     <button @click="btnDetailClicked()" class="v-btn-show-details">
-        <span v-if="siteIsFr">détails</span>
-        <span v-else         >details</span>
+        <template v-if="$isActive">
+            <span v-if="siteIsFr">cacher les détails</span>
+            <span v-else         >hide details</span>
+        </template>
+        <template v-else>
+            <span v-if="siteIsFr">voir les détails</span>
+            <span v-else         >show details</span>
+        </template>
     </button>
 </template>
 
@@ -17,7 +23,11 @@
         @Prop({required: true}) $siteLang!: LANG_LIST
         get siteIsFr() { return this.$siteLang === LANG_LIST.FR }
 
+        private isActive = false
+        get $isActive() {return this.isActive}
+
         btnDetailClicked() {
+            this.isActive = !this.isActive
             this.$emit("clicked")
         }
     }
