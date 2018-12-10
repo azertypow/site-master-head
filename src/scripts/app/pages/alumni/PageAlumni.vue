@@ -2,14 +2,14 @@
     <section class="v-page-alumni">
         <header-with-text :data="data.header"></header-with-text>
 
-        <div class="v-page-alumni__filter" >
-            <filter-setting
-                    $textInsteadTagList="alumni"
-                    :$dates="$alumniDates"
-                    v-on:change="$filterDate = $event"></filter-setting>
-        </div>
-
         <main class="v-page-alumni__main">
+            <div class="v-page-alumni__filter" >
+                <filter-setting
+                        $textInsteadTagList="alumni"
+                        :$dates="$alumniDates"
+                        v-on:change="$filterDate = $event"></filter-setting>
+            </div>
+
             <div class="v-page-alumni__main__alumni">
                 <template v-for="alumni of this.$alumniToShow">
                     <div class="v-page-alumni__main__alumni__item">

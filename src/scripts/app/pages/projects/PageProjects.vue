@@ -2,14 +2,14 @@
     <section class="v-page-projects">
         <header-with-text :data="this.$pageProjectsDate.header"></header-with-text>
 
-        <div class="v-page-projects__filter" >
-            <filter-setting
-                    :$tags="$projectsTags"
-                    :$dates="$projectsDates"
-                    v-on:change="$filterDate = $event"></filter-setting>
-        </div>
-
         <main class="v-page-projects__main">
+            <div class="v-page-projects__filter" >
+                <filter-setting
+                        :$tags="$projectsTags"
+                        :$dates="$projectsDates"
+                        v-on:change="$filterDate = $event"></filter-setting>
+            </div>
+
             <template v-for="item of $itemsToShow">
                 <project
                         :$siteLang="$siteLang"

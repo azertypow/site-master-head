@@ -2,15 +2,15 @@
     <section class="v-page-thesis">
         <header-with-text :data="pageThesisData.header"></header-with-text>
 
-        <div class="v-page-projects__filter" >
-            <filter-setting
-                    class="v-page-thesis__filter"
-                    $textInsteadTagList="thesis"
-                    :$dates="$projectsDates"
-                    v-on:change="$filterDate = $event"></filter-setting>
-        </div>
-
         <main class="v-page-thesis__main">
+            <div class="v-page-projects__filter" >
+                <filter-setting
+                        class="v-page-thesis__filter"
+                        $textInsteadTagList="thesis"
+                        :$dates="$projectsDates"
+                        v-on:change="$filterDate = $event"></filter-setting>
+            </div>
+
             <template v-for="item of $itemsToShow">
                 <thesis
                         :$siteLang="$siteLang"
