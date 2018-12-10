@@ -1,7 +1,7 @@
 import {LANG_LIST} from "../GLOBAL_ENUMS"
 <template>
     <section id="header-with-text">
-        <div class="text-content">
+        <div class="header-with-text__text">
             <div v-if="siteIsFr">
                 <h1>{{this.data.title.fr}}</h1>
                 <h2>{{this.data.subtitle.fr}}</h2>

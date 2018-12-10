@@ -8,7 +8,7 @@ let app = createVueApplication({
         home: {
             header: {
                 title: {
-                    fr: "HEAD—genève",
+                    fr: "HEAD—genève master media design",
                     en: "HEAD—geneva"
                 },
                 images: [
