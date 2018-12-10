@@ -122,5 +122,9 @@
 
     .v-page-contact {
         @include page-light;
+
+        .header-with-text__text:after {
+            content: none;
+        }
     }
 </style>

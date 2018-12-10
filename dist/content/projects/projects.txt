@@ -2,8 +2,8 @@ Title: Projects
 
 ----
 
-Text-description-francais: Voici tous les projets de la section !
+Text-description-francais: Dans sa part artistique, il repose sur un travail des formes qui rappelle celui de la création artistique et qui peut concerner aussi bien des formes spatiales (design d’espace, architecture intérieure), volumiques (design de produits, design industriel), textiles (design de mode, stylisme), graphiques (design graphique, graphisme) ou interactives (design interactif, design d’interaction, design numérique). Ce travail sur les formes explique l’importance des considérations esthétiques dans le champ du design, mais ne doit pas masquer l’importance tout aussi grande des considérations fonctionnelles, techniques, environnementales, biologiques, juridiques, économiques, sociales et politiques, voire philosophiques, qui sont au cœur du travail du designer, considéré comme l’un des grands métiers de la conception, avec ceux de l’architecte ou de l’ingénieur.
 
 ----
 
-Text-description-anglais: Here is all the projects from the section !
+Text-description-anglais: In its artistic part, it is based on a work of forms reminiscent of artistic creation and which can concern both spatial forms (space design, interior architecture), volume (product design, industrial design), textiles ( fashion design, fashion design), graphics (graphic design, graphic design) or interactive (interactive design, interactive design, digital design). This work on shapes explains the importance of aesthetic considerations in the field of design, but should not obscure the equally important importance of functional, technical, environmental, biological, legal, economic, social, political and even philosophical considerations. which are at the heart of the work of the designer, considered as one of the great professions of the design, with those of the architect or the engineer.

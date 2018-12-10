@@ -20,8 +20,8 @@ let app = createVueApplication({
         projects: {
             header: {
                 title: {
-                    fr: "HEAD—genève",
-                    en: "HEAD—geneva"
+                    fr: "HEAD—<br>media design",
+                    en: "HEAD—<br>media design"
                 },
                 subtitle: {
                     fr: "projets",
@@ -36,8 +36,8 @@ let app = createVueApplication({
         alumni: {
             header: {
                 title: {
-                    fr: "HEAD—genève",
-                    en: "HEAD—geneva"
+                    fr: "HEAD—<br>media design",
+                    en: "HEAD—<br>media design"
                 },
                 subtitle: {
                     fr: "alumni",
@@ -52,8 +52,8 @@ let app = createVueApplication({
         thesis: {
             header: {
                 title: {
-                    fr: "HEAD—genève",
-                    en: "HEAD—geneva"
+                    fr: "HEAD—<br>media design",
+                    en: "HEAD—<br>media design"
                 },
                 subtitle: {
                     fr: "mémoires",
@@ -68,8 +68,8 @@ let app = createVueApplication({
         contact: {
             header: {
                 title: {
-                    fr: "HEAD—genève",
-                    en: "HEAD—geneva"
+                    fr: "HEAD—<br>media design",
+                    en: "HEAD—<br>media design"
                 },
                 subtitle: {
                     fr: "contacte",

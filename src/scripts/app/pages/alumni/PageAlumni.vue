@@ -99,6 +99,10 @@
     .v-page-alumni {
         @include page-light;
 
+        .header-with-text__text:after {
+            content: none;
+        }
+
         &__main {
             @include column(12, 12);
             padding: 0;

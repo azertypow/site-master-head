@@ -17,5 +17,17 @@
 
   &__text {
     position: relative;
+
+    &__scroll {
+      &__title {
+        font-size: 4em;
+        margin: 0;
+        line-height: 1em;
+      }
+
+      &__subtitle {
+        font-weight: 500;
+      }
+    }
   }
 }
