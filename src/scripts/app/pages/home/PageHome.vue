@@ -149,5 +149,8 @@
 
     .v-page-home {
         @include page-dark;
+        &__main {
+            margin-top: 10em;
+        }
     }
 </style>
