@@ -10,6 +10,8 @@ include("api/VUEApplication.php");
 c::set('license', 'put your license key here');
 c::set('debug', true);
 
+c::set('ka.image.shrink.maxDimension', 500);
+
 c::set('routes', array(
 
     // ------------------------------------
