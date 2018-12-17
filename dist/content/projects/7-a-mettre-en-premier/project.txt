@@ -1,0 +1,64 @@
+Content: 
+
+----
+
+Title: a mettre en premier
+
+----
+
+Year: 2019
+
+----
+
+Description-french: premier article avec images retaillées
+
+----
+
+Description-english: first article with auto resize image on upload
+
+----
+
+Students: 
+
+- 
+  students_name: Suleman Briggs
+
+----
+
+Tags: a
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: true
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: header_position
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true
