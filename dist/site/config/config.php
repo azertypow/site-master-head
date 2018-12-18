@@ -10,7 +10,12 @@ include("api/VUEApplication.php");
 c::set('license', 'put your license key here');
 c::set('debug', true);
 
-c::set('ka.image.shrink.maxDimension', 500);
+c::set('mmd.image.folderName', 'generated');
+c::set('mmd.image.parameters', [
+    'icon'  => ['config' => ['width' => 100,    'height' => 100,    'quality' => 50,   'blur' => true],     'extensionName' => '@mmd-icon'],
+    'small' => ['config' => ['width' => 150,                        'quality' => 100],                      'extensionName' => '@mmd-small'],
+    'large' => ['config' => ['width' => 1280,   'height' => 800,    'quality' => 100],                      'extensionName' => '@mmd-large'],
+]);
 
 c::set('routes', array(
 

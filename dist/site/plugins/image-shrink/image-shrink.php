@@ -5,31 +5,37 @@ kirby()->hook('panel.file.upload', 'shrinkImage');
 kirby()->hook('panel.file.replace', 'shrinkImage');
 function shrinkImage($file)
 {
-
-
-	$maxDimension = c::get('ka.image.shrink.maxDimension', 1000);
-	$customConfigArray = c::get('ka.image.shrink.customConfig', array());
+    $folderNameForGeneratedImages = c::get('mmd.image.folderName', 'generated');
+    $arrayOfImageParameters = c::get('mmd.image.parameters', array());
 
 	try {
-		if ($file->type() == 'image' and ($file->width() > $maxDimension or $file->height() > $maxDimension)) {
-
-			$config = [
-				'width' => $maxDimension,
-				'height' => $maxDimension
-			];
-
-			$config = array_merge($config, $customConfigArray);
-
-			// Get original file path
-			$originalPath = $file->dir() . '/' . $file->name() . "@1000." .$file->extension();
-			// Create a thumb and get its path
-			$resized = $file->thumb($config);
-			$resizedPath = $resized->dir() . '/' . $resized->filename();
-			// Replace the original file with the resized one
-			copy($resizedPath, $originalPath);
-			unlink($resizedPath);
-		}
+        if($file->type() == 'image') {
+            foreach ($arrayOfImageParameters as $imageParameter) {
+                generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages);
+            }
+        }
 	} catch (Exception $e) {
 		return response::error($e->getMessage());
 	}
+}
+
+function putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage) {
+    copy($tempImageGeneratedPath, $pathForFinalGeneratedImage);
+    unlink($tempImageGeneratedPath);
+}
+
+function generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages) {
+    $tempImageGenerated = $file->thumb($imageParameter['config']);
+
+    $tempImageGeneratedPath = $tempImageGenerated->dir() . '/' . $tempImageGenerated->filename();
+
+    $folderPathForGeneratedImages = $file->dir() . '/'. $folderNameForGeneratedImages .'/';
+
+    if(! is_dir($folderPathForGeneratedImages)) {
+        mkdir($folderPathForGeneratedImages);
+    }
+
+    $pathForFinalGeneratedImage = $folderPathForGeneratedImages . $file->name() . $imageParameter['extensionName'] . "." .$file->extension();
+
+    putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage);
 }
