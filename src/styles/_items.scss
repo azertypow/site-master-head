@@ -50,6 +50,7 @@
     $opening-transition-timing: 500ms;
 
     @include column-container;
+    overflow: hidden;
     transition: max-height $opening-transition-timing ease-in-out;
     max-height: 7.5em;
     margin-bottom: 1em;

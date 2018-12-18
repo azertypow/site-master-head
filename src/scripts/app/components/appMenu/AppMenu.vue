@@ -326,7 +326,7 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         }*/
 
         .app-menu__bottom {
-            bottom: 5em;
+            bottom: $footer-height;
         }
     }
 </style>

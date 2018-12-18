@@ -1,12 +1,13 @@
 @import "_params";
 
 @mixin app-header() {
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
 
   .canvas-container {
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;

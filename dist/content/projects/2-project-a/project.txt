@@ -57,7 +57,7 @@ Students:
 
 ----
 
-Text-bandeau-french: Super texte bandeau en français
+Text-bandeau-french: Pour choisir le max-width: 860px (l1), j’ai simplement regardé la taille que la fenêtre avait au moment ou le 700px prenait 100% de la place et je le remplace par 100 (l8). J’augmente aussi un peu la vitesse de l’animation en baissant la durée pour éviter de s’endormir trop dessus. Bilan, l’animation est parfaite au dessus d’un écran à 860px et un peu saccadée au niveau de la boucle mais relativement visionnable en dessous.
 
 ----
 

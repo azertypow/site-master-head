@@ -19,7 +19,7 @@
 
 /* wrapper */
 @mixin column-container() {
-  overflow: hidden;
+  @include remove-first-and-last-vertical-margin;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -52,7 +52,7 @@
 
 /* column */
 @mixin column($column-number, $column-division: 24) {
-  overflow: hidden;
+  @include remove-first-and-last-vertical-margin;
   display: block;
   position: relative;
   box-sizing: border-box;

@@ -2,7 +2,6 @@
 @import "_grid";
 
 @mixin _page {
-  overflow: hidden;
   @include column-container;
   @include container-content-centred;
   @include site-max-width;

@@ -4,12 +4,16 @@
         <template v-if="$barHasContent">
             <div class="text-container">
                 <template v-for="bottomElement of $projectsInBottomBar">
-                    <div
-                            v-if="siteIsFr"
-                            class="text" v-html="bottomElement.text_bandeau_french"></div>
-                    <div
-                            v-else
-                            class="text" v-html="bottomElement.text_bandeau_english"></div>
+                    <div class="text-container__scrolling-container">
+                        <div
+                                v-if="siteIsFr"
+                                ref  ="text-container__text"
+                                class="text-container__text" v-html="bottomElement.text_bandeau_french"></div>
+                        <div
+                                v-else
+                                ref  ="text-container__text"
+                                class="text-container__text" v-html="bottomElement.text_bandeau_english"></div>
+                    </div>
                 </template>
             </div>
         </template>
@@ -24,28 +28,41 @@
         </template>
 
         <div id="bottom-bar-btn" @click="closeBottomBar()">
-            <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M0,0 L50,50" ></path>
-                <path d="M50,0 L0,50" ></path>
+            <svg id="bottom-bar-btn__icon" width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M0,0 L50,50" vector-effect="non-scaling-stroke" ></path>
+                <path d="M50,0 L0,50" vector-effect="non-scaling-stroke" ></path>
             </svg>
         </div>
     </section>
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop} from "vue-property-decorator"
+    import {Vue, Component, Prop, Watch} from "vue-property-decorator"
     import {EventBus} from "../../../event-bus"
     import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
     import {getBottomBarData} from "../../../apiRequestes"
     import {pushArrayInArray} from "../../../arrayPush"
     import {IProjectItem, IProjectsAppearBottomBar, IProjectsAppearhome} from "../../../api/genericsApiTypesIntefaces"
 
-    @Component
+    @Component({
+        updated: function() {
+
+            const textContainerElement: Vue | Element | Vue[] | Element[] = (this as BottomBar).$refs["text-container__text"]
+
+            if(Array.isArray(textContainerElement)) {
+                for(const element of textContainerElement) {
+                    if(element instanceof HTMLElement) {
+                        BottomBar.setAnimationDuration(element)
+                    }
+                }
+            }
+        }
+    })
     export default class BottomBar extends Vue {
         constructor() {
             super()
             getBottomBarData().then((data) => {
-                this.$projectsAppearBottomBar = data
+                this.$projectsInBottomBar = data.project
             })
         }
 
@@ -60,15 +77,10 @@
         /*
         * content of bottom bar
         * */
-        private projectsAppearBottomBar!: IProjectsAppearBottomBar
-        get $projectsAppearBottomBar() {return this.projectsAppearBottomBar}
-        set $projectsAppearBottomBar(value: IProjectsAppearBottomBar) {
-            this.$projectsInBottomBar = value.project
-            this.projectsAppearBottomBar = value
-        }
-
         private projectsInBottomBar: IProjectItem[] = []
-        get $projectsInBottomBar()        {return this.projectsInBottomBar}
+        get $projectsInBottomBar() {
+            return this.projectsInBottomBar.slice(0, 2)
+        }
         set $projectsInBottomBar(value)   {
             pushArrayInArray(value, this.projectsInBottomBar)
         }
@@ -79,6 +91,10 @@
         closeBottomBar() {
             EventBus.$emit(EVENT_BUS_LIST.CLOSE_BOTTOM_BAR)
         }
+
+        static setAnimationDuration(element: HTMLElement) {
+            element.style.animationDuration = element.getBoundingClientRect().width / 100 + "s"
+        }
     }
 </script>
 
@@ -87,42 +103,78 @@
     @import "../../../../styles/_grid";
 
     #bottom-bar {
+        @include remove-first-and-last-vertical-margin;
         position: fixed;
         left: 0;
         bottom: 0;
         color: $color-main;
         background-color: $color-main-light;
         box-sizing: border-box;
-        padding-right: 100px;
+        padding-right: $footer-height;
         width: 100%;
 
         .text-container {
+            @include row-container;
+            @include container-content-centred;
             width: 100%;
-            height: 4em;
+            height: $footer-height;
+        }
+        .text-container__scrolling-container {
+            @include remove-first-and-last-vertical-margin;
+            height: $footer-height / 2;
+
+            &:nth-child(2n) .text-container__text {
+                animation-direction: reverse;
+            }
+        }
+        .text-container__text {
+            @include remove-first-and-last-vertical-margin;
+            height: $footer-height / 2;
+            line-height: $footer-height / 2;
+            white-space: nowrap;
+            position: absolute;
+            left: 100%;
+            padding-right: 100%;
+            animation-duration: 41.41s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-name: text-horizontal-scrolling;
+        }
+
+        @keyframes text-horizontal-scrolling {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+            to {
+                transform: translate3d(-100%, 0, 0);
+            }
         }
 
         .social-container {
             width: 100%;
             height: 4em;
         }
-    }
 
-    #bottom-bar-btn {
-        @include gutter;
-        @include gutter-horizontal;
-        position: absolute;
-        box-sizing: content-box;
-        top: 50%;
-        right: 0;
-        cursor: pointer;
-        transform: translate(0, -50%);
-
-        > svg {
+        #bottom-bar-btn {
+            @include gutter;
+            @include gutter-horizontal;
+            background-color: white;
+            position: absolute;
+            box-sizing: border-box;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            width: $footer-height;
+            height: $footer-height;
+        }
+        #bottom-bar-btn__icon {
             fill: none;
             stroke: $color-main-dark;
             position: relative;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
         }
     }
 </style>
