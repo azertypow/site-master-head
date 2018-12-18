@@ -25,6 +25,11 @@ class Projects
         //$json['pages'] = $data->pagination()->countPages();
         //$json['page'] = $data->pagination()->page();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
+
+            $arrayOfImagesInProject = $oneproject->files()->filter(function($file) {
+                return $file->type() == 'image';
+            })->toArray();
+
             $json['project'][] = array(
                 'url' => (string)$oneproject->url(),
                 'title' => (string)$oneproject->title(),
@@ -41,7 +46,8 @@ class Projects
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects' => (string)$oneproject->appears_projects(),
-                'media' => $oneproject->files()->toArray($callback = null)
+                'media' => $oneproject->files()->toArray($callback = null),
+                'media_generated' => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         }
         return response::json($json);
@@ -237,5 +243,46 @@ class Projects
             );
         }
         return response::json($json);
+    }
+
+    public static function getImagesGeneratedInProject($arrayOfImageInProject) {
+        $arrayOfImagesGenerated = array();
+
+        foreach ($arrayOfImageInProject as $imageInProject) {
+
+            array_push($arrayOfImagesGenerated, [
+                'origin'    => $imageInProject,
+                'generated' => Projects::getImagesGeneratedOfImageInProject($imageInProject),
+            ]);
+        }
+
+        return $arrayOfImagesGenerated;
+    }
+
+    public static function getImagesGeneratedOfImageInProject($imageInProject) {
+        $folderNameOfGeneratedImages   = c::get('mmd.image.folderName', 'generated');
+        $arrayOfImageParameters         = c::get('mmd.image.parameters', array());
+
+        $folderPathForGeneratedImages = $imageInProject['diruri'] . '/'. $folderNameOfGeneratedImages .'/';
+
+        $arrayOfImagesGeneratedUrl = array();
+
+        foreach ($arrayOfImageParameters as $imageParametersName => $imageParameter) {
+            $urlOfImageGenerated = Projects::getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter);
+            $arrayOfImagesGeneratedUrl[$imageParametersName] = $urlOfImageGenerated;
+        }
+
+        return [
+            'origin'    => $imageInProject,
+            'generated' => $arrayOfImagesGeneratedUrl,
+        ];
+    }
+
+    public static function getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter) {
+        $url = pathinfo($imageInProject['url'])['dirname'];
+
+        $pathForFinalGeneratedImage = $folderPathForGeneratedImages . $imageInProject['name'] . $imageParameter['extensionName'] . "." .$imageInProject['extension'];
+
+        return $url . $pathForFinalGeneratedImage;
     }
 }
