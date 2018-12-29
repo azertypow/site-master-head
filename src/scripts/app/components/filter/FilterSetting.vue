@@ -11,7 +11,7 @@
              v-if="$hasTextInsteadTagList">
 
             <span   class="v-filter-setting__tags__value"
-                    @click="$toggleOpenTags()"
+                    @click="$tagsIsOpen = true"
                     >{{$tagSelected}}</span>
 
             <ul class="v-filter-setting__tags__list">
@@ -22,7 +22,8 @@
                 </template>
             </ul>
 
-            <div class="v-filter-setting__tags__cache"></div>
+            <div class="v-filter-setting__tags__cache"
+                 @click="$tagsIsOpen = false"></div>
         </div>
         <div v-else>
             {{$textInsteadTagList}}
@@ -38,7 +39,7 @@
              :class="{'open' : this.$min_dateIsOpen}">
 
             <span   class="v-filter-setting__from__value"
-                    @click="$toggleOpen_min_date()"
+                    @click="$min_dateIsOpen = true"
                     >{{this.$min_dateSelected}}</span>
 
             <ul class="v-filter-setting__from__list">
@@ -50,7 +51,8 @@
                 </template>
             </ul>
 
-            <div class="v-filter-setting__from__cache"></div>
+            <div class="v-filter-setting__from__cache"
+                 @click="$min_dateIsOpen = false"></div>
         </div>
 
         <!--data filter - to-->
@@ -63,7 +65,7 @@
              :class="{'open' : this.$max_DateIsOpen}">
 
             <span class="v-filter-setting__to__value"
-                  @click="$toggleOpen_max_date()"
+                  @click="$max_DateIsOpen = true"
                   >{{this.$max_dateSelected}}</span>
 
             <ul class="v-filter-setting__to__list">
@@ -75,7 +77,8 @@
                 </template>
             </ul>
 
-            <div class="v-filter-setting__to__cache"></div>
+            <div class="v-filter-setting__to__cache"
+                 @click="$max_DateIsOpen = false"></div>
         </div>
 
     </section>
@@ -148,8 +151,6 @@
         get $tagsIsOpen() {return this.tagsIsOpen}
         set $tagsIsOpen(value: boolean) { this.tagsIsOpen = value}
 
-        $toggleOpenTags() { this.$tagsIsOpen = !this.$tagsIsOpen}
-
         /*
         * minimum date selection
         * */
@@ -180,8 +181,6 @@
         get $min_dateIsOpen() {return this.min_dateIsOpen}
         set $min_dateIsOpen(value: boolean) { this.min_dateIsOpen = value}
 
-        $toggleOpen_min_date() { this.$min_dateIsOpen = !this.$min_dateIsOpen}
-
         /*
         *maximum date selection 
         * */
@@ -211,8 +210,6 @@
         private max_DateIsOpen = false
         get $max_DateIsOpen() { return this.max_DateIsOpen }
         set $max_DateIsOpen(value: boolean) { this.max_DateIsOpen = value }
-
-        $toggleOpen_max_date() { this.$max_DateIsOpen = !this.$max_DateIsOpen}
 
         /*
         * emit

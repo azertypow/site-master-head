@@ -1,5 +1,6 @@
 import {getAllAlumni, getAllContact, getAllProjects, getAllThesis} from "./apiRequestes"
 import {createVueApplication, IMainVue} from "./app/createVueApplication"
+import Grid, {GridUi, IGrid, UNIT} from "../Grid"
 
 console.log("%c=== head media design <3 ===", "color: hotpink")
 
@@ -156,3 +157,38 @@ function loadApplicationData(vueApplication: IMainVue) {
         vueApplication.data.allContacts = value
     })
 }
+
+// GRID
+
+const gridSettings: IGrid = {
+    column: {
+        gutterOnOutside: "half gutter",
+        gutterWidth: {
+            unit: UNIT.PIXEL,
+            value: 20,
+        },
+        numberOfColumn: 12,
+        offset: "center",
+        totalWidth: {
+            value: 100,
+            unit: UNIT.PERCENT,
+        }
+    },
+    lineHeight: 20,
+    row: false,
+    xHeight: 10,
+}
+
+const gridPageThesis    = new Grid(document.querySelector(".v-page-thesis")    as HTMLElement, gridSettings);
+const gridPageHome      = new Grid(document.querySelector(".v-page-home")      as HTMLElement, gridSettings);
+const gridPageProjects  = new Grid(document.querySelector(".v-page-projects")  as HTMLElement, gridSettings);
+const gridPageAlumni    = new Grid(document.querySelector(".v-page-alumni")    as HTMLElement, gridSettings);
+const gridPageContact   = new Grid(document.querySelector(".v-page-contact")   as HTMLElement, gridSettings);
+
+const gridUi = new GridUi([
+    gridPageThesis,
+    gridPageHome,
+    gridPageProjects,
+    gridPageAlumni,
+    gridPageContact,
+]);
