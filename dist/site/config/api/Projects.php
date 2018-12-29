@@ -17,8 +17,8 @@ class Projects
 
         $json['info'] = array(
             'title' => (string)$info->title(),
-            'text_description_french' => (string)$info->text_description_francais(),
-            'text_description_english' => (string)$info->text_description_anglais()
+//            'text_description_french' => (string)$info->text_description_francais(),
+//            'text_description_english' => (string)$info->text_description_anglais()
         );
 
         $json['project'] = array();
@@ -123,8 +123,8 @@ class Projects
 
         $datatagedjson['info'] = array(
             'title' => (string)$info->title(),
-            'text_description_french' => (string)$info->text_description_francais(),
-            'text_description_english' => (string)$info->text_description_anglais()
+//            'text_description_french' => (string)$info->text_description_francais(),
+//            'text_description_english' => (string)$info->text_description_anglais()
         );
 
 
@@ -188,8 +188,8 @@ class Projects
 
         $datatagedjson['info'] = array(
             'title' => (string)$info->title(),
-            'text_description_french' => (string)$info->text_description_francais(),
-            'text_description_english' => (string)$info->text_description_anglais()
+//            'text_description_french' => (string)$info->text_description_francais(),
+//            'text_description_english' => (string)$info->text_description_anglais()
         );
 
 

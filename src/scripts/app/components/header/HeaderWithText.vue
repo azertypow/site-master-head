@@ -6,12 +6,12 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
                 <template v-if="siteIsFr">
                     <h1 v-html="this.data.title.fr" ></h1>
                     <h3                             >{{this.data.subtitle.fr}}</h3>
-                    <p                              >{{this.data.text.fr}}</p>
+                    <!--<p                              >{{this.data.text.fr}}</p>-->
                 </template>
                 <template v-else>
                     <h1 v-html="this.data.title.en" ></h1>
                     <h3                             >{{this.data.subtitle.en}}</h3>
-                    <p                              >{{this.data.text.en}}</p>
+                    <!--<p                              >{{this.data.text.en}}</p>-->
                 </template>
             </div>
         </div>

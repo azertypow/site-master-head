@@ -28,10 +28,10 @@ let app = createVueApplication({
                     fr: "projets",
                     en: "projects"
                 },
-                text: {
-                    fr: "",
-                    en: "",
-                },
+                // text: {
+                //     fr: "",
+                //     en: "",
+                // },
             },
         },
         alumni: {
@@ -44,10 +44,10 @@ let app = createVueApplication({
                     fr: "alumni",
                     en: "alumni"
                 },
-                text: {
-                    fr: "",
-                    en: "",
-                },
+                // text: {
+                //     fr: "",
+                //     en: "",
+                // },
             },
         },
         thesis: {
@@ -60,10 +60,10 @@ let app = createVueApplication({
                     fr: "mémoires",
                     en: "thesis"
                 },
-                text: {
-                    fr: "",
-                    en: "",
-                },
+                // text: {
+                //     fr: "",
+                //     en: "",
+                // },
             },
         },
         contact: {
@@ -76,25 +76,25 @@ let app = createVueApplication({
                     fr: "contacte",
                     en: "contact"
                 },
-                text: {
-                    fr: "",
-                    en: "",
-                },
+                // text: {
+                //     fr: "",
+                //     en: "",
+                // },
             },
         }
     },
     allProjects: {
         info: {
-            text_description_english: "",
-            text_description_french: "",
+            // text_description_english: "",
+            // text_description_french: "",
             title: "",
         },
         project: [],
     },
     allAlumni: {
         info: {
-            text_description_english: "",
-            text_description_french: "",
+            // text_description_english: "",
+            // text_description_french: "",
             title: "",
             url: "",
         },
@@ -103,8 +103,8 @@ let app = createVueApplication({
     allThesis: {
         info: {
             title: "",
-            text_description_french: "",
-            text_description_english: "",
+            // text_description_french: "",
+            // text_description_english: "",
         },
         thesis: [],
         page: 0,
@@ -131,26 +131,26 @@ function loadApplicationData(vueApplication: IMainVue) {
 
     getAllProjects().then(value => {
         vueApplication.data.allProjects = value
-        vueApplication.data.allPagesData.projects.header.text = {
-            fr: value.info.text_description_french,
-            en: value.info.text_description_english,
-        }
+        // vueApplication.data.allPagesData.projects.header.text = {
+        //     fr: value.info.text_description_french,
+        //     en: value.info.text_description_english,
+        // }
     })
 
     getAllAlumni().then(value => {
         vueApplication.data.allAlumni = value
-        vueApplication.data.allPagesData.alumni.header.text = {
-            fr: value.info.text_description_french,
-            en: value.info.text_description_english,
-        }
+        // vueApplication.data.allPagesData.alumni.header.text = {
+        //     fr: value.info.text_description_french,
+        //     en: value.info.text_description_english,
+        // }
     })
 
     getAllThesis().then(value => {
         vueApplication.data.allThesis = value
-        vueApplication.data.allPagesData.thesis.header.text = {
-            fr: value.info.text_description_french,
-            en: value.info.text_description_english,
-        }
+        // vueApplication.data.allPagesData.thesis.header.text = {
+        //     fr: value.info.text_description_french,
+        //     en: value.info.text_description_english,
+        // }
     })
 
     getAllContact().then(value => {

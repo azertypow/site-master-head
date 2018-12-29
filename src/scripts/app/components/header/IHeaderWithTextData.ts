@@ -7,8 +7,8 @@ export interface IHeaderWithTextData {
         fr: string
         en: string
     }
-    text: {
-        fr: string
-        en: string
-    }
+    // text: {
+    //     fr: string
+    //     en: string
+    // }
 }

@@ -2,9 +2,9 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
 <template>
     <section class="header-with-image app-header">
         <div class="app-header__background-container">
-            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/3-project-b/4bd.jpg');transform: translateX(-109%) translateY(-32%) translateZ(163px) rotateY(30deg) rotateZ(-17deg);"></div>
-            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/1-autre-projet/anna-popovic-56025-unsplash.jpg');transform: translateX(-40%) translateY(-30%) translateZ(60px) rotateY(5deg) rotateZ(9deg);"></div>
-            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/5-2/annie-spratt-51434-unsplash.jpg');transform: translateX(26%) translateY(-30%) translateZ(56px) rotateY(-15deg) rotateZ(-10deg);"></div>
+            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/3-project-b/4bd.jpg');                              transform: translateX(-145%)    translateY(-45%) translateZ(130px) rotateY(5deg)    rotateZ(-10deg);"></div>
+            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/1-autre-projet/anna-popovic-56025-unsplash.jpg');   transform: translateX(-50%)     translateY(-50%) translateZ(125px) rotateY(-4deg)   rotateZ(7deg);"></div>
+            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/5-2/annie-spratt-51434-unsplash.jpg');              transform: translateX(45%)      translateY(-50%) translateZ(120px) rotateY(5deg)    rotateZ(-4deg);"></div>
         </div>
         <div class="app-header__text-container">
             <div class="app-header__text">
