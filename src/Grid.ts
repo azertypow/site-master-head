@@ -221,27 +221,43 @@ export class GridUi {
         this._uiContainer.appendChild(this._buttonColumn)
         this._uiContainer.appendChild(this._buttonLineHeight)
         this._uiContainer.appendChild(this._buttonXHeight)
-        this._uiContainer.className = "grid-ui-control"
+
+        this._buttonGrid.className          = "grid-ui-control"
+        this._buttonPlus.className          = "grid-ui-control"
+        this._buttonMoin.className          = "grid-ui-control"
+        this._buttonColumn.className        = "grid-ui-control"
+        this._buttonLineHeight.className    = "grid-ui-control"
+        this._buttonXHeight.className       = "grid-ui-control"
+
+        this._uiContainer.className = "grid-ui-container"
 
         document.body.appendChild(this._uiContainer)
 
         const styleElements = document.createElement("style")
         styleElements.innerText = `
-        .grid-ui-control {
-          all: unset;
+        .grid-ui-container {
           position: fixed;
           top: 0;
           right: 0;
           z-index: 10000000;
+          line-height: 1ex;
+          opacity: 0.25;
+        }
+        .grid-ui-container:hover {
+          opacity: 1;
+        }
+
+        .grid-ui-control {
+          all: unset;
+          cursor: pointer;
+          padding: 1ex;
+          line-height: 1ex;
+          display: inline-block;
+          color: black;
           background: white;
           border: solid 1px;
           font-size: 10px;
           font-family: sans-serif;            
-          opacity: 0.25;
-        }
-        
-        .grid-ui-control:hover {
-          opacity: 1;
         }
         `
         document.body.appendChild(this._uiContainer)
