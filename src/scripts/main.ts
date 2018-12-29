@@ -9,8 +9,8 @@ let app = createVueApplication({
         home: {
             header: {
                 title: {
-                    fr: "HEAD—genève master media design",
-                    en: "HEAD—geneva"
+                    fr: "HEAD—genève master<br>media design",
+                    en: "HEAD—geneva master<br>media design"
                 },
                 images: [
                     "",
@@ -21,8 +21,8 @@ let app = createVueApplication({
         projects: {
             header: {
                 title: {
-                    fr: "HEAD—<br>media design",
-                    en: "HEAD—<br>media design"
+                    fr: "master<br>media design",
+                    en: "master<br>media design"
                 },
                 subtitle: {
                     fr: "projets",
@@ -174,21 +174,16 @@ const gridSettings: IGrid = {
             unit: UNIT.PERCENT,
         }
     },
-    lineHeight: 20,
+    lineHeight: 36/2,
     row: false,
-    xHeight: 10,
+    xHeight: 15,
 }
 
-const gridPageThesis    = new Grid(document.querySelector(".v-page-thesis")    as HTMLElement, gridSettings);
-const gridPageHome      = new Grid(document.querySelector(".v-page-home")      as HTMLElement, gridSettings);
-const gridPageProjects  = new Grid(document.querySelector(".v-page-projects")  as HTMLElement, gridSettings);
-const gridPageAlumni    = new Grid(document.querySelector(".v-page-alumni")    as HTMLElement, gridSettings);
-const gridPageContact   = new Grid(document.querySelector(".v-page-contact")   as HTMLElement, gridSettings);
-
 const gridUi = new GridUi([
-    gridPageThesis,
-    gridPageHome,
-    gridPageProjects,
-    gridPageAlumni,
-    gridPageContact,
+    new Grid(document.querySelector(".v-page-thesis")    as HTMLElement, gridSettings),
+    new Grid(document.querySelector(".v-page-home")      as HTMLElement, gridSettings),
+    new Grid(document.querySelector(".v-page-projects")  as HTMLElement, gridSettings),
+    new Grid(document.querySelector(".v-page-alumni")    as HTMLElement, gridSettings),
+    new Grid(document.querySelector(".v-page-contact")   as HTMLElement, gridSettings),
+    // new Grid(document.querySelector("body")   as HTMLElement, gridSettings),
 ]);

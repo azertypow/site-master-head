@@ -1,17 +1,17 @@
 import {LANG_LIST} from "../GLOBAL_ENUMS"
 <template>
-    <section class="header-with-text">
-        <div class="header-with-text__text">
-            <div class="header-with-text__text__scroll">
+    <section class="header-with-text app-header">
+        <div class="app-header__text-container">
+            <div class="app-header__text">
                 <template v-if="siteIsFr">
-                    <h1 v-html="this.data.title.fr" class="header-with-text__text__scroll__title"></h1>
-                    <h2                             class="header-with-text__text__scroll__subtitle">{{this.data.subtitle.fr}}</h2>
-                    <p                              class="header-with-text__text__scroll__description">{{this.data.text.fr}}</p>
+                    <h1 v-html="this.data.title.fr" ></h1>
+                    <h3                             >{{this.data.subtitle.fr}}</h3>
+                    <p                              >{{this.data.text.fr}}</p>
                 </template>
                 <template v-else>
-                    <h1 v-html="this.data.title.en" class="header-with-text__text__scroll__title"></h1>
-                    <h2                             class="header-with-text__text__scroll__subtitle">{{this.data.subtitle.en}}</h2>
-                    <p                              class="header-with-text__text__scroll__description">{{this.data.text.en}}</p>
+                    <h1 v-html="this.data.title.en" ></h1>
+                    <h3                             >{{this.data.subtitle.en}}</h3>
+                    <p                              >{{this.data.text.en}}</p>
                 </template>
             </div>
         </div>
@@ -55,8 +55,6 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
     @import "../../../../styles/_params";
 
     .header-with-text {
-        @include app-header;
-
         &__text {
             $gradient-height: 4em;
 
@@ -74,15 +72,6 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
                 left: 0;
                 bottom: -1px;
                 background: linear-gradient(hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 1));;
-            }
-
-            &__scroll {
-                max-height: 75vh;
-                overflow: scroll;
-
-                > p:last-child {
-                    margin-bottom: $gradient-height;
-                }
             }
         }
     }

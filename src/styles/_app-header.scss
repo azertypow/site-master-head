@@ -1,34 +1,50 @@
 @import "_params";
+@import "_grid";
 
-@mixin app-header() {
-  //overflow: hidden;
+.app-header {
   position: relative;
   width: 100vw;
   height: 100vh;
+}
 
-  .canvas-container {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $color-main-dark;
-  }
+.app-header__background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-main-dark;
 
-  &__text {
-    position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform-box: view-box;
+}
 
-    &__scroll {
-      &__title {
-        font-size: 4em;
-        margin: 0;
-        line-height: 1em;
-      }
+.app-header__image {
+  width: 600px;
+  height: 500px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 50%;
+  left: 50%;
+}
 
-      &__subtitle {
-        font-weight: 500;
-      }
-    }
+.app-header__text-container {
+  @include column-container;
+  @include container-content-centred;
+  @include site-max-width;
+  height: 100%;
+}
+
+.app-header__text {
+  @include column(1, 1);
+  position: absolute;
+  top: 25%;
+  transform: translateY(-25%);
+
+  > * {
+    margin: 0;
   }
 }
