@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
+        // publicPath: './',
         filename: 'build.js'
     },
     // mode: "development",
@@ -37,7 +37,16 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]?[hash]'
+                    name: '[name].[ext]?[hash]',
+                    outputPath: 'assets/dist/images/'
+                }
+            },
+            {
+                test: /\.(woff(2)?|otf|ttf|eot|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'assets/dist/fonts/'
                 }
             }
         ]
