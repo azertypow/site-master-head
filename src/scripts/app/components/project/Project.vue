@@ -19,8 +19,8 @@
 
         <div class="v-project__description" :class="{'show-details': showDetails}">
             <div class="v-project__description__texts">
-                <p v-if="$siteIsFr"  >{{this.$projectData.description_french}}</p>
-                <p v-else           >{{this.$projectData.description_english}}</p>
+                <div v-if="$siteIsFr" v-html="this.$projectData.description_french"   ></div>
+                <div v-else           v-html="this.$projectData.description_english"  ></div>
             </div>
 
             <div class="v-project__description__images">
