@@ -63,7 +63,7 @@
         &__content {
             @include remove-first-and-last-vertical-margin;
             padding-left: 20px;
-            margin-top: 1em;
+            margin-top: 1rem;
 
             &__text {
                 @include remove-first-and-last-vertical-margin;

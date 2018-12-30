@@ -1,4 +1,5 @@
 @import "_params";
+@import "font";
 
 @mixin site-max-width {
   max-width: $max-width;
@@ -19,6 +20,7 @@
 
 /* wrapper */
 @mixin column-container() {
+  @include init-font;
   @include remove-first-and-last-vertical-margin;
     display: -webkit-box;
     display: -webkit-flex;

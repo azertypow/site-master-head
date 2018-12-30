@@ -70,6 +70,8 @@
 </script>
 
 <style lang="scss">
+    @import "../../../../styles/font";
+
     .v-thesis {
         position: relative;
         margin-top: 10em;
@@ -82,7 +84,7 @@
         }
 
         .authors {
-            font-size: 1.1em;
+            font-size: $font-s;
             font-weight: 600;
             mix-blend-mode: difference;
 

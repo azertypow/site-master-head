@@ -1,12 +1,13 @@
 <template>
-    <button @click="btnDetailClicked()" class="v-btn-show-details">
+    <button @click="btnDetailClicked()" class="v-btn-show-details button--small">
+
         <template v-if="$isActive">
-            <span v-if="siteIsFr">cacher les détails</span>
-            <span v-else         >hide details</span>
+            <template v-if="siteIsFr">cacher les détails</template>
+            <template v-else         >hide details</template>
         </template>
         <template v-else>
-            <span v-if="siteIsFr">voir les détails</span>
-            <span v-else         >show details</span>
+            <template v-if="siteIsFr">voir les détails</template>
+            <template v-else         >show details</template>
         </template>
     </button>
 </template>

@@ -1,4 +1,5 @@
 @import "_grid";
+@import "font";
 
 @mixin items {
   position: relative;
@@ -38,7 +39,7 @@
   }
 
   .authors {
-    font-size: 1.1em;
+    font-size: $font-s;
     font-weight: 600;
 
     > * {

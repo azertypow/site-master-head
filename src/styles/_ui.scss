@@ -1,5 +1,24 @@
+@import "font";
+
 @mixin link {
   cursor: pointer;
   user-select: none;
   border-bottom: solid 1px;
+}
+
+button,
+.button {
+  all: unset;
+  font-size: 2em;
+  line-height: 1rem;
+  padding: calc(1rem - 1px);
+  border: solid 1px;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button--small {
+  font-size: $font-s;
+  padding: calc(.5rem - 1px);
 }
