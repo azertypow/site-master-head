@@ -11,19 +11,21 @@
              v-if="$hasTextInsteadTagList">
 
             <span   class="v-filter-setting__tags__value"
-                    @click="$tagsIsOpen = true"
+                    @click="$openTags($event)"
                     >{{$tagSelected}}</span>
 
-            <ul class="v-filter-setting__tags__list">
-                <template v-for="(tag, index) in $tags" >
-                    <li @click="$indexOf_Tag_Selected = index" :class="{'is-selected': this_Tag_IsSelected(index)}">
-                        {{tag}}
-                    </li>
-                </template>
-            </ul>
-
-            <div class="v-filter-setting__tags__cache"
-                 @click="$tagsIsOpen = false"></div>
+            <div class="v-filter-setting__container" @click="$tagsIsOpen = false">
+                <div class="v-filter-setting__container-grid">
+                    <ul class="v-filter-setting__tags__list" :style="{ top: $tagsPositionTop + 'px' }">
+                        <template v-for="(tag, index) in $tags" >
+                            <li @click="$indexOf_Tag_Selected = index" :class="{'is-selected': this_Tag_IsSelected(index)}">
+                                {{tag}}
+                            </li>
+                            <div class="list__break"></div>
+                        </template>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div v-else>
             {{$textInsteadTagList}}
@@ -39,20 +41,22 @@
              :class="{'open' : this.$min_dateIsOpen}">
 
             <span   class="v-filter-setting__from__value"
-                    @click="$min_dateIsOpen = true"
+                    @click="$openMin_Date($event)"
                     >{{this.$min_dateSelected}}</span>
 
-            <ul class="v-filter-setting__from__list">
-                <template v-for="(date, index) in $dates" >
-                    <li @click="$indexOf_Min_DateSelected = index"
-                        :class="{'is-selected': $thisIs_min_dateSelected(index)}">
-                        {{date}}
-                    </li>
-                </template>
-            </ul>
-
-            <div class="v-filter-setting__from__cache"
-                 @click="$min_dateIsOpen = false"></div>
+            <div class="v-filter-setting__container" @click="$min_dateIsOpen = false">
+                <div class="v-filter-setting__container-grid">
+                    <ul class="v-filter-setting__from__list" :style="{ top: $min_DatePositionTop + 'px' }">
+                        <template v-for="(date, index) in $dates" >
+                            <li @click="$indexOf_Min_DateSelected = index"
+                                :class="{'is-selected': $thisIs_min_dateSelected(index)}">
+                                {{date}}
+                            </li>
+                            <div class="list__break"></div>
+                        </template>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!--data filter - to-->
@@ -65,20 +69,22 @@
              :class="{'open' : this.$max_DateIsOpen}">
 
             <span class="v-filter-setting__to__value"
-                  @click="$max_DateIsOpen = true"
+                  @click="$openMax_Date($event)"
                   >{{this.$max_dateSelected}}</span>
 
-            <ul class="v-filter-setting__to__list">
-                <template v-for="(date, index) in $dates" >
-                    <li @click="$indexOf_Max_DateSelected = index"
-                        :class="{'is-selected': $thisIs_max_dateSelected(index)}" >
-                        {{date}}
-                    </li>
-                </template>
-            </ul>
-
-            <div class="v-filter-setting__to__cache"
-                 @click="$max_DateIsOpen = false"></div>
+            <div class="v-filter-setting__container" @click="$max_DateIsOpen = false">
+                <div class="v-filter-setting__container-grid">
+                    <ul class="v-filter-setting__to__list" :style="{ top: $max_DatePositionTop + 'px' }">
+                        <template v-for="(date, index) in $dates" >
+                            <li @click="$indexOf_Max_DateSelected = index"
+                                :class="{'is-selected': $thisIs_max_dateSelected(index)}" >
+                                {{date}}
+                            </li>
+                            <div class="list__break"></div>
+                        </template>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -151,6 +157,17 @@
         get $tagsIsOpen() {return this.tagsIsOpen}
         set $tagsIsOpen(value: boolean) { this.tagsIsOpen = value}
 
+        private tagsPositionTop = 0;
+        get $tagsPositionTop() {return this.tagsPositionTop}
+        set $tagsPositionTop(value) {this.tagsPositionTop = value}
+
+        $openTags(event: MouseEvent) {
+            this.$tagsIsOpen = true;
+            if(event.srcElement) {
+                this.$tagsPositionTop = event.srcElement.getBoundingClientRect().bottom;
+            }
+        }
+
         /*
         * minimum date selection
         * */
@@ -180,6 +197,17 @@
         min_dateIsOpen = false
         get $min_dateIsOpen() {return this.min_dateIsOpen}
         set $min_dateIsOpen(value: boolean) { this.min_dateIsOpen = value}
+
+        private min_DatePositionTop = 0;
+        get $min_DatePositionTop() {return this.min_DatePositionTop}
+        set $min_DatePositionTop(value) {this.min_DatePositionTop = value}
+
+        $openMin_Date(event: MouseEvent) {
+            this.$min_dateIsOpen = true;
+            if(event.srcElement) {
+                this.$min_DatePositionTop = event.srcElement.getBoundingClientRect().bottom;
+            }
+        }
 
         /*
         *maximum date selection 
@@ -211,6 +239,16 @@
         get $max_DateIsOpen() { return this.max_DateIsOpen }
         set $max_DateIsOpen(value: boolean) { this.max_DateIsOpen = value }
 
+        private max_DatePositionTop = 0;
+        get $max_DatePositionTop() {return this.max_DatePositionTop}
+        set $max_DatePositionTop(value) {this.max_DatePositionTop = value}
+
+        $openMax_Date(event: MouseEvent) {
+            this.$max_DateIsOpen = true;
+            if(event.srcElement) {
+                this.$max_DatePositionTop = event.srcElement.getBoundingClientRect().bottom;
+            }
+        }
         /*
         * emit
         * */
@@ -224,9 +262,12 @@
 </script>
 
 <style lang="scss">
+    @import "../../../../styles/_grid";
     @import "../../../../styles/ui";
 
     .v-filter-setting {
+        @include font-reg;
+        position: absolute;
         user-select: none;
         overflow: visible;
 
@@ -246,21 +287,35 @@
             }
 
             &__list {
-                position: absolute;
-                padding: 0;
-                margin: 0;
-                top: 100%;
-                left: 0;
-                display: none;
+                @include column-skip(1, 12);
+                @include gutter;
+                @include font-reg;
+                position: relative;
+                white-space: nowrap;
+                display: block;
+                padding-bottom: 75vh;
 
                 li {
                     list-style: none;
                     position: relative;
                     z-index: 10;
-                    display: block;
+                    display: inline-block;
+
+                    &:hover:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 1ex;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background: white;
+                    }
+                }
+                .list__break {
+                    width: 100%;
                 }
                 .is-selected {
-                    color: red;
+                    display: none;
                 }
             }
 
@@ -271,21 +326,42 @@
                 top: 0;
                 left: 0;
                 z-index: 10;
-                transition: opacity 500ms;
                 position: fixed;
+                transition: opacity 500ms;
                 opacity: 0;
             }
+        }
+
+        .v-filter-setting__container {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            z-index: 10;
+            display: block;
+            transition: opacity 500ms;
+            overflow: hidden;
+            top: -100%;
+            left: -100%;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        .v-filter-setting__container-grid {
+            @include column-container;
+            @include site-max-width;
         }
 
         &__tags.open,
         &__from.open,
         &__to.open {
-            .v-filter-setting__tags__list,
-            .v-filter-setting__from__list,
-            .v-filter-setting__to__list {
-                display: block;
-                z-index: 1000000;
-                overflow: hidden;
+
+            .v-filter-setting__container {
+                overflow: scroll;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 1;
             }
 
             .v-filter-setting__tags__cache,

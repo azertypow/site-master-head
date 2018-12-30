@@ -8,8 +8,8 @@
 
   &__filter {
     @include column(10, 12);
-    @include gutter;
     overflow: visible;
+    padding-bottom: 2rem;
   }
 
   &__main {
