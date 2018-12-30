@@ -31,23 +31,23 @@ class Projects
             })->toArray();
 
             $json['project'][] = array(
-                'url' => (string)$oneproject->url(),
-                'title' => (string)$oneproject->title(),
-                'year' => (string)$oneproject->year(),
-                'description_french' => (string)$oneproject->description_french(),
-                'description_english' => (string)$oneproject->description_english(),
-                'students' => $oneproject->students()->yaml(),
-                'tags' => (string)$oneproject->tags(),
-                'appear_homepage' => (string)$oneproject->appears_homepage(),
-                'event_pertinence' => (string)$oneproject->event_pertinence(),
-                'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
-                'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
-                'appear_bandeau' => (string)$oneproject->appears_bandeau(),
+                'url'                   => (string)$oneproject->url(),
+                'title'                 => (string)$oneproject->title(),
+                'year'                  => (string)$oneproject->year(),
+                'description_french'    => (string)$oneproject->description_french(),
+                'description_english'   => (string)$oneproject->description_english(),
+                'students'              => $oneproject->students()->yaml(),
+                'tags'                  => (string)$oneproject->tags(),
+                'appear_homepage'       => (string)$oneproject->appears_homepage(),
+                'event_pertinence'      => (string)$oneproject->event_pertinence(),
+                'workshop_pertinence'   => (string)$oneproject->workshop_pertinence(),
+                'seminar_pertinence'    => (string)$oneproject->seminar_pertinence(),
+                'appear_bandeau'        => (string)$oneproject->appears_bandeau(),
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
-                'appears_projects' => (string)$oneproject->appears_projects(),
-                'media' => $oneproject->files()->toArray($callback = null),
-                'media_generated' => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
+                'appears_projects'      => (string)$oneproject->appears_projects(),
+                'media'                 => $oneproject->files()->toArray($callback = null),
+                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         }
         return response::json($json);
@@ -59,22 +59,22 @@ class Projects
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
-                'url' => (string)$oneproject->url(),
-                'title' => (string)$oneproject->title(),
-                'year' => (string)$oneproject->year(),
-                'description_french' => (string)$oneproject->description_french(),
-                'description_english' => (string)$oneproject->description_english(),
-                'students' => $oneproject->students()->yaml(),
-                'tags' => (string)$oneproject->tags(),
-                'appear_homepage' => (string)$oneproject->appears_homepage(),
-                'event_pertinence' => (string)$oneproject->event_pertinence(),
-                'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
-                'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
-                'appear_bandeau' => (string)$oneproject->appears_bandeau(),
+                'url'                   => (string)$oneproject->url(),
+                'title'                 => (string)$oneproject->title(),
+                'year'                  => (string)$oneproject->year(),
+                'description_french'    => (string)$oneproject->description_french(),
+                'description_english'   => (string)$oneproject->description_english(),
+                'students'              => $oneproject->students()->yaml(),
+                'tags'                  => (string)$oneproject->tags(),
+                'appear_homepage'       => (string)$oneproject->appears_homepage(),
+                'event_pertinence'      => (string)$oneproject->event_pertinence(),
+                'workshop_pertinence'   => (string)$oneproject->workshop_pertinence(),
+                'seminar_pertinence'    => (string)$oneproject->seminar_pertinence(),
+                'appear_bandeau'        => (string)$oneproject->appears_bandeau(),
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
-                'appears_projects' => (string)$oneproject->appears_projects(),
-                'media' => $oneproject->files()->toArray($callback = null)
+                'appears_projects'      => (string)$oneproject->appears_projects(),
+                'media'                 => $oneproject->files()->toArray($callback = null)
             );
         }
         return response::json($datatagedjson);
@@ -86,22 +86,22 @@ class Projects
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
-                'url' => (string)$oneproject->url(),
-                'title' => (string)$oneproject->title(),
-                'year' => (string)$oneproject->year(),
-                'description_french' => (string)$oneproject->description_french(),
-                'description_english' => (string)$oneproject->description_english(),
-                'students' => $oneproject->students()->yaml(),
-                'tags' => (string)$oneproject->tags(),
-                'appear_homepage' => (string)$oneproject->appears_homepage(),
-                'event_pertinence' => (string)$oneproject->event_pertinence(),
-                'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
-                'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
-                'appear_bandeau' => (string)$oneproject->appears_bandeau(),
+                'url'                   => (string)$oneproject->url(),
+                'title'                 => (string)$oneproject->title(),
+                'year'                  => (string)$oneproject->year(),
+                'description_french'    => (string)$oneproject->description_french(),
+                'description_english'   => (string)$oneproject->description_english(),
+                'students'              => $oneproject->students()->yaml(),
+                'tags'                  => (string)$oneproject->tags(),
+                'appear_homepage'       => (string)$oneproject->appears_homepage(),
+                'event_pertinence'      => (string)$oneproject->event_pertinence(),
+                'workshop_pertinence'   => (string)$oneproject->workshop_pertinence(),
+                'seminar_pertinence'    => (string)$oneproject->seminar_pertinence(),
+                'appear_bandeau'        => (string)$oneproject->appears_bandeau(),
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
-                'appears_projects' => (string)$oneproject->appears_projects(),
-                'media' => $oneproject->files()->toArray($callback = null)
+                'appears_projects'      => (string)$oneproject->appears_projects(),
+                'media'                 => $oneproject->files()->toArray($callback = null)
             );
         }
         return response::json($datatagedjson);
@@ -131,22 +131,22 @@ class Projects
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
-                'url' => (string)$oneproject->url(),
-                'title' => (string)$oneproject->title(),
-                'year' => (string)$oneproject->year(),
-                'description_french' => (string)$oneproject->description_french(),
-                'description_english' => (string)$oneproject->description_english(),
-                'students' => $oneproject->students()->yaml(),
-                'tags' => (string)$oneproject->tags(),
-                'appear_homepage' => (string)$oneproject->appears_homepage(),
-                'event_pertinence' => (string)$oneproject->event_pertinence(),
-                'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
-                'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
-                'appear_bandeau' => (string)$oneproject->appears_bandeau(),
+                'url'                   => (string)$oneproject->url(),
+                'title'                 => (string)$oneproject->title(),
+                'year'                  => (string)$oneproject->year(),
+                'description_french'    => (string)$oneproject->description_french(),
+                'description_english'   => (string)$oneproject->description_english(),
+                'students'              => $oneproject->students()->yaml(),
+                'tags'                  => (string)$oneproject->tags(),
+                'appear_homepage'       => (string)$oneproject->appears_homepage(),
+                'event_pertinence'      => (string)$oneproject->event_pertinence(),
+                'workshop_pertinence'   => (string)$oneproject->workshop_pertinence(),
+                'seminar_pertinence'    => (string)$oneproject->seminar_pertinence(),
+                'appear_bandeau'        => (string)$oneproject->appears_bandeau(),
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
-                'appears_projects' => (string)$oneproject->appears_projects(),
-                'media' => $oneproject->files()->toArray($callback = null)
+                'appears_projects'      => (string)$oneproject->appears_projects(),
+                'media'                 => $oneproject->files()->toArray($callback = null)
             );
         }
         return response::json($datatagedjson);
@@ -196,18 +196,18 @@ class Projects
         $datatagedjson['project'] = array();
         foreach ($collection->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
-                'url' => (string)$oneproject->url(),
-                'title' => (string)$oneproject->title(),
-                'year' => (string)$oneproject->year(),
-                'description_french' => (string)$oneproject->description_french(),
-                'description_english' => (string)$oneproject->description_english(),
-                'students' => $oneproject->students()->yaml(),
-                'tags' => (string)$oneproject->tags(),
-                'appear_homepage' => (string)$oneproject->appears_homepage(),
-                'event_pertinence' => (string)$oneproject->event_pertinence(),
-                'workshop_pertinence' => (string)$oneproject->workshop_pertinence(),
-                'seminar_pertinence' => (string)$oneproject->seminar_pertinence(),
-                'appear_bandeau' => (string)$oneproject->appears_bandeau(),
+                'url'                   => (string)$oneproject->url(),
+                'title'                 => (string)$oneproject->title(),
+                'year'                  => (string)$oneproject->year(),
+                'description_french'    => (string)$oneproject->description_french(),
+                'description_english'   => (string)$oneproject->description_english(),
+                'students'              => $oneproject->students()->yaml(),
+                'tags'                  => (string)$oneproject->tags(),
+                'appear_homepage'       => (string)$oneproject->appears_homepage(),
+                'event_pertinence'      => (string)$oneproject->event_pertinence(),
+                'workshop_pertinence'   => (string)$oneproject->workshop_pertinence(),
+                'seminar_pertinence'    => (string)$oneproject->seminar_pertinence(),
+                'appear_bandeau'        => (string)$oneproject->appears_bandeau(),
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects'      => (string)$oneproject->appears_projects(),
