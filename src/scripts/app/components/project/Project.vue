@@ -18,10 +18,8 @@
         </header>
 
         <div class="v-project__description" :class="{'show-details': showDetails}">
-            <div class="v-project__description__texts">
-                <div v-if="$siteIsFr" v-html="this.$projectData.description_french"   ></div>
-                <div v-else           v-html="this.$projectData.description_english"  ></div>
-            </div>
+            <div v-if="$siteIsFr"   class="v-project__description__texts"   v-html="this.$projectData.description_french"></div>
+            <div v-else             class="v-project__description__texts"   v-html="this.$projectData.description_english"></div>
 
             <div class="v-images-list">
                 <template v-for="imageData of this.$imagesData">
