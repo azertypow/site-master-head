@@ -64,14 +64,11 @@
 
 <style lang="scss">
     @import "../../../../styles/_grid";
+    @import "../../../../styles/font";
 
     .v-projects-section {
         margin-top: 12em;
         margin-bottom: 8em;
-
-        &__title {
-            font-size: 6em;
-        }
 
         &__header {
             @include column-container;
@@ -93,6 +90,9 @@
                 @include remove-first-and-last-vertical-margin;
             }
         }
+    }
 
+    .v-projects-section__title {
+        @include font-xxl;
     }
 </style>
