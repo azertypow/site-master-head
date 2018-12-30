@@ -1,17 +1,17 @@
 <template>
     <section class="v-thesis">
 
-        <h3 v-if="$siteIsFr" class="title">{{this.$thesisData.title_thesis_french }}</h3>
-        <h3 v-else           class="title">{{this.$thesisData.title_thesis_english}}</h3>
+        <div class="v-cartel__header">
+            <h3 class="v-cartel__header__title" v-if="$siteIsFr" >{{this.$thesisData.title_thesis_french }}</h3>
+            <h3 class="v-cartel__header__title" v-else           >{{this.$thesisData.title_thesis_english}}</h3>
 
-        <div>
-            <p class="v-author">{{this.$thesisData.students_thesis}} </p>
-            <p class="v-author">{{this.$thesisData.tuteurs_thesis}}  </p>
+            <div class="v-cartel__header__author">{{this.$thesisData.students_thesis}} </div>
+            <div class="v-cartel__header__author">{{this.$thesisData.tuteurs_thesis}}  </div>
         </div>
 
-        <div class="description">
-            <p v-if="$siteIsFr"  >{{this.$thesisData.description_thesis_french }}</p>
-            <p v-else            >{{this.$thesisData.description_thesis_english}}</p>
+        <div class="v-cartel__description">
+            <div v-if="$siteIsFr"   class="v-cartel__description__texts" v-html="this.$thesisData.description_thesis_french"></div>
+            <div v-else             class="v-cartel__description__texts" v-html="this.$thesisData.description_thesis_english"></div>
         </div>
 
         <btn-show-details :$siteLang="$siteLang"
@@ -75,17 +75,5 @@
     .v-thesis {
         position: relative;
         margin-top: 10em;
-
-        .title {
-            font-size: 3em;
-            margin: 0;
-            position: relative;
-            mix-blend-mode: difference;
-        }
-
-        .description {
-            max-width: 50em;
-            margin-top: 10em;
-        }
     }
 </style>

@@ -8,18 +8,15 @@
                             :data="imageData"/>
                 </template>
             </div>
-            <div class="v-project__header__texts">
-                <h3 class="title">{{this.$projectData.title}}</h3>
-
-                <div>
-                    <div class="v-author" v-for="students of this.$projectData.students">{{students.students_name}}</div>
-                </div>
+            <div class="v-project__header__texts v-cartel__header">
+                <h3     class="v-cartel__header__title">{{this.$projectData.title}}</h3>
+                <div    class="v-cartel__header__author" v-for="students of this.$projectData.students" >{{students.students_name}}</div>
             </div>
         </header>
 
-        <div class="v-project__description" :class="{'show-details': showDetails}">
-            <div v-if="$siteIsFr"   class="v-project__description__texts"   v-html="this.$projectData.description_french"></div>
-            <div v-else             class="v-project__description__texts"   v-html="this.$projectData.description_english"></div>
+        <div class="v-project__description v-cartel__description" :class="{'show-details': showDetails}">
+            <div v-if="$siteIsFr"   class="v-cartel__description__texts" v-html="this.$projectData.description_french"></div>
+            <div v-else             class="v-cartel__description__texts" v-html="this.$projectData.description_english"></div>
 
             <div class="v-images-list">
                 <template v-for="imageData of this.$imagesData">

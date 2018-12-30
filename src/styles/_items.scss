@@ -30,23 +30,14 @@
       mix-blend-mode: difference;
     }
   }
-
-  .title {
-    font-size: 4em;
-    line-height: 1.2em;
-    margin: 0;
-    position: relative;
-  }
 }
 
 .v-project__description {
   $opening-transition-timing: 500ms;
 
-  @include column-container;
   overflow: hidden;
   transition: max-height $opening-transition-timing ease-in-out;
   max-height: 7.5em;
-  margin-bottom: 1rem;
 
   &.show-details {
     max-height: 50em;
@@ -71,10 +62,20 @@
   }
 }
 
-.v-project__description__texts {
-  @include column(8, 10);
+
+.v-cartel__header {}
+
+.v-cartel__header__title {}
+
+.v-cartel__header__author {
+  @include font-xs;
 }
 
-.v-author {
-  @include font-xs;
+.v-cartel__description {
+  @include column-container;
+  margin-bottom: 1rem;
+}
+
+.v-cartel__description__texts {
+  @include column(8, 10);
 }
