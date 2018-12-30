@@ -1,5 +1,5 @@
-Image-description: 
+Image-description: description
 
 ----
 
-Copyright: 
+Copyright: copyright

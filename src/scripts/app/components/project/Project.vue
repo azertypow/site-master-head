@@ -23,13 +23,10 @@
                 <div v-else           v-html="this.$projectData.description_english"  ></div>
             </div>
 
-            <div class="v-project__description__images">
+            <div class="v-images-list">
                 <template v-for="imageData of this.$imagesData">
-                    <div class="v-project__description__images__item">
-                        <MediaImage
-                                :inImageElement=true
-                                :showDetails=true
-                                :data="imageData"/>
+                    <div class="v-images-list__item">
+                        <img class="v-images-list__item__img" :src="imageData.url" :alt="imageData.meta.image_description + ' ' + imageData.meta.copyright">
                     </div>
                 </template>
             </div>
