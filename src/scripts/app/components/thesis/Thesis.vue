@@ -4,9 +4,9 @@
         <h3 v-if="$siteIsFr" class="title">{{this.$thesisData.title_thesis_french }}</h3>
         <h3 v-else           class="title">{{this.$thesisData.title_thesis_english}}</h3>
 
-        <div class="authors">
-            <p>{{this.$thesisData.students_thesis}} </p>
-            <p>{{this.$thesisData.tuteurs_thesis}}  </p>
+        <div>
+            <p class="v-author">{{this.$thesisData.students_thesis}} </p>
+            <p class="v-author">{{this.$thesisData.tuteurs_thesis}}  </p>
         </div>
 
         <div class="description">
@@ -81,17 +81,6 @@
             margin: 0;
             position: relative;
             mix-blend-mode: difference;
-        }
-
-        .authors {
-            font-size: $font-s;
-            font-weight: 600;
-            mix-blend-mode: difference;
-
-
-            > * {
-                margin: 0;
-            }
         }
 
         .description {

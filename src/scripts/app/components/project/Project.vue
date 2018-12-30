@@ -11,8 +11,8 @@
             <div class="v-project__header__texts">
                 <h3 class="title">{{this.$projectData.title}}</h3>
 
-                <div class="authors">
-                    <p v-for="students of this.$projectData.students">{{students.students_name}}</p>
+                <div>
+                    <div class="v-author" v-for="students of this.$projectData.students">{{students.students_name}}</div>
                 </div>
             </div>
         </header>

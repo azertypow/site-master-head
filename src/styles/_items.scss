@@ -37,15 +37,6 @@
     margin: 0;
     position: relative;
   }
-
-  .authors {
-    font-size: $font-s;
-    font-weight: 600;
-
-    > * {
-      margin: 0;
-    }
-  }
 }
 
 .v-project__description {
@@ -82,4 +73,8 @@
 
 .v-project__description__texts {
   @include column(8, 10);
+}
+
+.v-author {
+  @include font-xs;
 }
