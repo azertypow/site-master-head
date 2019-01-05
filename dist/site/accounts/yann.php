@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
-  - projects/project-a
   - projects/a-mettre-en-premier
+  - projects/project-a
   - alumnis
   - projects
   - alumnis/franciszek-rooney

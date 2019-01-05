@@ -49,11 +49,11 @@ Seminar-pertinence: false
 
 ----
 
-Appears-bandeau: false
+Appears-bandeau: true
 
 ----
 
-Text-bandeau-french: 
+Text-bandeau-french: coucou pour le texte en francais (image: comparaison-photoshop.jpg)
 
 ----
 

@@ -40,6 +40,12 @@
   }
 }
 
+@mixin column-container--one-line() {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
 @mixin row-container {
   @include column-container;
   flex-direction: column;

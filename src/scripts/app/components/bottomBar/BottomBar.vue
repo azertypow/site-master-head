@@ -103,7 +103,10 @@
     @import "../../../../styles/_grid";
 
     #bottom-bar {
+        $height-of-one-line: $footer-height / 2;
+
         @include remove-first-and-last-vertical-margin;
+
         position: fixed;
         left: 0;
         bottom: 0;
@@ -121,16 +124,18 @@
         }
         .text-container__scrolling-container {
             @include remove-first-and-last-vertical-margin;
-            height: $footer-height / 2;
+            height: $height-of-one-line;
 
             &:nth-child(2n) .text-container__text {
                 animation-direction: reverse;
             }
         }
         .text-container__text {
+            @include column-container;
+            @include column-container--one-line;
             @include remove-first-and-last-vertical-margin;
-            height: $footer-height / 2;
-            line-height: $footer-height / 2;
+            height: $height-of-one-line;
+            line-height: $height-of-one-line;
             white-space: nowrap;
             position: absolute;
             left: 100%;
@@ -139,6 +144,27 @@
             animation-iteration-count: infinite;
             animation-timing-function: linear;
             animation-name: text-horizontal-scrolling;
+
+            > * {
+                @include font-xs;
+                margin: 0 !important;
+                margin-right: $gutter-width !important;
+                padding: 0;
+                line-height: $height-of-one-line / 4 * 3; // aline vertical text on figure element (height: $footer-height)
+                height: $height-of-one-line;
+            }
+
+            figure {
+                position: relative;
+                width: $height-of-one-line * (16/9);
+
+                > img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
         }
 
         @keyframes text-horizontal-scrolling {
