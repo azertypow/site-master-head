@@ -80,7 +80,9 @@
         </main>
 
         <footer class="v-page-contact__footer">
-            <app-footer :$backgroundIsDark=false></app-footer>
+            <app-footer
+                    :$siteLang="$siteLang"
+                    :$backgroundIsDark=false></app-footer>
         </footer>
     </section>
 </template>

@@ -20,7 +20,9 @@
         </main>
 
         <footer class="v-page-alumni__footer">
-            <app-footer :$backgroundIsDark=false></app-footer>
+            <app-footer
+                    :$siteLang="$siteLang"
+                    :$backgroundIsDark=false></app-footer>
         </footer>
     </section>
 </template>

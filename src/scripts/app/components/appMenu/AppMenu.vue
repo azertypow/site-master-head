@@ -13,7 +13,7 @@ import {PAGES_PATHNAME} from "../../../../SETTINGS"
         <div class="app-menu__bottom">
             <div class="app-menu__bottom__wrap">
                 <div class="app-menu__bottom__wrap__button">
-                    <button id="app-menu-contact"  @click="goToPageContact" :class="$contactBtnClassPosition" >contact / about</button>
+                    <button id="app-menu-contact"  @click="goToPageContact" :class="$contactBtnClassPosition" >about</button>
                 </div>
                 <div class="app-menu__bottom__wrap__button">
                     <button id="app-menu-thesis"   @click="goToPageThesis"  :class="$thesisBtnClassPosition"  >thesis</button>

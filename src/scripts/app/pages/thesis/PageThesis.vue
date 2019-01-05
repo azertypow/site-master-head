@@ -19,7 +19,9 @@
         </main>
 
         <footer class="v-page-thesis__footer">
-            <app-footer :$backgroundIsDark=true></app-footer>
+            <app-footer
+                    :$siteLang="$siteLang"
+                    :$backgroundIsDark=true></app-footer>
         </footer>
     </section>
 </template>

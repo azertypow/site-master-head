@@ -20,9 +20,8 @@
 
   &__footer {
     @include column(10, 12);
-    @include gutter;
-    @include gutter-horizontal;
-    padding-bottom: 10em;
+    padding-bottom: 50vh;
+    margin-top: 10rem;
   }
 }
 

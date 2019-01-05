@@ -2,9 +2,10 @@
 @import "font";
 
 @mixin items {
+  @include remove-first-and-last-vertical-margin;
   position: relative;
-  margin-top: 4em;
-  margin-bottom: 8em;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
 
   &__header {
     position: relative;
@@ -73,9 +74,12 @@
 
 .v-cartel__description {
   @include column-container;
-  margin-bottom: 1rem;
+  @include remove-first-and-last-vertical-margin;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .v-cartel__description__texts {
   @include column(8, 10);
+  margin-bottom: 1rem;
 }

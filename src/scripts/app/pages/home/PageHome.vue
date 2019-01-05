@@ -21,7 +21,10 @@
         </main>
 
         <footer class="v-page-home__footer">
-            <app-footer class="test" :$backgroundIsDark=true></app-footer>
+            <app-footer
+                    class="test"
+                    :$siteLang="$siteLang"
+                    :$backgroundIsDark=true></app-footer>
         </footer>
     </section>
 </template>
@@ -114,7 +117,7 @@
 
         get $eventsProjectsSectionData(): IProjectsSectionData {return {
             title: {
-                fr: "évènements",
+                fr: "événements",
                 en: "events",
             },
             description: {

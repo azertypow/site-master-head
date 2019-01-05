@@ -7,6 +7,16 @@
   font-weight:  400;
 }
 
+@mixin font-has-no-space-next-line {
+  &.has-no-space-next-line:not(:last-child) {
+    padding-bottom: 0;
+  }
+
+  &.has-no-space-next-line + * {
+    padding-top: 0;
+  }
+}
+
 @mixin font-xxl {
   font-family: "Suisse Neue", serif;
   font-size: $font-size--xxl;
@@ -16,6 +26,7 @@
   padding-bottom: 6px;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  @include font-has-no-space-next-line;
 }
 @mixin font-xl {
   font-family: "Klim Domaine Sans Text", sans-serif;
@@ -26,6 +37,7 @@
   padding-bottom: 15px;
   margin-top: 0;
   margin-bottom: 0;
+  @include font-has-no-space-next-line;
 }
 @mixin font-l {
   font-family: "Klim Domaine Sans Text", sans-serif;
@@ -36,6 +48,7 @@
   padding-bottom: 4px;
   margin-top: 126px;
   margin-bottom: 18px;
+  @include font-has-no-space-next-line;
 }
 @mixin font-m {
   font-family: "Klim Domaine Sans Text", sans-serif;
@@ -46,6 +59,7 @@
   padding-bottom: 10px;
   margin-top: 54px;
   margin-bottom: 18px;
+  @include font-has-no-space-next-line;
 }
 @mixin font-reg {
   font-family: "Klim Domaine Sans Text", sans-serif;
@@ -56,6 +70,7 @@
   padding-bottom: 10px;
   margin-top: 18px;
   margin-bottom: 18px;
+  @include font-has-no-space-next-line;
 }
 @mixin font-s {
   font-family: "Klim Domaine Sans Text", sans-serif;
@@ -66,6 +81,7 @@
   padding-bottom: 14px;
   margin-top: 0;
   margin-bottom: 0;
+  @include font-has-no-space-next-line;
 }
 @mixin font-xs {
   font-family: "Klim Domaine Sans Text", sans-serif;
@@ -76,4 +92,5 @@
   padding-bottom: 14px;
   margin-top: 0;
   margin-bottom: 0;
+  @include font-has-no-space-next-line;
 }

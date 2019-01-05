@@ -33,13 +33,14 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop} from "vue-property-decorator"
+    import {Vue, Component, Prop, Watch} from "vue-property-decorator"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
     import {IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import MediaImage from "../image/MediaImage"
+    import secureIsNaNNumber from "../../../secureIsNaNNumber"
     @Component({
-        components: {MediaImage, BtnShowDetails}
+        components: {MediaImage, BtnShowDetails},
     })
     export default class Project extends Vue {
         @Prop({required: true}) data!: IProjectItem
@@ -50,6 +51,36 @@
         * */
         @Prop({required: true}) $siteLang!: LANG_LIST
         get $siteIsFr() { return this.$siteLang === LANG_LIST.FR }
+
+        private get descriptionContentHeight() {
+
+            const textElement = this.$el.querySelector('.v-cartel__description__texts');
+            const imageListElement = this.$el.querySelector('.v-images-list');
+
+            let heightToReturn = 0;
+
+            if(textElement) {
+                heightToReturn += textElement.getBoundingClientRect().height
+
+                const marginTop     = window.getComputedStyle(textElement, null).marginTop
+                const marginBottom  = window.getComputedStyle(textElement, null).marginBottom
+
+                heightToReturn += marginTop ? secureIsNaNNumber(parseFloat(marginTop))          : 0
+                heightToReturn += marginBottom ? secureIsNaNNumber(parseFloat(marginBottom))    : 0
+            }
+
+            if(imageListElement) {
+                heightToReturn += imageListElement.getBoundingClientRect().height
+
+                const marginTop     = window.getComputedStyle(imageListElement, null).marginTop
+                const marginBottom  = window.getComputedStyle(imageListElement, null).marginBottom
+
+                heightToReturn += marginTop     ? secureIsNaNNumber(parseFloat(marginTop))      : 0
+                heightToReturn += marginBottom  ? secureIsNaNNumber(parseFloat(marginBottom))   : 0
+            }
+
+            return heightToReturn;
+        }
 
         /**/
 
@@ -62,6 +93,18 @@
 
         btnDetailClicked() {
             this.$showDetails = !this.$showDetails
+
+            const descriptionContainerElement = this.$el.querySelector('.v-cartel__description')
+
+            if(descriptionContainerElement instanceof HTMLElement) {
+
+                if(this.$showDetails) {
+                    descriptionContainerElement.style.maxHeight = `${this.descriptionContentHeight}px`;
+                } else {
+                    descriptionContainerElement.style.maxHeight = ""
+                }
+            }
+
         }
 
         get $imagesData(): IMediaItem[] {
