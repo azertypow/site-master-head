@@ -20,8 +20,13 @@
                 </h6>
             </div>
             <div class="v-app-footer__right">
-                <img    class="mmd-logo mmd-logo--small"
-                        src="https://www.hesge.ch/hem/sites/default/files/contributions/Logos/hes-so_geneve_defonce_blanc.png"
+                <img    v-if="$backgroundIsDark"
+                        class="mmd-logo mmd-logo--small"
+                        src="../../../../images/hes-so_geneve_white.png"
+                        alt="hesso logo">
+                <img    v-else
+                        class="mmd-logo mmd-logo--small"
+                        src="../../../../images/hes-so_geneve_black.png"
                         alt="hesso logo">
             </div>
             <div class="v-app-footer__bottom">

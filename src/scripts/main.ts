@@ -165,7 +165,7 @@ const gridSettings: IGrid = {
         gutterOnOutside: "half gutter",
         gutterWidth: {
             unit: UNIT.PIXEL,
-            value: 20,
+            value: 36,
         },
         numberOfColumn: 12,
         offset: "center",

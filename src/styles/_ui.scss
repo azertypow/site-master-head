@@ -16,9 +16,14 @@ button,
   box-sizing: border-box;
   display: inline-block;
   cursor: pointer;
+
+  &.button--small {
+    font-size: $font-s;
+    padding: calc(.5rem - 1px);
+  }
+
+  &:disabled {
+    border-color: transparent;
+  }
 }
 
-.button--small {
-  font-size: $font-s;
-  padding: calc(.5rem - 1px);
-}

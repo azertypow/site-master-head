@@ -15,7 +15,7 @@ $color-main: blue;
 
 
 /* grid */
-$gutter-width: 32px;
+$gutter-width: $grid-line-height * 2;
 $max-width: 1280px;
 
 $footer-height: 4em;

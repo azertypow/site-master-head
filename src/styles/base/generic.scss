@@ -1,0 +1,11 @@
+.mmd-link {
+  &.mmd-link--arrow {
+    border-bottom: none;
+    text-decoration: none;
+
+    &:after {
+      content: ' \02192';
+    }
+  }
+}
+
