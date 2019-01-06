@@ -1,7 +1,7 @@
 <template>
     <section v-if="$bottomIsOpen" id="bottom-bar">
 
-        <template v-if="$barHasContent">
+        <template v-if="!$barHasContent">
             <div class="text-container">
                 <template v-for="bottomElement of $projectsInBottomBar">
                     <div class="text-container__scrolling-container">
@@ -20,10 +20,18 @@
 
         <template v-else>
             <div class="social-container">
-                <span>instagram</span>
-                <span>twitter</span>
-                <span>vimeo</span>
-                <span>github</span>
+                <div class="social-container__item">
+                    <a href="https://www.instagram.com/headmediadesign/" class="mmd-link--no-underline">instagram</a>
+                </div>
+                <div class="social-container__item">
+                    <a href="https://twitter.com/headmediadesign" class="mmd-link--no-underline">twitter</a>
+                </div>
+                <div class="social-container__item">
+                    <a href="https://vimeo.com/headmediadesign" class="mmd-link--no-underline">vimeo</a>
+                </div>
+                <div class="social-container__item">
+                    <a href="https://github.com/" class="mmd-link--no-underline">github</a>
+                </div>
             </div>
         </template>
 
@@ -177,8 +185,17 @@
         }
 
         .social-container {
+            @include column-container;
+            @include container-content-justified;
+            @include gutter;
+            align-items: center;
             width: 100%;
-            height: 4em;
+            height: $footer-height;
+        }
+        .social-container__item {
+            > * {
+                @include font-reg;
+            }
         }
 
         #bottom-bar-btn {

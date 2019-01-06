@@ -1,11 +1,24 @@
+a,
 .mmd-link {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(to right,currentColor 100%, currentColor 0);
+  background-size: 1px 1px;
+  background-position: 0 calc(50% + 1ex);
+
   &.mmd-link--arrow {
-    border-bottom: none;
     text-decoration: none;
+    background-image: none;
 
     &:after {
       content: ' \02192';
     }
+  }
+
+  &.mmd-link--no-underline {
+    background-image: none;
   }
 }
 

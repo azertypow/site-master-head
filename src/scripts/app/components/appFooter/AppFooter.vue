@@ -5,7 +5,7 @@
             <div class="v-app-footer__left">
                 <h5>© 2019 master media design</h5>
                 <h6>
-                    <a href="https://www.hesge.ch/head/" target="_blank">
+                    <a  class="mmd-link--arrow" href="https://www.hesge.ch/head/" target="_blank">
                         <template   v-if="this.siteIsFr"    >HEAD — Genève, Haute école d'art et de design</template>
                         <template   v-else                  >HEAD — Geneva, High School of Art and Design</template>
                     </a>
@@ -14,9 +14,9 @@
             <div class="v-app-footer__center">
                 <h5 class="has-no-space-next-line">fonts</h5>
                 <h6>
-                    <a href="https://klim.co.nz/retail-fonts/domaine-sans-text/"    target="_blank">Klim — Domaine Sans Text</a>
+                    <a class="mmd-link--arrow" href="https://klim.co.nz/retail-fonts/domaine-sans-text/"    target="_blank">Klim — Domaine Sans Text</a>
                     <br>
-                    <a href="https://www.swisstypefaces.com/fonts/suisse/"          target="_blank">Swiss Typefaces — Suisse Neue</a>
+                    <a class="mmd-link--arrow" href="https://www.swisstypefaces.com/fonts/suisse/"          target="_blank">Swiss Typefaces — Suisse Neue</a>
                 </h6>
             </div>
             <div class="v-app-footer__right">
@@ -31,7 +31,7 @@
             </div>
             <div class="v-app-footer__bottom">
                 <h6>
-                    <a href="https://github.com/azertypow/site-master-head/issues/new" target="_blank">
+                    <a class="mmd-link--arrow" href="https://github.com/azertypow/site-master-head/issues/new" target="_blank">
                         <template   v-if="this.siteIsFr"    >rapporter un bug ou un commentaire</template>
                         <template   v-else                  >report a bug or comment</template>
                     </a>
@@ -67,11 +67,6 @@
         &.bg-dark {
             background-color: $color-main-dark;
             color: $color-main-light;
-        }
-
-        a {
-            @extend .mmd-link;
-            @extend .mmd-link--arrow;
         }
     }
 
