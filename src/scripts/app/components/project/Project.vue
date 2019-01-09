@@ -1,5 +1,6 @@
 <template>
     <section class="v-project">
+
         <header class="v-project__header">
             <div class="v-project__header__images">
                 <template v-for="(imageData, imageIndex) of this.$imagesData">
@@ -8,10 +9,6 @@
                             :showDetails=false
                             :data="imageData"/>
                 </template>
-
-                <!--<MediaImage-->
-                        <!--:showDetails=false-->
-                        <!--:data="$imageToShowData"/>-->
             </div>
             <div class="v-project__header__texts v-cartel__header">
                 <h3     class="v-cartel__header__title">{{this.$projectData.title}}</h3>
@@ -72,6 +69,8 @@
         @Prop({required: true}) $siteLang!: LANG_LIST
         get $siteIsFr() { return this.$siteLang === LANG_LIST.FR }
 
+        /**/
+
         private get descriptionContentHeight() {
 
             const textElement = this.$el.querySelector('.v-cartel__description__texts');
@@ -101,8 +100,6 @@
 
             return heightToReturn;
         }
-
-        /**/
 
         /*
         * details sections
