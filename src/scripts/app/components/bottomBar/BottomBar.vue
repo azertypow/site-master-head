@@ -109,11 +109,13 @@
 <style lang="scss">
     @import "../../../../styles/_params";
     @import "../../../../styles/_grid";
+    @import "../../../../styles/fix";
 
     #bottom-bar {
         $height-of-one-line: $footer-height / 2;
 
         @include remove-first-and-last-vertical-margin;
+        @include -fix-safari-navigation-3d-overflow;
 
         position: fixed;
         left: 0;

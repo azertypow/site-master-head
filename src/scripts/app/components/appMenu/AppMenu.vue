@@ -95,8 +95,6 @@
         private readonly currentPage!: PAGES_PATHNAME
         set $currentPage(pageName: PAGES_PATHNAME) {
 
-            console.log("page change")
-
             if(pageName !== this.currentPage) {
                 EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
 
@@ -121,6 +119,7 @@
 <style lang="scss">
     @import "../../../../styles/_params";
     @import "../../../../styles/_grid";
+    @import "../../../../styles/fix";
 
     #app-menu {
         $transition-color-timing:   500ms 500ms;
@@ -136,9 +135,11 @@
             color: $color-main-light;
 
             .app-menu__top {
+                @include -fix-safari-navigation-3d-overflow;
                 box-shadow: $shadow-properties--top black;
             }
             .app-menu__bottom {
+                @include -fix-safari-navigation-3d-overflow;
                 box-shadow: $shadow-properties--bottom black;
             }
         }
