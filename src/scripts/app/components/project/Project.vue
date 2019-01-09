@@ -2,11 +2,16 @@
     <section class="v-project">
         <header class="v-project__header">
             <div class="v-project__header__images">
-                <template v-for="imageData of this.$imagesData">
+                <template v-for="(imageData, imageIndex) of this.$imagesData">
                     <MediaImage
+                            :visible=$imageIsVisible(imageIndex)
                             :showDetails=false
                             :data="imageData"/>
                 </template>
+
+                <!--<MediaImage-->
+                        <!--:showDetails=false-->
+                        <!--:data="$imageToShowData"/>-->
             </div>
             <div class="v-project__header__texts v-cartel__header">
                 <h3     class="v-cartel__header__title">{{this.$projectData.title}}</h3>
@@ -33,14 +38,29 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop, Watch} from "vue-property-decorator"
+    import {Vue, Component, Prop} from "vue-property-decorator"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
     import {IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import MediaImage from "../image/MediaImage"
     import secureIsNaNNumber from "../../../secureIsNaNNumber"
+
     @Component({
         components: {MediaImage, BtnShowDetails},
+        mounted: function() {
+            const headerElement = (this as Project).$el.querySelector(".v-project__header");
+
+            if(headerElement instanceof HTMLElement) {
+                const headerImages = headerElement.querySelector(".v-project__header__images")
+                const headerTexts = headerElement.querySelector(".v-project__header__texts")
+
+                if(headerImages instanceof HTMLElement && headerTexts instanceof HTMLElement) {
+                    headerElement.addEventListener("mousemove", (e)=> {
+                        (this as Project).headerImageInteraction(e, headerImages, headerTexts)
+                    });
+                }
+            }
+        }
     })
     export default class Project extends Vue {
         @Prop({required: true}) data!: IProjectItem
@@ -118,6 +138,49 @@
 
             return arrayOfImageMedia
         }
+
+        // get $imageToShowData(): IMediaItem {
+        //     return this.$imagesData[this.$indexOfImageToShowInHeader]
+        // }
+
+        $imageIsVisible(imageIndex: number) {return this.$indexOfImageToShowInHeader === imageIndex}
+
+        private indexOfImageToShowInHeader = 0
+        get $indexOfImageToShowInHeader() {return this.indexOfImageToShowInHeader}
+
+        /*
+        * header image interaction
+        * */
+        static readonly degTransformation = 20
+        static readonly translationTransformation = 15
+
+        headerImageInteraction(e: Event, headerImages: HTMLElement, headerTexts: HTMLElement) {
+
+            const left   = headerImages.getBoundingClientRect().left
+            const top    = headerImages.getBoundingClientRect().top
+            const width  = headerImages.getBoundingClientRect().width
+            const height = headerImages.getBoundingClientRect().height
+
+            if(e instanceof MouseEvent) {
+                const positionX = e.clientX - (left + width / 2)
+                const positionY = e.clientY - (top  + height / 2)
+
+                const vectorX = positionX / width
+                const vectorY = positionY / height
+
+                function getPercentOfXPosition(xPosition: number, width: number, left: number) {
+                    const value = Math.round( (xPosition - left) / width * 100 )
+                    if(value < 0) return 0
+                    else if(value > 99) return 99
+                    else return value
+                }
+
+                this.indexOfImageToShowInHeader = Math.floor( getPercentOfXPosition(e.clientX, width, left) * this.$imagesData.length / 100 )
+
+                headerImages.style.transform = `rotateX(${vectorX * Project.degTransformation}deg) rotateY(${vectorY * Project.degTransformation}deg) translateX(${ - vectorX * Project.translationTransformation}px)`
+            }
+
+        }
     }
 </script>
 
@@ -125,5 +188,9 @@
     @import "../../../../styles/items";
     .v-project {
         @include items;
+    }
+
+    .v-project__header {
+        perspective: 2500px;
     }
 </style>

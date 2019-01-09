@@ -1,5 +1,5 @@
 <template>
-    <div class="v-media-image">
+    <div class="v-media-image" :class="{'is-visible' : visible}">
         <img v-if="inImageElement"  class="v-media-image__img"   :src="this.$projectData.url"/>
         <div v-else                 class="v-media-image__img"   :style="{backgroundImage: 'url(' + this.$projectData.url + ')'}"></div>
         <template v-if="$showDetails">
@@ -26,6 +26,8 @@
         get $showDetails() {return this.showDetails}
 
         @Prop({default: false, type: Boolean}) inImageElement!: boolean
+
+        @Prop({default: true, type: Boolean}) visible!: boolean
     }
 </script>
 
@@ -33,6 +35,9 @@
     .v-media-image {
         width: 100%;
         height: 100%;
+        //todo trnasition confilct with page transition
+        /*transition: opacity 250ms ease-in-out;*/
+        opacity: 0;
 
         &__img {
             width: 100%;
@@ -51,4 +56,9 @@
             margin-top: 1.2em;
         }
     }
+
+    .v-media-image.is-visible {
+        opacity: 1;
+    }
+
 </style>

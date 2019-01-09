@@ -165,7 +165,7 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
                 cubeContainer.style.transform = "";
                 cubeContainer.style.transform = getComputedStyle(cubeContainer).transform;
-                (this.$appHTMLElement.querySelector(".app-cube-container") as HTMLElement).style.transition = "";
+                cubeContainer.style.transition = "";
                 cubeContainer.style.transform = "";
             }
 
