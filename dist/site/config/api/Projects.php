@@ -31,6 +31,7 @@ class Projects
             })->toArray();
 
             $json['project'][] = array(
+                'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
                 'title'                 => (string)$oneproject->title(),
                 'year'                  => (string)$oneproject->year(),
@@ -53,12 +54,43 @@ class Projects
         return response::json($json);
     }
 
+    public static function getProjectByUri($uri) {
+        $data = page("$uri");
+
+        if($data) {
+            $datatagedjson = array(
+                'uri'                   => $data->uri(),
+                'url'                   => (string)$data->url(),
+                'title'                 => (string)$data->title(),
+                'year'                  => (string)$data->year(),
+                'description_french'    => (string)$data->description_french()->kirbytext(),
+                'description_english'   => (string)$data->description_english()->kirbytext(),
+                'students'              => $data->students()->yaml(),
+                'tags'                  => (string)$data->tags(),
+                'appear_homepage'       => (string)$data->appears_homepage(),
+                'event_pertinence'      => (string)$data->event_pertinence(),
+                'workshop_pertinence'   => (string)$data->workshop_pertinence(),
+                'seminar_pertinence'    => (string)$data->seminar_pertinence(),
+                'appear_bandeau'        => (string)$data->appears_bandeau(),
+                'text_bandeau_french'   => (string)$data->text_bandeau_french()->kirbytext(),
+                'text_bandeau_english'  => (string)$data->text_bandeau_english()->kirbytext(),
+                'appears_projects'      => (string)$data->appears_projects(),
+                'media'                 => $data->files()->toArray($callback = null)
+            );
+        } else {
+            $datatagedjson = null;
+        }
+
+        return response::json($datatagedjson);
+    }
+
     public static function getAllProjectsAppearHome()
     {
         $data = page('projects')->children()->visible()->filterBy('appears_homepage', 'true');
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
+                'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
                 'title'                 => (string)$oneproject->title(),
                 'year'                  => (string)$oneproject->year(),
@@ -86,6 +118,7 @@ class Projects
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
+                'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
                 'title'                 => (string)$oneproject->title(),
                 'year'                  => (string)$oneproject->year(),
@@ -131,6 +164,7 @@ class Projects
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
+                'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
                 'title'                 => (string)$oneproject->title(),
                 'year'                  => (string)$oneproject->year(),
@@ -196,6 +230,7 @@ class Projects
         $datatagedjson['project'] = array();
         foreach ($collection->sortBy('year', 'desc') as $oneproject) {
             $datatagedjson['project'][] = array(
+                'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
                 'title'                 => (string)$oneproject->title(),
                 'year'                  => (string)$oneproject->year(),

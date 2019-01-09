@@ -25,5 +25,16 @@ button,
   &:disabled {
     border-color: transparent;
   }
+
+  &.button--revert {
+    background: white;
+    color: black;
+  }
+
+  &.button--arrow {
+    &:after {
+      content: ' \02192';
+    }
+  }
 }
 

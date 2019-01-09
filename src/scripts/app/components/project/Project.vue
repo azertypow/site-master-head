@@ -29,6 +29,10 @@
             </div>
         </div>
 
+        <button class="button--small button--arrow button--revert" @click="$getProjectUri($projectData.uri)">
+            share
+        </button>
+
         <btn-show-details :$siteLang="$siteLang"
                           v-on:clicked="btnDetailClicked()"></btn-show-details>
     </section>
@@ -41,6 +45,7 @@
     import {IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import MediaImage from "../image/MediaImage"
     import secureIsNaNNumber from "../../../secureIsNaNNumber"
+    import {getProjectsByUri} from "../../../apiRequestes"
 
     @Component({
         components: {MediaImage, BtnShowDetails},
@@ -177,6 +182,17 @@
                 headerImages.style.transform = `rotateX(${vectorX * Project.degTransformation}deg) rotateY(${vectorY * Project.degTransformation}deg) translateX(${ - vectorX * Project.translationTransformation}px)`
             }
 
+        }
+
+        /*
+        * URI SHARE
+        * */
+        $getProjectUri(uri: string) {
+            getProjectsByUri(uri).then(value => {
+                console.log( value.description_french )
+            }, reason => {
+                console.log(`OUPS, we can't get project with ${uri} uri`)
+            })
         }
     }
 </script>

@@ -1,7 +1,7 @@
 import {
     IAllAlumni, IAllContacts,
     IAllProjects,
-    IAllThesis,
+    IAllThesis, IProjectItem,
     IProjectsAppearBottomBar,
     IProjectsAppearhome
 } from "./api/genericsApiTypesIntefaces"
@@ -15,6 +15,14 @@ export async function getProjectsAppearHome(): Promise<IProjectsAppearhome> {
 
 export async function getBottomBarData(): Promise<IProjectsAppearBottomBar> {
     return await getJsonData("api/projects/appearbandeau") as IProjectsAppearBottomBar
+}
+
+/*
+* GET ONE PROJECT
+* */
+export async function getProjectsByUri(uri: string): Promise<IProjectItem> {
+    const encodedUri = encodeURIComponent(uri);
+    return await getJsonData(`api/projects/uri=${encodedUri}`) as IProjectItem
 }
 
 /*
@@ -65,7 +73,11 @@ export function getJsonData(url: string) {
             request.addEventListener("load", function(e) {
                 if (this.readyState === 4) {
                     if(this.status === 200) {
-                        resolve( JSON.parse(this.responseText))
+                        try {
+                            resolve( JSON.parse(this.responseText))
+                        } catch (e) {
+                            reject(`can't format json on ${url}`)
+                        }
                     } else {
                         reject(`XMLHttpRequest error on ${url}`)
                     }

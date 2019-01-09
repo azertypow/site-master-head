@@ -54,6 +54,13 @@ c::set('routes', array(
         }
     ),
     array(
+        'pattern' => 'api/projects/uri=(:any)',
+        'action' => function ($uri) {
+            $uriDecode = urldecode($uri);
+            echo Projects::getProjectByUri($uriDecode);
+        }
+    ),
+    array(
         'pattern' => 'api/projects/alltags',
         'action' => function () {
             echo Projects::getAllTags();

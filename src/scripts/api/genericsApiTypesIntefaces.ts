@@ -75,6 +75,7 @@ export interface IAllProjects {
 }
 
 export interface IProjectItem extends IGenericItem {
+    uri: string;
     url: string;
     title: string;
     description_french: string;
