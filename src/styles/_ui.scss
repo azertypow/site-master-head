@@ -8,7 +8,9 @@
 
 button,
 .button {
-  all: unset;
+  font-family: "Klim Domaine Sans Text", sans-serif;
+  background: none;
+  color: white;
   font-size: 2em;
   line-height: 1rem;
   padding: calc(1rem - 1px);
