@@ -16,6 +16,11 @@ kirby()->hook([
                 foreach ($arrayOfImageParameters as $imageParameter) {
                     generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages);
                 }
+
+//                $file->copy($file->dir() . '/'. $folderNameForGeneratedImages .'/' . $file->name() . "." .$file->extension());
+
+                resizeOriginalImageAndSaveIt($file, $folderNameForGeneratedImages);
+
             }
         } catch (Exception $e) {
             return response::error($e->getMessage());
@@ -39,6 +44,24 @@ function generatedImageSize($file, $imageParameter, $folderNameForGeneratedImage
     }
 
     $pathForFinalGeneratedImage = $folderPathForGeneratedImages . $file->name() . $imageParameter['extensionName'] . "." .$file->extension();
+
+    putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage);
+}
+
+function resizeOriginalImageAndSaveIt($file, $folderNameForGeneratedImages) {
+    // save originalImage
+    $file->copy($file->dir() . '/'. $folderNameForGeneratedImages .'/' . $file->name() . "." .$file->extension());
+
+
+
+
+    $regularParams = c::get('mmd.image.parameters', array())['regular'];
+
+    $tempImageGenerated = $file->thumb($regularParams['config']);
+
+    $tempImageGeneratedPath = $tempImageGenerated->dir() . '/' . $tempImageGenerated->filename();
+
+    $pathForFinalGeneratedImage = $file->dir() . '/' . $file->name() . "." .$file->extension();
 
     putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage);
 }

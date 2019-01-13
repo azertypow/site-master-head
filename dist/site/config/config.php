@@ -14,6 +14,7 @@ c::set('mmd.image.folderName', 'generated');
 c::set('mmd.image.parameters', [
     'icon'  => ['config' => ['width' => 100,    'height' => 100,    'quality' => 50,   'blur' => true],     'extensionName' => '@mmd-icon'],
     'small' => ['config' => ['width' => 150,                        'quality' => 100],                      'extensionName' => '@mmd-small'],
+    'regular' => ['config' => ['width' => 1050,   'height' => 500,    'quality' => 80],                      'extensionName' => '@mmd-regular'],
     'large' => ['config' => ['width' => 1280,   'height' => 800,    'quality' => 100],                      'extensionName' => '@mmd-large'],
 ]);
 
