@@ -158,8 +158,19 @@
         .app-menu__top {
             @include app-menu-section;
             top: 0;
-            padding-top: 1rem;
             box-shadow: $shadow-properties--top white;
+
+            font-size: 0.8em;
+            padding-left: $gutter-width / 4;
+            padding-right: $gutter-width / 4;
+            padding-top: .5rem;
+
+            @media (min-width: $break-extra-small) {
+                font-size: inherit;
+                padding-top: 1rem;
+                padding-left: $gutter-width / 2;
+                padding-right: $gutter-width / 2;
+            }
         }
 
         .app-menu__bottom {
@@ -194,7 +205,13 @@
 
         #app-menu-lang {
             position: absolute;
-            right: $gutter-width / 2;
+            bottom: 0;
+            right: 0;
+            font-size: 0.8em;
+
+            @media (min-width: $break-extra-small) {
+                font-size: inherit;
+            }
         }
 
         #app-menu-contact {
@@ -207,7 +224,7 @@
             position: absolute;
             top: 0;
             left: 25%;
-            transform: translateX(-50%);
+            transform: translateX(-25%);
         }
         #app-menu-home {
             position: absolute;
@@ -219,7 +236,7 @@
             position: absolute;
             top: 0;
             right: 25%;
-            transform: translateX(50%);
+            transform: translateX(25%);
         }
         #app-menu-alumni {
             position: absolute;

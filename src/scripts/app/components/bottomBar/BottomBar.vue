@@ -126,6 +126,8 @@
         padding-right: $footer-height;
         width: 100%;
 
+
+
         .text-container {
             @include row-container;
             @include container-content-centred;
@@ -189,14 +191,29 @@
         .social-container {
             @include column-container;
             @include container-content-justified;
-            @include gutter;
             align-items: center;
             width: 100%;
             height: $footer-height;
+
+            padding-left: $gutter-width / 4;
+            padding-right: $gutter-width / 4;
+
+            @media ($break-extra-small) {
+                @include gutter;
+            }
         }
         .social-container__item {
             > * {
                 @include font-reg;
+                font-size: 1em !important;
+
+                @media (min-width: $break-extra-small) {
+                    font-size: $font-size-small !important;
+                }
+
+                @media (min-width: $break-small) {
+                    font-size: $font-size--reg !important;
+                }
             }
         }
 

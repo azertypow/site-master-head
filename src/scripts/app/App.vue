@@ -247,6 +247,7 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             width: 100vw;
             height: 100vh;
             overflow: scroll;
+            -webkit-overflow-scrolling: touch;
             //border: solid 2px $color-main-light;
 
             &.app-page-current {

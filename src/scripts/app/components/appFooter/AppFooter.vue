@@ -77,14 +77,36 @@
 
     .v-app-footer__left,
     .v-app-footer__center {
-        @include column(1, 3);
         @include gutter;
+        @include column(1, 1);
+
+        @media (min-width: $break-regular) {
+            @include column(1, 2);
+        }
+
+        @media (min-width: $break-medium) {
+            @include column(2, 5);
+        }
+    }
+
+    .v-app-footer__center {
+        margin-top: 2rem;
+
+        @media (min-width: $break-regular) {
+            margin-top: 0;
+        }
     }
 
     .v-app-footer__right {
-        @include column(1, 3);
         @include gutter;
-        text-align: right;
+        @include column(1, 1);
+        margin-top: 2rem;
+
+        @media (min-width: $break-medium) {
+            @include column(1, 5);
+            text-align: right;
+            margin-top: 0;
+        }
     }
 
     .v-app-footer__bottom {
