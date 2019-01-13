@@ -6,7 +6,7 @@ a,
   background-repeat: repeat-x;
   background-image: linear-gradient(to right,currentColor 100%, currentColor 0);
   background-size: 1px 1px;
-  background-position: 0 calc(50% + 1ex);
+  background-position: 0 100%;
 
   &.mmd-link--arrow {
     text-decoration: none;

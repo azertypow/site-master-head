@@ -18,7 +18,7 @@ button,
   cursor: pointer;
 
   &.button--small {
-    font-size: $font-s;
+    font-size: $font-size-small;
     padding: calc(.5rem - 1px);
   }
 
@@ -36,5 +36,15 @@ button,
       content: ' \02192';
     }
   }
+
+  .mmd-buttons & + & {
+    margin-left: $gutter-width;
+  }
+}
+
+.mmd-buttons {
+  display: flex;
+
+  //@include button-suite;
 }
 

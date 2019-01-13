@@ -43,10 +43,48 @@ p {
   @include font-reg;
 }
 
+ul,
+ol {
+  @include font-reg;
+  position: relative;
+  padding-left: 2rem;
+  list-style: none;
+
+  li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+  }
+
+  p + & {
+    margin-top: -1rem !important;
+  }
+}
+
 h5 {
   @include font-s;
 }
 
 h6 {
   @include font-xs;
+}
+
+hr {
+  display: block;
+  position: relative;
+  margin: 0;
+  height: 2rem;
+  box-sizing: border-box;
+  border: none;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    background-color: currentColor;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+  }
 }

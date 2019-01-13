@@ -1,0 +1,24 @@
+.mmd-content {
+  @include remove-first-and-last-vertical-margin;
+
+  h1 {
+    @include font-medium-xxl;
+  }
+
+  h2 {
+    @include font-medium-xl;
+  }
+
+  h3 {
+    @include font-medium-l;
+  }
+
+  p {
+    @include font-medium-reg;
+  }
+
+  ul,
+  ol {
+    @include font-medium-reg;
+  }
+}

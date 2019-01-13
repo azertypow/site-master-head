@@ -1,0 +1,21 @@
+Name-team: Lysianne Lechot Hirt
+
+----
+
+Position-team: Responsable de la coordination de l'enseignement
+
+----
+
+About-team: description
+
+----
+
+External-link-team: 
+
+----
+
+Email-team: lysianne.lechot-hirt@hesge.ch
+
+----
+
+Title: Lysianne Lechot Hirt

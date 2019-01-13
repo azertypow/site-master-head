@@ -267,6 +267,7 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             }
             &.app-cube-flip-contact {
                 background-color: $color-main-light;
+                scroll-behavior: smooth;
             }
         }
 

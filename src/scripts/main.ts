@@ -73,8 +73,8 @@ let app = createVueApplication({
                     en: "HEAD—<br>media design"
                 },
                 subtitle: {
-                    fr: "contacte",
-                    en: "contact"
+                    fr: "contactes et informations",
+                    en: "contacts and informations"
                 },
                 // text: {
                 //     fr: "",
@@ -112,16 +112,17 @@ let app = createVueApplication({
     },
     allContacts: {
         about: {
-            etude_plan_english: "",
-            etude_plan_french: "",
+            // etude_plan_english: "",
+            // etude_plan_french: "",
             external_link_about: "",
-            general_informations_english: "",
-            general_informations_french: "",
+            // general_informations_english: "",
+            // general_informations_french: "",
             general_presentation_english: "",
             general_presentation_french: "",
             url: "",
         },
         team: [],
+        links: [],
     }
 })
 
@@ -178,6 +179,9 @@ const gridSettings: IGrid = {
     row: false,
     xHeight: 15,
 }
+
+// medium
+gridSettings.xHeight = 12
 
 const gridUi = new GridUi([
     new Grid(document.querySelector(".v-page-thesis")    as HTMLElement, gridSettings),

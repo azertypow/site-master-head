@@ -14,13 +14,16 @@
             <div v-else             class="v-cartel__description__texts" v-html="this.$thesisData.description_thesis_english"></div>
         </div>
 
-        <btn-show-details :$siteLang="$siteLang"
-                          v-on:clicked="btnDetailClicked()"></btn-show-details>
 
-        <template v-if="$pdfLink">
-            <a class="button button--small button--revert button--arrow" v-if="this.$siteIsFr" :href="$pdfLink" target="_blank">fichier PDF</a>
-            <a class="button button--small button--revert button--arrow" v-else                :href="$pdfLink" target="_blank">PDF file</a>
-        </template>
+        <div class="mmd-buttons">
+            <btn-show-details :$siteLang="$siteLang"
+                              v-on:clicked="btnDetailClicked()"></btn-show-details>
+
+            <template v-if="$pdfLink">
+                <a class="button button--small button--revert button--arrow" v-if="this.$siteIsFr" :href="$pdfLink" target="_blank">fichier PDF</a>
+                <a class="button button--small button--revert button--arrow" v-else                :href="$pdfLink" target="_blank">PDF file</a>
+            </template>
+        </div>
     </section>
 </template>
 

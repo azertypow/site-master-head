@@ -1,7 +1,9 @@
 title: About
 
 pages:
-  template: team
+  template:
+    - team
+    - link
   num: zero
 
 files: false
@@ -28,24 +30,46 @@ fields:
     type: textarea
     required: true
 
-  etude_plan_french:
-    label: Plan d'étude et pédagogique - français
-    type: textarea
+#  etude_plan_french:
+#    label: Plan d'étude et pédagogique - français
+#    type: textarea
+#
+#  etude_plan_english:
+#    label: Plan d'étude et pédagogique - anglais
+#    type: textarea
 
-  etude_plan_english:
-    label: Plan d'étude et pédagogique - anglais
-    type: textarea
-
-  general_informations_french:
-    label: Informations générales - français
-    type: textarea
-    required: true
-
-  general_informations_english:
-    label: Informations générales - anglais
-    type: textarea
-    required: true
+#  general_informations_french:
+#    label: Informations générales - français
+#    type: textarea
+#    required: true
+#
+#  general_informations_english:
+#    label: Informations générales - anglais
+#    type: textarea
+#    required: true
 
   external_link_about:
     label: Liens externes supplémentaires
     type: textarea
+
+#  fruits:
+#    label: Give Me Fruits
+#    type: list
+#    placeholder: Add a new fruit
+
+  sortable:
+    label: Sortable
+    type:  sortable
+
+    sortable: true
+
+    layout:  base
+    variant: null
+
+    limit: false
+
+    parent: links
+    prefix: null
+
+    options:
+      limit: false

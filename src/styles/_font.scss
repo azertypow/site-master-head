@@ -17,6 +17,11 @@
   }
 }
 
+/*
+===============
+    EXTRA EXTRA LARGE
+===============
+*/
 @mixin font-xxl {
   font-family: "Suisse Neue", serif;
   font-size: $font-size--xxl;
@@ -27,7 +32,25 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   @include font-has-no-space-next-line;
+
+  strong {
+    font-weight: 900;
+  }
 }
+@mixin font-medium-xxl {
+  @include font-xxl;
+
+  font-size: $font-medium-size--xxl;
+  line-height: 4rem;
+  padding-top: 14px;
+  padding-bottom: 4px;
+}
+
+/*
+===============
+    EXTRA LARGE
+===============
+*/
 @mixin font-xl {
   font-family: "Klim Domaine Sans Text", sans-serif;
   font-size: $font-size--xl;
@@ -35,10 +58,33 @@
   line-height: 6rem;
   padding-top: 3px;
   padding-bottom: 15px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
   @include font-has-no-space-next-line;
+
+  strong {
+    font-weight: 700;
+  }
 }
+@mixin font-medium-xl {
+  @include font-xl;
+
+  font-size: $font-medium-size--xl;
+  padding-top: 16px;
+  padding-bottom: 2px;
+  line-height: 4rem;
+  font-weight: 500;
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+/*
+===============
+    LARGE
+===============
+*/
 @mixin font-l {
   font-family: "Klim Domaine Sans Text", sans-serif;
   font-size: $font-size--l;
@@ -46,10 +92,28 @@
   line-height: 4rem;
   padding-top: 14px;
   padding-bottom: 4px;
-  margin-top: 126px;
-  margin-bottom: 18px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   @include font-has-no-space-next-line;
+
+  strong {
+    font-weight: 700;
+  }
 }
+@mixin font-medium-l {
+  @include font-l;
+
+  font-size: $font-medium-size--l;
+  padding-top: 15px;
+  padding-bottom: 3px;
+  line-height: 3rem;
+}
+
+/*
+===============
+    MEDIUM
+===============
+*/
 @mixin font-m {
   font-family: "Klim Domaine Sans Text", sans-serif;
   font-size: $font-size--reg;
@@ -57,10 +121,20 @@
   line-height: 2rem;
   padding-top: 8px;
   padding-bottom: 10px;
-  margin-top: 54px;
-  margin-bottom: 18px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   @include font-has-no-space-next-line;
+
+  strong {
+    font-weight: 700;
+  }
 }
+
+/*
+===============
+    REGULAR
+===============
+*/
 @mixin font-reg {
   font-family: "Klim Domaine Sans Text", sans-serif;
   font-size: $font-size--reg;
@@ -68,13 +142,37 @@
   line-height: 2rem;
   padding-top: 8px;
   padding-bottom: 10px;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   @include font-has-no-space-next-line;
+
+  strong {
+    font-weight: 500;
+  }
 }
+@mixin font-medium-reg {
+  @include font-reg;
+  font-size: $font-small-size--reg;
+  padding-top: 11px;
+  padding-bottom: 7px;
+  line-height: 1.5rem;
+
+
+  @media (min-width: $break-extra-small) {
+    font-size: $font-medium-size--reg;
+    line-height: 2rem;
+  }
+}
+
+
+/*
+===============
+    SMALL
+===============
+*/
 @mixin font-s {
   font-family: "Klim Domaine Sans Text", sans-serif;
-  font-size: $font-s;
+  font-size: $font-size-small;
   font-weight: 600;
   line-height: 1rem;
   padding-top: 4px;
@@ -82,10 +180,20 @@
   margin-top: 0;
   margin-bottom: 0;
   @include font-has-no-space-next-line;
+
+  strong {
+    font-weight: 700;
+  }
 }
+
+/*
+===============
+    EXTRA LARGE
+===============
+*/
 @mixin font-xs {
   font-family: "Klim Domaine Sans Text", sans-serif;
-  font-size: $font-s;
+  font-size: $font-size-small;
   font-weight: 400;
   line-height: 1rem;
   padding-top: 4px;
@@ -93,4 +201,8 @@
   margin-top: 0;
   margin-bottom: 0;
   @include font-has-no-space-next-line;
+
+  strong {
+    font-weight: 500;
+  }
 }

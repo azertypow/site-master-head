@@ -12,10 +12,12 @@ fields:
   name_team:
     label: Name
     type: title
+    required: true
 
   position_team:
     label: Position
     type: text
+    required: true
 
   about_team:
     label: About

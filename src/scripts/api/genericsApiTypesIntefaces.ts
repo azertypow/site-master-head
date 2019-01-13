@@ -164,15 +164,16 @@ export interface IMetaThesis {
 export interface IAllContacts {
     about: IAbout;
     team: ITeamItem[];
+    links: ILinkItem[];
 }
 export interface IAbout {
     url: string;
     general_presentation_french: string;
     general_presentation_english: string;
-    etude_plan_french: string;
-    etude_plan_english: string;
-    general_informations_french: string;
-    general_informations_english: string;
+    // etude_plan_french: string;
+    // etude_plan_english: string;
+    // general_informations_french: string;
+    // general_informations_english: string;
     external_link_about: string;
 }
 export interface ITeamItem {
@@ -181,4 +182,8 @@ export interface ITeamItem {
     about_team: string;
     external_link_team: string;
     email_team: string;
+}
+export interface ILinkItem {
+    title: string,
+    link_value: string,
 }

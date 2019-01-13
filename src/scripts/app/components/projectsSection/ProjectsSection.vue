@@ -67,11 +67,12 @@
     @import "../../../../styles/font";
 
     .v-projects-section {
-        margin-top: 12em;
-        margin-bottom: 8em;
+        margin-top: 20em;
+        margin-bottom: 17em;
 
         &__header {
             @include column-container;
+            margin-bottom: 8rem;
 
             &__top {
                 @include column(1, 1);

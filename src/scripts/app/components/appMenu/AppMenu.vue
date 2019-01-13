@@ -176,10 +176,19 @@
         }
 
         .app-menu__button {
-            &.active {
-                cursor: default;
-                line-height: 0;
-                padding-bottom: 0;
+            border: transparent;
+            padding: 0;
+
+            &:disabled {
+                font-style: italic;
+            }
+        }
+
+        .contact-details {
+            display: none;
+
+            @media (min-width: $break-medium) {
+                display: inline;
             }
         }
 

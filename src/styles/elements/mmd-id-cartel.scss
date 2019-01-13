@@ -1,0 +1,19 @@
+.mmd-id-cartel {
+  .mmd-id-cartel_title {
+    margin: 0;
+  }
+
+  .mmd-id-cartel_desc {
+    margin: 0;
+  }
+
+  .mmd-id-cartel_contact {
+    @include font-xs;
+    margin-top: 1rem;
+  }
+
+  .mmd-id-cartel_link {
+    margin-right: $gutter-width;
+  }
+}
+

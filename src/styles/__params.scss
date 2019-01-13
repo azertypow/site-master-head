@@ -6,7 +6,15 @@ $font-size--xxl:    8em;
 $font-size--xl:     6.5em;
 $font-size--l:      4.25em;
 $font-size--reg:    2em;
-$font-s:            1.2em;
+$font-size-small:   1.2em;
+
+
+$font-medium-size--xxl:    4.2em;
+$font-medium-size--xl:     4em;
+$font-medium-size--l:      2.4em;
+$font-medium-size--reg:    1.5em;
+
+$font-small-size--reg:    1.2em;
 
 /* colors */
 $color-main-dark: black;
@@ -19,3 +27,10 @@ $gutter-width: $grid-line-height * 2;
 $max-width: 1280px;
 
 $footer-height: 4em;
+
+
+$break-large: 1260px;
+$break-medium: 1060px;
+$break-regular: 920px;
+$break-small: 800px;
+$break-extra-small: 550px;

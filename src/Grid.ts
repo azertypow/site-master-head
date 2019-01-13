@@ -24,14 +24,39 @@ export default class Grid implements IGrid {
     private _lineHeightGroupElement = document.createElementNS("http://www.w3.org/2000/svg", "g")
     private _xHeightGroupElement    = document.createElementNS("http://www.w3.org/2000/svg", "g")
 
+    constructor(elementForGrid: HTMLElement, settings: IGrid) {
+        this._elementForGrid = elementForGrid;
+        this._elementForGrid.appendChild(this._gridElement);
+
+        this.xHeight = settings.xHeight;
+        this.lineHeight = settings.lineHeight;
+        this.row = settings.row;
+        this.column = settings.column;
+
+        window.addEventListener("resize", () => {this.buildGrid()})
+
+
+        this.buildGrid();
+    }
+
     public toggleGrid() {
         const isDisable = this._gridElement.style.display === "none"
 
         if(isDisable) {
+            Grid.setGridVisibility("enable")
             this.buildGrid();
         } else {
+            Grid.setGridVisibility("disable")
             this._gridElement.style.display = "none";
         }
+    }
+
+    private static setGridVisibility(visibility: GridVisibility) {
+        localStorage.setItem("visible", visibility)
+    }
+
+    private static getGridVisibility() {
+        return localStorage.getItem("visible") as GridVisibility
     }
 
     public plus() {
@@ -57,25 +82,14 @@ export default class Grid implements IGrid {
         this._xHeightGroupElement.style.display = isDisable ? "block" : "none"
     }
 
-    constructor(elementForGrid: HTMLElement, settings: IGrid) {
-        this._elementForGrid = elementForGrid;
-        this._elementForGrid.appendChild(this._gridElement);
-
-        this.xHeight = settings.xHeight;
-        this.lineHeight = settings.lineHeight;
-        this.row = settings.row;
-        this.column = settings.column;
-
-        window.addEventListener("resize", () => {this.buildGrid()})
-
-        this.buildGrid();
-    }
 
     public buildGrid() {
-        this._generateGridElement()
-        this._generateGridColumns()
+        if(Grid.getGridVisibility() === "enable") {
+            this._generateGridElement()
+            this._generateGridColumns()
 
-        this._generateLineElements()
+            this._generateLineElements()
+        }
     }
 
     private _generateLineElements() {
@@ -313,3 +327,5 @@ export class Unit implements IUnit {
 
     public get stringValue():string {return this.value + this.unit}
 }
+
+type GridVisibility = "enable" | "disable"
