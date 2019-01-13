@@ -64,8 +64,10 @@
                                 <p  class="mmd-id-cartel_desc" v-if="team.about_team">{{team.about_team}}</p>
 
                                 <div class="mmd-id-cartel_contact">
-                                    <a class="mmd-id-cartel_link" v-if="team.external_link_team"    :href="team.external_link_team"  >{{cleanUrl(team.external_link_team)}}</a>
-                                    <a class="mmd-id-cartel_link" v-if="team.email_team"            :href="'mailto:' + team.email_team"          >{{team.email_team}}</a>
+                                    <a class="mmd-id-cartel_link" target="_blank" v-if="team.external_link_team"    :href="team.external_link_team"  >{{cleanUrl(team.external_link_team)}}</a>
+                                </div>
+                                <div class="mmd-id-cartel_contact">
+                                    <a class="mmd-id-cartel_link" target="_blank" v-if="team.email_team"            :href="'mailto:' + team.email_team"          >{{team.email_team}}</a>
                                 </div>
                             </div>
 

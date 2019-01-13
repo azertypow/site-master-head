@@ -3,7 +3,7 @@
         <header-with-text :data="data.header"></header-with-text>
 
         <main class="v-page-alumni__main">
-            <div class="v-page-alumni__filter" >
+            <div class="v-page-alumni__filter v-filter-background-white" >
                 <filter-setting
                         $textInsteadTagList="alumni"
                         :$dates="$alumniDates"
@@ -111,13 +111,35 @@
 
             &__alumni {
                 @include column-container;
+                margin-top: 5rem;
 
                 &__item {
-                    @include column(4, 12);
+                    @include column(1, 1);
                     @include gutter;
                     margin-top: 5em;
+
+                    @media (min-width: $break-small) {
+                        @include column(6, 12);
+
+                        &:nth-child(1),
+                        &:nth-child(2) {
+                            margin-top: 0;
+                        }
+                    }
+
+                    @media (min-width: $break-regular) {
+                        @include column(4, 12);
+
+                        &:nth-child(3) {
+                            margin-top: 0;
+                        }
+                    }
                 }
             }
         }
+    }
+
+    .v-page-alumni__filter {
+        @include gutter;
     }
 </style>

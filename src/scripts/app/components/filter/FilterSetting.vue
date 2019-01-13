@@ -301,6 +301,10 @@
                     z-index: 10;
                     display: inline-block;
 
+                    &:before {
+                        content: none;
+                    }
+
                     &:hover:after {
                         content: "";
                         position: absolute;
@@ -308,7 +312,7 @@
                         left: 0;
                         width: 100%;
                         height: 1px;
-                        background: white;
+                        background: currentColor;
                     }
                 }
                 .list__break {
@@ -373,5 +377,11 @@
             }
         }
 
+    }
+
+    .v-filter-background-white {
+        .v-filter-setting__container {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
     }
 </style>

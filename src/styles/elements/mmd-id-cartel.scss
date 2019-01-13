@@ -12,6 +12,10 @@
     margin-top: 1rem;
   }
 
+  .mmd-id-cartel_contact + .mmd-id-cartel_contact {
+      margin-top: 0;
+  }
+
   .mmd-id-cartel_link {
     margin-right: $gutter-width;
   }

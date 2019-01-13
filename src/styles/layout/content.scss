@@ -22,3 +22,26 @@
     @include font-medium-reg;
   }
 }
+
+.mmd-content-small {
+  @include remove-first-and-last-vertical-margin;
+
+  h1 {
+    @include font-medium-xl;
+  }
+
+  h2 {
+    @include font-medium-l;
+  }
+
+  h3 {
+    @include font-medium-reg;
+  }
+
+  p,
+  ul,
+  ol {
+    @include font-medium-reg;
+    font-size: $font-small-size--reg !important;
+  }
+}

@@ -1,32 +1,20 @@
 <template>
-    <section class="v-alumni">
+    <div class="mmd-content mmd-id-cartel v-alumni">
+        <h4 class="mmd-id-cartel_title">{{this.$alumniData.prenom_alumni}} {{this.$alumniData.nom_alumni}}</h4>
 
-        <div class="v-alumni__header">
-            <h3 class="v-alumni__header__title">
-                {{this.$alumniData.prenom_alumni}} {{this.$alumniData.nom_alumni}}
-            </h3>
-            <div class="v-alumni__header__date">
-                {{this.$alumniData.year}}
-            </div>
+        <h6>{{this.$alumniData.year}}</h6>
+
+        <h5 class="mmd-id-cartel_post" v-if="this.$alumniData.actual_post_alumni">{{this.$alumniData.actual_post_alumni}}</h5>
+
+        <div  class="mmd-id-cartel_desc mmd-content-small v-alumni__add-link" v-if="this.$alumniData.external_link_alumni" v-html="this.$alumniData.external_link_alumni"></div>
+
+        <div class="mmd-id-cartel_contact">
+            <a class="mmd-id-cartel_link"   target="_blank"   v-if="this.$alumniData.website_perso_alumni"  :href="this.$alumniData.website_perso_alumni"            >{{cleanUrl(this.$alumniData.website_perso_alumni)}}</a>
         </div>
-
-        <div class="v-alumni__content">
-            <h4 class="v-alumni__content__current-post">
-                {{this.$alumniData.actual_post_alumni}}
-            </h4>
-
-            <p class="v-alumni__content__site">
-                <a :href="cleanUrl(this.$alumniData.website_perso_alumni)" target="_blank">{{cleanUrl(this.$alumniData.website_perso_alumni)}}</a>
-            </p>
-
-            <p class="v-alumni__content__mail">
-                <a :href="'mailto:' + this.$alumniData.email_perso_alumni">{{this.$alumniData.email_perso_alumni}}</a>
-            </p>
-
-            <div class="v-alumni__content__text" v-html="this.$alumniData.external_link_alumni">
-            </div>
+        <div class="mmd-id-cartel_contact">
+            <a class="mmd-id-cartel_link"   target="_blank"   v-if="this.$alumniData.email_perso_alumni"    :href="'mailto:' + this.$alumniData.email_perso_alumni"  >{{this.$alumniData.email_perso_alumni}}</a>
         </div>
-    </section>
+    </div>
 </template>
 
 <script lang="ts">
@@ -47,27 +35,5 @@
     @import "../../../../styles/_grid";
 
     .v-alumni {
-        overflow: hidden;
-
-        &__header {
-            &__date {
-                font-size: 0.7em;
-            }
-
-            &__title {
-                font-size: 2em;
-                margin: 0;
-            }
-        }
-
-        &__content {
-            @include remove-first-and-last-vertical-margin;
-            padding-left: 20px;
-            margin-top: 1rem;
-
-            &__text {
-                @include remove-first-and-last-vertical-margin;
-            }
-        }
     }
 </style>
