@@ -38,7 +38,11 @@ button,
   }
 
   .mmd-buttons & + & {
-    margin-left: $gutter-width;
+    margin-left: $gutter-width / 2;
+
+    @media (min-width: $break-extra-small) {
+      margin-left: $gutter-width;
+    }
   }
 }
 

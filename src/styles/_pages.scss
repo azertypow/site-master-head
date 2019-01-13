@@ -13,9 +13,17 @@
   }
 
   &__main {
-    @include column(10, 12);
+    @include column(1, 1);
     @include gutter;
     @include remove-first-and-last-vertical-margin;
+
+    @media (min-width: $break-regular) {
+      @include column(22, 24);
+    }
+
+    @media (min-width: $break-large) {
+      @include column(10, 12);
+    }
   }
 
   &__footer {

@@ -7,9 +7,13 @@
 }
 
 .v-images-list__item {
-  margin-right: $gutter-width;
+  margin-right: $gutter-width / 2;
   height: 3rem;
   width: 6rem;
+
+  @media (min-width: $break-extra-small) {
+    margin-right: $gutter-width;
+  }
 }
 
 .v-images-list__item__img {
