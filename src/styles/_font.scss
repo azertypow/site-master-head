@@ -24,26 +24,51 @@
 */
 @mixin font-xxl {
   font-family: "Suisse Neue", serif;
-  font-size: $font-size--xxl;
   font-weight: 800;
-  line-height: 8rem;
-  padding-top: 12px;
-  padding-bottom: 6px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+
+  font-size: $font-medium-size--l;
+  line-height: 2rem;
+  padding-top: 6px;
+  padding-bottom: 12px;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
   @include font-has-no-space-next-line;
 
   strong {
     font-weight: 900;
   }
+
+  @media(min-width: $break-extra-small) {
+    font-size: $font-medium-size--xl;
+    line-height: 4rem;
+    padding-top: 16px;
+    padding-bottom: 3px;
+  }
+
+  @media(min-width: $break-small) {
+    font-size: $font-size--xl;
+    padding-top: 4px;
+    line-height: 6rem;
+    padding-bottom: 14px;
+  }
+
+  @media(min-width: $break-regular) {
+    font-size: $font-size--xxl;
+    line-height: 8rem;
+    padding-top: 12px;
+    padding-bottom: 6px;
+  }
 }
 @mixin font-medium-xxl {
   @include font-xxl;
 
-  font-size: $font-medium-size--xxl;
-  line-height: 4rem;
-  padding-top: 14px;
-  padding-bottom: 4px;
+  @media(min-width: $break-small) {
+    font-size: $font-medium-size--xxl;
+    line-height: 4rem;
+    padding-top: 14px;
+    padding-bottom: 4px;
+  }
 }
 
 /*
@@ -53,30 +78,53 @@
 */
 @mixin font-xl {
   font-family: "Klim Domaine Sans Text", sans-serif;
-  font-size: $font-size--xl;
   font-weight: 600;
-  line-height: 6rem;
-  padding-top: 3px;
-  padding-bottom: 15px;
-  margin-top: 5rem;
-  margin-bottom: 1rem;
+
+  font-size: $font-medium-size--l;
+  line-height: 2rem;
+  padding-top: 14px;
+  padding-bottom: 4px;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
   @include font-has-no-space-next-line;
 
   strong {
     font-weight: 700;
   }
+
+  @media(min-width: $break-extra-small) {
+    margin-top: 3rem;
+  }
+
+  @media(min-width: $break-small) {
+    font-size: $font-medium-size--xl;
+    padding-top: 16px;
+    line-height: 4rem;
+    padding-bottom: 3px;
+  }
+
+  @media(min-width: $break-regular) {
+    font-size: $font-size--xl;
+    padding-top: 3px;
+    line-height: 6rem;
+    padding-bottom: 15px;
+    margin-top: 5rem;
+  }
 }
 @mixin font-medium-xl {
   @include font-xl;
 
-  font-size: $font-medium-size--xl;
-  padding-top: 16px;
-  padding-bottom: 2px;
-  line-height: 4rem;
-  font-weight: 500;
+  @media(min-width: $break-small) {
+    font-size: $font-medium-size--xl;
+    padding-top: 16px;
+    padding-bottom: 2px;
+    line-height: 4rem;
+    font-weight: 500;
 
-  strong {
-    font-weight: 600;
+    strong {
+      font-weight: 600;
+    }
   }
 }
 
@@ -87,26 +135,50 @@
 */
 @mixin font-l {
   font-family: "Klim Domaine Sans Text", sans-serif;
-  font-size: $font-size--l;
-  font-weight: 600;
-  line-height: 4rem;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+
+  font-size: $font-medium-size--reg;
+  line-height: 2rem;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  margin-top: 2rem;
+  margin-bottom: 0;
+
+  font-weight: 500;
   @include font-has-no-space-next-line;
+
 
   strong {
     font-weight: 700;
+  }
+
+  @media(min-width: $break-extra-small) {
+    font-size: $font-size--reg;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  @media(min-width: $break-small) {
+    font-weight: 600;
+    font-size: $font-medium-size--l;
+    line-height: 3rem;
+    padding-top: 14px;
+    padding-bottom: 4px;
+  }
+
+  @media(min-width: $break-regular) {
+    font-size: $font-size--l;
+    line-height: 4rem;
   }
 }
 @mixin font-medium-l {
   @include font-l;
 
-  font-size: $font-medium-size--l;
-  padding-top: 15px;
-  padding-bottom: 3px;
-  line-height: 3rem;
+  @media(min-width: $break-small) {
+    font-size: $font-medium-size--l;
+    padding-top: 15px;
+    padding-bottom: 3px;
+    line-height: 3rem;
+  }
 }
 
 /*
@@ -117,16 +189,34 @@
 @mixin font-m {
   font-family: "Klim Domaine Sans Text", sans-serif;
   font-size: $font-size--reg;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 2rem;
   padding-top: 8px;
   padding-bottom: 10px;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   @include font-has-no-space-next-line;
 
   strong {
     font-weight: 700;
+  }
+
+  @media(min-width: $break-small) {
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+@mixin font-medium-m {
+  @include font-m;
+  font-size: $font-small-size--reg;
+  padding-top: 11px;
+  padding-bottom: 7px;
+  line-height: 1.5rem;
+
+  @media (min-width: $break-extra-small) {
+    font-size: $font-medium-size--reg;
+    line-height: 2rem;
   }
 }
 
@@ -137,17 +227,31 @@
 */
 @mixin font-reg {
   font-family: "Klim Domaine Sans Text", sans-serif;
-  font-size: $font-size--reg;
+
+  font-size: $font-size-small;
+  line-height: 1.5rem;
+  padding-top: 11px;
+  padding-bottom: 7px;
+  margin-top: 0;
+  margin-bottom: 0;
+
   font-weight: 400;
-  line-height: 2rem;
-  padding-top: 8px;
-  padding-bottom: 10px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   @include font-has-no-space-next-line;
 
   strong {
     font-weight: 500;
+  }
+
+  @media(min-width: $break-small) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media(min-width: $break-extra-small) {
+    font-size: $font-size--reg;
+    line-height: 2rem;
+    padding-top: 8px;
+    padding-bottom: 10px;
   }
 }
 @mixin font-medium-reg {

@@ -13,6 +13,10 @@
     @include font-medium-l;
   }
 
+  h4 {
+    @include font-medium-m;
+  }
+
   p {
     @include font-medium-reg;
   }
@@ -36,6 +40,10 @@
 
   h3 {
     @include font-medium-reg;
+  }
+
+  h4 {
+    @include font-medium-m;
   }
 
   p,

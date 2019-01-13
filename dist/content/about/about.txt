@@ -25,7 +25,7 @@ Sed ut perspiciatis, **3 axes sont principaux** omnis iste natus error sit volup
 
 ### En détail
 
-#### electronique
+#### Electronique
 
 But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
 
@@ -95,4 +95,4 @@ Sortable2: yann-longchamp, nicolas-baldran, lysianne-lechot-hirt
 
 ----
 
-Sortable: link-183zcul
+Sortable: link-183zcul, head, head-media-design, twitter, vimeo
