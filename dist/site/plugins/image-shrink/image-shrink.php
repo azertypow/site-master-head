@@ -13,9 +13,9 @@ kirby()->hook([
 
         try {
             if($file->type() == 'image') {
-                foreach ($arrayOfImageParameters as $imageParameter) {
-                    generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages);
-                }
+//                foreach ($arrayOfImageParameters as $imageParameter) {
+//                    generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages);
+//                }
 
 //                $file->copy($file->dir() . '/'. $folderNameForGeneratedImages .'/' . $file->name() . "." .$file->extension());
 
@@ -49,8 +49,14 @@ function generatedImageSize($file, $imageParameter, $folderNameForGeneratedImage
 }
 
 function resizeOriginalImageAndSaveIt($file, $folderNameForGeneratedImages) {
+    $folderPathForGeneratedImages = $file->dir() . '/'. $folderNameForGeneratedImages .'/';
+
+    if(! is_dir($folderPathForGeneratedImages)) {
+        mkdir($folderPathForGeneratedImages);
+    }
+
     // save originalImage
-    $file->copy($file->dir() . '/'. $folderNameForGeneratedImages .'/' . $file->name() . "." .$file->extension());
+    $file->copy($folderPathForGeneratedImages . $file->name() . "." .$file->extension());
 
 
 

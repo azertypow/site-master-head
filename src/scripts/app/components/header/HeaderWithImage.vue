@@ -2,9 +2,9 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
 <template>
     <section class="header-with-image app-header">
         <div class="app-header__background-container">
-            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/3-project-b/4bd.jpg');                              transform: translateX(-145%)    translateY(-45%) translateZ(130px) rotateY(5deg)    rotateZ(-10deg);"></div>
-            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/1-autre-projet/anna-popovic-56025-unsplash.jpg');   transform: translateX(-50%)     translateY(-50%) translateZ(125px) rotateY(-4deg)   rotateZ(7deg);"></div>
-            <div class="app-header__image" style="background-image: url('http://localhost:8000/content/projects/5-2/annie-spratt-51434-unsplash.jpg');              transform: translateX(45%)      translateY(-50%) translateZ(120px) rotateY(5deg)    rotateZ(-4deg);"></div>
+            <div class="app-header__image" style="background-image: url('/content/projects/5-bootcamp/md_bootcamp-2018head-raphaellemueller-11.jpg');                              transform: translateX(-145%)    translateY(-45%) translateZ(130px) rotateY(5deg)    rotateZ(-10deg);"></div>
+            <div class="app-header__image" style="background-image: url('/content/projects/5-bootcamp/md_bootcamp-2018head-raphaellemueller-8-low.jpg');   transform: translateX(-50%)     translateY(-50%) translateZ(125px) rotateY(-4deg)   rotateZ(7deg);"></div>
+            <div class="app-header__image" style="background-image: url('/content/projects/5-bootcamp/md_bootcamp-2018head-raphaellemueller-23-low.jpg');              transform: translateX(45%)      translateY(-50%) translateZ(120px) rotateY(5deg)    rotateZ(-4deg);"></div>
         </div>
         <div class="app-header__text-container">
             <div class="app-header__text">

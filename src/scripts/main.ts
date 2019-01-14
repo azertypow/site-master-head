@@ -1,6 +1,5 @@
 import {getAllAlumni, getAllContact, getAllProjects, getAllThesis} from "./apiRequestes"
 import {createVueApplication, IMainVue} from "./app/createVueApplication"
-import Grid, {GridUi, IGrid, UNIT} from "../Grid"
 
 console.log("%c=== head media design <3 ===", "color: hotpink")
 
@@ -161,33 +160,35 @@ function loadApplicationData(vueApplication: IMainVue) {
 
 // GRID
 
-const gridSettings: IGrid = {
-    column: {
-        gutterOnOutside: "half gutter",
-        gutterWidth: {
-            unit: UNIT.PIXEL,
-            value: 36,
-        },
-        numberOfColumn: 12,
-        offset: "center",
-        totalWidth: {
-            value: 100,
-            unit: UNIT.PERCENT,
-        }
-    },
-    lineHeight: 36/2,
-    row: false,
-    xHeight: 15,
-}
-
-// medium
-gridSettings.xHeight = 12
-
-const gridUi = new GridUi([
-    new Grid(document.querySelector(".v-page-thesis")    as HTMLElement, gridSettings),
-    new Grid(document.querySelector(".v-page-home")      as HTMLElement, gridSettings),
-    new Grid(document.querySelector(".v-page-projects")  as HTMLElement, gridSettings),
-    new Grid(document.querySelector(".v-page-alumni")    as HTMLElement, gridSettings),
-    new Grid(document.querySelector(".v-page-contact")   as HTMLElement, gridSettings),
-    // new Grid(document.querySelector("body")   as HTMLElement, gridSettings),
-]);
+// import Grid, {GridUi, IGrid, UNIT} from "../Grid"
+//
+// const gridSettings: IGrid = {
+//     column: {
+//         gutterOnOutside: "half gutter",
+//         gutterWidth: {
+//             unit: UNIT.PIXEL,
+//             value: 36,
+//         },
+//         numberOfColumn: 12,
+//         offset: "center",
+//         totalWidth: {
+//             value: 100,
+//             unit: UNIT.PERCENT,
+//         }
+//     },
+//     lineHeight: 36/2,
+//     row: false,
+//     xHeight: 15,
+// }
+//
+// // medium
+// gridSettings.xHeight = 12
+//
+// const gridUi = new GridUi([
+//     new Grid(document.querySelector(".v-page-thesis")    as HTMLElement, gridSettings),
+//     new Grid(document.querySelector(".v-page-home")      as HTMLElement, gridSettings),
+//     new Grid(document.querySelector(".v-page-projects")  as HTMLElement, gridSettings),
+//     new Grid(document.querySelector(".v-page-alumni")    as HTMLElement, gridSettings),
+//     new Grid(document.querySelector(".v-page-contact")   as HTMLElement, gridSettings),
+//     // new Grid(document.querySelector("body")   as HTMLElement, gridSettings),
+// ]);

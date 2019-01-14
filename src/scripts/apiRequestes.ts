@@ -63,8 +63,8 @@ export async function getAllContact(): Promise<IAllContacts> {
 export function getJsonData(url: string) {
     return new Promise((resolve, reject) => {
 
-        //@todo remove time connection simulation
-        setTimeout(() => { // time connection simulation
+        // //@todo remove time connection simulation
+        // setTimeout(() => { // time connection simulation
 
             const request = new XMLHttpRequest()
 
@@ -86,6 +86,6 @@ export function getJsonData(url: string) {
 
             request.send(null)
 
-        }, 1000) // time connection simulation
+        // }, 1000) // time connection simulation
     })
 }
