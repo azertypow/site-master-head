@@ -57,7 +57,26 @@ Students:
 
 ----
 
-Text-bandeau-french: Pour choisir le max-width: 860px (l1), j’ai simplement regardé la taille que la fenêtre avait au moment ou le 700px prenait 100% de la place et je le remplace par 100 (l8). J’augmente aussi un peu la vitesse de l’animation en baissant la durée pour éviter de s’endormir trop dessus. Bilan, l’animation est parfaite au dessus d’un écran à 860px et un peu saccadée au niveau de la boucle mais relativement visionnable en dessous.
+Text-bandeau-french: 
+
+Pour choisir le max-width: 860px (l1),
+(image: closeup.jpg)
+j’ai simplement
+regardé la taille
+
+(image: annie.jpg)(image: closeup.jpg)(image: closeup.jpg)
+
+
+
+
+
+
+(image: 26198235_2074473539235321_4471254529681552082_o.jpg)
+
+
+(image: 26198235_2074473539235321_4471254529681552082_o.jpg)
+
+que la fenêtre avait au moment ou le 700px prenait 100% de la place et je le remplace par 100 (l8). J’augmente aussi un peu la vitesse de l’animation en baissant la durée pour éviter de s’endormir trop dessus. Bilan, l’animation est parfaite au dessus d’un écran à 860px et un peu saccadée au niveau de la boucle mais relativement visionnable en dessous.
 
 ----
 

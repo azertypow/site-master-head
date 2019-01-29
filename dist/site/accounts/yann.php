@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
-  - projects/1
+  - projects/project-b
+  - projects/project-a
   - projects/bootcamp
   - about
   - about/lysianne-lechot-hirt
-  - about/links/head-media-design

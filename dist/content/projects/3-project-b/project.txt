@@ -59,7 +59,7 @@ Students:
 
 ----
 
-Text-bandeau-french: francais ok (link: google.fr text: google)
+Text-bandeau-french: (image: 2bd.jpg)francais ok(link: google.fr text: google)  (image: 4bd.jpg)
 
 ----
 
