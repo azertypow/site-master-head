@@ -1,0 +1,31 @@
+Name-team: Douglas Edric Stanley
+
+----
+
+Position-team: Professeur
+
+----
+
+About-team: 
+
+Douglas Edric Stanley is an American-born artist working principally in the field of new media where he explores the complex intersections of algorithms and æsthetics. At once artist, designer, curator, developer, and theoretician, he documents the means by which various disciplines are progressively being transformed by the algorithmisation of the world. Active in the scene of video games and experimental forms of play, he co-founded with Antonin Fourneau the hydra-monster otherwise known as ENIAROF. His current research is concerned with writing systems and the manner in which playable non-linear narratives can model the real.
+
+Douglas Edric Stanley has organised numerous workshops related to creative coding and experimental game design for museums, non-profits, universities, and art schools. As an artist, he has participated in several exhibitions related to digital art.
+
+- @abstractmachine
+
+- http://abstractmachine.net
+
+- http://eniarof.com
+
+----
+
+External-link-team: 
+
+----
+
+Email-team: douglas.stanley@hesge.ch
+
+----
+
+Title: Douglas Edric Stanley

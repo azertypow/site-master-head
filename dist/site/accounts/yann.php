@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
-  - projects/project-b
-  - projects/project-a
-  - projects/bootcamp
-  - about
-  - about/lysianne-lechot-hirt
+  - about/douglas-edric-stanley
+  - about/gordan-savicic
+  - about/daniel-sciboz
+  - about/camille-bechet-scherrer
+  - about/nicolas-nova

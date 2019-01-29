@@ -1,0 +1,25 @@
+Name-team: Nicolas Nova
+
+----
+
+Position-team: Professeur HES associé
+
+----
+
+About-team: 
+
+Nicolas Nova est Professeur Associé à la Haute-Ecole d'Art et de Design (HEAD – Genève) où il enseigne l'anthropologie des cultures numériques, l’ethnographie et la recherche en design. Il est également co-fondateur du Near Future Laboratory, une agence de prospective et d’innovation impliqué dans des projets de design fiction. Il s'intéresse aux questions d'usages et de détournement des objets techniques dans le champ du numérique avec un point de vue socio-anthropologique. Titulaire d’un doctorat en sciences de la société (Université de Genève) et d'un autre en informatique (Ecole Polytechnique Fédérale de Lausanne). Il a été professeur invité à Art Center College of Design (Pasadena, California) et Politecnico di Milano (Italie).
+
+Nicolas Nova is Associate Professor at the Geneva School of Arts and Design  (HEAD – Genève) and the co-founder of the Near Future Laboratory, a futures research agency based in Europe and California focused on design fiction. His work lies at the intersection of digital anthropology, interaction design and design research. He is interested in observing and documenting digital and new media practices, in order to create new computing experiences centered around people’s needs, cultures and contexts. He holds a PhD in Social Sciences from the University of Geneva, and another one in Computer Science (Human-Computer Interaction) from the Swiss Institute of Technology (EPFL, Lausanne). He was previously a visiting professor at Politecnico di Milano (Italy) and a visiting researcher at the Art Center College of Design (Pasadena, CA)
+
+----
+
+External-link-team: 
+
+----
+
+Email-team: nicolas.nova@hesge.ch
+
+----
+
+Title: Nicolas Nova

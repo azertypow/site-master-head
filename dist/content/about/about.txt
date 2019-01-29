@@ -4,48 +4,20 @@ Title: Contact & About
 
 General-presentation-french: 
 
-# Master media design, Genève
+# Master en Media Design
 
-En introduction, le passage classique «Lorem ipsum dolor sit amet…» est attribué à un remixage du texte du philosophe romain Cicéron 45 de C. De Finibus Bonorum et Malorum («Sur les extrêmes du Bien et du Mal»). Plus précisément, on pense que le passage provient des sections 1.10.32 à 33 de son texte, dont la partie la plus notable est extraite ci-dessous
+#### Concevoir les expériences connectées de demain
 
-## Présentation générale
+Dans ce Master, vous explorez le futur du design d’interaction par la création de nouveaux types de produits, d’expériences et d’interfaces. A l’issue du programme, vous maitriserez les différentes facettes de la profession de designer d’interaction : pratiques, ludiques ou expérimentales.
 
- Selon le professeur latin Richard McClintock, l'homme reconnu pour avoir découvert les racines de Lorem Ipsum, il est probable qu'au Moyen Âge, un typographe a brouillé une partie de De Finibus de Cicéron afin de fournir un texte d'espace libre pour mettre en forme des polices variées pour un spécimen. Mais ce n'était que le début.
+Dans cette formation, vous imaginez et vous créez des prototypes d’objets connectés, des services et des expériences interactives de la vie  de tous les jours. Cet objectif repose sur une compréhen­sion fine des enjeux de design d’expérience utilisateur, mais aussi sur la maîtrise des processus de conception et de prototypage du design de produits et du design d’infor­mation.
 
-### Design d'interraction
+En devenant designer d’interaction, vous appren­drez aussi à maitriser les enjeux éthiques et culturels des sociétés de demain afin d’anticiper de façon inventive l’impact des technologies numériques sur notre quotidien.
 
-Le design est une activité de création souvent à vocation industrielle ou commerciale, pouvant s’orienter vers les milieux sociaux, politiques, scientifiques et environnementaux. Le but premier du design est d’inventer, d’améliorer ou de faciliter l’usage ou le processus d’un élément ayant à interagir avec un produit ou un service matériel ou virtuel. Un des rôles du design est de répondre à des besoins, de résoudre des problèmes, de proposer des solutions nouvelles ou d’explorer des possibilités pour améliorer la qualité de vie des êtres humains, que ce soit dans les sociétés industrielles occidentales (où le design est né) ou dans les pays en voie de développement (design humanitaire). La pluridisciplinarité est au cœur du travail du designer, dont la culture se nourrit aussi bien des arts, des techniques, des sciences humaines ou des (link: https://fr.wikipedia.org/wiki/Science_de_la_nature text: sciences de la nature popup: yes).
+Durant la première année, vos apprentissages se focalisent sur les outils et les compétences techniques nécessaires à la création de nouvelles applications des technologies actuelles : ateliers de conception de prototypes interactifs centrés sur l’hu­main, création d’expériences immersives et élaboration de scénarios prospectifs. Une partie des ateliers se déroule en collaboration avec des professionnels, des scientifiques, des ingénieurs et des artistes qui vont encadrer vos travaux mais aussi former la base de votre futur réseau d’insertion profes­sionnelle. Des séminaires théoriques et d’initiation aux méthodes de recherche complémentent ce programme.
+La deuxième année est centrée sur la réalisation de votre projet de diplôme Master qui comprend un mémoire de recherche et un projet pratique. Encadré par un tuteur, vous mènerez ce travail de la phase exploratoire à la phase de production. 
 
-### Design suisse
-
-Aldus Corporation, qui a plus tard fusionné avec Adobe Systems, a contribué à amener Lorem Ipsum à l'ère de l'information avec son logiciel phare 1985 Aldus PageMaker. Le programme était livré avec du texte factice Lorem Ipsum pour aider à la mise en page du contenu, et d'autres traitements de texte comme Microsoft Word a suivi. Plus récemment, la croissance de la conception web a contribué à la prolifération de Lorem Ipsum à travers l'Internet comme un espace réservé pour la mise en place de sites Web et blogs et dans certains cas le contenu final (ne vous laissez pas être!).
-
-## Plan d'étude
-Sed ut perspiciatis, **3 axes sont principaux** omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] **atelier à disposition** eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
-
-### En détail
-
-#### Electronique
-
-But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
-
-#### UI/UX
-
-But I must explain to you how all this mistaken idea of denouncing of a pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain.
-
-## Informations générales
-
-Le design est une activité de création souvent à vocation industrielle ou commerciale, pouvant s’orienter vers les milieux sociaux, politiques, scientifiques et environnementaux:
-
-- no one rejects, dislikes, or avoids pleasure itself, because it is pleasure;
-- who has any right to find fault with a man who chooses;
-- homme reconnu pour avoir découvert les racines de Lorem Ipsum.
-
-Le but premier du design est d’inventer, d’améliorer ou de faciliter l’usage ou le processus d’un élément ayant à interagir avec un produit ou un service matériel ou virtuel. Un des rôles du design est de répondre à des besoins, de résoudre des problèmes, de proposer des solutions nouvelles ou d’explorer des possibilités pour améliorer la qualité de vie des êtres humains, que ce soit dans les sociétés industrielles occidentales (où le design est né) ou dans les pays en voie de développement (design humanitaire). La pluridisciplinarité est au cœur du travail du designer, dont la culture se nourrit aussi bien des arts, des techniques, des sciences humaines ou des (link: https://fr.wikipedia.org/wiki/Science_de_la_nature text: sciences de la nature popup: yes).
-
-##### Traduction par H. Rackham
-
-###### Letraset, une société de lettrage française, a popularisé le passage de Lorem Ipsum dans les années 1960 avec leurs feuilles de transfert à sec.
+Vous êtes diplômé-e en design d’interaction, design industriel, communication visuelle ou en informatique : ce Master vous ouvre à des perspectives de carrière dans les industries créatives, la re­cherche ou l’entrepreneuriat.
 
 ----
 

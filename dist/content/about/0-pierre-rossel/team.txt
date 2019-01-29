@@ -1,0 +1,27 @@
+Name-team: Pierre Rossel
+
+----
+
+Position-team: Professeur
+
+----
+
+About-team: 
+
+Enseignant en bachelor et master. Ingénieur en électronique et postgrade en informatique technique.
+
+En 2002, Pierre Rossel rejoint la Haute école d’arts appliqués, actuellement la Haute école d’art et de design. D’abord dans le cadre du postgrade Immédiat et de la filière de Communication Visuelle, puis du master Media Design. A mi-temps, il enseigne la programmation et l'électronique, participe à la réalisation de mandats, de projets de recherche appliquée et développement. Il offre également un soutien technique aux diplômants et développe des projets d'étudiants pour les expositions.
+
+Pendant son autre mi-temps, il travaille dans l’entreprise Prossel Software qu’il a créé en 2001 pour offrir des services de programmation. Son activité principale est le développement d’applications mobiles et de sites Internet avec bases de données. Ses clients sont principalement des PME, mais aussi des particuliers et de grandes organisations internationales.
+
+----
+
+External-link-team: 
+
+----
+
+Email-team: pierre.rossel@hesge.ch
+
+----
+
+Title: Pierre Rossel

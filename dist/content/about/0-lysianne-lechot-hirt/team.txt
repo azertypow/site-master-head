@@ -6,7 +6,7 @@ Position-team: Responsable de la coordination de l'enseignement
 
 ----
 
-About-team: description
+About-team: 
 
 ----
 
