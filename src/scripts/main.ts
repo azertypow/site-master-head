@@ -8,8 +8,8 @@ let app = createVueApplication({
         home: {
             header: {
                 title: {
-                    fr: "HEAD—genève master<br>media design",
-                    en: "HEAD—geneva master<br>media design"
+                    fr: "master<br>media design",
+                    en: "master<br>media design"
                 },
                 images: [
                     "",
@@ -36,8 +36,8 @@ let app = createVueApplication({
         alumni: {
             header: {
                 title: {
-                    fr: "HEAD—<br>media design",
-                    en: "HEAD—<br>media design"
+                    fr: "master<br>media design",
+                    en: "master<br>media design"
                 },
                 subtitle: {
                     fr: "alumni",
@@ -52,8 +52,8 @@ let app = createVueApplication({
         thesis: {
             header: {
                 title: {
-                    fr: "HEAD—<br>media design",
-                    en: "HEAD—<br>media design"
+                    fr: "master<br>media design",
+                    en: "master<br>media design"
                 },
                 subtitle: {
                     fr: "mémoires",
@@ -68,8 +68,8 @@ let app = createVueApplication({
         contact: {
             header: {
                 title: {
-                    fr: "HEAD—<br>media design",
-                    en: "HEAD—<br>media design"
+                    fr: "master<br>media design",
+                    en: "master<br>media design"
                 },
                 subtitle: {
                     fr: "contactes et informations",
