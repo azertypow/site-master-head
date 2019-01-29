@@ -22,10 +22,10 @@
 }
 
 .app-header__image {
-  width: 500px;
-  height: 500px;
+  width: 40vw;
+  height: 50vh;
   position: absolute;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   top: 50%;
@@ -37,6 +37,7 @@
   @include container-content-centred;
   @include site-max-width;
   height: 100%;
+  pointer-events: none !important;
 }
 
 .app-header__text {
