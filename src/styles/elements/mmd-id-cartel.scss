@@ -5,11 +5,17 @@
 
   .mmd-id-cartel_desc {
     margin: 0;
+    font-size: 1.25em;
+    line-height: 1.5rem;
   }
 
   .mmd-id-cartel_contact {
     @include font-xs;
     margin-top: 1rem;
+
+  }
+  .mmd-id-cartel_post + .mmd-id-cartel_contact {
+    margin-top: 0;
   }
 
   .mmd-id-cartel_contact + .mmd-id-cartel_contact {
