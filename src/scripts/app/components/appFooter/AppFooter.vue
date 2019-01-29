@@ -20,14 +20,16 @@
                 </h6>
             </div>
             <div class="v-app-footer__right">
-                <img    v-if="$backgroundIsDark"
-                        class="mmd-logo mmd-logo--small"
-                        src="../../../../images/hes-so_geneve_white.png"
-                        alt="hesso logo">
-                <img    v-else
-                        class="mmd-logo mmd-logo--small"
-                        src="../../../../images/hes-so_geneve_black.png"
-                        alt="hesso logo">
+                <a href="https://www.hesge.ch/head/" class="mmd-link--no-underline" target="_blank">
+                    <img    v-if="$backgroundIsDark"
+                            class="mmd-logo mmd-logo--small"
+                            src="../../../../images/head-logo/logo-head-white.png"
+                            alt="hesso logo">
+                    <img    v-else
+                            class="mmd-logo mmd-logo--small"
+                            src="../../../../images/head-logo/logo-head-black.png"
+                            alt="hesso logo">
+                </a>
             </div>
             <div class="v-app-footer__bottom">
                 <h6>
