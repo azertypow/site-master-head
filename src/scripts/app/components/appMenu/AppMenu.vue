@@ -7,31 +7,31 @@
                         class="app-menu__button button--small"
                         @click="goToPageContact"
                         :disabled="$currentPageIs_contact"
-                >about<span class="contact-details"> / contact</span></button>
+                ><template v-if="siteIsFr">à propos</template><template v-else>about</template><span class="contact-details"> / contacts</span></button>
 
                 <button id="app-menu-thesis"
                         class="app-menu__button button--small"
                         @click="goToPageThesis"
                         :disabled="$currentPageIs_thesis"
-                >thesis</button>
+                ><template v-if="siteIsFr">mémoires</template><template v-else>thesis</template></button>
 
                 <button id="app-menu-home"
                         class="app-menu__button button--small"
                         @click="goToPageHome"
                         :disabled="$currentPageIs_home"
-                >home</button>
+                ><template v-if="siteIsFr">accueil</template><template v-else>home</template></button>
 
                 <button id="app-menu-projects"
                         class="app-menu__button button--small"
                         @click="goToPageProject"
                         :disabled="$currentPageIs_project"
-                >projects</button>
+                ><template v-if="siteIsFr">projets</template><template v-else>projects</template></button>
 
                 <button id="app-menu-alumni"
                         class="app-menu__button button--small"
                         @click="goToPageAlumni"
                         :disabled="$currentPageIs_alumni"
-                >alumni</button>
+                ><template v-if="siteIsFr">alumni</template><template v-else>alumni</template></button>
             </div>
         </div>
 
