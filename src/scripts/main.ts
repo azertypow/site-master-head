@@ -72,7 +72,7 @@ let app = createVueApplication({
                     en: "master<br>media design"
                 },
                 subtitle: {
-                    fr: "contactes et informations",
+                    fr: "contacts et informations",
                     en: "contacts and informations"
                 },
                 // text: {
