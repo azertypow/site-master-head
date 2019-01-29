@@ -246,6 +246,16 @@
         }
     }
 
+    #app-menu-lang {
+        > button {
+            color: black;
+
+            .bg-dark & {
+                color: white;
+            }
+        }
+    }
+
     #app-menu.bottom-is-open {
         .app-menu__bottom {
             bottom: $footer-height;
