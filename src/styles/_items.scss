@@ -98,8 +98,8 @@
 }
 
 .v-cartel__description__texts {
-  margin-bottom: 1rem;
   @include column(12, 12);
+  margin-bottom: 1rem;
 
   @media (min-width: $break-small) {
     @include column(21, 24);
