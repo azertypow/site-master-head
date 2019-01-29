@@ -1,7 +1,7 @@
 <template>
     <section v-if="$bottomIsOpen" id="bottom-bar">
 
-        <template v-if="!$barHasContent">
+        <template v-if="$barHasContent">
             <div class="text-container">
                 <template v-for="bottomElement of $projectsInBottomBar">
                     <div class="text-container__scrolling-container">
@@ -157,18 +157,33 @@
             animation-timing-function: linear;
             animation-name: text-horizontal-scrolling;
 
+            font-size: $font-size-small;
+
             > * {
-                @include font-xs;
                 margin: 0 !important;
-                margin-right: $gutter-width !important;
+                margin-right: $grid-line-height !important;
                 padding: 0;
-                line-height: $height-of-one-line / 4 * 3; // aline vertical text on figure element (height: $footer-height)
-                height: $height-of-one-line;
+                line-height: $height-of-one-line;
+                height: $height-of-one-line / 4 * 3; // aline vertical text on figure element (height: $footer-height)
+
+                font-size: 1em;
+            }
+
+            > a {
+                margin-left: $grid-line-height !important;
+            }
+
+            br {
+                content:' ';
+                &:after{
+                    content:' ';
+                }
             }
 
             figure {
                 position: relative;
                 width: $height-of-one-line * (16/9);
+                height: $height-of-one-line;
 
                 > img {
                     height: 100%;
