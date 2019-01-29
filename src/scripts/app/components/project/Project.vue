@@ -181,7 +181,9 @@
 
                 this.indexOfImageToShowInHeader = Math.floor( getPercentOfXPosition(e.clientX, width, left) * this.$imagesData.length / 100 )
 
-                headerImages.style.transform = `rotateX(${vectorX * Project.degTransformation}deg) rotateY(${vectorY * Project.degTransformation}deg) translateX(${ - vectorX * Project.translationTransformation}px)`
+                headerImages.style.transform =  `rotateX(${vectorX * Project.degTransformation}deg)     rotateY(${vectorY * Project.degTransformation}deg) translateX(${ - vectorX * Project.translationTransformation}px)`
+
+                headerTexts.style.transform =   `rotateX(${vectorX * Project.degTransformation}deg)     rotateY(${vectorY * Project.degTransformation}deg) translateX(${ vectorX * Project.translationTransformation}px)`
             }
 
         }
