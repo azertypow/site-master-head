@@ -6,3 +6,12 @@
 @import "./base/all";
 @import "./elements/all";
 @import "./layout/all";
+
+.app-menu__button {
+  color: black;
+}
+.bg-dark {
+  .app-menu__button {
+    color: white;
+  }
+}
