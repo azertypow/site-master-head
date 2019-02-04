@@ -27,15 +27,24 @@ kirby()->hook([
         }
 });
 
-function putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage) {
+function putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage, $removeTempFile) {
     copy($tempImageGeneratedPath, $pathForFinalGeneratedImage);
-    unlink($tempImageGeneratedPath);
+
+    printInfoInTxtFile($pathForFinalGeneratedImage, $tempImageGeneratedPath);
+
+    if($removeTempFile) {
+        unlink($tempImageGeneratedPath);
+    }
 }
 
 function generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages) {
+    $originImagePath = $file->dir() . '/' . $file->filename();
+
     $tempImageGenerated = $file->thumb($imageParameter['config']);
 
     $tempImageGeneratedPath = $tempImageGenerated->dir() . '/' . $tempImageGenerated->filename();
+
+    $tempImageFileIsTheOriginalInputFile = $originImagePath == $tempImageGeneratedPath;
 
     $folderPathForGeneratedImages = $file->dir() . '/'. $folderNameForGeneratedImages .'/';
 
@@ -45,29 +54,54 @@ function generatedImageSize($file, $imageParameter, $folderNameForGeneratedImage
 
     $pathForFinalGeneratedImage = $folderPathForGeneratedImages . $file->name() . $imageParameter['extensionName'] . "." .$file->extension();
 
-    putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage);
-}
 
-function resizeOriginalImageAndSaveIt($file, $folderNameForGeneratedImages) {
-    $folderPathForGeneratedImages = $file->dir() . '/'. $folderNameForGeneratedImages .'/';
-
-    if(! is_dir($folderPathForGeneratedImages)) {
-        mkdir($folderPathForGeneratedImages);
+    if($tempImageFileIsTheOriginalInputFile) {
+        printInfoInTxtFile($pathForFinalGeneratedImage, "origin and temp are same file");
+    } else {
+        printInfoInTxtFile($pathForFinalGeneratedImage, "temp is not original file");
     }
 
-    // save originalImage
-    $file->copy($folderPathForGeneratedImages . $file->name() . "." .$file->extension());
+    putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage, !$tempImageFileIsTheOriginalInputFile);
+}
+
+//function resizeOriginalImageAndSaveIt($file, $folderNameForGeneratedImages) {
+//    $folderPathForGeneratedImages = $file->dir() . '/'. $folderNameForGeneratedImages .'/';
+//
+//    if(! is_dir($folderPathForGeneratedImages)) {
+//        mkdir($folderPathForGeneratedImages);
+//    }
+//
+//    // save originalImage
+//    $file->copy($folderPathForGeneratedImages . $file->name() . "." .$file->extension());
+//
+//
+//
+//
+//    $regularParams = c::get('mmd.image.parameters', array())['regular'];
+//
+//    $tempImageGenerated = $file->thumb($regularParams['config']);
+//
+//    $tempImageGeneratedPath = $tempImageGenerated->dir() . '/' . $tempImageGenerated->filename();
+//
+//    $pathForFinalGeneratedImage = $file->dir() . '/' . $file->name() . "." .$file->extension();
+//
+//    putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage);
+//}
+
+function printInfoInTxtFile($fileDirectoryPath, $text) {
+    $fileInfo = fopen($fileDirectoryPath . "console.txt", "a");
 
 
+    $today = getdate();
 
+    $sec = $today['seconds'];
+    $min = $today['minutes'];
+    $h = $today['hours'];
+    $day = $today['mday'];
+    $mon = $today['mon'];
+    $y = $today['year'];
 
-    $regularParams = c::get('mmd.image.parameters', array())['regular'];
-
-    $tempImageGenerated = $file->thumb($regularParams['config']);
-
-    $tempImageGeneratedPath = $tempImageGenerated->dir() . '/' . $tempImageGenerated->filename();
-
-    $pathForFinalGeneratedImage = $file->dir() . '/' . $file->name() . "." .$file->extension();
-
-    putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage);
+    $txt = "\n\n\n$y : $mon : $day : $h : $min : $sec \t| $text : ";
+    fwrite($fileInfo, $txt);
+    fclose($fileInfo);
 }
