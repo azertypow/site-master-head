@@ -20,6 +20,19 @@
                     </div>
 
                     <div class="v-page-contact__names">
+                        <h4         class="v-page-contact__names__title" v-if="siteIsFr">intervenants</h4>
+                        <h4         class="v-page-contact__names__title" v-else         >speakers</h4>
+
+                        <div        class="v-page-contact__names__link-wrap">
+
+                            <div    class="v-page-contact__names-item"
+                                    v-for="intervenant of this.$allContacts.intervenants">
+                                <a>{{intervenant.intervenant_name}}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="v-page-contact__names">
                         <h4         class="v-page-contact__names__title" v-if="siteIsFr">Equipe</h4>
                         <h4         class="v-page-contact__names__title" v-else         >links</h4>
 
