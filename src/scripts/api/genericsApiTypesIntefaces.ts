@@ -174,7 +174,7 @@ export interface IAbout {
     // etude_plan_english: string;
     // general_informations_french: string;
     // general_informations_english: string;
-    external_link_about: string;
+    // external_link_about: string;
 }
 export interface ITeamItem {
     name_team: string;

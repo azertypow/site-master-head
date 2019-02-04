@@ -113,7 +113,6 @@ let app = createVueApplication({
         about: {
             // etude_plan_english: "",
             // etude_plan_french: "",
-            external_link_about: "",
             // general_informations_english: "",
             // general_informations_french: "",
             general_presentation_english: "",

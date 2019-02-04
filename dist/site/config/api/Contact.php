@@ -23,7 +23,7 @@ class Contact
 //            'etude_plan_english'            => (string)$data->etude_plan_english()->kirbytext(),
 //            'general_informations_french'   => (string)$data->general_informations_french()->kirbytext(),
 //            'general_informations_english'  => (string)$data->general_informations_english()->kirbytext(),
-            'external_link_about'           => (string)$data->external_link_about()->kirbytext(),
+//            'external_link_about'           => (string)$data->external_link_about()->kirbytext(),
         );
         $json['team'] = array();
         foreach ($team as $onemember) {
