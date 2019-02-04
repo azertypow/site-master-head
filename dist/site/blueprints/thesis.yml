@@ -15,7 +15,6 @@ options:
   status: true
   template: false
   url: true
-  delete: false
 
 fields:
   title_thesis_french:
