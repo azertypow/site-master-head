@@ -70,3 +70,28 @@ Sortable2: yann-longchamp, nicolas-baldran, lysianne-lechot-hirt
 ----
 
 Sortable: link-183zcul, head, head-media-design, twitter, vimeo
+
+----
+
+Intervenants: 
+
+- 
+  intervenant_name: Julian Bayle
+- 
+  intervenant_name: Camille De Dieu
+- 
+  intervenant_name: Matteo Loglio
+- 
+  intervenant_name: Stéphanie Mader
+- 
+  intervenant_name: Nicolas Maigret
+- 
+  intervenant_name: Etienne Mineur
+- 
+  intervenant_name: Iohanna Nicenboim
+- 
+  intervenant_name: Daniel Pinkas
+- 
+  intervenant_name: Niklas Roy
+- 
+  intervenant_name: Yuri Suzuki
