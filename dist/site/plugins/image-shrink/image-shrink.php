@@ -13,13 +13,13 @@ kirby()->hook([
 
         try {
             if($file->type() == 'image') {
-//                foreach ($arrayOfImageParameters as $imageParameter) {
-//                    generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages);
-//                }
+                foreach ($arrayOfImageParameters as $imageParameter) {
+                    generatedImageSize($file, $imageParameter, $folderNameForGeneratedImages);
+                }
 
-//                $file->copy($file->dir() . '/'. $folderNameForGeneratedImages .'/' . $file->name() . "." .$file->extension());
+                $file->copy($file->dir() . '/'. $folderNameForGeneratedImages .'/' . $file->name() . "." .$file->extension());
 
-                resizeOriginalImageAndSaveIt($file, $folderNameForGeneratedImages);
+//                resizeOriginalImageAndSaveIt($file, $folderNameForGeneratedImages);
 
             }
         } catch (Exception $e) {

@@ -60,6 +60,11 @@ class Projects
         $data = page("$uri");
 
         if($data) {
+
+            $arrayOfImagesInProject = $data->files()->filter(function($file) {
+                return $file->type() == 'image';
+            })->toArray();
+
             $datatagedjson = array(
                 'uri'                   => $data->uri(),
                 'url'                   => (string)$data->url(),
@@ -77,7 +82,8 @@ class Projects
                 'text_bandeau_french'   => (string)$data->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$data->text_bandeau_english()->kirbytext(),
                 'appears_projects'      => (string)$data->appears_projects(),
-                'media'                 => $data->files()->toArray($callback = null)
+                'media'                 => $data->files()->toArray($callback = null),
+                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         } else {
             $datatagedjson = null;
@@ -90,7 +96,13 @@ class Projects
     {
         $data = page('projects')->children()->visible()->filterBy('appears_homepage', 'true');
         $datatagedjson['project'] = array();
+
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
+
+            $arrayOfImagesInProject = $oneproject->files()->filter(function($file) {
+                return $file->type() == 'image';
+            })->toArray();
+
             $datatagedjson['project'][] = array(
                 'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
@@ -108,7 +120,8 @@ class Projects
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects'      => (string)$oneproject->appears_projects(),
-                'media'                 => $oneproject->files()->toArray($callback = null)
+                'media'                 => $oneproject->files()->toArray($callback = null),
+                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         }
         return response::json($datatagedjson);
@@ -118,7 +131,13 @@ class Projects
     {
         $data = page('projects')->children()->visible()->filterBy('appears_bandeau', 'true');
         $datatagedjson['project'] = array();
+
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
+
+            $arrayOfImagesInProject = $oneproject->files()->filter(function($file) {
+                return $file->type() == 'image';
+            })->toArray();
+
             $datatagedjson['project'][] = array(
                 'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
@@ -136,7 +155,8 @@ class Projects
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects'      => (string)$oneproject->appears_projects(),
-                'media'                 => $oneproject->files()->toArray($callback = null)
+                'media'                 => $oneproject->files()->toArray($callback = null),
+                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         }
         return response::json($datatagedjson);
@@ -165,6 +185,11 @@ class Projects
 
         $datatagedjson['project'] = array();
         foreach ($data->sortBy('year', 'desc') as $oneproject) {
+
+            $arrayOfImagesInProject = $oneproject->files()->filter(function($file) {
+                return $file->type() == 'image';
+            })->toArray();
+
             $datatagedjson['project'][] = array(
                 'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
@@ -182,7 +207,8 @@ class Projects
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects'      => (string)$oneproject->appears_projects(),
-                'media'                 => $oneproject->files()->toArray($callback = null)
+                'media'                 => $oneproject->files()->toArray($callback = null),
+                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         }
         return response::json($datatagedjson);
@@ -231,6 +257,11 @@ class Projects
 
         $datatagedjson['project'] = array();
         foreach ($collection->sortBy('year', 'desc') as $oneproject) {
+
+            $arrayOfImagesInProject = $oneproject->files()->filter(function($file) {
+                return $file->type() == 'image';
+            })->toArray();
+
             $datatagedjson['project'][] = array(
                 'uri'                   => $oneproject->uri(),
                 'url'                   => (string)$oneproject->url(),
@@ -248,7 +279,8 @@ class Projects
                 'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
                 'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
                 'appears_projects'      => (string)$oneproject->appears_projects(),
-                'media'                 => $oneproject->files()->toArray($callback = null)
+                'media'                 => $oneproject->files()->toArray($callback = null),
+                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         }
         return response::json($datatagedjson);
@@ -297,7 +329,7 @@ class Projects
     }
 
     public static function getImagesGeneratedOfImageInProject($imageInProject) {
-        $folderNameOfGeneratedImages   = c::get('mmd.image.folderName', 'generated');
+        $folderNameOfGeneratedImages    = c::get('mmd.image.folderName', 'generated');
         $arrayOfImageParameters         = c::get('mmd.image.parameters', array());
 
         $folderPathForGeneratedImages = $imageInProject['diruri'] . '/'. $folderNameOfGeneratedImages .'/';
@@ -309,10 +341,7 @@ class Projects
             $arrayOfImagesGeneratedUrl[$imageParametersName] = $urlOfImageGenerated;
         }
 
-        return [
-            'origin'    => $imageInProject,
-            'generated' => $arrayOfImagesGeneratedUrl,
-        ];
+        return $arrayOfImagesGeneratedUrl;
     }
 
     public static function getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter) {

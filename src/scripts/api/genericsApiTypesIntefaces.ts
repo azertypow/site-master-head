@@ -91,7 +91,18 @@ export interface IProjectItem extends IGenericItem {
     text_bandeau_english: string;
     appears_projects: BooleanInString;
     media: IMediaItemProject[];
+    media_generated: {
+        origin: IMediaItemProject,
+        generated: {
+            icon: Url,
+            small: Url,
+            regular: Url,
+            large: Url,
+        }
+    }
 }
+
+export type Url = string;
 
 export interface IMediaItemProject extends IMediaItem {
     meta: IMetaProject;
