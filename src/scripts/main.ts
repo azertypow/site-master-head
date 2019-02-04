@@ -121,6 +121,7 @@ let app = createVueApplication({
         },
         team: [],
         links: [],
+        intervenants: [],
     }
 })
 

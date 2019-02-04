@@ -165,6 +165,7 @@ export interface IAllContacts {
     about: IAbout;
     team: ITeamItem[];
     links: ILinkItem[];
+    intervenants: IIntervenantsItem[];
 }
 export interface IAbout {
     url: string;
@@ -186,4 +187,8 @@ export interface ITeamItem {
 export interface ILinkItem {
     title: string,
     link_value: string,
+}
+
+export interface IIntervenantsItem {
+    intervenant_name: string;
 }

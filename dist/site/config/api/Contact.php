@@ -50,6 +50,8 @@ class Contact
             );
         }
 
+        $json['intervenants'] = $data->intervenants()->yaml();
+
         return response::json($json);
     }
 }
