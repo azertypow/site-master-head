@@ -52,6 +52,15 @@ fields:
 #    label: Liens externes supplémentaires
 #    type: textarea
 
+  intervenants:
+    label: Liste d'intervenants
+    type: structure
+    style: table
+    fields:
+      intervenant_name:
+        label: Prénom et nom de la personne
+        type: text
+
   sortable:
     label: Liens extenes
     type:  sortable
