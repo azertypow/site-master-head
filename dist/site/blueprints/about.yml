@@ -48,17 +48,12 @@ fields:
 #    type: textarea
 #    required: true
 
-  external_link_about:
-    label: Liens externes supplémentaires
-    type: textarea
-
-#  fruits:
-#    label: Give Me Fruits
-#    type: list
-#    placeholder: Add a new fruit
+#  external_link_about:
+#    label: Liens externes supplémentaires
+#    type: textarea
 
   sortable:
-    label: Sortable
+    label: Liens extenes
     type:  sortable
 
     sortable: true

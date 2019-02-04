@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
+  - about
   - alumnis/vellas
   - alumnis/thevenot
   - alumnis/rattoni
   - alumnis/pisler
-  - alumnis/ndiaye

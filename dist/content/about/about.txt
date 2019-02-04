@@ -63,14 +63,6 @@ we are cool
 
 External-link-about: 
 
-(link: https://www.instagram.com/headmediadesign/ text: instagram popup: yes)
-(link: https://twitter.com/headmediadesign text: twitter popup: yes)
-(link: https://vimeo.com/headmediadesign text: vimeo popup: yes)
-
-(link: https://www.hesge.ch/head/ text: HEAD popup: yes)
-
-(link: https://www.hesge.ch/head/formations-recherche/master-en-media-design text: HEAD | Master of Arts in Media Design popup: yes)
-
 ----
 
 Sortable2: yann-longchamp, nicolas-baldran, lysianne-lechot-hirt
