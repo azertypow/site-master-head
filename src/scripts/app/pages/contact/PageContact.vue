@@ -33,8 +33,8 @@
                     </div>
 
                     <div class="v-page-contact__names">
-                        <h4         class="v-page-contact__names__title" v-if="siteIsFr">Equipe</h4>
-                        <h4         class="v-page-contact__names__title" v-else         >links</h4>
+                        <h4         class="v-page-contact__names__title" v-if="siteIsFr">équipe</h4>
+                        <h4         class="v-page-contact__names__title" v-else         >team</h4>
 
                         <div        class="v-page-contact__names__link-wrap">
                             <div    class="v-page-contact__names-item"
