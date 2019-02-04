@@ -77,7 +77,11 @@
 }
 
 
-.v-cartel__header {}
+.v-cartel__header {
+  + .mmd-buttons {
+    margin-top: 1rem;
+  }
+}
 
 .v-cartel__header__title {}
 

@@ -9,15 +9,18 @@
             <div class="v-cartel__header__author">{{this.$thesisData.tuteurs_thesis}}  </div>
         </header>
 
-        <div class="v-cartel__description" :class="{'show-details': showDetails}">
+        <div    v-if="$currentContentIsNotEmpty"
+                class="v-cartel__description"
+                :class="{'show-details': showDetails}">
             <div v-if="$siteIsFr"   class="v-cartel__description__texts" v-html="this.$thesisData.description_thesis_french"></div>
             <div v-else             class="v-cartel__description__texts" v-html="this.$thesisData.description_thesis_english"></div>
         </div>
 
 
         <div class="mmd-buttons">
-            <btn-show-details :$siteLang="$siteLang"
-                              v-on:clicked="btnDetailClicked()"></btn-show-details>
+            <btn-show-details   v-if="this.$currentContentIsNotEmpty"
+                                :$siteLang="$siteLang"
+                                v-on:clicked="btnDetailClicked()"></btn-show-details>
 
             <template v-if="$pdfLink">
                 <a class="button button--small button--revert button--arrow" v-if="this.$siteIsFr" :href="$pdfLink" target="_blank">fichier PDF</a>
@@ -97,6 +100,14 @@
             }
 
             return null
+        }
+
+        get $currentContentIsNotEmpty(): boolean {
+            if(this.$siteIsFr) {
+                return this.$thesisData.description_thesis_french !== ""
+            } else {
+                return this.$thesisData.description_thesis_english !== ""
+            }
         }
     }
 </script>
