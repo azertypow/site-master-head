@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
-  - about
-  - about/douglas-edric-stanley
-  - about/gordan-savicic
-  - about/daniel-sciboz
-  - about/camille-bechet-scherrer
+  - alumnis/vellas
+  - alumnis/thevenot
+  - alumnis/rattoni
+  - alumnis/pisler
+  - alumnis/ndiaye

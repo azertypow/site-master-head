@@ -1,0 +1,33 @@
+Title-thesis-french: Variable fonts, entre possibilités et nécessité
+
+----
+
+Title-thesis-english: Variable fonts, entre possibilités et nécessité
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: David Héritier
+
+----
+
+Tuteurs-thesis: Daniel Sciboz
+
+----
+
+Tags-thesis: variable font/type
+
+----
+
+Title: Variable fonts, entre possibilités et nécessité

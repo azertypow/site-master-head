@@ -1,0 +1,21 @@
+Prenom-alumni: Cassandre
+
+----
+
+Nom-alumni: POIRIER-SIMON
+
+----
+
+Date-end-alumni: 2012
+
+----
+
+Website-alumni: http://leschemins.net
+
+----
+
+Email-alumni: cassandre@leschemins.net
+
+----
+
+Title: POIRIER-SIMON

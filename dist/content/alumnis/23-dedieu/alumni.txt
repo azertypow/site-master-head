@@ -1,0 +1,21 @@
+Prenom-alumni: Camille
+
+----
+
+Nom-alumni: DEDIEU
+
+----
+
+Date-end-alumni: 2013
+
+----
+
+Website-alumni: http://camillededieu.ch
+
+----
+
+Email-alumni: camillededieu@gmail.com
+
+----
+
+Title: DEDIEU

@@ -1,0 +1,21 @@
+Prenom-alumni: Marine
+
+----
+
+Nom-alumni: SERGENT
+
+----
+
+Date-end-alumni: 2014
+
+----
+
+Website-alumni: https://www.behance.net/marinesergent
+
+----
+
+Email-alumni: marine.sergent.brusco@gmail.com
+
+----
+
+Title: SERGENT

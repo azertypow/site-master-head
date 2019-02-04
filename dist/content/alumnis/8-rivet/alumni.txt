@@ -1,0 +1,21 @@
+Prenom-alumni: Nicolas
+
+----
+
+Nom-alumni: RIVET
+
+----
+
+Date-end-alumni: 2011
+
+----
+
+Website-alumni: http://rosabrux.org/info/
+
+----
+
+Email-alumni: rivetnicolas@yahoo.fr
+
+----
+
+Title: RIVET

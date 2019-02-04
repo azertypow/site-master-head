@@ -1,0 +1,33 @@
+Title-thesis-french: la réalité virtuelle pour raconter des histoires
+
+----
+
+Title-thesis-english: la réalité virtuelle pour raconter des histoires
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Salomé Faure
+
+----
+
+Tuteurs-thesis: -
+
+----
+
+Tags-thesis: interactive design
+
+----
+
+Title: la réalité virtuelle pour raconter des histoires

@@ -1,0 +1,21 @@
+Prenom-alumni: Camille
+
+----
+
+Nom-alumni: RATTONI
+
+----
+
+Date-end-alumni: 2016
+
+----
+
+Website-alumni: http://www.koya.li
+
+----
+
+Email-alumni: camille.rattoni@gmail.com
+
+----
+
+Title: RATTONI

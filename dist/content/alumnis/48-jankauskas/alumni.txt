@@ -1,0 +1,21 @@
+Prenom-alumni: Vytautas
+
+----
+
+Nom-alumni: JANKAUSKAS
+
+----
+
+Date-end-alumni: 2015
+
+----
+
+Website-alumni: http://montague.lt
+
+----
+
+Email-alumni: jank.vytautas@gmail.com
+
+----
+
+Title: JANKAUSKAS

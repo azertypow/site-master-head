@@ -1,0 +1,33 @@
+Title-thesis-french: clouders
+
+----
+
+Title-thesis-english: clouders
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Pierre Cottanceau
+
+----
+
+Tuteurs-thesis: Nicolas Nova
+
+----
+
+Tags-thesis: cloud computing
+
+----
+
+Title: clouders

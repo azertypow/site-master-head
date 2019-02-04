@@ -1,0 +1,21 @@
+Prenom-alumni: Catherine
+
+----
+
+Nom-alumni: BRAND
+
+----
+
+Date-end-alumni: 2015
+
+----
+
+Website-alumni: http://www.catherinebrand.ch
+
+----
+
+Email-alumni: brand.catherine@gmail.com
+
+----
+
+Title: BRAND

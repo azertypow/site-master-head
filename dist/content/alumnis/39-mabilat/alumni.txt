@@ -1,0 +1,21 @@
+Prenom-alumni: Aurélien
+
+----
+
+Nom-alumni: MABILAT
+
+----
+
+Date-end-alumni: 2014
+
+----
+
+Website-alumni: http://aurelienmabilat.com
+
+----
+
+Email-alumni: aurelien.mabilat@gmail.com
+
+----
+
+Title: MABILAT

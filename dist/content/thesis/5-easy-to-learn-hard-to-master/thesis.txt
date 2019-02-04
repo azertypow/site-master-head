@@ -1,0 +1,33 @@
+Title-thesis-french: easy to learn, hard to master
+
+----
+
+Title-thesis-english: easy to learn, hard to master
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Ivan Gulizia
+
+----
+
+Tuteurs-thesis: -
+
+----
+
+Tags-thesis: game design
+
+----
+
+Title: easy to learn, hard to master

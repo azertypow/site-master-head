@@ -1,0 +1,21 @@
+Prenom-alumni: Sylvain
+
+----
+
+Nom-alumni: JOLY
+
+----
+
+Date-end-alumni: 2015
+
+----
+
+Website-alumni: http://apelab.ch
+
+----
+
+Email-alumni: syl@apelab.ch
+
+----
+
+Title: JOLY2

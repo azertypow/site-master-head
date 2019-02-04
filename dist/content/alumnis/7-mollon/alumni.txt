@@ -1,0 +1,21 @@
+Prenom-alumni: Max
+
+----
+
+Nom-alumni: MOLLON
+
+----
+
+Date-end-alumni: 2011
+
+----
+
+Website-alumni: http://cargocollective.com
+
+----
+
+Email-alumni: maxmollon@gmail.com
+
+----
+
+Title: MOLLON

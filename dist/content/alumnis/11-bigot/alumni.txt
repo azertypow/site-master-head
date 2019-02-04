@@ -1,0 +1,21 @@
+Prenom-alumni: Carine
+
+----
+
+Nom-alumni: BIGOT
+
+----
+
+Date-end-alumni: 2013
+
+----
+
+Website-alumni: http://c4rin3.virtuelles.fr
+
+----
+
+Email-alumni: krin.bigot@hotmail.fr
+
+----
+
+Title: BIGOT

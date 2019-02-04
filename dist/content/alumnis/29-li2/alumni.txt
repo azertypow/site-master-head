@@ -1,0 +1,21 @@
+Prenom-alumni: Yu
+
+----
+
+Nom-alumni: LI
+
+----
+
+Date-end-alumni: 2013
+
+----
+
+Website-alumni: http://crazypulsar.net/
+
+----
+
+Email-alumni: lipulsar@gmail.com
+
+----
+
+Title: LI2

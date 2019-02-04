@@ -1,0 +1,33 @@
+Title-thesis-french: communautés d'amateurs en ligne & l'expérience de la musique
+
+----
+
+Title-thesis-english: communautés d'amateurs en ligne & l'expérience de la musique
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Romain Talou
+
+----
+
+Tuteurs-thesis: Jöel Vacheron
+
+----
+
+Tags-thesis: music/interactive design
+
+----
+
+Title: communautés d'amateurs en ligne & l'expérience de la musique

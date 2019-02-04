@@ -1,0 +1,21 @@
+Prenom-alumni: Sophie
+
+----
+
+Nom-alumni: ROS
+
+----
+
+Date-end-alumni: 2015
+
+----
+
+Website-alumni: 
+
+----
+
+Email-alumni: sophie.rosko@gmail.com
+
+----
+
+Title: ROS

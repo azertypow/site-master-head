@@ -1,0 +1,21 @@
+Prenom-alumni: Matthieu
+
+----
+
+Nom-alumni: CHERUBINI
+
+----
+
+Date-end-alumni: 2011
+
+----
+
+Website-alumni: http://mchrbn.net
+
+----
+
+Email-alumni: mchrbn@gmail.com
+
+----
+
+Title: CHERUBINI

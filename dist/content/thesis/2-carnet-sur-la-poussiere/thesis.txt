@@ -1,0 +1,33 @@
+Title-thesis-french: carnet sur la poussière
+
+----
+
+Title-thesis-english: carnet sur la poussière
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Carla Marceau
+
+----
+
+Tuteurs-thesis: Nicolas Nova
+
+----
+
+Tags-thesis: speculative design
+
+----
+
+Title: carnet sur la poussière

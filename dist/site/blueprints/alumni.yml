@@ -30,22 +30,6 @@ fields:
     required: true
     width: 1/3
 
-  actual_post_alumni:
-    label: Poste actuel, agence, studio,...
-    type: text
-
-  related_pp_alumni:
-    label: Projet pratique lié
-    type: page
-    width: 1/2
-    help: Commencer par taper le mot "projects"
-
-  related_thesis_alumni:
-    label: Mémoire lié
-    type: page
-    width: 1/2
-    help: Commencer par taper le mot "thesis"
-
   website_alumni:
     label: Website perso
     type: url
@@ -56,6 +40,30 @@ fields:
     type: email
     width: 1/2
 
-  external_link_alumni:
-    label: Liens externes supplémentaires
-    type: textarea
+#    ==========
+#    to add:
+#    ==========
+
+#  related_pp_alumni:
+#    label: Projet pratique lié
+#    type: page
+#    width: 1/2
+#    help: Commencer par taper le mot "projects"
+#
+#  related_thesis_alumni:
+#    label: Mémoire lié
+#    type: page
+#    width: 1/2
+#    help: Commencer par taper le mot "thesis"
+
+#    ==========
+#    to remove:
+#    ==========
+
+#  actual_post_alumni:
+#    label: Poste actuel, agence, studio,...
+#    type: text
+
+#  external_link_alumni:
+#    label: Liens externes supplémentaires
+#    type: textarea

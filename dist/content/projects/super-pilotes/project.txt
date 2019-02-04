@@ -1,0 +1,66 @@
+Content: 
+
+----
+
+Title: super pilotes
+
+----
+
+Year: 2018
+
+----
+
+Description-french: text vide
+
+----
+
+Description-english: empty text
+
+----
+
+Students: 
+
+- 
+  students_name: Catia Ferreira Barreiras
+- 
+  students_name: Romain Talou
+
+----
+
+Tags: super pilotes
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: false
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: middle_position
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true

@@ -1,0 +1,21 @@
+Prenom-alumni: Emilie
+
+----
+
+Nom-alumni: JOLY
+
+----
+
+Date-end-alumni: 2012
+
+----
+
+Website-alumni: http://apelab.ch
+
+----
+
+Email-alumni: emi@apelab.ch
+
+----
+
+Title: JOLY

@@ -1,0 +1,21 @@
+Prenom-alumni: Raphaël
+
+----
+
+Nom-alumni: MUÑOZ
+
+----
+
+Date-end-alumni: 2012
+
+----
+
+Website-alumni: http://aprobado.ch
+
+----
+
+Email-alumni: raphael@aprobado.ch
+
+----
+
+Title: MUÑOZ

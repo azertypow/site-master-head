@@ -1,0 +1,76 @@
+Content: 
+
+----
+
+Title: machine learning for designers
+
+----
+
+Year: 2018
+
+----
+
+Description-french: 
+
+pas de text francais
+
+Matteo Loglio, Londres, (link: matlo.me text: https://matlo.me/)
+
+----
+
+Description-english: 
+
+We hear news about artificial intelligence and machine learning almost every day, but what is it exactly, and how can we use it in the design practice? This workshop tries to shed some light on artificial intelligence and the relative creative applications. Participants will learn how to include AI in their projects, and to experiment with some simple tools created for artists and designers.
+We will look into existing projects that use this technology in the fields of art, science, design, and creativity in general. Then we will start to prototype ideas using machine learning as a design instrument. Participants will learn existing libraries and prototyping applications hands-on, and many examples will be provided for future reference. 
+We will use some simple programming tools, such as ml5.js, Wekinator, and others. Some basic skills of Processing or Javascript would be ideal, but not required. A laptop is required.
+
+*Matteo Loglio is an interaction designer and creative technologist, working on playful products and experiences, experimental interfaces and award-winning toys. Previously working at Google Creative Lab, he’s also a Visiting Lecturer at the Central Saint Martins college, partner at the interaction design lab oio.studio and creator of the wooden robot Cubetto. His work has been displayed in various exhibitions around the world, such as MoMA NY and V&A museum.*
+
+Matteo Loglio, Londres, (link: matlo.me text: https://matlo.me/)
+
+----
+
+Students: 
+
+- 
+  students_name: Matteo Loglio
+
+----
+
+Tags: workshop/machin learning
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: true
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: header_position
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true

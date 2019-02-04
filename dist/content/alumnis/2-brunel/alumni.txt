@@ -1,0 +1,21 @@
+Prenom-alumni: Cédric
+
+----
+
+Nom-alumni: BRUNEL
+
+----
+
+Date-end-alumni: 2012
+
+----
+
+Website-alumni: https://cedricbrunel.com
+
+----
+
+Email-alumni: cedbrunel@gmail.com
+
+----
+
+Title: BRUNEL

@@ -1,0 +1,21 @@
+Prenom-alumni: Jérémie
+
+----
+
+Nom-alumni: LASNIER
+
+----
+
+Date-end-alumni: 2013
+
+----
+
+Website-alumni: http://jeremielasnier.com
+
+----
+
+Email-alumni: jeremielasnier@gmail.com
+
+----
+
+Title: LASNIER

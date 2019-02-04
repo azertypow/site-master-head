@@ -1,0 +1,33 @@
+Title-thesis-french: gameplay for learning
+
+----
+
+Title-thesis-english: gameplay for learning
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Megan Stephan
+
+----
+
+Tuteurs-thesis: Daniel Sciboz
+
+----
+
+Tags-thesis: game design
+
+----
+
+Title: gameplay for learning

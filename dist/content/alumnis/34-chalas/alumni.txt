@@ -1,0 +1,21 @@
+Prenom-alumni: Charles
+
+----
+
+Nom-alumni: CHALAS
+
+----
+
+Date-end-alumni: 2014
+
+----
+
+Website-alumni: http://chalas.ch
+
+----
+
+Email-alumni: charles@chalas.ch
+
+----
+
+Title: CHALAS

@@ -1,0 +1,33 @@
+Title-thesis-french: le[s] sens du texte, du potentiel des technologies d’écritures, dans les littératures numériques
+
+----
+
+Title-thesis-english: le[s] sens du texte, du potentiel des technologies d’écritures, dans les littératures numériques
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Rémi Opalinski
+
+----
+
+Tuteurs-thesis: Nicolas Nova
+
+----
+
+Tags-thesis: digital literature
+
+----
+
+Title: le[s] sens du texte

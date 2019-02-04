@@ -1,0 +1,21 @@
+Prenom-alumni: Clovis
+
+----
+
+Nom-alumni: DURAN
+
+----
+
+Date-end-alumni: 2011
+
+----
+
+Website-alumni: http://rosabrux.org/info/
+
+----
+
+Email-alumni: clovis.duran@gmail.com
+
+----
+
+Title: DURAN

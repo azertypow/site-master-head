@@ -1,0 +1,21 @@
+Prenom-alumni: Kumiko
+
+----
+
+Nom-alumni: KUWABARA
+
+----
+
+Date-end-alumni: 2015
+
+----
+
+Website-alumni: http://kumikokuwabara.com
+
+----
+
+Email-alumni: info@kumikokuwabara.com
+
+----
+
+Title: KUWABARA

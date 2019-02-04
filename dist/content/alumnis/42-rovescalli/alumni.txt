@@ -1,0 +1,21 @@
+Prenom-alumni: Andrea
+
+----
+
+Nom-alumni: ROVESCALLI
+
+----
+
+Date-end-alumni: 2014
+
+----
+
+Website-alumni: http://www.earove.info/#about
+
+----
+
+Email-alumni: andrearovescalli@hotmail.com
+
+----
+
+Title: ROVESCALLI

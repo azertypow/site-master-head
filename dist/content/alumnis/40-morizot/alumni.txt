@@ -1,0 +1,21 @@
+Prenom-alumni: Camille
+
+----
+
+Nom-alumni: MORIZOT
+
+----
+
+Date-end-alumni: 2014
+
+----
+
+Website-alumni: http://www.camillemorizot.com
+
+----
+
+Email-alumni: morizot.camille@gmail.com
+
+----
+
+Title: MORIZOT
