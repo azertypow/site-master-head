@@ -23,7 +23,7 @@
             <div class="v-images-list">
                 <template v-for="imageData of this.$imagesData">
                     <div class="v-images-list__item">
-                        <img class="v-images-list__item__img" :src="imageData.url" :alt="imageData.meta.image_description + ' ' + imageData.meta.copyright">
+                        <img class="v-images-list__item__img" :src="imageData.generated.icon" :alt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright">
                     </div>
                 </template>
             </div>
@@ -44,7 +44,7 @@
     import {Vue, Component, Prop} from "vue-property-decorator"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
-    import {IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
+    import {IMedia_generatedItem, IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import MediaImage from "../image/MediaImage"
     import secureIsNaNNumber from "../../../secureIsNaNNumber"
     import {getProjectsByUri} from "../../../apiRequestes"
@@ -131,11 +131,11 @@
 
         }
 
-        get $imagesData(): IMediaItem[] {
-            const arrayOfImageMedia: IMediaItem[] = []
+        get $imagesData(): IMedia_generatedItem[] {
+            const arrayOfImageMedia: IMedia_generatedItem[] = []
 
-            for(const media of this.$projectData.media) {
-                if(media.type === "image") {
+            for(const media of this.$projectData.media_generated) {
+                if(media.origin.type === "image") {
                     arrayOfImageMedia.push(media)
                 }
             }
