@@ -12,7 +12,7 @@ Year: 2018
 
 Description-french: 
 
-pas de text francais
+Nous entendons presque tous les jours des nouvelles sur l'intelligence artificielle et l'apprentissage automatique, mais de quoi s'agit-il exactement et comment pouvons-nous l'utiliser dans les pratiques liées au design ? Cet atelier tente de faire la lumière surl es applications créatives relatives aux intelligences artificielles. Les participants apprendront à inclure l'IA dans leurs projets et à expérimenter avec des outils simples conçus pour les artistes et les designers. Nous examinerons tout d'abord les projets existants qui utilisent le machine learning dans les domaines de l'art, de la science, du design en général. Nous commencerons ensuite à prototyper des idées en utilisant le machine learning comme instrument de conception. Les participant.e.s découvriront les bibliothèques existantes et les applications de prototypage. Nous allons utiliser des outils de programmation simples, tels que ml5.js, Wekinator et autres. Certaines compétences de base en traitement ou Javascript seraient idéales, mais non requises.
 
 Matteo Loglio, Londres, (link: matlo.me text: https://matlo.me/)
 

@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
+  - projects/machine-learning-for-designers
+  - projects/advanced-selfie-machines
   - about
   - alumnis/vellas
   - alumnis/thevenot
-  - alumnis/rattoni
-  - alumnis/pisler
