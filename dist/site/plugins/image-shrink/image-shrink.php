@@ -30,7 +30,7 @@ kirby()->hook([
 function putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage, $removeTempFile) {
     copy($tempImageGeneratedPath, $pathForFinalGeneratedImage);
 
-    printInfoInTxtFile($pathForFinalGeneratedImage, $tempImageGeneratedPath);
+//    printInfoInTxtFile($pathForFinalGeneratedImage, $tempImageGeneratedPath);
 
     if($removeTempFile) {
         unlink($tempImageGeneratedPath);
@@ -55,11 +55,11 @@ function generatedImageSize($file, $imageParameter, $folderNameForGeneratedImage
     $pathForFinalGeneratedImage = $folderPathForGeneratedImages . $file->name() . $imageParameter['extensionName'] . "." .$file->extension();
 
 
-    if($tempImageFileIsTheOriginalInputFile) {
-        printInfoInTxtFile($pathForFinalGeneratedImage, "origin and temp are same file");
-    } else {
-        printInfoInTxtFile($pathForFinalGeneratedImage, "temp is not original file");
-    }
+//    if($tempImageFileIsTheOriginalInputFile) {
+//        printInfoInTxtFile($pathForFinalGeneratedImage, "origin and temp are same file");
+//    } else {
+//        printInfoInTxtFile($pathForFinalGeneratedImage, "temp is not original file");
+//    }
 
     putImageGeneratedToGeneratedImageFolder($tempImageGeneratedPath, $pathForFinalGeneratedImage, !$tempImageFileIsTheOriginalInputFile);
 }
