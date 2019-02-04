@@ -42,7 +42,6 @@ fields:
   description_thesis_english:
     label: Résumé / question de recherche - anglais
     type:  textarea
-    required: true
 
   students_thesis:
     label: Etudiant(s)
