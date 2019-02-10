@@ -34,14 +34,6 @@
     @media (min-height: $break-height-regular) and (min-width: $break-regular) {
       padding-bottom: 33vh;
     }
-
-    @media (min-width: $break-regular) {
-      @include column(11, 12);
-    }
-
-    @media (min-width: $break-large) {
-      @include column(10, 12);
-    }
   }
 }
 

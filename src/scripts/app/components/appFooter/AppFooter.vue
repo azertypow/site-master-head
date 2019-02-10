@@ -4,21 +4,8 @@
         <div class="v-app-footer__wrap">
             <div class="v-app-footer__left">
                 <h5>© 2019 master media design</h5>
-                <h5 class="has-no-space-next-line">fonts&nbsp;:</h5>
-                <h6>
-                    <a class="mmd-link--arrow" href="https://klim.co.nz/retail-fonts/domaine-sans-text/"    target="_blank">Klim — Domaine Sans Text</a>
-                    <br>
-                    <a class="mmd-link--arrow" href="https://www.swisstypefaces.com/fonts/suisse/"          target="_blank">Swiss Typefaces — Suisse Neue</a>
-                </h6>
             </div>
-            <div class="v-app-footer__center">
-                <h6>
-                    <a  class="mmd-link--arrow" href="https://www.hesge.ch/head/" target="_blank">
-                        <template   v-if="this.siteIsFr"    >HEAD — Genève, Haute école d'art et de design</template>
-                        <template   v-else                  >HEAD — Geneva, High School of Art and Design</template>
-                    </a>
-                </h6>
-            </div>
+            <!--<div class="v-app-footer__center"></div>-->
             <div class="v-app-footer__right">
                 <a href="https://www.hesge.ch/head/" class="mmd-link--no-underline" target="_blank">
                     <img    v-if="$backgroundIsDark"
@@ -30,14 +17,6 @@
                             src="../../../../images/head-logo/logo-head-black.png"
                             alt="hesso logo">
                 </a>
-            </div>
-            <div class="v-app-footer__bottom">
-                <h6>
-                    <a class="mmd-link--arrow" href="https://github.com/azertypow/site-master-head/issues/new" target="_blank">
-                        <template   v-if="this.siteIsFr"    >rapporter un bug ou un commentaire</template>
-                        <template   v-else                  >report a bug or comment</template>
-                    </a>
-                </h6>
             </div>
         </div>
     </section>
@@ -109,11 +88,5 @@
             text-align: right;
             margin-top: 0;
         }
-    }
-
-    .v-app-footer__bottom {
-        @include gutter;
-        margin-top: 2rem;
-        @include column(1, 1);
     }
 </style>

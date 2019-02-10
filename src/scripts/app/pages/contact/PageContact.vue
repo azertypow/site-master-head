@@ -27,7 +27,7 @@
 
                             <div    class="v-page-contact__names-item"
                                     v-for="intervenant of this.$allContacts.intervenants">
-                                <a>{{intervenant.intervenant_name}}</a>
+                                <span>{{intervenant.intervenant_name}}</span>
                             </div>
                         </div>
                     </div>
@@ -43,6 +43,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--<div class="v-page-contact__names">-->
+                        <!--<h4 v-if="siteIsFr" class="v-page-contact__names__title"><a class="mmd-link&#45;&#45;arrow" href="#credits">crédit</a></h4>-->
+                        <!--<h4 v-else          class="v-page-contact__names__title"><a class="mmd-link&#45;&#45;arrow" href="#credits">crédit</a></h4>-->
+                    <!--</div>-->
 
                 </aside>
 
@@ -89,6 +94,21 @@
 
                 </div>
 
+            </div>
+
+            <div class="v-page-contact__wrap-content" id="credits">
+                <div class="v-page-contact__details">
+                    <template v-if="siteIsFr">
+                        <h5>crédits</h5>
+                        <h6>Ce site utilise les fontes <a href="https://klim.co.nz/retail-fonts/domaine-sans-text/" target="_blank">Klim — Domaine Sans Text</a> et <a href="https://www.swisstypefaces.com/fonts/suisse/" target="_blank">Swiss Typefaces — Suisse Neue</a>.</h6>
+                        <h6>Il à était designé et developé par Yann Longchamps et Nicolas Baldran.</h6>
+                    </template>
+                    <template v-else>
+                        <h5>credits</h5>
+                        <h6>This site uses the fonts <a href="https://klim.co.nz/retail-fonts/domaine-sans-text/" target="_blank">Klim — Domaine Sans Text</a> and <a href="https://www.swisstypefaces.com/fonts/suisse/" target="_blank">Swiss Typefaces — Suisse Neue</a>.</h6>
+                        <h6>It has been designed and developed by Yann Longchamps and Nicolas Baldran.</h6>
+                    </template>
+                </div>
             </div>
 
         </main>
@@ -167,12 +187,10 @@
 
         @media (min-width: $break-regular) {
             @include column(21, 24);
-            @include column-skip(1, 12);
         }
 
         @media (min-width: $break-medium) {
             @include column(17, 24);
-            @include column-skip(0, 24);
         }
 
         @media (min-width: $break-large) {
@@ -196,6 +214,15 @@
         }
     }
 
+    .v-page-contact__details {
+        @include column(12, 12);
+        @include gutter;
+    }
+
+    #credits {
+        margin-top: 15rem;
+    }
+
     .v-page-contact__links__link-wrap,
     .v-page-contact__names__link-wrap {
         @include column-container;
@@ -203,10 +230,6 @@
         font-size: .75em;
         padding-top: 8px;
         padding-bottom: 10px;
-
-        a {
-            background: none;
-        }
     }
 
     .v-page-contact__links__title,
@@ -238,13 +261,11 @@
         }
 
         @media (min-width: $break-regular) {
-            @include column-skip(1, 12);
             @include column(21, 24);
             padding-top: 2rem;
         }
 
         @media (min-width: $break-medium) {
-            @include column-skip(0, 12);
             @include column(5, 24);
         }
     }
@@ -276,12 +297,10 @@
 
         @media (min-width: $break-regular) {
             @include column(22, 24);
-            @include column-skip(1,24);
         }
 
         @media (min-width: $break-medium) {
             @include column(1, 1);
-            @include column-skip(0,24);
         }
     }
 
