@@ -13,9 +13,8 @@
 
   &__header {
     position: relative;
-    max-height: 500px;
-    height: calc(100vh / 3 );
-
+    //max-height: 500px;
+    height: 50vh;
 
     @media (min-width: $break-extra-small) {
       height: 70vh;
@@ -25,10 +24,12 @@
       position: relative;
       height: 100%;
 
-      > * {
+      .v-media-image {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
       }
     }
 
@@ -80,7 +81,9 @@
   }
 }
 
-.v-cartel__header__title {}
+.v-cartel__header__title {
+  max-width: 12em;
+}
 
 .v-cartel__header__author {
   @include font-xs;
