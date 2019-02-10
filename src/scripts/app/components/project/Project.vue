@@ -25,6 +25,7 @@
                     <div class="v-images-list__item">
 
                         <ImageWithLoader :$imageData="imageData"
+                                         :$fitCover="true"
                                          :$imageAlt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright"
                                          class="v-images-list__item__img"></ImageWithLoader>
 

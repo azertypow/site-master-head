@@ -2,12 +2,12 @@
     <div class="v-image-with-loader">
         <img :src="$imageSrc"
              :alt="$imageAlt"
-             :class="$imageClass"
+             :class="[$imageClass, {'fit-cover' : $fitCover}]"
              @load="originalImageIsLoaded = true">
 
         <img :src="$imageSrc_icon"
              :alt="$imageAlt"
-             :class="[$imageClass, {'img-loaded' : originalImageIsLoaded}]"
+             :class="[$imageClass, {'img-loaded' : originalImageIsLoaded}, {'fit-cover' : $fitCover}]"
              class="v-image-with-loader__cache">
     </div>
 </template>
@@ -25,6 +25,7 @@
         @Prop() $imageData!: IMedia_generatedItem
         @Prop() $imageAlt!: string
         @Prop() $imageClass!: string
+        @Prop({required: true, type: Boolean}) $fitCover!: boolean
 
         originalImageIsLoaded = false;
 
@@ -50,7 +51,11 @@
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+
+            &.fit-cover {
+                object-fit: cover;
+            }
         }
     }
 
