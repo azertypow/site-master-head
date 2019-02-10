@@ -7,9 +7,9 @@
   @include site-max-width;
 
   &__filter {
-    @include column(10, 12);
+    @include column(12, 12);
     overflow: visible;
-    padding-bottom: 2rem;
+    padding-bottom: 8rem;
   }
 
   &__main {

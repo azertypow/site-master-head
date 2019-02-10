@@ -101,7 +101,7 @@ export interface IMediaItemProject extends IMediaItem {
 }
 
 export interface IMedia_generatedItem {
-    origin: IMediaItem,
+    origin: IMediaItemProject,
     generated: {
         icon: Url,
         small: Url,
