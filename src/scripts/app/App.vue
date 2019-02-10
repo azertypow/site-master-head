@@ -20,6 +20,7 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
 
             <div class="app-cube-flip-projects" :class="[this.getClassNamePageHistoryState('/project')]">
                 <page-projects
+                        ref="projectPage"
                         :data="appData.allPagesData.projects"
                         :allProjects="appData.allProjects"
                         :$siteLang="$siteLang" ></page-projects>
@@ -94,6 +95,15 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
                 (this as App).pageTransitionRun = true;
 
                 (this as App).$currentPageActive = pageName[0] as PAGES_PATHNAME
+
+
+                const projectPage = ((this as App).$refs.projectPage as PageProjects)
+
+                if(projectPage) {
+                    if(projectPage.projectOpen) {
+                        projectPage.projectOpen = null
+                    }
+                }
             })
         },
         mounted: function () {

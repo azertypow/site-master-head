@@ -43,6 +43,28 @@
                     :$siteLang="$siteLang"
                     :$backgroundIsDark=true></app-footer>
         </footer>
+
+        <div class="v-page-projects__modal"
+             v-if="projectOpen">
+            <div class="v-page-projects__modal-container">
+                <div class="v-page-projects__modal-column">
+
+                    <button @click="closeProject()" class="button--small close-top">
+                        <template v-if="$siteIsFr">fermer le projet</template>
+                        <template v-else         >close project</template>
+                    </button>
+
+                    <project :$siteLang="$siteLang"
+                             class="v-page-projects__modal-project"
+                             :data="projectOpen"/>
+
+                    <button @click="closeProject()" class="button--small close-bottom">
+                        <template v-if="$siteIsFr">fermer le projet</template>
+                        <template v-else         >close project</template>
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -54,7 +76,7 @@
     import {getProjectsTags} from "../../../apiRequestes"
     import {IAllProjects, IMedia_generatedItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import Project from "../../components/project/Project"
-    import {LANG_LIST} from "../../../GLOBAL_ENUMS"
+    import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import ImageWithLoader from "../../components/image/ImageWithLoader.vue"
 
@@ -126,9 +148,14 @@
             return array
         }
 
-        // noinspection JSMethodCanBeStatic
+        projectOpen: IProjectItem | null = null
+
         openProject(item: IProjectItem) {
-            console.log(item)
+            this.projectOpen = item
+        }
+
+        closeProject() {
+            this.projectOpen = null
         }
     }
 </script>
@@ -174,5 +201,65 @@
 
     .v-page-projects__item__student {
 
+    }
+
+    .v-page-projects__modal {
+        position: fixed;
+        background: black;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+
+        animation-duration: 1s;
+        animation-name: fadeIn;
+    }
+
+    .v-page-projects__modal-container {
+        @include column-container;
+        @include container-content-centred;
+        @include site-max-width;
+        padding-top: 5rem;
+        padding-bottom: 50vh;
+    }
+
+    .v-page-projects__modal-column {
+        @include column(1, 1);
+        @include gutter;
+        @include remove-first-and-last-vertical-margin;
+
+        @media (min-width: $break-regular) {
+            @include column(22, 24);
+        }
+
+        @media (min-width: $break-large) {
+            @include column(10, 12);
+        }
+    }
+
+    .v-page-projects__modal-project {
+        margin-top: 3rem;
+        margin-bottom: 10rem;
+    }
+
+    .close-top {
+        float: right;
+    }
+
+    .close-bottom {
+        display: block;
+        margin-left: auto;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 </style>

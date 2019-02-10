@@ -60,7 +60,7 @@
     }
 
     .v-image-with-loader__cache {
-        transition: opacity 1s ease-in-out;
+        transition: opacity 250ms ease-in-out;
         opacity: 1;
 
         &.img-loaded {
