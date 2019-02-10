@@ -71,6 +71,10 @@
                     });
                 }
             }
+
+            const descriptionContainer = this.$el.querySelector('.v-cartel__description')
+
+            if(descriptionContainer instanceof HTMLElement) { (this as Project).$descriptionContainerElement = descriptionContainer}
         }
     })
     export default class Project extends Vue {
@@ -83,9 +87,13 @@
         @Prop({required: true}) $siteLang!: LANG_LIST
         get $siteIsFr() { return this.$siteLang === LANG_LIST.FR }
 
-        /**/
+        /*
+        * details sections
+        * */
 
-        private get descriptionContentHeight() {
+        private descriptionContentHeight() {
+
+            console.log("open")
 
             const textElement = this.$el.querySelector('.v-cartel__description__texts');
             const imageListElement = this.$el.querySelector('.v-images-list');
@@ -115,12 +123,22 @@
             return heightToReturn;
         }
 
-        /*
-        * details sections
-        * */
         private showDetails = false
         set $showDetails(value) {this.showDetails = value}
         get $showDetails()      {return this.showDetails}
+
+        descriptionContainerElement: HTMLElement | null = null
+        set $descriptionContainerElement(value: HTMLElement | null) {this.descriptionContainerElement = value}
+        get $descriptionContainerElement()                   {return this.descriptionContainerElement}
+
+        private onresize = function(this: Project) {
+            const selfThis = this
+
+            if(selfThis.$descriptionContainerElement) {
+                selfThis.$descriptionContainerElement.style.maxHeight = `${selfThis.descriptionContentHeight()}px`
+            }
+        }
+        private onResizeListener: EventListenerOrEventListenerObject | null = null
 
         btnDetailClicked() {
             this.$showDetails = !this.$showDetails
@@ -130,9 +148,20 @@
             if(descriptionContainerElement instanceof HTMLElement) {
 
                 if(this.$showDetails) {
-                    descriptionContainerElement.style.maxHeight = `${this.descriptionContentHeight}px`;
+                    descriptionContainerElement.style.maxHeight = `${this.descriptionContentHeight()}px`;
+
+                    this.onResizeListener = this.onresize.bind(this);
+
+                    if(this.onResizeListener) {
+                        window.addEventListener("resize", this.onResizeListener)
+                    }
                 } else {
                     descriptionContainerElement.style.maxHeight = ""
+
+                    if(this.onResizeListener) {
+                        window.removeEventListener("resize", this.onResizeListener)
+                        this.onResizeListener = null
+                    }
                 }
             }
 
