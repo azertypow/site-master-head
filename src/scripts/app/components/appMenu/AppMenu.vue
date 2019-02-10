@@ -3,40 +3,38 @@
 
         <div class="app-menu__top">
             <div class="app-menu__wrap">
-                <button id="app-menu-contact"
-                        class="app-menu__button button--small"
-                        @click="goToPageContact"
-                        :disabled="$currentPageIs_contact"
-                ><template v-if="siteIsFr">à propos</template><template v-else>about</template><span class="contact-details"> / contacts</span></button>
+                <nav id="app-menu-nav">
+                    <button id="app-menu-home"
+                            class="app-menu__button button--small app-menu-nav__item"
+                            @click="goToPageHome"
+                            :disabled="$currentPageIs_home"
+                    ><template v-if="siteIsFr">accueil</template><template v-else>home</template></button>
 
-                <button id="app-menu-thesis"
-                        class="app-menu__button button--small"
-                        @click="goToPageThesis"
-                        :disabled="$currentPageIs_thesis"
-                ><template v-if="siteIsFr">mémoires</template><template v-else>thesis</template></button>
+                    <button id="app-menu-projects"
+                            class="app-menu__button button--small app-menu-nav__item"
+                            @click="goToPageProject"
+                            :disabled="$currentPageIs_project"
+                    ><template v-if="siteIsFr">projets</template><template v-else>projects</template></button>
 
-                <button id="app-menu-home"
-                        class="app-menu__button button--small"
-                        @click="goToPageHome"
-                        :disabled="$currentPageIs_home"
-                ><template v-if="siteIsFr">accueil</template><template v-else>home</template></button>
+                    <button id="app-menu-thesis"
+                            class="app-menu__button button--small app-menu-nav__item"
+                            @click="goToPageThesis"
+                            :disabled="$currentPageIs_thesis"
+                    ><template v-if="siteIsFr">mémoires</template><template v-else>thesis</template></button>
 
-                <button id="app-menu-projects"
-                        class="app-menu__button button--small"
-                        @click="goToPageProject"
-                        :disabled="$currentPageIs_project"
-                ><template v-if="siteIsFr">projets</template><template v-else>projects</template></button>
+                    <button id="app-menu-alumni"
+                            class="app-menu__button button--small app-menu-nav__item"
+                            @click="goToPageAlumni"
+                            :disabled="$currentPageIs_alumni"
+                    ><template v-if="siteIsFr">alumni</template><template v-else>alumni</template></button>
 
-                <button id="app-menu-alumni"
-                        class="app-menu__button button--small"
-                        @click="goToPageAlumni"
-                        :disabled="$currentPageIs_alumni"
-                ><template v-if="siteIsFr">alumni</template><template v-else>alumni</template></button>
-            </div>
-        </div>
+                    <button id="app-menu-contact"
+                            class="app-menu__button button--small app-menu-nav__item"
+                            @click="goToPageContact"
+                            :disabled="$currentPageIs_contact"
+                    ><template v-if="siteIsFr">à propos</template><template v-else>about</template><span class="contact-details"> / contacts</span></button>
+                </nav>
 
-        <div class="app-menu__bottom">
-            <div class="app-menu__wrap">
                 <div id="app-menu-lang">
                     <button v-if="this.siteIsFr"
                             class="button--small"
@@ -138,10 +136,6 @@
                 @include -fix-safari-navigation-3d-overflow;
                 box-shadow: $shadow-properties--top black;
             }
-            .app-menu__bottom {
-                @include -fix-safari-navigation-3d-overflow;
-                box-shadow: $shadow-properties--bottom black;
-            }
         }
 
         @mixin app-menu-section {
@@ -173,15 +167,9 @@
             }
         }
 
-        .app-menu__bottom {
-            @include app-menu-section;
-            bottom: 0;
-            padding-bottom: 1rem;
-            box-shadow: $shadow-properties--bottom white;
-        }
-
         .app-menu__wrap {
-            position: relative;
+            @include column-container;
+            align-items: center;
             height: 100%;
             width: 100%;
         }
@@ -202,63 +190,30 @@
                 display: inline;
             }
         }
+    }
 
-        #app-menu-lang {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            font-size: 0.8em;
+    #app-menu-nav {
+        @include column-container;
+    }
 
-            @media (min-width: $break-extra-small) {
-                font-size: inherit;
-            }
-        }
-
-        #app-menu-contact {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translateX(0);
-        }
-        #app-menu-thesis {
-            position: absolute;
-            top: 0;
-            left: 25%;
-            transform: translateX(-25%);
-        }
-        #app-menu-home {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        #app-menu-projects {
-            position: absolute;
-            top: 0;
-            right: 25%;
-            transform: translateX(25%);
-        }
-        #app-menu-alumni {
-            position: absolute;
-            top: 0;
-            right: 0;
-            transform: translateX(0);
-        }
+    .app-menu-nav__item {
+        margin-right: $gutter-width;
     }
 
     #app-menu-lang {
+        margin-left: auto;
+        font-size: 0.8em;
+
+        @media (min-width: $break-extra-small) {
+            font-size: inherit;
+        }
+
         > button {
             color: black;
 
             .bg-dark & {
                 color: white;
             }
-        }
-    }
-
-    #app-menu.bottom-is-open {
-        .app-menu__bottom {
-            bottom: $footer-height;
         }
     }
 </style>
