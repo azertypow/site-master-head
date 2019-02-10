@@ -33,6 +33,11 @@
                             @click="goToPageContact"
                             :disabled="$currentPageIs_contact"
                     ><template v-if="siteIsFr">à propos</template><template v-else>about</template><span class="contact-details"> / contacts</span></button>
+
+                    <button class="app-menu__button button--small app-menu-nav__item">
+                        <a v-if="siteIsFr"  href="https://age.hes-so.ch/imoniteur_AGEP/!formInscrs.connection?ww_c_formulaire=FORM_HEAD_MA_2019&ww_c_langue=fr" target="_blank">s'inscrire</a>
+                        <a v-else           href="https://age.hes-so.ch/imoniteur_AGEP/!formInscrs.connection?ww_c_formulaire=FORM_HEAD_MA_2019&ww_c_langue=en" target="_blank">register</a>
+                    </button>
                 </nav>
 
                 <div id="app-menu-lang">
