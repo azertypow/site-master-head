@@ -1,7 +1,10 @@
 <template>
     <div class="v-media-image" :class="{'is-visible' : visible}">
-        <img v-if="inImageElement"  class="v-media-image__img"   :src="this.$projectData.generated.regular"/>
-        <div v-else                 class="v-media-image__img"   :style="{backgroundImage: 'url(' + this.$projectData.generated.regular + ')'}"></div>
+        <ImageWithLoader :$imageData="this.$projectData"
+                         :$fitCover="false"
+                         :$imageAlt="this.$projectData.origin.meta.image_description + ' ' + this.$projectData.origin.meta.copyright"
+                         class="v-media-image__img"></ImageWithLoader>
+
         <template v-if="$showDetails">
             <div class="v-media-image__copyright">
                 {{this.$projectData.origin.meta.copyright}}
@@ -16,16 +19,17 @@
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
     import {IMedia_generatedItem, IMediaItem} from "../../../api/genericsApiTypesIntefaces"
+    import ImageWithLoader from "./ImageWithLoader.vue"
 
-    @Component
+    @Component({
+        components: {ImageWithLoader}
+    })
     export default class MediaImage extends Vue {
         @Prop({required: true}) data!: IMedia_generatedItem
         get $projectData() {return this.data}
 
         @Prop({required: true, type: Boolean}) showDetails!: boolean
         get $showDetails() {return this.showDetails}
-
-        @Prop({default: false, type: Boolean}) inImageElement!: boolean
 
         @Prop({default: true, type: Boolean}) visible!: boolean
     }
