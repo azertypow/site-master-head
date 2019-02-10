@@ -62,6 +62,9 @@
             const headerElement = (this as Project).$el.querySelector(".v-project__header");
 
             if(headerElement instanceof HTMLElement) {
+
+                (this as Project).headerElement = headerElement;
+
                 const headerImages = headerElement.querySelector(".v-project__header__images")
                 const headerTexts = headerElement.querySelector(".v-project__header__texts")
 
@@ -86,6 +89,10 @@
         * */
         @Prop({required: true}) $siteLang!: LANG_LIST
         get $siteIsFr() { return this.$siteLang === LANG_LIST.FR }
+
+        headerElement!: HTMLElement
+        cursorIsLeft = true
+        get cursorIsRight() {return !this.cursorIsLeft}
 
         /*
         * details sections
@@ -208,18 +215,15 @@
                 const vectorX = positionX / width
                 const vectorY = positionY / height
 
-                function getPercentOfXPosition(xPosition: number, width: number, left: number) {
-                    const value = Math.round( (xPosition - left) / width * 100 )
-                    if(value < 0) return 0
-                    else if(value > 99) return 99
-                    else return value
-                }
+                const percentOfPosition = Project.getPercentOfXPosition(e.clientX, width, left)
 
-                this.indexOfImageToShowInHeader = Math.floor( getPercentOfXPosition(e.clientX, width, left) * this.$imagesData.length / 100 )
+                this.indexOfImageToShowInHeader = Math.floor( percentOfPosition * this.$imagesData.length / 100 )
 
                 headerImages.style.transform =  `rotateX(${vectorX * Project.degTransformation}deg)     rotateY(${vectorY * Project.degTransformation}deg) translateX(${ - vectorX * Project.translationTransformation}px)`
 
                 headerTexts.style.transform =   `rotateX(${vectorX * Project.degTransformation}deg)     rotateY(${vectorY * Project.degTransformation}deg) translateX(${ vectorX * Project.translationTransformation}px)`
+
+                this.setCursorStyle(percentOfPosition);
             }
 
         }
@@ -235,6 +239,28 @@
                 console.log(`OUPS, we can't get project with ${uri} uri`)
             })
         }
+
+        //==========
+        private static getPercentOfXPosition(xPosition: number, width: number, left: number) {
+            const value = Math.round( (xPosition - left) / width * 100 )
+            if(value < 0) return 0
+            else if(value > 99) return 99
+            else return value
+        }
+
+        private setCursorStyle(percent: number) {
+
+            const cursorIsOnRight = percent > 50
+            const cursosIsOnLeft = !cursorIsOnRight
+
+            if(cursorIsOnRight && this.cursorIsLeft) {
+                this.headerElement.classList.add("to-left")
+                this.cursorIsLeft = false
+            } else if(cursosIsOnLeft && this.cursorIsRight) {
+                this.headerElement.classList.remove("to-left")
+                this.cursorIsLeft = true
+            }
+        }
     }
 </script>
 
@@ -246,5 +272,10 @@
 
     .v-project__header {
         perspective: 2500px;
+        cursor: e-resize;
+
+        &.to-left {
+            cursor: w-resize;
+        }
     }
 </style>
