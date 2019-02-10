@@ -48,11 +48,7 @@
 
   overflow: hidden;
   transition: max-height $opening-transition-timing ease-in-out;
-  max-height: 10rem;
-
-  @media (min-width: $break-extra-small) {
-    max-height: 15rem;
-  }
+  max-height: 0;
 
   &.show-details {
     max-height: 50em;
