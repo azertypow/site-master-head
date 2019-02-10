@@ -192,6 +192,7 @@
         * URI SHARE
         * */
         $getProjectUri(uri: string) {
+            console.log(uri);
             getProjectsByUri(uri).then(value => {
                 console.log( value.description_french )
             }, reason => {
