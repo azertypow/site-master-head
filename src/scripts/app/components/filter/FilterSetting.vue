@@ -1,6 +1,10 @@
 <template>
     <section class="v-filter-setting" >
-        <template>
+        <template v-if="$indexOf_Tag_Selected === -1">
+            <div v-if="siteIsEn">show</div>
+            <div v-else         >montrer</div>
+        </template>
+        <template v-else>
             <div v-if="siteIsEn">show</div>
             <div v-else         >montrer les</div>
         </template>
@@ -12,11 +16,22 @@
 
             <span   class="v-filter-setting__tags__value"
                     @click="$openTags($event)"
-                    >{{$tagSelected}}</span>
+                    >
+                <template v-if="$indexOf_Tag_Selected === -1">
+                    <template v-if="siteIsEn"   >all projects</template>
+                    <template v-else            >tous les projets</template>
+                </template>
+                <template v-else>{{$tagSelected}}</template>
+            </span>
 
             <div class="v-filter-setting__container" @click="$tagsIsOpen = false">
                 <div class="v-filter-setting__container-grid">
                     <ul class="v-filter-setting__tags__list" :style="{ top: $tagsPositionTop + 'px' }">
+                            <li @click="$indexOf_Tag_Selected = -1" :class="{'is-selected': this_Tag_IsSelected(-1)}">
+                                <template v-if="siteIsEn">all projects</template>
+                                <template v-else>tous les projets</template>
+                            </li>
+                            <div class="list__break"></div>
                         <template v-for="(tag, index) in $tags" >
                             <li @click="$indexOf_Tag_Selected = index" :class="{'is-selected': this_Tag_IsSelected(index)}">
                                 {{tag}}
@@ -30,63 +45,6 @@
         <div v-else>
             {{$textInsteadTagList}}
         </div>
-
-        <!--data filter - from-->
-        <template>
-            <div v-if="siteIsEn">from</div>
-            <div v-else         >de</div>
-        </template>
-
-        <div class="v-filter-setting__from"
-             :class="{'open' : this.$min_dateIsOpen}">
-
-            <span   class="v-filter-setting__from__value"
-                    @click="$openMin_Date($event)"
-                    >{{this.$min_dateSelected}}</span>
-
-            <div class="v-filter-setting__container" @click="$min_dateIsOpen = false">
-                <div class="v-filter-setting__container-grid">
-                    <ul class="v-filter-setting__from__list" :style="{ top: $min_DatePositionTop + 'px' }">
-                        <template v-for="(date, index) in $dates" >
-                            <li @click="$indexOf_Min_DateSelected = index"
-                                :class="{'is-selected': $thisIs_min_dateSelected(index)}">
-                                {{date}}
-                            </li>
-                            <div class="list__break"></div>
-                        </template>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!--data filter - to-->
-        <template>
-            <div v-if="siteIsEn">to</div>
-            <div v-else         >à</div>
-        </template>
-
-        <div class="v-filter-setting__to"
-             :class="{'open' : this.$max_DateIsOpen}">
-
-            <span class="v-filter-setting__to__value"
-                  @click="$openMax_Date($event)"
-                  >{{this.$max_dateSelected}}</span>
-
-            <div class="v-filter-setting__container" @click="$max_DateIsOpen = false">
-                <div class="v-filter-setting__container-grid">
-                    <ul class="v-filter-setting__to__list" :style="{ top: $max_DatePositionTop + 'px' }">
-                        <template v-for="(date, index) in $dates" >
-                            <li @click="$indexOf_Max_DateSelected = index"
-                                :class="{'is-selected': $thisIs_max_dateSelected(index)}" >
-                                {{date}}
-                            </li>
-                            <div class="list__break"></div>
-                        </template>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
     </section>
 </template>
 
@@ -98,9 +56,9 @@
 
     @Component({
         watch: {
-            $dates: function() {
-                // if the list of dates changes, select the largest date for the value "to" and ensure that we see all the projects
-                (this as FilterSetting).$indexOf_Max_DateSelected = (this as FilterSetting).$dates.length - 1
+            $tags: function() {
+                // if the list of tags changes, select "all project" with -1 index
+                (this as FilterSetting).$indexOf_Tag_Selected = -1;
             }
         },
         created: function() {
@@ -115,7 +73,6 @@
     export default class FilterSetting extends Vue {
         @Prop() $textInsteadTagList!: string
         @Prop({default: () => []}) $tags!: string[]
-        @Prop({default: () => []}) $dates!: number[]
 
         get $hasTextInsteadTagList() {
             return this.$textInsteadTagList === void 0
@@ -137,7 +94,7 @@
         /*
         * tags selection
         * */
-        indexOf_Tag_Selected = 0
+        indexOf_Tag_Selected = -1
         get $indexOf_Tag_Selected() { return this.indexOf_Tag_Selected }
         set $indexOf_Tag_Selected(index: number) {
             this.indexOf_Tag_Selected = index
@@ -146,6 +103,7 @@
         }
 
         get $tagSelected() {
+            if(this.indexOf_Tag_Selected < 0) return "all"
             return this.$tags[this.$indexOf_Tag_Selected]
         }
 
@@ -169,93 +127,11 @@
         }
 
         /*
-        * minimum date selection
-        * */
-        indexOf_Min_DateSelected = 0
-        get $indexOf_Min_DateSelected() { return this.indexOf_Min_DateSelected }
-        set $indexOf_Min_DateSelected(index: number) {
-
-            if(index > this.$indexOf_Max_DateSelected) {
-                this.$indexOf_Max_DateSelected = index
-            }
-
-            this.indexOf_Min_DateSelected = index
-
-            this.$min_dateIsOpen = false
-
-            this.$emitNewFilterValues()
-        }
-
-        get $min_dateSelected() {
-            return this.$dates[this.$indexOf_Min_DateSelected]
-        }
-
-        $thisIs_min_dateSelected(index: number) {
-            return this.indexOf_Min_DateSelected === index
-        }
-
-        min_dateIsOpen = false
-        get $min_dateIsOpen() {return this.min_dateIsOpen}
-        set $min_dateIsOpen(value: boolean) { this.min_dateIsOpen = value}
-
-        private min_DatePositionTop = 0;
-        get $min_DatePositionTop() {return this.min_DatePositionTop}
-        set $min_DatePositionTop(value) {this.min_DatePositionTop = value}
-
-        $openMin_Date(event: MouseEvent) {
-            this.$min_dateIsOpen = true;
-            if(event.srcElement) {
-                this.$min_DatePositionTop = event.srcElement.getBoundingClientRect().bottom;
-            }
-        }
-
-        /*
-        *maximum date selection 
-        * */
-        indexOf_Max_DateSelected = this.$dates.length
-        get $indexOf_Max_DateSelected() { return this.indexOf_Max_DateSelected }
-        set $indexOf_Max_DateSelected(index: number) {
-
-            if(index < this.$indexOf_Min_DateSelected) {
-                this.$indexOf_Min_DateSelected = index
-            }
-
-            this.indexOf_Max_DateSelected = index
-
-            this.$max_DateIsOpen = false
-
-            this.$emitNewFilterValues()
-        }
-
-        get $max_dateSelected() {
-            return this.$dates[this.$indexOf_Max_DateSelected]
-        }
-
-        $thisIs_max_dateSelected(index: number) {
-            return this.indexOf_Max_DateSelected === index
-        }
-
-        private max_DateIsOpen = false
-        get $max_DateIsOpen() { return this.max_DateIsOpen }
-        set $max_DateIsOpen(value: boolean) { this.max_DateIsOpen = value }
-
-        private max_DatePositionTop = 0;
-        get $max_DatePositionTop() {return this.max_DatePositionTop}
-        set $max_DatePositionTop(value) {this.max_DatePositionTop = value}
-
-        $openMax_Date(event: MouseEvent) {
-            this.$max_DateIsOpen = true;
-            if(event.srcElement) {
-                this.$max_DatePositionTop = event.srcElement.getBoundingClientRect().bottom;
-            }
-        }
-        /*
         * emit
         * */
         $emitNewFilterValues() {
             this.$emit("change", {
-                from: this.$min_dateSelected,
-                to  : this.$max_dateSelected,
+                tagSelected: this.$tagSelected,
             })
         }
     }

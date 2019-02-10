@@ -3,14 +3,6 @@
         <header-with-text :data="pageThesisData.header"></header-with-text>
 
         <main class="v-page-thesis__main">
-            <div class="v-page-projects__filter" >
-                <filter-setting
-                        class="v-page-thesis__filter"
-                        $textInsteadTagList="thesis"
-                        :$dates="$projectsDates"
-                        v-on:change="$filterDate = $event"></filter-setting>
-            </div>
-
             <template v-for="item of $itemsToShow">
                 <thesis
                         :$siteLang="$siteLang"
@@ -32,10 +24,8 @@
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageThesisData} from "./IPageThesisData"
     import {IAllThesis, IThesisItem} from "../../../api/genericsApiTypesIntefaces"
-    import {generateDateFromTo} from "../../generateDateFromTo"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import Project from "../../components/project/Project.vue"
-    import {getItemsFilterByDates, IFilterDate} from "../../itemsFilters"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Thesis from "../../components/thesis/Thesis"
 
@@ -56,25 +46,8 @@
         get $siteIsFr() { return this.$siteLang === LANG_LIST.FR }
 
         /**/
-
-        get $projectsDates() {
-            return generateDateFromTo(this.$allThesis.thesis)
-        }
-
         get $itemsToShow(): IThesisItem[] {
-            return getItemsFilterByDates(this.$allThesis.thesis, this.$filterDate)
-        }
-
-        /*
-        * FILTER
-        * */
-        private filterDate: IFilterDate = {
-            from:   0,
-            to:     0,
-        }
-        get $filterDate() {return this.filterDate}
-        set $filterDate(value) {
-            this.filterDate = value
+            return this.$allThesis.thesis
         }
     }
 </script>

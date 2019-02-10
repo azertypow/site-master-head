@@ -3,13 +3,6 @@
         <header-with-text :data="data.header"></header-with-text>
 
         <main class="v-page-alumni__main">
-            <div class="v-page-alumni__filter v-filter-background-white" >
-                <filter-setting
-                        $textInsteadTagList="alumni"
-                        :$dates="$alumniDates"
-                        v-on:change="$filterDate = $event"></filter-setting>
-            </div>
-
             <div class="v-page-alumni__main__alumni">
                 <template v-for="alumni of this.$alumniToShow">
                     <div class="v-page-alumni__main__alumni__item">
@@ -32,12 +25,10 @@
     import HeaderWithText from "../../components/header/HeaderWithText"
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageAlumniData} from "./IPageAlumniData"
-    import {generateDateFromTo} from "../../generateDateFromTo"
     import {IAllAlumni, IAlumnisItem} from "../../../api/genericsApiTypesIntefaces"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Alumni from "../../components/alumni/Alumni"
-    import {IFilterDate} from "../../itemsFilters"
 
     @Component({
         components: {
@@ -60,37 +51,8 @@
         get $siteIsFr() { return this.$siteLang === LANG_LIST.FR }
 
         /**/
-
-        get $alumniDates() {
-            //todo use api/other/minmaxdates
-            return generateDateFromTo(this.$allAlumni.alumnis)
-        }
-
         get $alumniToShow(): IAlumnisItem[] {
-            const listToReturn: IAlumnisItem[] = []
-
-            for(const alumni of this.$allAlumni.alumnis) {
-                let alumniYear = parseInt(alumni.year)
-                if(Number.isNaN(alumniYear)) alumniYear = this.$filterDate.from
-
-                const alumniYearIsInSelection = alumniYear >= this.$filterDate.from && alumniYear <= this.$filterDate.to
-
-                if(alumniYearIsInSelection) listToReturn.push(alumni)
-            }
-
-            return listToReturn
-        }
-
-        /*
-        * FILTER
-        * */
-        private filterDate: IFilterDate = {
-            from:   0,
-            to:     0,
-        }
-        get $filterDate() {return this.filterDate}
-        set $filterDate(value) {
-            this.filterDate = value
+            return this.$allAlumni.alumnis
         }
     }
 </script>
@@ -137,9 +99,5 @@
                 }
             }
         }
-    }
-
-    .v-page-alumni__filter {
-        @include gutter;
     }
 </style>

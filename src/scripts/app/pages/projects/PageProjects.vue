@@ -1,13 +1,11 @@
 <template>
     <section class="v-page-projects">
-        <header-with-text :data="this.$pageProjectsDate.header"></header-with-text>
+        <header-with-text :data="this.$pageProjectsData.header"></header-with-text>
 
         <main class="v-page-projects__main">
             <div class="v-page-projects__filter" >
                 <filter-setting
-                        :$tags="$projectsTags"
-                        :$dates="$projectsDates"
-                        v-on:change="$filterDate = $event"></filter-setting>
+                        :$tags="$projectsTags"></filter-setting>
             </div>
 
             <template v-for="item of $itemsToShow">
@@ -31,12 +29,10 @@
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageProjectsData} from "./IPageProjectsData"
     import {getProjectsTags} from "../../../apiRequestes"
-    import {generateDateFromTo} from "../../generateDateFromTo"
     import {IAllProjects, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import Project from "../../components/project/Project"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
-    import {getItemsFilterByDates, IFilterDate} from "../../itemsFilters"
 
     @Component({
         components: {
@@ -55,7 +51,7 @@
         }
 
         @Prop({required: true}) data!: IPageProjectsData
-        get $pageProjectsDate() { return this.data }
+        get $pageProjectsData() { return this.data }
 
         @Prop({required: true}) allProjects!: IAllProjects
         get $allProjects() { return this.allProjects }
@@ -78,25 +74,8 @@
             return this.projectsTags
         }
 
-        get $projectsDates() {
-            //todo use api/other/minmaxdates
-            return generateDateFromTo(this.$allProjects.project)
-        }
-
         get $itemsToShow(): IProjectItem[] {
-            return getItemsFilterByDates(this.$allProjects.project, this.$filterDate)
-        }
-
-        /*
-        * FILTER
-        * */
-        private filterDate: IFilterDate = {
-            from:   0,
-            to:     0,
-        }
-        get $filterDate() {return this.filterDate}
-        set $filterDate(value) {
-            this.filterDate = value
+            return this.$allProjects.project
         }
     }
 </script>
