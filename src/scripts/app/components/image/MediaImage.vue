@@ -1,7 +1,7 @@
 <template>
     <div class="v-media-image" :class="{'is-visible' : visible}">
-        <img v-if="inImageElement"  class="v-media-image__img"   :src="this.$projectData.generated.icon"/>
-        <div v-else                 class="v-media-image__img"   :style="{backgroundImage: 'url(' + this.$projectData.generated.icon + ')'}"></div>
+        <img v-if="inImageElement"  class="v-media-image__img"   :src="this.$projectData.generated.regular"/>
+        <div v-else                 class="v-media-image__img"   :style="{backgroundImage: 'url(' + this.$projectData.generated.regular + ')'}"></div>
         <template v-if="$showDetails">
             <div class="v-media-image__copyright">
                 {{this.$projectData.origin.meta.copyright}}

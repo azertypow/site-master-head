@@ -23,7 +23,12 @@
             <div class="v-images-list">
                 <template v-for="imageData of this.$imagesData">
                     <div class="v-images-list__item">
-                        <img class="v-images-list__item__img" :src="imageData.generated.icon" :alt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright">
+
+                        <ImageWithLoader :$imageData="imageData"
+                                         :$imageAlt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright"
+                                         class="v-images-list__item__img"></ImageWithLoader>
+
+                        <!--<img class="v-images-list__item__img" :src="imageData.generated.icon" :alt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright">-->
                     </div>
                 </template>
             </div>
@@ -48,9 +53,10 @@
     import MediaImage from "../image/MediaImage"
     import secureIsNaNNumber from "../../../secureIsNaNNumber"
     import {getProjectsByUri} from "../../../apiRequestes"
+    import ImageWithLoader from "../image/ImageWithLoader.vue"
 
     @Component({
-        components: {MediaImage, BtnShowDetails},
+        components: {ImageWithLoader, MediaImage, BtnShowDetails},
         mounted: function() {
             const headerElement = (this as Project).$el.querySelector(".v-project__header");
 
