@@ -1,5 +1,7 @@
 <template>
-    <section v-if="$bottomIsOpen" id="bottom-bar">
+    <section v-if="$bottomIsOpen"
+             id="bottom-bar"
+             :class="{'no-content': !$barHasContent}">
 
         <template v-if="$barHasContent">
             <div class="text-container">
@@ -208,7 +210,7 @@
             @include container-content-justified;
             align-items: center;
             width: 100%;
-            height: $footer-height;
+            height: 2rem;
 
             padding-left: $gutter-width / 4;
             padding-right: $gutter-width / 4;
@@ -219,16 +221,7 @@
         }
         .social-container__item {
             > * {
-                @include font-reg;
-                font-size: 1em !important;
-
-                @media (min-width: $break-extra-small) {
-                    font-size: $font-size-small !important;
-                }
-
-                @media (min-width: $break-small) {
-                    font-size: $font-size--reg !important;
-                }
+                @include font-xs;
             }
         }
 
@@ -244,6 +237,7 @@
             width: $footer-height;
             height: $footer-height;
         }
+
         #bottom-bar-btn__icon {
             fill: none;
             stroke: $color-main-dark;
@@ -252,6 +246,14 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        &.no-content {
+            #bottom-bar-btn {
+                width: 2rem;
+                height: 2rem;
+                padding: $gutter-width / 4;
+            }
         }
     }
 </style>

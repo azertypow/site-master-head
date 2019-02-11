@@ -203,6 +203,10 @@
 
     .app-menu-nav__item {
         margin-right: $gutter-width;
+
+        @media (min-width: $break-regular) {
+            font-size: 1.4em !important;
+        }
     }
 
     #app-menu-lang {
