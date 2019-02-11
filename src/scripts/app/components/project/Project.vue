@@ -20,7 +20,7 @@
             <div v-if="$siteIsFr"   class="v-cartel__description__texts" v-html="this.$projectData.description_french"></div>
             <div v-else             class="v-cartel__description__texts" v-html="this.$projectData.description_english"></div>
 
-            <div class="v-images-list">
+            <div class="v-images-list v-cartel__description__images">
                 <template v-for="imageData of this.$imagesData">
                     <div class="v-images-list__item">
 
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="mmd-buttons">
+        <div class="mmd-buttons v-cartel__buttons">
             <btn-show-details :$siteLang="$siteLang"
                               v-on:clicked="btnDetailClicked()"></btn-show-details>
 

@@ -36,6 +36,8 @@
 </script>
 
 <style lang="scss">
+    @import "../../../../styles/_grid";
+
     .v-media-image {
         width: 100%;
         height: 100%;
@@ -44,12 +46,29 @@
         opacity: 0;
 
         &__img {
-            width: 100%;
             height: 100%;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             margin: auto;
+
+            width: 100%;
+
+            @media (min-width: $break-regular) {
+                width: 85%;
+            }
+
+            @media (min-width: $break-medium) {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: $break-small - 1px) {
+            &:first-child {
+                .v-media-image__img > * {
+                    object-fit: cover;
+                }
+            }
         }
 
         &__copyright{

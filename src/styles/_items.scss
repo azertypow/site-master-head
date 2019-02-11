@@ -14,15 +14,23 @@
   &__header {
     position: relative;
     //max-height: 500px;
-    height: 50vh;
+    height: auto;
 
-    @media (min-width: $break-extra-small) {
+    @media (min-width: $break-regular) {
       height: 70vh;
     }
 
     &__images {
       position: relative;
-      height: 100%;
+      height: 20rem;
+
+      @media(min-width: $break-regular) {
+        height: 100%;
+      }
+
+      @media (max-width: $break-small - 1px) {
+        transform: none !important;
+      }
 
       .v-media-image {
         position: absolute;
@@ -34,12 +42,32 @@
     }
 
     &__texts {
-      position: absolute;
-      top: 50%;
       left: 0;
-      transform: translateY(-50%);
       mix-blend-mode: difference;
       width: 100%;
+
+      position: relative;
+      top: -2rem;
+      margin-bottom: -2rem;
+
+      @media (max-width: $break-small - 1px) {
+        transform: none !important;
+      }
+
+      @media (min-width: $break-small) {
+        transform: translateY(-50%);
+        position: absolute;
+        top: auto;
+        bottom: -5rem;
+        margin-bottom: 0;
+        padding-left: 8.33333%;
+      }
+
+      @media (min-width: $break-regular) {
+        padding-left: 0;
+        top: 50%;
+        bottom: auto;
+      }
     }
   }
 }
@@ -54,8 +82,26 @@
   &.show-details {
     max-height: 50em;
 
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    @media (min-width: $break-extra-small) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
     &:after {
       opacity: 0;
+    }
+  }
+
+  &:not(.show-details) {
+    + .mmd-buttons {
+      margin-top: 2rem;
+
+      @media (min-width: $break-regular) {
+        margin-top: 4rem;
+      }
     }
   }
 
@@ -83,6 +129,12 @@
 
 .v-cartel__header__title {
   max-width: 12em;
+
+  @media(max-width: $break-extra-small - 1px) {
+    font-size: $font-size--reg;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .v-cartel__header__author {
@@ -92,13 +144,6 @@
 .v-cartel__description {
   @include column-container;
   @include remove-first-and-last-vertical-margin;
-  margin-top: 0;
-  margin-bottom: 1rem;
-
-  @media (min-width: $break-extra-small) {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
 }
 
 .v-cartel__description__texts {
@@ -117,5 +162,21 @@
 
   @media (min-width: $break-medium) {
     @include column(10, 12);
+  }
+}
+
+.v-cartel__description__images {
+  @media (min-width: $break-small) {
+    @include column-skip(2, 24);
+  }
+}
+
+.v-cartel__buttons {
+  @media (min-width: $break-small) {
+    @include column-skip(2, 24);
+  }
+
+  @media (min-width: $break-regular) {
+    @include column-skip(0, 12);
   }
 }
