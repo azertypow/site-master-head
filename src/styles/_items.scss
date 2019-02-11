@@ -167,16 +167,20 @@
 
 .v-cartel__description__images {
   @media (min-width: $break-small) {
-    @include column-skip(2, 24);
+    padding-left: 100% / 12 * 1;
+  }
+
+  @media (min-width: $break-regular) {
+    padding-left: 0;
   }
 }
 
 .v-cartel__buttons {
   @media (min-width: $break-small) {
-    @include column-skip(2, 24);
+    padding-left: 100% / 12 * 1;
   }
 
   @media (min-width: $break-regular) {
-    @include column-skip(0, 12);
+    padding-left: 0;
   }
 }
