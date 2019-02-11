@@ -5,7 +5,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
         <div class="app-header__background-container">
             <div class="app-header__image" style="background-image: url('/content/projects/3-machine-learning-for-designers/generated/18_md_sdtlphead-raphaellemueller-75@mmd-large.jpg');"></div>
         </div>
-        <div class="app-header__text-container">
+        <div class="app-header__text-container" :class="{'has-no-title' : !titleFr || !title}">
             <div class="app-header__text" v-if="titleFr && title">
                 <h1 v-if="siteIsFr" v-html="titleFr"></h1>
                 <h1 v-else          v-html="title"></h1>
@@ -144,6 +144,24 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
         @media (min-width: $break-large) {
             padding-left: 15%;
         }
+
+        h3 {
+            font-size: 3.25em;
+            line-height: 3rem;
+
+            @media (min-width: $break-regular) {
+                font-size: 4.25em;
+                line-height: 4rem;
+            }
+        }
+    }
+
+    .app-header__text-container.has-no-title {
+        display: none;
+
+        @media (min-width: $break-small) {
+            display: block;
+        }
     }
 
     .is-white {
@@ -161,12 +179,14 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
     }
 
     .has-max-height {
-        &.header-with-image {
-            max-height: 700px;
-        }
+        @media (min-width: $break-small) {
+            &.header-with-image {
+                max-height: 700px;
+            }
 
-        .app-header__image {
-            max-height: 500px;
+            .app-header__image {
+                max-height: 500px;
+            }
         }
     }
 

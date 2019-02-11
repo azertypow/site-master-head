@@ -31,7 +31,7 @@
     margin-top: 15rem;
     @include column(1, 1);
 
-    @media (min-height: $break-height-regular) and (min-width: $break-regular) {
+    @media (min-height: $break-height-small) and (min-width: $break-regular) {
       padding-bottom: 33vh;
     }
   }
