@@ -1,9 +1,18 @@
 <template>
-    <section id="app-menu" :class="{'bg-dark': $backgroundIsDark, 'bottom-is-open': $bottomIsOpen}">
+    <section id="app-menu" :class="{'bg-dark': $backgroundIsDark, 'bottom-is-open': $bottomIsOpen, 'menu-open': menuOpen}">
 
         <div class="app-menu__top">
             <div class="app-menu__wrap">
                 <nav id="app-menu-nav">
+                    <div id="nav-burger"
+                         @click="burgerClicked()">
+                        <div class="nav-burger__container">
+                            <span class="nav-burger__line top"></span>
+                            <span class="nav-burger__line middle"></span>
+                            <span class="nav-burger__line bottom"></span>
+                        </div>
+                    </div>
+
                     <button id="app-menu-home"
                             class="app-menu__button button--small app-menu-nav__item"
                             @click="goToPageHome"
@@ -34,7 +43,7 @@
                             :disabled="$currentPageIs_contact"
                     ><template v-if="siteIsFr">à propos</template><template v-else>about</template><span class="contact-details"> / contacts</span></button>
 
-                    <button class="app-menu__button button--small app-menu-nav__item">
+                    <button id="inscription" class="app-menu__button button--small app-menu-nav__item">
                         <a v-if="siteIsFr"  href="https://age.hes-so.ch/imoniteur_AGEP/!formInscrs.connection?ww_c_formulaire=FORM_HEAD_MA_2019&ww_c_langue=fr" target="_blank">s'inscrire</a>
                         <a v-else           href="https://age.hes-so.ch/imoniteur_AGEP/!formInscrs.connection?ww_c_formulaire=FORM_HEAD_MA_2019&ww_c_langue=en" target="_blank">register</a>
                     </button>
@@ -98,6 +107,8 @@
         private readonly currentPage!: PAGES_PATHNAME
         set $currentPage(pageName: PAGES_PATHNAME) {
 
+            if(this.menuOpen) this.menuOpen = false
+
             if(pageName !== this.currentPage) {
                 EventBus.$emit(EVENT_BUS_LIST.PAGE_CHANGED, [pageName])
 
@@ -116,10 +127,16 @@
         private get $currentPageIs_alumni()     {   return this.$currentPage === PAGES_PATHNAME.ALUMNI  }
 
         get $backgroundIsDark() {   return PAGE_SETTINGS[this.$currentPage].backgroundIsDark }
+
+        menuOpen = false
+
+        burgerClicked() {
+            this.menuOpen = !this.menuOpen
+        }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "../../../../styles/_params";
     @import "../../../../styles/_grid";
     @import "../../../../styles/fix";
@@ -158,18 +175,10 @@
             @include app-menu-section;
             top: 0;
             box-shadow: $shadow-properties--top white;
-
-            font-size: 0.8em;
-            padding-left: $gutter-width / 4;
-            padding-right: $gutter-width / 4;
-            padding-top: .5rem;
-
-            @media (min-width: $break-extra-small) {
-                font-size: inherit;
-                padding-top: 1rem;
-                padding-left: $gutter-width / 2;
-                padding-right: $gutter-width / 2;
-            }
+            font-size: inherit;
+            padding-top: 1rem;
+            padding-left: $gutter-width / 2;
+            padding-right: $gutter-width / 2;
         }
 
         .app-menu__wrap {
@@ -199,13 +208,29 @@
 
     #app-menu-nav {
         @include column-container;
+        user-select: none;
     }
 
     .app-menu-nav__item {
         margin-right: $gutter-width;
+        font-size: 1.4em !important;
+    }
 
-        @media (min-width: $break-regular) {
-            font-size: 1.4em !important;
+    #app-menu-home,
+    #app-menu-projects,
+    #app-menu-thesis,
+    #app-menu-alumni,
+    #app-menu-contact {
+        display: none;
+    }
+
+    @media (min-width: $break-regular) {
+        #app-menu-home,
+        #app-menu-projects,
+        #app-menu-thesis,
+        #app-menu-alumni,
+        #app-menu-contact {
+            display: block;
         }
     }
 
@@ -223,6 +248,116 @@
             .bg-dark & {
                 color: white;
             }
+        }
+    }
+
+    #nav-burger {
+        width: 3rem;
+        height: 2rem;
+        position: relative;
+        box-sizing: border-box;
+        padding: 0.5rem 1.5rem 0.5rem 0;
+        cursor: pointer;
+    }
+
+    .nav-burger__container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .nav-burger__line {
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        background: black;
+
+        .bg-dark & {
+            background: white;
+        }
+    }
+
+
+    .top {
+        top: 0;
+    }
+
+    .middle {
+        top: 50%;
+    }
+
+    .bottom {
+        bottom: 0;
+    }
+
+    #app-menu.menu-open {
+        .app-menu__top {
+            height: 100%;
+            background: white;
+        }
+
+        &.bg-dark {
+            .app-menu__top {
+                background: black;
+            }
+        }
+
+        #nav-burger {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        #app-menu-lang {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        #inscription {
+            position: fixed;
+            top: 1.5rem;
+            left: 4rem;
+        }
+
+        $break-menu-small: 450px;
+
+        #app-menu-home,
+        #app-menu-projects,
+        #app-menu-thesis,
+        #app-menu-alumni,
+        #app-menu-contact {
+            display: block;
+            font-size: 2em !important;
+            line-height: 1.5em;
+            font-family: "Suisse Neue", serif;
+
+            @media (min-width: $break-menu-small) {
+                font-size: 3em !important;
+            }
+        }
+
+        #app-menu-nav {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 3rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            max-height: 30rem;
+
+            @media (min-width: $break-menu-small) {
+                max-height: 40rem;
+                top: auto;
+                bottom: 0;
+            }
+        }
+
+        .app-menu-nav__item {
+            text-align: left;
         }
     }
 </style>
