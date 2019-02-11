@@ -190,12 +190,27 @@
     }
 
     .v-page-projects__item {
-        @include column(1, 3);
         @include gutter;
         @include gutter-horizontal;
+        @include column(1, 1);
+        max-width: 30em;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @media (min-width: $break-small) {
+            @include column(1, 2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (min-width: $break-medium) {
+            @include column(1, 3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     }
 
     .v-page-projects__item__image {
