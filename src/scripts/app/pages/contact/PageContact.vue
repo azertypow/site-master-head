@@ -1,6 +1,15 @@
 <template>
     <section class="v-page-contact">
-        <header-with-text :data="pageContactData.header"></header-with-text>
+        <!--<header-with-text :data="pageContactData.header"></header-with-text>-->
+
+        <app-header-with-image
+                :hasMaxHeight="true"
+                class="contact-header"
+                subtitleFr="informations <br>et contacts"
+                subtitle="information <br>and contacts"
+                :isWhite="true"
+                :data="this.pageContactData.header" />
+
 
         <main class="v-page-contact__main">
             <div class="v-page-contact__wrap-content">
@@ -123,6 +132,7 @@
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
+    import AppHeaderWithImage from '../../components/header/HeaderWithImage'
     import HeaderWithText from "../../components/header/HeaderWithText"
     import {IPageContactData} from "./IPageContactData"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
@@ -132,6 +142,7 @@
         components: {
             AppFooter,
             HeaderWithText,
+            AppHeaderWithImage,
         }
     })
     export default class PageContact extends Vue {
@@ -157,11 +168,15 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "../../../../styles/pages";
 
     .v-page-contact {
         @include page-light;
+    }
+
+    .contact-header {
+        margin-bottom: 7rem;
     }
 
     .v-page-contact__main {

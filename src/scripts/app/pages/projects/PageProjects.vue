@@ -1,6 +1,9 @@
 <template>
     <section class="v-page-projects">
-        <header-with-text :data="this.$pageProjectsData.header"></header-with-text>
+        <!--<header-with-text :data="this.$pageProjectsData.header"></header-with-text>-->
+
+        <section class="empty-header">
+        </section>
 
         <main class="v-page-projects__main">
             <div class="v-page-projects__filter" >
@@ -165,6 +168,11 @@
 
     .v-page-projects {
         @include page-dark;
+    }
+
+    .empty-header {
+        height: 10rem;
+        width: 100%;
     }
 
     .v-page-projects__main {

@@ -1,6 +1,8 @@
 <template>
     <section class="v-page-home">
         <app-header-with-image
+                titleFr="master <br> media design"
+                title="master <br> media design"
                 :data="pageHomeData.header" />
 
         <main class="v-page-home__main">
@@ -146,7 +148,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "../../../../styles/_params";
     @import "../../../../styles/pages";
 

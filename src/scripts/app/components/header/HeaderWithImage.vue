@@ -1,13 +1,18 @@
 import {LANG_LIST} from "../GLOBAL_ENUMS"
 <template>
-    <section class="header-with-image app-header">
+    <section class="header-with-image app-header"
+             :class="[{'is-white' : isWhite}, { 'has-max-height' : hasMaxHeight}]">
         <div class="app-header__background-container">
             <div class="app-header__image" style="background-image: url('/content/projects/3-machine-learning-for-designers/generated/18_md_sdtlphead-raphaellemueller-75@mmd-large.jpg');"></div>
         </div>
         <div class="app-header__text-container">
-            <div class="app-header__text">
-                <h1 v-if="siteIsFr" v-html="this.data.title.fr"></h1>
-                <h1 v-else          v-html="this.data.title.en"></h1>
+            <div class="app-header__text" v-if="titleFr && title">
+                <h1 v-if="siteIsFr" v-html="titleFr"></h1>
+                <h1 v-else          v-html="title"></h1>
+            </div>
+            <div class="app-header__text is-subtitle" v-if="subtitleFr && subtitle">
+                <h3 v-if="siteIsFr" v-html="subtitleFr"></h3>
+                <h3 v-else          v-html="subtitle"></h3>
             </div>
         </div>
     </section>
@@ -56,6 +61,16 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
     })
     export default class HeaderWithImage extends Vue {
         @Prop({required: true}) data!: IHeaderWithImageData
+
+        @Prop({default: false}) isWhite!: boolean
+
+        @Prop({default: false}) hasMaxHeight!: boolean
+
+        @Prop() titleFr!: string
+        @Prop() title!: string
+
+        @Prop() subtitleFr!: string
+        @Prop() subtitle!: string
 
         siteLang = DEFAULT_SITE_LANG
         set $siteLang(value: LANG_LIST) {
@@ -110,7 +125,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "../../../../styles/app-header";
     @import "../../../../styles/_params";
     @import "../../../../styles/_grid";
@@ -118,4 +133,41 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
     .header-with-image {
 
     }
+
+    .app-header__text.is-subtitle {
+        padding-left: 1rem;
+
+        @media (min-width: $break-regular) {
+            padding-left: 5%;
+        }
+
+        @media (min-width: $break-large) {
+            padding-left: 15%;
+        }
+    }
+
+    .is-white {
+        &.header-with-image {
+            background: white;
+        }
+
+        .app-header__text-container {
+            color: white;
+        }
+
+        .app-header__background-container {
+            background: white;
+        }
+    }
+
+    .has-max-height {
+        &.header-with-image {
+            max-height: 700px;
+        }
+
+        .app-header__image {
+            max-height: 500px;
+        }
+    }
+
 </style>

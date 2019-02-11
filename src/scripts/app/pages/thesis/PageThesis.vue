@@ -1,6 +1,9 @@
 <template>
     <section class="v-page-thesis">
-        <header-with-text :data="pageThesisData.header"></header-with-text>
+        <!--<header-with-text :data="pageThesisData.header"></header-with-text>-->
+
+        <section class="empty-header">
+        </section>
 
         <main class="v-page-thesis__main">
             <template v-for="item of $itemsToShow">
@@ -52,10 +55,19 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "../../../../styles/pages";
 
     .v-page-thesis {
         @include page-dark;
+    }
+
+    .empty-header {
+        height: 10rem;
+        width: 100%;
+
+        @media (min-width: $break-regular) {
+            height: 15rem;
+        }
     }
 </style>

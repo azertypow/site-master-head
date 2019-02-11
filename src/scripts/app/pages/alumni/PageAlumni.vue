@@ -1,6 +1,9 @@
 <template>
     <section class="v-page-alumni">
-        <header-with-text :data="data.header"></header-with-text>
+        <!--<header-with-text :data="data.header"></header-with-text>-->
+
+        <section class="empty-header">
+        </section>
 
         <main class="v-page-alumni__main">
             <div class="v-page-alumni__main__alumni">
@@ -57,8 +60,17 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "../../../../styles/pages";
+
+    .empty-header {
+        height: 10rem;
+        width: 100%;
+
+        @media (min-width: $break-regular) {
+            height: 15rem;
+        }
+    }
 
     .v-page-alumni {
         @include page-light;

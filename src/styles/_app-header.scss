@@ -6,7 +6,9 @@
   width: 100vw;
   height: 100vh;
 
+  // @todo header page transition
   perspective: 1500px;
+  //transform-box: view-box;
 }
 
 .app-header__background-container {
@@ -17,10 +19,11 @@
   height: 100%;
   background-color: $color-main-dark;
 
-  perspective: 1000px;
+  // @todo header page transition
+  //perspective: 1000px;
   transform-style: preserve-3d;
   transform-box: view-box;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 .app-header__image {
@@ -45,9 +48,10 @@
 .app-header__text {
   @include gutter;
   position: absolute;
-  bottom: 5rem;
+  bottom: 3rem;
   mix-blend-mode: difference;
   width: 100%;
+  box-sizing: border-box;
 
   > * {
     margin: 0;
