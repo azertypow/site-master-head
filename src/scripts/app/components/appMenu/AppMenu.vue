@@ -72,7 +72,13 @@
     import {DEFAULT_SITE_LANG, PAGE_SETTINGS, PAGES_PATHNAME} from "../../../../SETTINGS"
     import {getWindowPageInfo} from "../../../currentPageInfo"
 
-    @Component
+    @Component({
+        mounted: function() {
+            window.addEventListener("resize", () => {
+                if((this as AppMenu).menuOpen) (this as AppMenu).menuOpen = false
+            })
+        }
+    })
     export default class AppMenu extends Vue {
         constructor() {
             super();
@@ -258,6 +264,11 @@
         box-sizing: border-box;
         padding: 0.5rem 1.5rem 0.5rem 0;
         cursor: pointer;
+        display: block;
+
+        @media (min-width: $break-regular) {
+            display: none;
+        }
     }
 
     .nav-burger__container {
