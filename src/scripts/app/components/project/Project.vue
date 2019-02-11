@@ -221,7 +221,7 @@
 
                 headerImages.style.transform =  `rotateX(${vectorX * Project.degTransformation}deg)     rotateY(${vectorY * Project.degTransformation}deg) translateX(${ - vectorX * Project.translationTransformation}px)`
 
-                headerTexts.style.transform =   `rotateX(${vectorX * Project.degTransformation}deg)     rotateY(${vectorY * Project.degTransformation}deg) translateX(${ vectorX * Project.translationTransformation}px)`
+                headerTexts.style.transform =   `rotateX(${vectorX * Project.degTransformation}deg)     rotateY(${vectorY * Project.degTransformation}deg) translateX(${ vectorX * Project.translationTransformation}px)    translateY(-50%)`
 
                 this.setCursorStyle(percentOfPosition);
             }
