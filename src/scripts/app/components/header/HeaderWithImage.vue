@@ -102,7 +102,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
                 const vectorX = positionX / width
                 const vectorY = positionY / height
 
-                backgroundContainer.style.transform =   `rotateX(${vectorY / 2 * HeaderWithImage.degTransformation}deg) rotateY(${vectorX * HeaderWithImage.degTransformation / 2}deg)  translateX(${ - vectorX * HeaderWithImage.translationTransformation}px)`
+                backgroundContainer.style.transform =   `translateZ(-50px) rotateX(${vectorY / 2 * HeaderWithImage.degTransformation}deg) rotateY(${vectorX * HeaderWithImage.degTransformation / 2}deg)  translateX(${ - vectorX * HeaderWithImage.translationTransformation}px)`
 
                 textElement.style.transform =           `rotateX(${vectorY / 2 * HeaderWithImage.degTransformation / 2}deg)                           translateY(${ - vectorY * HeaderWithImage.translationTransformation / 10}px)`
 
