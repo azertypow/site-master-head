@@ -22,16 +22,16 @@
 
         <template v-else>
             <div class="social-container">
-                <div class="social-container__item">
+                <div class="social-container__item" id="instagram">
                     <a class="mmd-link--no-underline"   target="_blank" href="https://www.instagram.com/headmediadesign/">instagram</a>
                 </div>
-                <div class="social-container__item">
+                <div class="social-container__item" id="twitter">
                     <a class="mmd-link--no-underline"   target="_blank" href="https://twitter.com/headmediadesign">twitter</a>
                 </div>
-                <div class="social-container__item">
+                <div class="social-container__item" id="vimeo">
                     <a class="mmd-link--no-underline"   target="_blank" href="https://vimeo.com/headmediadesign">vimeo</a>
                 </div>
-                <div class="social-container__item">
+                <div class="social-container__item" id="github">
                     <a class="mmd-link--no-underline"   target="_blank" href="https://github.com/">github</a>
                 </div>
             </div>
@@ -128,7 +128,9 @@
         padding-right: $footer-height;
         width: 100%;
 
-
+        &.no-content {
+            padding-right: 2rem;
+        }
 
         .text-container {
             @include row-container;
@@ -207,21 +209,35 @@
 
         .social-container {
             @include column-container;
-            @include container-content-justified;
+            justify-content: space-around;
             align-items: center;
             width: 100%;
             height: 2rem;
+            max-width: 1280px;
+            margin: auto;
 
             padding-left: $gutter-width / 4;
             padding-right: $gutter-width / 4;
 
-            @media ($break-extra-small) {
-                @include gutter;
+            @media (min-width: $break-small) {
+                @include container-content-justified;
             }
         }
         .social-container__item {
+            padding-left: $gutter-width / 2;
+            padding-right: $gutter-width / 2;
+
             > * {
                 @include font-xs;
+            }
+        }
+
+        #twitter,
+        #github {
+            display: none;
+
+            @media (min-width: $break-small) {
+                display: block;
             }
         }
 
