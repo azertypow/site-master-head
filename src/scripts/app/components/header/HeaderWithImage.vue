@@ -2,9 +2,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
 <template>
     <section class="header-with-image app-header">
         <div class="app-header__background-container">
-            <div class="app-header__image" style="background-image: url('/content/projects/3-machine-learning-for-designers/generated/18_md_sdtlphead-raphaellemueller-84@mmd-regular.jpg');                transform: translateX(-145%)    translateY(-45%) translateZ(130px) rotateY(5deg)    rotateZ(-10deg);"></div>
-            <div class="app-header__image" style="background-image: url('/content/projects/3-machine-learning-for-designers/generated/18_md_sdtlphead-raphaellemueller-61@mmd-regular.jpg');                transform: translateX(-50%)     translateY(-50%) translateZ(125px) rotateY(-4deg)   rotateZ(7deg);"></div>
-            <div class="app-header__image" style="background-image: url('/content/projects/2-bootcamp/generated/md_bootcamp-2018head-raphaellemueller-11@mmd-regular.jpg');                                 transform: translateX(45%)      translateY(-50%) translateZ(120px) rotateY(5deg)    rotateZ(-4deg);"></div>
+            <div class="app-header__image" style="background-image: url('/content/projects/3-machine-learning-for-designers/generated/18_md_sdtlphead-raphaellemueller-75@mmd-large.jpg');"></div>
         </div>
         <div class="app-header__text-container">
             <div class="app-header__text">
@@ -72,7 +70,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
         /*
         * header image interaction
         * */
-        static readonly degTransformation = 20
+        static readonly degTransformation = 10
         static readonly translationTransformation = 15
 
         static headerImageInteraction(e: Event, backgroundContainer: HTMLElement, arrayOfImageElement: HTMLElement[], textElement: HTMLElement) {
@@ -89,24 +87,24 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
                 const vectorX = positionX / width
                 const vectorY = positionY / height
 
-                backgroundContainer.style.transform =   `rotateX(${vectorX / 2 * HeaderWithImage.degTransformation}deg) rotateY(${vectorY * HeaderWithImage.degTransformation}deg)  translateX(${ - vectorX * HeaderWithImage.translationTransformation}px)`
+                backgroundContainer.style.transform =   `rotateX(${vectorY / 2 * HeaderWithImage.degTransformation}deg) rotateY(${vectorX * HeaderWithImage.degTransformation / 2}deg)  translateX(${ - vectorX * HeaderWithImage.translationTransformation}px)`
 
-                textElement.style.transform =           `rotateX(${vectorY * HeaderWithImage.degTransformation}deg)     rotateY(${vectorX * HeaderWithImage.degTransformation}deg)  translateX(${ - vectorX * HeaderWithImage.translationTransformation}px)`
+                textElement.style.transform =           `rotateX(${vectorY / 2 * HeaderWithImage.degTransformation / 2}deg)                           translateY(${ - vectorY * HeaderWithImage.translationTransformation / 10}px)`
 
-                for(let index = 0; index < arrayOfImageElement.length; index++) {
-
-                    const imageElement = arrayOfImageElement[index];
-
-                    switch (index) {
-                        case (0) :
-                            imageElement.style.transform = `translateX(-145%) translateY(-45%) translateZ(130px)    rotateZ(${-10 * -vectorX / 10}deg)  rotateX(${-vectorX / 3 * HeaderWithImage.degTransformation}deg) rotateY(${-vectorY / 3 * HeaderWithImage.degTransformation}deg)`
-                            break;
-                        case (2):
-                            imageElement.style.transform = `translateX(45%) translateY(-50%) translateZ(120px)      rotateZ(${-4 *   vectorX / 3}deg)  rotateX(${-vectorX / 3 * HeaderWithImage.degTransformation}deg) rotateY(${-vectorY / 3 * HeaderWithImage.degTransformation}deg)`
-                            break;
-                    }
-
-                }
+                // for(let index = 0; index < arrayOfImageElement.length; index++) {
+                //
+                //     const imageElement = arrayOfImageElement[index];
+                //
+                //     switch (index) {
+                //         case (0) :
+                //             imageElement.style.transform = `translateX(-145%) translateY(-45%) translateZ(130px)    rotateZ(${-10 * -vectorX / 10}deg)  rotateX(${-vectorX / 3 * HeaderWithImage.degTransformation}deg) rotateY(${-vectorY / 3 * HeaderWithImage.degTransformation}deg)`
+                //             break;
+                //         case (2):
+                //             imageElement.style.transform = `translateX(45%) translateY(-50%) translateZ(120px)      rotateZ(${-4 *   vectorX / 3}deg)  rotateX(${-vectorX / 3 * HeaderWithImage.degTransformation}deg) rotateY(${-vectorY / 3 * HeaderWithImage.degTransformation}deg)`
+                //             break;
+                //     }
+                //
+                // }
             }
         }
     }

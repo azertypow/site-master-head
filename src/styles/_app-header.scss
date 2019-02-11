@@ -5,6 +5,8 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+
+  perspective: 1500px;
 }
 
 .app-header__background-container {
@@ -22,30 +24,30 @@
 }
 
 .app-header__image {
-  width: 40vw;
-  height: 50vh;
+  width: calc(100vw - 10rem);
+  height: calc(100vh - 10rem);
   position: absolute;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   top: 50%;
   left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .app-header__text-container {
-  @include column-container;
-  @include container-content-centred;
-  @include site-max-width;
+  position: relative;
+  width: 100%;
   height: 100%;
   pointer-events: none !important;
 }
 
 .app-header__text {
-  @include column(1, 1);
   @include gutter;
   position: absolute;
-  top: 25%;
-  transform: translateY(-25%);
+  bottom: 5rem;
+  mix-blend-mode: difference;
+  width: 100%;
 
   > * {
     margin: 0;
