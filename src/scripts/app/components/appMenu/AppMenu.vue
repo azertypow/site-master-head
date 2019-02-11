@@ -44,8 +44,8 @@
                     ><template v-if="siteIsFr">à propos</template><template v-else>about</template><span class="contact-details"> / contacts</span></button>
 
                     <button id="inscription" class="app-menu__button button--small app-menu-nav__item">
-                        <a v-if="siteIsFr"  href="https://age.hes-so.ch/imoniteur_AGEP/!formInscrs.connection?ww_c_formulaire=FORM_HEAD_MA_2019&ww_c_langue=fr" target="_blank">s'inscrire</a>
-                        <a v-else           href="https://age.hes-so.ch/imoniteur_AGEP/!formInscrs.connection?ww_c_formulaire=FORM_HEAD_MA_2019&ww_c_langue=en" target="_blank">register</a>
+                        <a v-if="siteIsFr"  href="https://www.hesge.ch/head/formations-et-recherche/bachelor/admissions-2019" target="_blank">s'inscrire</a>
+                        <a v-else           href="https://www.hesge.ch/head/en/studies-and-research/bachelor-arts/admissions-2019" target="_blank">apply</a>
                     </button>
                 </nav>
 
