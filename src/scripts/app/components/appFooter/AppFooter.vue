@@ -61,7 +61,7 @@
         @include gutter;
         @include column(1, 1);
 
-        @media (min-width: $break-regular) {
+        @media (min-width: $break-small) {
             @include column(1, 2);
         }
 
@@ -83,8 +83,8 @@
         @include column(1, 1);
         margin-top: 2rem;
 
-        @media (min-width: $break-medium) {
-            @include column(1, 5);
+        @media (min-width: $break-small) {
+            @include column(1, 2);
             text-align: right;
             margin-top: 0;
         }
