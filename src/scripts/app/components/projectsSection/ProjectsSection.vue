@@ -1,11 +1,11 @@
 <template>
     <section class="v-projects-section">
-        <header class="v-projects-section__header">
-            <div class="v-projects-section__header__top">
-                <h2 class="v-projects-section__title" v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>
-                <h2 class="v-projects-section__title" v-else          >{{this.projectsSectionData.title.en}}</h2>
-            </div>
-        </header>
+        <!--<header class="v-projects-section__header">-->
+            <!--<div class="v-projects-section__header__top">-->
+                <!--<h2 class="v-projects-section__title" v-if="siteIsFr" >{{this.projectsSectionData.title.fr}}</h2>-->
+                <!--<h2 class="v-projects-section__title" v-else          >{{this.projectsSectionData.title.en}}</h2>-->
+            <!--</div>-->
+        <!--</header>-->
 
         <div class="v-projects-section__content">
             <div class="v-projects-section__content__projects">
