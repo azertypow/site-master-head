@@ -110,13 +110,13 @@
                 <div class="v-page-contact__details">
                     <template v-if="siteIsFr">
                         <h5>crédits</h5>
-                        <h6>Ce site utilise les fontes <a href="https://klim.co.nz/retail-fonts/domaine-sans-text/" target="_blank">Klim — Domaine Sans Text</a> et <a href="https://www.swisstypefaces.com/fonts/suisse/" target="_blank">Swiss Typefaces — Suisse Neue</a>.</h6>
-                        <h6>Il à était designé et developé par Yann Longchamps et Nicolas Baldran.</h6>
+                        <h6>Ce site utilise les fontes <a href="https://klim.co.nz/retail-fonts/domaine-sans-text/" target="_blank">Klim Type Foundry — Domaine Sans Text</a> et <a href="https://www.swisstypefaces.com/fonts/suisse/" target="_blank">Swiss Typefaces — Suisse Neue</a>.</h6>
+                        <h6>Il a été créé et réalisé par Yann Longchamp et Nicolas Baldran.</h6>
                     </template>
                     <template v-else>
                         <h5>credits</h5>
-                        <h6>This site uses the fonts <a href="https://klim.co.nz/retail-fonts/domaine-sans-text/" target="_blank">Klim — Domaine Sans Text</a> and <a href="https://www.swisstypefaces.com/fonts/suisse/" target="_blank">Swiss Typefaces — Suisse Neue</a>.</h6>
-                        <h6>It has been designed and developed by Yann Longchamps and Nicolas Baldran.</h6>
+                        <h6>This site uses the fonts <a href="https://klim.co.nz/retail-fonts/domaine-sans-text/" target="_blank">Klim Type Foundry — Domaine Sans Text</a> and <a href="https://www.swisstypefaces.com/fonts/suisse/" target="_blank">Swiss Typefaces — Suisse Neue</a>.</h6>
+                        <h6>It was conceived and developed by Yann Longchamp and Nicolas Baldran.</h6>
                     </template>
                 </div>
             </div>
