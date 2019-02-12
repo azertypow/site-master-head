@@ -5,11 +5,12 @@
             <div class="app-menu__wrap">
                 <nav id="app-menu-nav">
                     <div id="nav-burger"
+                         class="mmd-burger-button"
                          @click="burgerClicked()">
-                        <div class="nav-burger__container">
-                            <span class="nav-burger__line top"></span>
-                            <span class="nav-burger__line middle"></span>
-                            <span class="nav-burger__line bottom"></span>
+                        <div class="mmd-burger-button__container">
+                            <span class="mmd-burger-button__line--top"></span>
+                            <span class="mmd-burger-button__line--middle"></span>
+                            <span class="mmd-burger-button__line--bottom"></span>
                         </div>
                     </div>
 
@@ -258,48 +259,9 @@
     }
 
     #nav-burger {
-        width: 3rem;
-        height: 2rem;
-        position: relative;
-        box-sizing: border-box;
-        padding: 0.5rem 1.5rem 0.5rem 0;
-        cursor: pointer;
-        display: block;
-
         @media (min-width: $break-regular) {
             display: none;
         }
-    }
-
-    .nav-burger__container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        box-sizing: border-box;
-    }
-
-    .nav-burger__line {
-        height: 1px;
-        width: 100%;
-        position: absolute;
-        background: black;
-
-        .bg-dark & {
-            background: white;
-        }
-    }
-
-
-    .top {
-        top: 0;
-    }
-
-    .middle {
-        top: 50%;
-    }
-
-    .bottom {
-        bottom: 0;
     }
 
     #app-menu.menu-open {

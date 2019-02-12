@@ -1,0 +1,41 @@
+.mmd-burger-button {
+  width: 3rem;
+  height: 2rem;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0.5rem 1.5rem 0.5rem 0;
+  cursor: pointer;
+  display: block;
+}
+
+.mmd-burger-button__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.mmd-burger-button__line--top,
+.mmd-burger-button__line--middle,
+.mmd-burger-button__line--bottom {
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  background: black;
+
+  .bg-dark & {
+    background: white;
+  }
+}
+
+.mmd-burger-button__line--top {
+  top: 0;
+}
+
+.mmd-burger-button__line--middle {
+  top: 50%;
+}
+
+.mmd-burger-button__line--bottom {
+  bottom: 0;
+}
