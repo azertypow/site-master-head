@@ -2,8 +2,17 @@
     <section class="v-page-projects">
         <!--<header-with-text :data="this.$pageProjectsData.header"></header-with-text>-->
 
-        <section class="empty-header">
-        </section>
+        <!--<section class="empty-header">-->
+        <!--</section>-->
+
+        <HeaderWithImage
+                :hasMaxHeight="false"
+                class="projects-header"
+                subtitleFr="projets<br>d'étudiants"
+                subtitle="projects<br>students"
+                jpgImageName="_01_17_MD_MargauxCharvolin©Head_RaphaëlleMueller-BaptisteCoulon_003"
+                :isWhite="false"
+                :data="this.data.header" />
 
         <main class="v-page-projects__main">
             <div class="v-page-projects__filter" >
@@ -73,22 +82,22 @@
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
-    import HeaderWithText from "../../components/header/HeaderWithText"
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageProjectsData} from "./IPageProjectsData"
     import {getProjectsTags} from "../../../apiRequestes"
     import {IAllProjects, IMedia_generatedItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import Project from "../../components/project/Project"
-    import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
+    import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import ImageWithLoader from "../../components/image/ImageWithLoader.vue"
+    import HeaderWithImage from "../../components/header/HeaderWithImage.vue"
 
     @Component({
         components: {
             ImageWithLoader,
             AppFooter,
             Project,
-            HeaderWithText,
+            HeaderWithImage,
             FilterSetting,
         }
     })
@@ -179,6 +188,7 @@
         @include column(12, 12);
         padding-left: 0;
         padding-right: 0;
+        margin-top: 3rem;
     }
 
     .v-page-projects__filter {
