@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
+  - about/felicien-goguey
+  - projects/machine-learning-for-designers
   - projects/advanced-selfie-machines
   - projects/bootcamp
   - thesis/carnet-sur-la-poussiere
-  - thesis/gameplay-for-learning
-  - projects/machine-learning-for-designers

@@ -37,7 +37,7 @@ Students:
 
 ----
 
-Tags: workshop/machin learning
+Tags: workshop/machine learning
 
 ----
 
