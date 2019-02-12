@@ -38,13 +38,13 @@
 
 .app-header__image {
   background-repeat: no-repeat;
-  background-position: center;
+  background-size: cover;
+  background-position: center 80%;
 
   width: calc(100vw + 2rem);
 
   height: 50vh;
   position: relative;
-  background-size: cover;
   top: 0;
   left: 0;
   transform: none;
@@ -52,7 +52,7 @@
   @media (min-width: $break-small) {
     height: calc(80vh - 2rem);
     position: absolute;
-    background-size: contain;
+    //background-size: contain;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);

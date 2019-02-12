@@ -3,7 +3,7 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
     <section class="header-with-image app-header"
              :class="[{'is-white' : isWhite}, { 'has-max-height' : hasMaxHeight}]">
         <div class="app-header__background-container">
-            <div class="app-header__image" style="background-image: url('/content/projects/3-machine-learning-for-designers/generated/18_md_sdtlphead-raphaellemueller-75@mmd-large.jpg');"></div>
+            <div class="app-header__image" :style="'background-image: url(/assets/dist/images/' + jpgImageName + '@1x.jpg);'"></div>
         </div>
         <div class="app-header__text-container" :class="{'has-no-title' : !titleFr || !title}">
             <div class="app-header__text" v-if="titleFr && title">
@@ -71,6 +71,8 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
 
         @Prop() subtitleFr!: string
         @Prop() subtitle!: string
+
+        @Prop({type: String, default:'201702_MD_Salone-Ludico_Ximoan©HEAD_MichelGiesbrecht_001'}) jpgImageName!: string
 
         siteLang = DEFAULT_SITE_LANG
         set $siteLang(value: LANG_LIST) {

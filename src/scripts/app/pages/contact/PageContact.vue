@@ -2,11 +2,12 @@
     <section class="v-page-contact">
         <!--<header-with-text :data="pageContactData.header"></header-with-text>-->
 
-        <app-header-with-image
+        <HeaderWithImage
                 :hasMaxHeight="true"
                 class="contact-header"
                 subtitleFr="informations <br>et contacts"
                 subtitle="information <br>and contacts"
+                jpgImageName="Diptyque1"
                 :isWhite="true"
                 :data="this.pageContactData.header" />
 
@@ -132,8 +133,7 @@
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
-    import AppHeaderWithImage from '../../components/header/HeaderWithImage'
-    import HeaderWithText from "../../components/header/HeaderWithText"
+    import HeaderWithImage from '../../components/header/HeaderWithImage'
     import {IPageContactData} from "./IPageContactData"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
@@ -141,8 +141,7 @@
     @Component({
         components: {
             AppFooter,
-            HeaderWithText,
-            AppHeaderWithImage,
+            HeaderWithImage,
         }
     })
     export default class PageContact extends Vue {
@@ -354,4 +353,10 @@
         }
     }
 
+</style>
+
+<style lang="scss">
+    .v-page-contact .app-header__image {
+        background-position: center 70%;
+    }
 </style>

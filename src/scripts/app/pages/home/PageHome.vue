@@ -1,6 +1,6 @@
 <template>
     <section class="v-page-home">
-        <app-header-with-image
+        <HeaderWithImage
                 titleFr="master <br> media design"
                 title="master <br> media design"
                 :data="pageHomeData.header" />
@@ -34,7 +34,7 @@
 <script lang="ts">
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {Component, Prop, Vue} from "vue-property-decorator"
-    import AppHeaderWithImage from '../../components/header/HeaderWithImage'
+    import HeaderWithImage from '../../components/header/HeaderWithImage'
     import {IPageHomeData} from "./IPageHomeData"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Project from "../../components/project/Project"
@@ -52,7 +52,7 @@
             AppFooter,
             ProjectsSection,
             Project,
-            AppHeaderWithImage,
+            HeaderWithImage,
         }
     })
     export default class PageHome extends Vue {

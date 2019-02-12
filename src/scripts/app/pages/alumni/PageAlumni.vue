@@ -2,8 +2,17 @@
     <section class="v-page-alumni">
         <!--<header-with-text :data="data.header"></header-with-text>-->
 
-        <section class="empty-header">
-        </section>
+        <!--<section class="empty-header">-->
+        <!--</section>-->
+
+        <HeaderWithImage
+                :hasMaxHeight="true"
+                class="contact-header"
+                subtitleFr="annuaire <br>des alumni"
+                subtitle="alumni <br>directory"
+                jpgImageName="_01_17_MD_MargauxCharvolin©Head_RaphaëlleMueller-BaptisteCoulon_003"
+                :isWhite="true"
+                :data="this.data.header" />
 
         <main class="v-page-alumni__main">
             <div class="v-page-alumni__main__alumni">
@@ -25,7 +34,7 @@
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
-    import HeaderWithText from "../../components/header/HeaderWithText"
+    import HeaderWithImage from '../../components/header/HeaderWithImage'
     import FilterSetting from "../../components/filter/FilterSetting"
     import {IPageAlumniData} from "./IPageAlumniData"
     import {IAllAlumni, IAlumnisItem} from "../../../api/genericsApiTypesIntefaces"
@@ -37,7 +46,7 @@
         components: {
             Alumni,
             AppFooter,
-            HeaderWithText,
+            HeaderWithImage,
             FilterSetting,
         }
     })
