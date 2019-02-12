@@ -6,6 +6,7 @@
                 <nav id="app-menu-nav">
                     <div id="nav-burger"
                          class="mmd-burger-button"
+                         :class="{'mmd-burger-button--close' : menuOpen}"
                          @click="burgerClicked()">
                         <div class="mmd-burger-button__container">
                             <span class="mmd-burger-button__line--top"></span>
@@ -259,6 +260,9 @@
     }
 
     #nav-burger {
+        padding: 0.5rem 1.5rem 0.5rem 0;
+        width: 3rem;
+
         @media (min-width: $break-regular) {
             display: none;
         }
@@ -267,12 +271,13 @@
     #app-menu.menu-open {
         .app-menu__top {
             height: 100%;
-            background: white;
+            transition: background-color 250ms ease-in-out;
+            background-color: white;
         }
 
         &.bg-dark {
             .app-menu__top {
-                background: black;
+                background-color: black;
             }
         }
 
@@ -306,10 +311,22 @@
             line-height: 1.5em;
             font-family: "Suisse Neue", serif;
 
+            opacity: 0;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+
             @media (min-width: $break-menu-small) {
                 font-size: 3em !important;
             }
         }
+
+        $animDecal: 50ms;
+        #app-menu-home      {animation-delay: 0 * $animDecal}
+        #app-menu-projects  {animation-delay: 1 * $animDecal}
+        #app-menu-thesis    {animation-delay: 2 * $animDecal}
+        #app-menu-alumni    {animation-delay: 3 * $animDecal}
+        #app-menu-contact   {animation-delay: 4 * $animDecal}
 
         #app-menu-nav {
             width: 100%;
@@ -331,6 +348,16 @@
 
         .app-menu-nav__item {
             text-align: left;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
         }
     }
 </style>

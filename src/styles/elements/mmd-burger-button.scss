@@ -1,11 +1,11 @@
 .mmd-burger-button {
-  width: 3rem;
   height: 2rem;
   position: relative;
   box-sizing: border-box;
-  padding: 0.5rem 1.5rem 0.5rem 0;
   cursor: pointer;
   display: block;
+  padding: 0.5rem;
+  width: 2.5rem;
 }
 
 .mmd-burger-button__container {
@@ -22,6 +22,7 @@
   width: 100%;
   position: absolute;
   background: black;
+  transition: transform 250ms ease-in-out;
 
   .bg-dark & {
     background: white;
@@ -30,12 +31,30 @@
 
 .mmd-burger-button__line--top {
   top: 0;
+  transform-origin: left;
+  transform: rotateZ(0deg);
+
+  .mmd-burger-button--close & {
+    transform: rotateZ(45deg) translateY(-1px) translateX(-.5px);
+  }
 }
 
 .mmd-burger-button__line--middle {
   top: 50%;
+  transform-origin: center;
+  transform: scaleX(1);
+
+  .mmd-burger-button--close & {
+    transform: scaleX(0);
+  }
 }
 
 .mmd-burger-button__line--bottom {
   bottom: 0;
+  transform-origin: left;
+  transform: rotateZ(0deg);
+
+  .mmd-burger-button--close & {
+    transform: rotateZ(-45deg) translateY(1px) translateX(-.5px);
+  }
 }
