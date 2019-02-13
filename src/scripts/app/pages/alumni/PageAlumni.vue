@@ -62,11 +62,11 @@
     @import "../../../../styles/pages";
 
     .empty-header {
-        height: 10rem;
+        height: 6rem;
         width: 100%;
 
-        @media (min-width: $break-regular) {
-            height: 15rem;
+        @media (min-width: $break-small) {
+            height: 8rem;
         }
     }
 
