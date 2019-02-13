@@ -1,8 +1,8 @@
-Title-thesis-french: le[s] sens du texte, du potentiel des technologies d’écritures, dans les littératures numériques
+Title-thesis-french: les sens du texte
 
 ----
 
-Title-thesis-english: le[s] sens du texte, du potentiel des technologies d’écritures, dans les littératures numériques
+Title-thesis-english: les sens du texte
 
 ----
 

@@ -22,7 +22,7 @@ Students-thesis: Salomé Faure
 
 ----
 
-Tuteurs-thesis: -
+Tuteurs-thesis: Nicolas Nova
 
 ----
 

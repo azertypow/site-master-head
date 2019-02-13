@@ -22,7 +22,7 @@ Students-thesis: Ivan Gulizia
 
 ----
 
-Tuteurs-thesis: -
+Tuteurs-thesis: Nicolas Nova
 
 ----
 
