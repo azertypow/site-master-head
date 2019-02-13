@@ -68,6 +68,7 @@
 
                     <project :$siteLang="$siteLang"
                              class="v-page-projects__modal-project"
+                             :detailsAlwaysOpening = "true"
                              :data="projectOpen"/>
 
                     <button @click="closeProject()" class="button--small close-bottom">

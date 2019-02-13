@@ -16,7 +16,7 @@
             </div>
         </header>
 
-        <div class="v-project__description v-cartel__description" :class="{'show-details': showDetails}">
+        <div class="v-project__description v-cartel__description" :class="{'show-details': showDetails || detailsAlwaysOpening, 'no-max-height' : detailsAlwaysOpening}">
             <div v-if="$siteIsFr"   class="v-cartel__description__texts" v-html="this.$projectData.description_french"></div>
             <div v-else             class="v-cartel__description__texts" v-html="this.$projectData.description_english"></div>
 
@@ -38,6 +38,7 @@
 
         <div class="mmd-buttons v-cartel__buttons">
             <btn-show-details :$siteLang="$siteLang"
+                              v-if="!detailsAlwaysOpening"
                               v-on:clicked="btnDetailClicked()"></btn-show-details>
 
             <button class="button--small button--arrow button--revert"  v-if="this.$siteIsFr"   @click="$getProjectUri($projectData.uri)">partager</button>
@@ -85,6 +86,8 @@
     export default class Project extends Vue {
         @Prop({required: true}) data!: IProjectItem
         get $projectData() {return this.data}
+
+        @Prop({default: false, type: Boolean}) detailsAlwaysOpening!: boolean
 
         /*
         * site lang

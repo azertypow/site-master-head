@@ -95,6 +95,10 @@
     }
   }
 
+  &.no-max-height {
+    max-height: none !important;
+  }
+
   &:not(.show-details) {
     + .mmd-buttons {
       margin-top: 2rem;
