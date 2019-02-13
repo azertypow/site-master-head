@@ -219,8 +219,8 @@
             padding-left: $gutter-width / 4;
             padding-right: $gutter-width / 4;
 
-            @media (min-width: $break-small) {
-                @include container-content-justified;
+            @media (min-width: 1700px) {
+                justify-content: space-between;
             }
         }
         .social-container__item {
