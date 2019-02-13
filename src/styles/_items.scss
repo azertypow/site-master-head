@@ -141,6 +141,25 @@
   }
 }
 
+.v-project__header__texts {
+}
+
+.v-project__header__text-container {
+  max-width: 1066px;
+  margin: auto;
+
+  @include column(1, 1);
+  @include gutter;
+
+  @media (min-width: $break-regular) {
+    @include column(22, 24);
+  }
+
+  @media (min-width: $break-large) {
+    @include column(10, 12);
+  }
+}
+
 .v-cartel__header__author {
   @include font-xs;
 }

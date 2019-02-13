@@ -11,8 +11,10 @@
                 </template>
             </div>
             <div class="v-project__header__texts v-cartel__header">
-                <h3     class="v-cartel__header__title">{{this.$projectData.title}}</h3>
-                <div    class="v-cartel__header__author" v-for="students of this.$projectData.students" >{{students.students_name}}</div>
+                <div class="v-project__header__text-container">
+                    <h3     class="v-cartel__header__title">{{this.$projectData.title}}</h3>
+                    <div    class="v-cartel__header__author" v-for="students of this.$projectData.students" >{{students.students_name}}</div>
+                </div>
             </div>
         </header>
 
@@ -283,6 +285,11 @@
     .v-project__header {
         perspective: 2500px;
         cursor: e-resize;
+        width: 100vw;
+        margin: auto;
+        transform: translateX(-50%);
+        left: 50%;
+        overflow: hidden;
 
         &.to-left {
             cursor: w-resize;
