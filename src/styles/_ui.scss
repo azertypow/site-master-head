@@ -33,6 +33,10 @@ button,
     color: black;
   }
 
+  &.has-no-border {
+    border: none;
+  }
+
   &.button--arrow {
     &:after {
       content: ' \02192';

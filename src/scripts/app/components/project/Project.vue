@@ -41,8 +41,8 @@
                               v-if="!detailsAlwaysOpening"
                               v-on:clicked="btnDetailClicked()"></btn-show-details>
 
-            <button class="button--small button--arrow button--revert"  v-if="this.$siteIsFr"   @click="$getProjectUri($projectData.uri)">partager</button>
-            <button class="button--small button--arrow button--revert"  v-else                  @click="$getProjectUri($projectData.uri)">share</button>
+            <button class="button--small button--arrow button--revert has-no-border"  v-if="this.$siteIsFr"   @click="$getProjectUri($projectData.uri)">partager</button>
+            <button class="button--small button--arrow button--revert has-no-border"  v-else                  @click="$getProjectUri($projectData.uri)">share</button>
         </div>
 
     </section>
