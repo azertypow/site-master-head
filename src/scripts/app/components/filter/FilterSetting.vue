@@ -1,5 +1,5 @@
 <template>
-    <section class="v-filter-setting" >
+    <section class="v-filter-setting is-not-extra-small" >
         <template v-if="$indexOf_Tag_Selected === -1">
             <div v-if="siteIsEn">show</div>
             <div v-else         >montrer</div>

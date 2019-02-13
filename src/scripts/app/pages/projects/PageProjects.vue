@@ -29,7 +29,7 @@
                                              class="v-page-projects__item__image"
                                              :$fitCover  = "true" ></ImageWithLoader>
 
-                            <p class="v-page-projects__item__title">{{getItemTitle(item)}}</p>
+                            <p class="v-page-projects__item__title is-not-extra-small">{{getItemTitle(item)}}</p>
                         </div>
 
                         <h5 class="v-page-projects__item__student"

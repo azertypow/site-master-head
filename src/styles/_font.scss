@@ -235,6 +235,14 @@
   margin-top: 0;
   margin-bottom: 0;
 
+
+  &.is-not-extra-small {
+    font-size: $font-size--reg;
+    line-height: 2rem;
+    padding-top: 8px;
+    padding-bottom: 10px;
+  }
+
   font-weight: 400;
   @include font-has-no-space-next-line;
 
@@ -242,16 +250,16 @@
     font-weight: 500;
   }
 
-  @media(min-width: $break-small) {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
   @media(min-width: $break-extra-small) {
     font-size: $font-size--reg;
     line-height: 2rem;
     padding-top: 8px;
     padding-bottom: 10px;
+  }
+
+  @media(min-width: $break-small) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 @mixin font-medium-reg {
