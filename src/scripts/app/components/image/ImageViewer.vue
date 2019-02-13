@@ -13,10 +13,8 @@
         </div>
         <div class="text-container"
              ref="to-animate">
-            <p>{{imageOpenData.origin.meta.image_description}} image_description</p>
-            <p>{{imageOpenData.origin.meta.copyright}} copyright</p>
-            <p>{{imageOpenData.origin.meta.imagedescription}} imagedescription</p>
-            <p>{{imageOpenData.origin.meta.sort}} sort</p>
+            <p>{{imageOpenData.origin.meta.image_description}} </p>
+            <p>{{imageOpenData.origin.meta.copyright}}</p>
         </div>
     </div>
 </template>
