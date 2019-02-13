@@ -55,6 +55,9 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         <bottom-bar
                 :$siteLang="$siteLang"
                 :$bottomIsOpen="$BottomIsOpen"></bottom-bar>
+
+        <ImageViewer @imageViewerClosed="closeImageViewer()"
+                     :imageOpenData="imageOpenData"></ImageViewer>
     </section>
 </template>
 
@@ -71,6 +74,8 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
     import PageAlumni from "./pages/alumni/PageAlumni"
     import PageThesis from "./pages/thesis/PageThesis"
     import PageContact from "./pages/contact/PageContact"
+    import {IMedia_generatedItem} from "../api/genericsApiTypesIntefaces"
+    import ImageViewer from "./components/image/ImageViewer.vue"
 
     @Component ({
         components: {
@@ -81,8 +86,13 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             PageHome,
             PageProjects,
             BottomBar,
+            ImageViewer,
         },
         created: function() {
+            EventBus.$on(EVENT_BUS_LIST.OPEN_IMAGE_DETAILS, (event: IMedia_generatedItem) => {
+                (this as App).imageOpenData = event
+            })
+
             EventBus.$on(EVENT_BUS_LIST.LANG, (event: LANG_LIST) => {
                 (this as App).$siteLang = event
             })
@@ -115,11 +125,15 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
             (this as App).initAppCubePosition();
 
             // todo event compatibility: https://developer.mozilla.org/en-US/docs/Web/Events/transitionend#Browser_compatibility
-            appHTMLElement.addEventListener("transitionend", () => {
+            appHTMLElement.addEventListener("transitionend", (e) => {
 
-                (this as App).initAppCubePosition();
-
-                (this as App).pageTransitionRun = false;
+                const targetElement = e.target
+                if(targetElement instanceof HTMLElement) {
+                    if(targetElement.classList.contains("app-cube-container")) {
+                        (this as App).initAppCubePosition();
+                        (this as App).pageTransitionRun = false;
+                    }
+                }
             });
 
             (this as App).pageTransitionRun = false;
@@ -217,11 +231,27 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
                 console.error("can't set html lang attribute: ", e)
             }
         }
+
+        imageOpenData: IMedia_generatedItem | null = null
+
+        closeImageViewer() {
+            this.imageOpenData = null
+        }
     }
 </script>
 
 <style lang="scss">
     @import "../../styles/_params";
+
+    #image-viewer {
+        position: fixed;
+        background: black;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000000;
+    }
 
     #app {
 

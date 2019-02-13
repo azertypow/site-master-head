@@ -6,7 +6,8 @@ export enum LANG_LIST {
 export enum EVENT_BUS_LIST {
     LANG = "lang",
     CLOSE_BOTTOM_BAR = "btn-bar-closed",
-    PAGE_CHANGED = "page changed"
+    PAGE_CHANGED = "page changed",
+    OPEN_IMAGE_DETAILS = "openImageDetails"
 }
 
 export enum HOME_PROJECT_POSITIONS {

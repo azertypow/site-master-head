@@ -21,8 +21,9 @@
             <div v-else             class="v-cartel__description__texts" v-html="this.$projectData.description_english"></div>
 
             <div class="v-images-list v-cartel__description__images">
-                <template v-for="imageData of this.$imagesData">
-                    <div class="v-images-list__item">
+                <template v-for="(imageData, imageDataIndex) of this.$imagesData">
+                    <div class="v-images-list__item"
+                         @click="openImageDetails(imageDataIndex)">
 
                         <ImageWithLoader :$imageData="imageData"
                                          :$fitCover="true"
@@ -48,13 +49,14 @@
 
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
-    import {LANG_LIST} from "../../../GLOBAL_ENUMS"
+    import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
     import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
     import {IMedia_generatedItem, IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import MediaImage from "../image/MediaImage"
     import secureIsNaNNumber from "../../../secureIsNaNNumber"
     import {getProjectsByUri} from "../../../apiRequestes"
     import ImageWithLoader from "../image/ImageWithLoader.vue"
+    import {EventBus} from "../../../event-bus"
 
     @Component({
         components: {ImageWithLoader, MediaImage, BtnShowDetails},
@@ -260,6 +262,11 @@
                 this.headerElement.classList.remove("to-left")
                 this.cursorIsLeft = true
             }
+        }
+
+        // image details
+        openImageDetails(index: number) {
+            EventBus.$emit(EVENT_BUS_LIST.OPEN_IMAGE_DETAILS, this.$imagesData[index])
         }
     }
 </script>
