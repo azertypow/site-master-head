@@ -22,26 +22,15 @@
 
             <div class="v-page-projects__list">
                 <template v-for="item of $itemsToShow">
-                    <div class="v-page-projects__item">
-                        <div>
-                            <ImageWithLoader :$imageData = "getImageData(item)"
-                                             :$imageAlt  = "getImageAlt(item)"
-                                             class="v-page-projects__item__image"
-                                             :$fitCover  = "true" ></ImageWithLoader>
 
-                            <p class="v-page-projects__item__title is-not-extra-small">{{getItemTitle(item)}}</p>
-                        </div>
-
-                        <h5 class="v-page-projects__item__student"
-                            v-for="studentName of getItemArrayOfStudents(item)">{{studentName}}</h5>
-
-                        <div>
-                            <button @click="openProject(item)" class="button--small">
-                                <template v-if="$siteIsFr">voir le projet</template>
-                                <template v-else         >open project</template>
-                            </button>
-                        </div>
-                    </div>
+                    <ProjetItem :imageData           = "getImageData(item)"
+                                :hasButton           = "true"
+                                :buttonText          = "{fr: 'voir le projet', en: 'open project'}"
+                                :$siteIsFr           = "$siteIsFr"
+                                :imageAlt            = "getImageAlt(item)"
+                                :itemTitle           = "getItemTitle(item)"
+                                @onOpenProject       = "openProject(item)"
+                                :itemArrayOfStudents = "getItemArrayOfStudents(item)" ></ProjetItem>
 
                     <!--<project-->
                             <!--:$siteLang="$siteLang"-->
@@ -90,12 +79,12 @@
     import Project from "../../components/project/Project"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
-    import ImageWithLoader from "../../components/image/ImageWithLoader.vue"
     import HeaderWithImage from "../../components/header/HeaderWithImage.vue"
+    import ProjetItem from "../../components/ProjetItem.vue"
 
     @Component({
         components: {
-            ImageWithLoader,
+            ProjetItem,
             AppFooter,
             Project,
             HeaderWithImage,
@@ -198,43 +187,6 @@
 
     .v-page-projects__list {
         @include column-container;
-    }
-
-    .v-page-projects__item {
-        @include gutter;
-        @include gutter-horizontal;
-        @include column(1, 1);
-        max-width: 30em;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        @media (min-width: $break-small) {
-            @include column(1, 2);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        @media (min-width: $break-medium) {
-            @include column(1, 3);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-    }
-
-    .v-page-projects__item__image {
-        width: 100%;
-        height: 10rem;
-    }
-
-    .v-page-projects__item__title {
-        margin: 0;
-    }
-
-    .v-page-projects__item__student {
-
     }
 
     .v-page-projects__modal {

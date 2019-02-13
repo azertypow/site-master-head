@@ -6,11 +6,24 @@
         </section>
 
         <main class="v-page-thesis__main">
-            <template v-for="item of $itemsToShow">
-                <thesis
-                        :$siteLang="$siteLang"
-                        :data="item"/>
-            </template>
+            <div class="v-page-thesis__list">
+                <template v-for="item of $itemsToShow">
+                    <!--<thesis-->
+                            <!--:$siteLang="$siteLang"-->
+                            <!--:data="item"/>-->
+
+                    <ProjetItem :imageData           = "getImageData(item)"
+                                :hasButton           = "true"
+                                :buttonText          = "{fr: 'voir le pdf', en: 'open pdf'}"
+                                :buttonLink          = "getPDFLink(item)"
+                                :$siteIsFr           = "$siteIsFr"
+                                :imageAlt            = "getImageAlt(item)"
+                                :itemTitle           = "getItemTitle_fr(item)"
+                                :itemTitle_en        = "getItemTitle_en(item)"
+                                :itemArrayOfStudents = "getItemArrayOfStudents(item)"
+                                :itemTutor           = "getTutorName(item)" ></ProjetItem>
+                </template>
+            </div>
         </main>
 
         <footer class="v-page-thesis__footer">
@@ -31,9 +44,10 @@
     import Project from "../../components/project/Project.vue"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Thesis from "../../components/thesis/Thesis"
+    import ProjetItem from "../../components/ProjetItem.vue"
 
     @Component({
-        components: {Thesis, Project, AppFooter, FilterSetting, HeaderWithText}
+        components: {Thesis, Project, AppFooter, FilterSetting, HeaderWithText, ProjetItem}
     })
     export default class PageThesis extends Vue {
         @Prop({required: true}) data!: IPageThesisData
@@ -52,6 +66,33 @@
         get $itemsToShow(): IThesisItem[] {
             return this.$allThesis.thesis
         }
+
+        // noinspection JSMethodCanBeStatic
+        getImageData(item: IThesisItem)  { return null}
+
+        // noinspection JSMethodCanBeStatic
+        getImageAlt(item: IThesisItem)   { return null}
+
+        // noinspection JSMethodCanBeStatic
+        getPDFLink(item: IThesisItem)     {
+
+            for(const media of item.media) {
+                if(media.type === "document") return media.url
+            }
+
+            return null
+        }
+
+        // noinspection JSMethodCanBeStatic
+        getItemTitle_fr(item: IThesisItem)  { return item.title_thesis_french}
+        // noinspection JSMethodCanBeStatic
+        getItemTitle_en(item: IThesisItem)     { return item.title_thesis_english}
+
+        // noinspection JSMethodCanBeStatic
+        getItemArrayOfStudents(item: IThesisItem) { return [item.students_thesis]}
+
+        // noinspection JSMethodCanBeStatic
+        getTutorName(item: IThesisItem) { return item.tuteurs_thesis}
     }
 </script>
 
@@ -60,6 +101,16 @@
 
     .v-page-thesis {
         @include page-dark;
+    }
+
+    .v-page-thesis__main {
+        @include column(12, 12);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .v-page-thesis__list {
+        @include column-container;
     }
 
     .empty-header {
