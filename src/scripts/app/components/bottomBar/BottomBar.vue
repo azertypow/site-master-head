@@ -31,9 +31,9 @@
                 <div class="social-container__item" id="vimeo">
                     <a class="mmd-link--no-underline"   target="_blank" href="https://vimeo.com/headmediadesign">vimeo</a>
                 </div>
-                <div class="social-container__item" id="github">
-                    <a class="mmd-link--no-underline"   target="_blank" href="https://github.com/">github</a>
-                </div>
+                <!--<div class="social-container__item" id="github">-->
+                    <!--<a class="mmd-link&#45;&#45;no-underline"   target="_blank" href="https://github.com/">github</a>-->
+                <!--</div>-->
             </div>
         </template>
 
