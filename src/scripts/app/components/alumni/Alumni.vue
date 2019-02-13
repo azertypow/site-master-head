@@ -8,10 +8,10 @@
 
         <div  class="mmd-id-cartel_desc mmd-content-small v-alumni__add-link" v-if="this.$alumniData.external_link_alumni" v-html="this.$alumniData.external_link_alumni"></div>
 
-        <div class="mmd-id-cartel_contact" v-if="this.$alumniData.website_perso_alumni">
+        <div class="mmd-id-cartel_contact">
             <a class="mmd-id-cartel_link"   target="_blank" :href="this.$alumniData.website_perso_alumni"            >{{cleanUrl(this.$alumniData.website_perso_alumni)}}</a>
         </div>
-        <div class="mmd-id-cartel_contact" v-if="this.$alumniData.email_perso_alumni">
+        <div class="mmd-id-cartel_contact">
             <a class="mmd-id-cartel_link"   target="_blank" :href="'mailto:' + this.$alumniData.email_perso_alumni"  >{{this.$alumniData.email_perso_alumni}}</a>
         </div>
     </div>
