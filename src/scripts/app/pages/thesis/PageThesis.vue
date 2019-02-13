@@ -12,7 +12,8 @@
                             <!--:$siteLang="$siteLang"-->
                             <!--:data="item"/>-->
 
-                    <ProjetItem :imageData           = "getImageData(item)"
+                    <ProjetItem class="v-page-thesis__project-item"
+                                :imageData           = "getImageData(item)"
                                 :hasButton           = "true"
                                 :buttonText          = "{fr: 'voir le pdf', en: 'open pdf'}"
                                 :buttonLink          = "getPDFLink(item)"
@@ -109,16 +110,38 @@
         padding-right: 0;
     }
 
+    .v-page-thesis__project-item {
+        margin-top: 2rem;
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+
+        @media (min-width: $break-small) {
+            margin-top: 5rem;
+
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+
+        @media (min-width: $break-medium) {
+            &:nth-child(3) {
+                margin-top: 0;
+            }
+        }
+    }
+
     .v-page-thesis__list {
         @include column-container;
     }
 
     .empty-header {
-        height: 10rem;
+        height: 6rem;
         width: 100%;
 
-        @media (min-width: $break-regular) {
-            height: 15rem;
+        @media (min-width: $break-small) {
+            height: 8rem;
         }
     }
 </style>

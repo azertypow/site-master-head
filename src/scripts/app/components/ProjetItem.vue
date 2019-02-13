@@ -1,5 +1,5 @@
 <template>
-    <div class="v-page-projects__item">
+    <div class="v-page-projects__item" :class="{'has-no-image' : !imageData}">
         <div class="v-project-item__header" :class="{'has-no-image' : !imageData}">
             <ImageWithLoader v-if="imageData"
                              :$imageData = "imageData"
@@ -85,6 +85,10 @@
         flex-direction: column;
         justify-content: space-between;
 
+        &.has-no-image {
+            max-width: none;
+        }
+
         @media (min-width: $break-small) {
             @include column(1, 2);
             display: flex;
@@ -120,6 +124,10 @@
 
     .v-page-projects__item__title {
         margin: 0;
+
+        .has-no-image & {
+            max-width: 17em;
+        }
     }
 
     .v-page-projects__item__student {
