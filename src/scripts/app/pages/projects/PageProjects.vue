@@ -8,8 +8,8 @@
         <HeaderWithImage
                 :hasMaxHeight="false"
                 class="projects-header"
-                subtitleFr="projets<br>d'étudiants"
-                subtitle="projects<br>students"
+                subtitleFr="projets"
+                subtitle="projects"
                 jpgImageName="_01_17_MD_MargauxCharvolin©Head_RaphaëlleMueller-BaptisteCoulon_003"
                 :isWhite="false"
                 :data="this.data.header" />
