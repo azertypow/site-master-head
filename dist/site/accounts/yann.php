@@ -7,8 +7,8 @@ email: y.longchamp@hotmail.com
 language: en
 role: admin
 history:
+  - about/laura-couto-rosado
   - thesis/easy-to-learn-hard-to-master
   - thesis/le-s-sens-du-texte
   - thesis/la-realite-virtuelle-pour-raconter-des-histoires
   - about/felicien-goguey
-  - projects/machine-learning-for-designers
