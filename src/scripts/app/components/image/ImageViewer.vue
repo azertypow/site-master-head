@@ -83,6 +83,7 @@
         min-width: 100%;
         left: 100%;
         bottom: 0;
+        white-space: nowrap;
 
         animation-duration: 41.41s;
         animation-iteration-count: infinite;
