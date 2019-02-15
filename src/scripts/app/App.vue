@@ -251,6 +251,7 @@ import {PAGES_PATHNAME} from "../../SETTINGS"
         top: 0;
         left: 0;
         z-index: 1000000;
+        transform: translate3d(0px, 0px, 20000px);
     }
 
     #app {
