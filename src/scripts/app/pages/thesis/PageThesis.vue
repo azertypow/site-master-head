@@ -13,12 +13,10 @@
                             <!--:data="item"/>-->
 
                     <ProjetItem class="v-page-thesis__project-item"
-                                :imageData           = "getImageData(item)"
                                 :hasButton           = "true"
                                 :buttonText          = "{fr: 'voir le pdf', en: 'open pdf'}"
                                 :buttonLink          = "getPDFLink(item)"
                                 :$siteIsFr           = "$siteIsFr"
-                                :imageAlt            = "getImageAlt(item)"
                                 :itemTitle           = "getItemTitle_fr(item)"
                                 :itemTitle_en        = "getItemTitle_en(item)"
                                 :itemArrayOfStudents = "getItemArrayOfStudents(item)"
@@ -67,12 +65,6 @@
         get $itemsToShow(): IThesisItem[] {
             return this.$allThesis.thesis
         }
-
-        // noinspection JSMethodCanBeStatic
-        getImageData(item: IThesisItem)  { return null}
-
-        // noinspection JSMethodCanBeStatic
-        getImageAlt(item: IThesisItem)   { return null}
 
         // noinspection JSMethodCanBeStatic
         getPDFLink(item: IThesisItem)     {
