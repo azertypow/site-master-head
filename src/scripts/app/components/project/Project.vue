@@ -7,6 +7,8 @@
                     <MediaImage
                             :visible=$imageIsVisible(imageIndex)
                             :showDetails=false
+                            @media-image-icon-loaded = "mediaImageIconLoaded++"
+                            :$startMediaImageOriginalImageLoad = "allMediaImageIconLoaded"
                             :data="imageData"/>
                 </template>
             </div>
@@ -30,6 +32,8 @@
                         <ImageWithLoader :$imageData="imageData"
                                          :$fitCover="true"
                                          :$imageAlt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright"
+                                         @icon-image-loaded="iconLoaded++"
+                                         :$startOriginalImageLoad="initOriginalImageLoadForDescription"
                                          class="v-images-list__item__img"></ImageWithLoader>
 
                         <!--<img class="v-images-list__item__img" :src="imageData.generated.icon" :alt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright">-->
@@ -100,6 +104,17 @@
         headerElement!: HTMLElement
         cursorIsLeft = true
         get cursorIsRight() {return !this.cursorIsLeft}
+
+        /*
+        * images loading
+        * */
+
+        get allIconLoaded(): boolean { return this.iconLoaded === this.$imagesData.length }
+        iconLoaded = 0
+        get initOriginalImageLoadForDescription(): boolean {return this.allIconLoaded && (this.showDetails || this.detailsAlwaysOpening)}
+
+        get allMediaImageIconLoaded(): boolean { return this.mediaImageIconLoaded === this.$imagesData.length }
+        mediaImageIconLoaded = 0
 
         /*
         * details sections

@@ -30,6 +30,8 @@
                                 :imageAlt            = "getImageAlt(item)"
                                 :itemTitle           = "getItemTitle(item)"
                                 @onOpenProject       = "openProject(item)"
+                                @project-item-icon-image-loaded = "itemHeaderIconLoaded++"
+                                :$startHeaderOriginalImageLoad   = "allItemHeaderIconLoaded"
                                 :itemArrayOfStudents = "getItemArrayOfStudents(item)" ></ProjetItem>
 
                     <!--<project-->
@@ -104,6 +106,13 @@
 
         @Prop({required: true}) allProjects!: IAllProjects
         get $allProjects() { return this.allProjects }
+
+        /*
+        * image item loader
+        * */
+        get allItemHeaderIconLoaded(): boolean { return this.itemHeaderIconLoaded === this.$itemsToShow.length }
+
+        itemHeaderIconLoaded = 0
 
         /*
         * site lang

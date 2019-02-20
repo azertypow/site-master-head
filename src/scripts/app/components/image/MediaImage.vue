@@ -3,7 +3,9 @@
         <ImageWithLoader :$imageData="this.$projectData"
                          :$fitCover="false"
                          :$imageAlt="this.$projectData.origin.meta.image_description + ' ' + this.$projectData.origin.meta.copyright"
-                         class="v-media-image__img"></ImageWithLoader>
+                         class="v-media-image__img"
+                         @icon-image-loaded="emitMediaImageIconLoaded"
+                         :$startOriginalImageLoad="$startMediaImageOriginalImageLoad"></ImageWithLoader>
 
         <template v-if="$showDetails">
             <div class="v-media-image__copyright">
@@ -17,7 +19,7 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop} from "vue-property-decorator"
+    import {Vue, Component, Prop, Emit} from "vue-property-decorator"
     import {IMedia_generatedItem, IMediaItem} from "../../../api/genericsApiTypesIntefaces"
     import ImageWithLoader from "./ImageWithLoader.vue"
 
@@ -32,6 +34,14 @@
         get $showDetails() {return this.showDetails}
 
         @Prop({default: true, type: Boolean}) visible!: boolean
+
+        /*
+        * image loading
+        * */
+        @Emit("media-image-icon-loaded")
+        emitMediaImageIconLoaded() {}
+
+        @Prop({default: false, type: Boolean}) $startMediaImageOriginalImageLoad!: boolean
     }
 </script>
 

@@ -3,17 +3,19 @@
         <img :src="$imageSrc"
              :alt="$imageAlt"
              :class="[$imageClass, {'fit-cover' : $fitCover}]"
+             v-if="$startOriginalImageLoad"
              @load="originalImageIsLoaded = true">
 
         <img :src="$imageSrc_icon"
              :alt="$imageAlt"
              :class="[$imageClass, {'img-loaded' : originalImageIsLoaded}, {'fit-cover' : $fitCover}]"
+             @load="emitIconLoadedEvent()"
              class="v-image-with-loader__cache">
     </div>
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop} from "vue-property-decorator"
+    import {Vue, Component, Prop, Emit} from "vue-property-decorator"
     import {IMedia_generatedItem} from "../../../api/genericsApiTypesIntefaces"
 
     @Component({
@@ -27,6 +29,8 @@
         @Prop() $imageClass!: string
         @Prop({required: true, type: Boolean}) $fitCover!: boolean
 
+        @Prop({default: false, type: Boolean}) $startOriginalImageLoad!: boolean
+
         originalImageIsLoaded = false;
 
         get $imageSrc_icon() {
@@ -36,6 +40,9 @@
         get $imageSrc() {
             return this.$imageData.generated.regular
         }
+
+        @Emit('icon-image-loaded')
+        emitIconLoadedEvent() {}
     }
 </script>
 
@@ -62,6 +69,7 @@
     .v-image-with-loader__cache {
         transition: opacity 250ms ease-in-out;
         opacity: 1;
+        filter: blur(3px);
 
         &.img-loaded {
             opacity: 0;

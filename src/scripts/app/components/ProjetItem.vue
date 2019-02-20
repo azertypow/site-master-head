@@ -5,6 +5,8 @@
                              :$imageData = "imageData"
                              :$imageAlt  = "imageAlt"
                              class="v-page-projects__item__image"
+                             @icon-image-loaded="emitIconHeaderImageLoaded"
+                             :$startOriginalImageLoad="$startHeaderOriginalImageLoad"
                              :$fitCover  = "true" ></ImageWithLoader>
 
             <div :class="{'solo' : !imageData}">
@@ -70,6 +72,14 @@
 
         @Emit("onOpenProject")
         openProjectClicked() {}
+
+        /*
+        * image loading
+        * */
+        @Emit("project-item-icon-image-loaded")
+        emitIconHeaderImageLoaded() {}
+
+        @Prop({default: false, type: Boolean}) $startHeaderOriginalImageLoad!: boolean
     }
 </script>
 
