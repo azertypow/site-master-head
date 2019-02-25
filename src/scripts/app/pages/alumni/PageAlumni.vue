@@ -2,8 +2,17 @@
     <section class="v-page-alumni">
         <!--<header-with-text :data="data.header"></header-with-text>-->
 
-        <section class="empty-header">
-        </section>
+        <!--<section class="empty-header">-->
+        <!--</section>-->
+
+        <HeaderWithImage
+                :hasMaxHeight="true"
+                class="alumni-header"
+                subtitleFr="alumni"
+                subtitle="alumni"
+                jpgImageName="Diptyque2"
+                :isWhite="true"
+                :data="this.data.header" />
 
         <main class="v-page-alumni__main">
             <div class="v-page-alumni__main__alumni">
@@ -31,12 +40,14 @@
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Alumni from "../../components/alumni/Alumni"
+    import HeaderWithImage from "../../components/header/HeaderWithImage.vue"
 
     @Component({
         components: {
             Alumni,
             AppFooter,
             FilterSetting,
+            HeaderWithImage
         }
     })
     export default class PageAlumni extends Vue {
@@ -68,6 +79,10 @@
         @media (min-width: $break-small) {
             height: 8rem;
         }
+    }
+
+    .alumni-header {
+        margin-bottom: 4rem;
     }
 
     .v-page-alumni {
@@ -109,5 +124,11 @@
                 }
             }
         }
+    }
+</style>
+
+<style lang="scss">
+    .v-page-alumni .app-header__image {
+        background-position: center 65%;
     }
 </style>
