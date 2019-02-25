@@ -183,11 +183,11 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
     .has-max-height {
         @media (min-width: $break-small) {
             &.header-with-image {
-                max-height: 700px;
+                max-height: 800px;
             }
 
             .app-header__image {
-                max-height: 500px;
+                max-height: 600px;
             }
         }
     }

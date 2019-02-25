@@ -176,10 +176,6 @@
 
     .contact-header {
         margin-bottom: 4rem;
-
-        @media (min-width: $break-small) {
-            margin-bottom: 7rem;
-        }
     }
 
     .v-page-contact__main {
