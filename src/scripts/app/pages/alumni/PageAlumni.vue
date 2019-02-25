@@ -129,6 +129,6 @@
 
 <style lang="scss">
     .v-page-alumni .app-header__image {
-        background-position: center 65%;
+        background-position: center 55%;
     }
 </style>
