@@ -8,8 +8,8 @@
         <HeaderWithImage
                 :hasMaxHeight="true"
                 class="thesis-header"
-                subtitleFr="projets"
-                subtitle="projects"
+                subtitleFr="mémoires"
+                subtitle="thesis"
                 jpgImageName="Diptyque6.6"
                 :isWhite="false"
                 :data="this.data.header" />
