@@ -29,11 +29,13 @@
                     <div class="v-images-list__item"
                          @click="openImageDetails(imageDataIndex)">
 
+                        <!--responsive sizes same value of media image-->
                         <ImageWithLoader :$imageData="imageData"
                                          :$fitCover="true"
                                          :$imageAlt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright"
                                          @icon-image-loaded="iconLoaded++"
                                          :$startOriginalImageLoad="initOriginalImageLoadForDescription"
+                                         $responsiveSizes = "(min-width: 1060px) 1280px, (min-width: 750px) 750px, 100vw"
                                          class="v-images-list__item__img"></ImageWithLoader>
 
                         <!--<img class="v-images-list__item__img" :src="imageData.generated.icon" :alt="imageData.origin.meta.image_description + ' ' + imageData.origin.meta.copyright">-->

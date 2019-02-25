@@ -9,7 +9,17 @@
             </div>
         </div>
         <div class="image-container">
-            <img :src="imageOpenData.generated.regular" class="image">
+            <!--<img :src="imageOpenData.generated.large" class="image">-->
+
+            <ImageWithLoader
+                             :$imageData = "imageOpenData"
+                             :$imageAlt  = "imageOpenData.origin.meta.image_description + ' ' + imageOpenData.origin.meta.copyright"
+                             class="image"
+                             $responsiveSizes = "100vw"
+                             @icon-image-loaded="loadOriginalImage = true"
+                             :$startOriginalImageLoad="loadOriginalImage"
+                             :$fitCover  = "false" ></ImageWithLoader>
+
         </div>
         <div class="text-container"
              ref="to-animate">
@@ -23,8 +33,10 @@
     import {Component, Prop, Vue, Emit} from "vue-property-decorator"
     import {IMedia_generatedItem} from "../../../api/genericsApiTypesIntefaces"
     import BottomBar from "../bottomBar/BottomBar.vue"
+    import ImageWithLoader from "./ImageWithLoader.vue"
 
     @Component({
+        components: {ImageWithLoader},
         updated: function(this: ImageViewer) {
             const textToAnimate = this.$refs["to-animate"]
 
@@ -40,6 +52,10 @@
         closeImageViewer() {
 
         }
+
+        iconImageLoaded = false
+
+        loadOriginalImage = false
     }
 </script>
 

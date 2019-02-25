@@ -4,6 +4,7 @@
                          :$fitCover="false"
                          :$imageAlt="this.$projectData.origin.meta.image_description + ' ' + this.$projectData.origin.meta.copyright"
                          class="v-media-image__img"
+                         $responsiveSizes = "(min-width: 1060px) 1280px, (min-width: 750px) 750px, 100vw"
                          @icon-image-loaded="emitMediaImageIconLoaded"
                          :$startOriginalImageLoad="$startMediaImageOriginalImageLoad"></ImageWithLoader>
 

@@ -1,9 +1,19 @@
 <template>
     <div class="v-image-with-loader">
-        <img :src="$imageSrc"
+
+        <!--<img v-if="$imageResponsive"-->
+             <!--:src="$imageSrc"-->
+             <!--:alt="$imageAlt"-->
+             <!--:class="[$imageClass, {'fit-cover' : $fitCover}]"-->
+             <!--@load="originalImageIsLoaded = true"-->
+             <!--:srcset="$imageData.generated.large +' 1280w,' + $imageData.generated.regular +' 750w'"-->
+             <!--&gt;-->
+        <img v-if="$startOriginalImageLoad"
+             :src="$imageSrc"
              :alt="$imageAlt"
              :class="[$imageClass, {'fit-cover' : $fitCover}]"
-             v-if="$startOriginalImageLoad"
+             :srcset="$imageResponsive ? $imageData.generated.large +' 1200w,' + $imageData.generated.regular +' 750w' : null"
+             :sizes ="$imageResponsive ? $responsiveSizes : null"
              @load="originalImageIsLoaded = true">
 
         <img :src="$imageSrc_icon"
@@ -31,6 +41,11 @@
 
         @Prop({default: false, type: Boolean}) $startOriginalImageLoad!: boolean
 
+        @Prop({default: "", type: String})     $responsiveSizes!: string
+        get $imageResponsive(): boolean {return this.$responsiveSizes.length > 0}
+
+        @Prop({default: false, type: Boolean}) $alwaysLargeImage!: boolean
+
         originalImageIsLoaded = false;
 
         get $imageSrc_icon() {
@@ -38,7 +53,7 @@
         }
 
         get $imageSrc() {
-            return this.$imageData.generated.regular
+            return this.$alwaysLargeImage ? this.$imageData.generated.large : this.$imageData.generated.regular
         }
 
         @Emit('icon-image-loaded')

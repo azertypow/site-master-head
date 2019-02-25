@@ -5,6 +5,7 @@
                              :$imageData = "imageData"
                              :$imageAlt  = "imageAlt"
                              class="v-page-projects__item__image"
+                             $responsiveSizes = "414px, (min-width: 1060px) 400px"
                              @icon-image-loaded="emitIconHeaderImageLoaded"
                              :$startOriginalImageLoad="$startHeaderOriginalImageLoad"
                              :$fitCover  = "true" ></ImageWithLoader>
