@@ -30,6 +30,18 @@
                     </div>
 
                     <div class="v-page-contact__names">
+                        <h4         class="v-page-contact__names__title" v-if="siteIsFr">équipe</h4>
+                        <h4         class="v-page-contact__names__title" v-else         >team</h4>
+
+                        <div        class="v-page-contact__names__link-wrap">
+                            <div    class="v-page-contact__names-item"
+                                    v-for="(team, index) of this.allContacts.team">
+                                <a :href="'#team_' + index">{{team.name_team}}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="v-page-contact__names">
                         <h4         class="v-page-contact__names__title" v-if="siteIsFr">intervenants</h4>
                         <h4         class="v-page-contact__names__title" v-else         >speakers</h4>
 
@@ -38,18 +50,6 @@
                             <div    class="v-page-contact__names-item"
                                     v-for="intervenant of this.$allContacts.intervenants">
                                 <span>{{intervenant.intervenant_name}}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="v-page-contact__names">
-                        <h4         class="v-page-contact__names__title" v-if="siteIsFr">équipe</h4>
-                        <h4         class="v-page-contact__names__title" v-else         >team</h4>
-
-                        <div        class="v-page-contact__names__link-wrap">
-                            <div    class="v-page-contact__names-item"
-                                    v-for="(team, index) of this.allContacts.team">
-                                <a :href="'#team_' + index">{{team.name_team}}</a>
                             </div>
                         </div>
                     </div>
