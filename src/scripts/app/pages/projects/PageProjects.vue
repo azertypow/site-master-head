@@ -6,7 +6,7 @@
         <!--</section>-->
 
         <HeaderWithImage
-                :hasMaxHeight="false"
+                :hasMaxHeight="true"
                 class="projects-header"
                 subtitleFr="projets"
                 subtitle="projects"
