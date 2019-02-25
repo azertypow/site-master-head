@@ -2,8 +2,17 @@
     <section class="v-page-thesis">
         <!--<header-with-text :data="pageThesisData.header"></header-with-text>-->
 
-        <section class="empty-header">
-        </section>
+        <!--<section class="empty-header">-->
+        <!--</section>-->
+
+        <HeaderWithImage
+                :hasMaxHeight="true"
+                class="thesis-header"
+                subtitleFr="projets"
+                subtitle="projects"
+                jpgImageName="Diptyque6.6"
+                :isWhite="false"
+                :data="this.data.header" />
 
         <main class="v-page-thesis__main">
             <div class="v-page-thesis__list">
@@ -44,9 +53,10 @@
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Thesis from "../../components/thesis/Thesis"
     import ProjetItem from "../../components/ProjetItem.vue"
+    import HeaderWithImage from "../../components/header/HeaderWithImage.vue"
 
     @Component({
-        components: {Thesis, Project, AppFooter, FilterSetting, HeaderWithText, ProjetItem}
+        components: {Thesis, Project, AppFooter, FilterSetting, HeaderWithText, ProjetItem, HeaderWithImage}
     })
     export default class PageThesis extends Vue {
         @Prop({required: true}) data!: IPageThesisData
@@ -135,5 +145,11 @@
         @media (min-width: $break-small) {
             height: 8rem;
         }
+    }
+</style>
+
+<style lang="scss">
+    .v-page-thesis .app-header__image {
+        background-position: center 20%;
     }
 </style>
