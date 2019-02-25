@@ -34,6 +34,7 @@
   @media (min-width: $break-small) {
     height: 100%;
     position: absolute;
+    transform: translateZ(-50px);
   }
 }
 
