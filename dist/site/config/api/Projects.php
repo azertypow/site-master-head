@@ -91,41 +91,6 @@ class Projects
         return $project;
     }
 
-    public static function getAllProjectsAppearHome()
-    {
-        $data = page('projects')->children()->visible()->filterBy('appears_homepage', 'true');
-        $datatagedjson['project'] = array();
-
-        foreach ($data->sortBy('year', 'desc') as $oneproject) {
-
-            $arrayOfImagesInProject = $oneproject->files()->filter(function($file) {
-                return $file->type() == 'image';
-            })->toArray();
-
-            $datatagedjson['project'][] = array(
-                'uri'                   => $oneproject->uri(),
-                'url'                   => (string)$oneproject->url(),
-                'title'                 => (string)$oneproject->title(),
-                'year'                  => (string)$oneproject->year(),
-                'description_french'    => (string)$oneproject->description_french()->kirbytext(),
-                'description_english'   => (string)$oneproject->description_english()->kirbytext(),
-                'students'              => $oneproject->students()->yaml(),
-                'tags'                  => (string)$oneproject->tags(),
-                'appear_homepage'       => (string)$oneproject->appears_homepage(),
-                'event_pertinence'      => (string)$oneproject->event_pertinence(),
-                'workshop_pertinence'   => (string)$oneproject->workshop_pertinence(),
-                'seminar_pertinence'    => (string)$oneproject->seminar_pertinence(),
-                'appear_bandeau'        => (string)$oneproject->appears_bandeau(),
-                'text_bandeau_french'   => (string)$oneproject->text_bandeau_french()->kirbytext(),
-                'text_bandeau_english'  => (string)$oneproject->text_bandeau_english()->kirbytext(),
-                'appears_projects'      => (string)$oneproject->appears_projects(),
-                'media'                 => $oneproject->files()->toArray($callback = null),
-                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
-            );
-        }
-        return response::json($datatagedjson);
-    }
-
     public static function getAllProjectsAppearBandeau()
     {
         $data = page('projects')->children()->visible()->filterBy('appears_bandeau', 'true');

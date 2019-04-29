@@ -31,12 +31,6 @@ c::set('routes', array(
         }
     ),
     array(
-        'pattern' => 'api/projects/appearhome',
-        'action' => function () {
-            echo Projects::getAllProjectsAppearHome();
-        }
-    ),
-    array(
         'pattern' => 'api/projects/appearbandeau',
         'action' => function () {
             echo Projects::getAllProjectsAppearBandeau();
