@@ -58,7 +58,7 @@ c::set('routes', array(
         'pattern' => 'api/projects/uri=(:any)',
         'action' => function ($uri) {
             $uriDecode = urldecode($uri);
-            echo Projects::getProjectByUri($uriDecode);
+            echo Projects::getJsonDataForProjectByUri($uriDecode);
         }
     ),
     array(

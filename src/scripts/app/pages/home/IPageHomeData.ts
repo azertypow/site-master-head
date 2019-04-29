@@ -1,5 +1,6 @@
-import {IHeaderWithImageData} from "../../components/header/IHeaderWithImageData"
+import {IProjectItem} from "../../../api/genericsApiTypesIntefaces"
 
 export interface IPageHomeData {
-    header: IHeaderWithImageData
+    url?: string,
+    project_to_show_in_home: IProjectItem[]
 }

@@ -12,18 +12,23 @@ class Home
     public static function getHome()
     {
         $data = page('home');
-        $json['home'] = array(
+        $json = array(
             'url' => (string)$data->url(),
-            'title' => (string)$data->title(),
-            'text_introduction_french' => (string)$data->text_introduction_french(),
-            'text_introduction_english' => (string)$data->text_introduction_english(),
-            'text_events_french' => (string)$data->text_events_french(),
-            'text_events_english' => (string)$data->text_events_english(),
-            'text_workshop_french' => (string)$data->text_workshop_french(),
-            'text_workshop_english' => (string)$data->text_workshop_english(),
-            'text_seminaire_french' => (string)$data->text_seminaire_french(),
-            'text_seminaire_english' => (string)$data->text_seminaire_english(),
+            'project_to_show_in_home'=> Home::getArrayOfProjectsInHome((string)$data->project_to_show_in_home())
         );
         return response::json($json);
+    }
+
+    public static function getArrayOfProjectsInHome($stringProjectUri) {
+
+        $arrayOfProjectsInHome = [];
+
+        $arrayOfProjectsInHomeUri = explode(", ", $stringProjectUri);
+
+        foreach ($arrayOfProjectsInHomeUri as $uriProject) {
+            array_push($arrayOfProjectsInHome, Projects::getProjectByUri($uriProject));
+        }
+
+        return $arrayOfProjectsInHome;
     }
 }

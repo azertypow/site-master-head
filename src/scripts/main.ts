@@ -1,4 +1,4 @@
-import {getAllAlumni, getAllContact, getAllProjects, getAllThesis} from "./apiRequestes"
+import {getAllAlumni, getAllContact, getAllProjects, getAllThesis, getHomeData} from "./apiRequestes"
 import {createVueApplication, IMainVue} from "./app/createVueApplication"
 
 console.log("%c=== head media design <3 ===", "color: hotpink")
@@ -6,16 +6,8 @@ console.log("%c=== head media design <3 ===", "color: hotpink")
 let app = createVueApplication({
     allPagesData: {
         home: {
-            header: {
-                title: {
-                    fr: "master<br>media design",
-                    en: "master<br>media design"
-                },
-                images: [
-                    "",
-                    ""
-                ]
-            },
+            url: undefined,
+            project_to_show_in_home: [],
         },
         projects: {
             header: {
@@ -128,6 +120,10 @@ let app = createVueApplication({
 loadApplicationData(app)
 
 function loadApplicationData(vueApplication: IMainVue) {
+
+    getHomeData().then(value => {
+        vueApplication.data.allPagesData.home = value
+    })
 
     getAllProjects().then(value => {
         vueApplication.data.allProjects = value

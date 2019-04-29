@@ -1,7 +1,7 @@
 import {
     IAllAlumni, IAllContacts,
     IAllProjects,
-    IAllThesis, IProjectItem,
+    IAllThesis, IHomeData, IProjectItem,
     IProjectsAppearBottomBar,
     IProjectsAppearhome
 } from "./api/genericsApiTypesIntefaces"
@@ -9,8 +9,8 @@ import {
 /*
 * HOME and BOTTOM BAR
 * */
-export async function getProjectsAppearHome(): Promise<IProjectsAppearhome> {
-    return await getJsonData("api/projects/appearhome") as IProjectsAppearhome
+export async function getHomeData(): Promise<IHomeData> {
+    return await getJsonData("api/home") as IHomeData
 }
 
 export async function getBottomBarData(): Promise<IProjectsAppearBottomBar> {

@@ -1,7 +1,5 @@
 export type BooleanInString = "true" | "false"
 
-export type PertinenceStatue = "false" | "header_position" | "middle_position" | "bottom_position"
-
 export type ImageOrientation = "landscape" | "portrait"
 
 export type MediaType = "image" | "document" | "archive" | "code" | "video" | "audio"
@@ -51,6 +49,11 @@ export interface IGenericItem {
 /*
 * HOME and BOTTOM BAR
 * */
+export interface IHomeData {
+    url: string
+    project_to_show_in_home: IProjectItem[]
+}
+
 export interface IProjectsAppearhome {
     project: IProjectItem[];
 }
@@ -76,7 +79,6 @@ export interface IProjectItem extends IGenericItem {
     description_english: string;
     students: IStudentsItem[];
     tags: string;
-    appear_homepage: BooleanInString;
     appear_bandeau: BooleanInString;
     text_bandeau_french: string;
     text_bandeau_english: string;

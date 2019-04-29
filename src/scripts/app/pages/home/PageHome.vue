@@ -35,14 +35,8 @@
     import {IPageHomeData} from "./IPageHomeData"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import Project from "../../components/project/Project"
-    import {getProjectsAppearHome} from "../../../apiRequestes"
     import ProjectsSection from "../../components/projectsSection/ProjectsSection"
-    import {
-        IProjectsPositionInSection,
-        IProjectsSectionData
-    } from "../../components/projectsSection/IProjectsSectionData"
-    import {pushArrayInArray} from "../../../arrayPush"
-    import {IProjectItem, PertinenceStatue} from "../../../api/genericsApiTypesIntefaces"
+    import {IProjectItem} from "../../../api/genericsApiTypesIntefaces"
 
     @Component({
         components: {
@@ -53,29 +47,14 @@
         }
     })
     export default class PageHome extends Vue {
-        constructor() {
-            super()
-            getProjectsAppearHome().then((homeProjectsData) => {
-                this.$homeProjects = homeProjectsData.project
-            })
-        }
-
         @Prop({required: true}) data!: IPageHomeData
         get pageHomeData() {return this.data}
 
         @Prop({required: true}) $siteLang!: LANG_LIST
         get siteIsFr() { return this.$siteLang === LANG_LIST.FR }
 
-        /*
-        * array of projects present in home page
-        * */
-        private homeProjects: IProjectItem[] = []
-
-        set $homeProjects(value: IProjectItem[]) {
-            pushArrayInArray(value, this.homeProjects)
-        }
-        get $homeProjects() {
-            return this.homeProjects
+        get $homeProjects(): IProjectItem[] {
+            return this.pageHomeData.project_to_show_in_home
         }
     }
 </script>

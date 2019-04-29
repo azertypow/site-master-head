@@ -9,7 +9,6 @@
       <p><?= $page->description_english()->html() ?></p>
       <p><?= $page->students()->html() ?></p>
       <p><?= $page->tags()->html() ?></p>
-      <h2>appears_homepage : <?= $page->appears_homepage()->html() ?></h2>
         <h5>event_pertinence : <?= $page->event_pertinence()->html() ?></h5>
         <h5>workshop_pertinence : <?= $page->workshop_pertinence()->html() ?></h5>
         <h5>seminar_pertinence : <?= $page->seminar_pertinence()->html() ?></h5>

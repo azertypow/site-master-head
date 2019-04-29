@@ -12,47 +12,13 @@ options:
   delete: false
 
 fields:
-  title:
-    label: Title
-    type:  text
-
-  text_introduction_french:
-    label: Texte d'introduction - français
-    type:  textarea
-
-  text_introduction_english:
-    label: Texte d'introduction - anglais
-    type:  textarea
-
-  line-a:
-    type: line
-
-  text_events_french:
-    label: Evenements - français
-    type:  textarea
-
-  text_events_english:
-    label: Evenements - anglais
-    type:  textarea
-
-  line-b:
-    type: line
-
-  text_workshop_french:
-    label: Workshop - français
-    type:  textarea
-
-  text_workshop_english:
-    label: Workshop - anglais
-    type:  textarea
-
-  line-c:
-    type: line
-
-  text_seminaire_french:
-    label: Séminaire - français
-    type:  textarea
-
-  text_seminaire_english:
-    label: Séminaire - anglais
-    type:  textarea
+  project_to_show_in_home:
+    label: projets à afficher sur la home
+    type: relationship
+    options: query
+    query:
+      page: projects
+      fetch: visibleChildren
+      value: '{{uri}}'
+    search: true
+    max: 5

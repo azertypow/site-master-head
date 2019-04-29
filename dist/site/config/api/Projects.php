@@ -41,7 +41,6 @@ class Projects
                 'description_english'   => (string)$oneproject->description_english()->kirbytext(),
                 'students'              => $oneproject->students()->yaml(),
                 'tags'                  => (string)$oneproject->tags(),
-                'appear_homepage'       => (string)$oneproject->appears_homepage(),
                 'event_pertinence'      => (string)$oneproject->event_pertinence(),
                 'workshop_pertinence'   => (string)$oneproject->workshop_pertinence(),
                 'seminar_pertinence'    => (string)$oneproject->seminar_pertinence(),
@@ -56,16 +55,19 @@ class Projects
         return response::json($json);
     }
 
+    public static function getJsonDataForProjectByUri($uri) {
+        return response::json(Projects::getProjectByUri($uri));
+    }
+
     public static function getProjectByUri($uri) {
         $data = page("$uri");
 
         if($data) {
-
             $arrayOfImagesInProject = $data->files()->filter(function($file) {
                 return $file->type() == 'image';
             })->toArray();
 
-            $datatagedjson = array(
+            $project = array(
                 'uri'                   => $data->uri(),
                 'url'                   => (string)$data->url(),
                 'title'                 => (string)$data->title(),
@@ -74,7 +76,6 @@ class Projects
                 'description_english'   => (string)$data->description_english()->kirbytext(),
                 'students'              => $data->students()->yaml(),
                 'tags'                  => (string)$data->tags(),
-                'appear_homepage'       => (string)$data->appears_homepage(),
                 'event_pertinence'      => (string)$data->event_pertinence(),
                 'workshop_pertinence'   => (string)$data->workshop_pertinence(),
                 'seminar_pertinence'    => (string)$data->seminar_pertinence(),
@@ -86,10 +87,10 @@ class Projects
                 'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
         } else {
-            $datatagedjson = null;
+            $project = null;
         }
 
-        return response::json($datatagedjson);
+        return $project;
     }
 
     public static function getAllProjectsAppearHome()

@@ -74,18 +74,6 @@ fields:
       true: "Oui"
       false: "Non"
 
-  appears_homepage:
-    label: Apparaît sur la page home ?
-    type: fieldtoggle
-    default: false
-    options:
-      true: "Oui"
-      false: "Non"
-    show:
-      true: workshop_pertinence seminar_pertinence event_pertinence
-    hide:
-      false: workshop_pertinence seminar_pertinence event_pertinence
-
   appears_bandeau:
       label: Apparaît dans le bandeau de la page home ?
       type: fieldtoggle

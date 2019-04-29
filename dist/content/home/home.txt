@@ -35,3 +35,15 @@ Text-seminaire-french: séminaire français
 ----
 
 Text-seminaire-english: séminaire english
+
+----
+
+Project-to-show-in-home: projects/machine-learning-for-designers, projects/bootcamp, projects/advanced-selfie-machines
+
+----
+
+Title-fr: master\nmedia design
+
+----
+
+Title-en: master media design
