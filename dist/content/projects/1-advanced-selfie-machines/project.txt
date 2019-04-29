@@ -68,7 +68,7 @@ Appears-bandeau: false
 
 ----
 
-Text-bandeau-french: 
+Text-bandeau-french: kikooo
 
 ----
 
