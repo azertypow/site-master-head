@@ -17,7 +17,8 @@ class Alumnis
 
         $json['info'] = array(
             'url' => (string)$dataalumnis->url(),
-            'title' => (string)$dataalumnis->title(),
+            'title_fr'  => (string)$dataalumnis->title_fr(),
+            'title_en'  => (string)$dataalumnis->title_en(),
         );
 
 

@@ -11,8 +11,7 @@
                 subtitleFr="projets"
                 subtitle="projects"
                 jpgImageName="_01_17_MD_MargauxCharvolin©Head_RaphaëlleMueller-BaptisteCoulon_003"
-                :isWhite="false"
-                :data="this.data.header" />
+                :isWhite="false" />
 
         <main class="v-page-projects__main">
             <div class="v-page-projects__filter" >

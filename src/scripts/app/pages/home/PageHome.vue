@@ -2,16 +2,9 @@
     <section class="v-page-home">
         <HeaderWithImage
                 titleFr="master <br> media design"
-                title="master <br> media design"
-                :data="pageHomeData.header" />
+                title="master <br> media design" />
 
         <main class="v-page-home__main">
-            <!--<projects-section-->
-                    <!--v-if="this.$workshopSectionHasProjectsToShow"-->
-                    <!--:data="$workshopsProjectsSectionData"-->
-                    <!--:$siteLang="$siteLang"></projects-section>-->
-
-
             <template v-for="projectData of $homeProjects">
                 <project
                         :data="projectData"

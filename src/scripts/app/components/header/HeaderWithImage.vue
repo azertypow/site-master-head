@@ -19,7 +19,6 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
 </template>
 
 <script lang="ts">
-    import {IHeaderWithImageData} from "./IHeaderWithImageData"
     import {Component, Prop, Vue} from "vue-property-decorator"
     import {EventBus} from "../../../event-bus"
     import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
@@ -60,8 +59,6 @@ import {LANG_LIST} from "../GLOBAL_ENUMS"
         }
     })
     export default class HeaderWithImage extends Vue {
-        @Prop({required: true}) data!: IHeaderWithImageData
-
         @Prop({default: false}) isWhite!: boolean
 
         @Prop({default: false}) hasMaxHeight!: boolean

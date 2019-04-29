@@ -1,3 +1,4 @@
+//todo delete?
 export interface IHeaderWithTextData {
     title: {
         fr: string

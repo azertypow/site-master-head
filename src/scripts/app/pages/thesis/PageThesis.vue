@@ -11,8 +11,7 @@
                 subtitleFr="mémoires"
                 subtitle="thesis"
                 jpgImageName="Diptyque6.6"
-                :isWhite="false"
-                :data="this.data.header" />
+                :isWhite="false" />
 
         <main class="v-page-thesis__main">
             <div class="v-page-thesis__list">

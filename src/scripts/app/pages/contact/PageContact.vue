@@ -8,8 +8,7 @@
                 subtitleFr="informations <br>et contacts"
                 subtitle="information <br>and contacts"
                 jpgImageName="Diptyque1"
-                :isWhite="true"
-                :data="this.pageContactData.header" />
+                :isWhite="true" />
 
 
         <main class="v-page-contact__main">

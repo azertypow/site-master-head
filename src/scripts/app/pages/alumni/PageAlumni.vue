@@ -11,8 +11,7 @@
                 subtitleFr="alumni"
                 subtitle="alumni"
                 jpgImageName="Diptyque2"
-                :isWhite="true"
-                :data="this.data.header" />
+                :isWhite="true" />
 
         <main class="v-page-alumni__main">
             <div class="v-page-alumni__main__alumni">
