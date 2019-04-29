@@ -16,8 +16,6 @@ class Thesis
 
         $json['info'] = array(
             'title' => (string)$info->title(),
-//            'text_description_french' => (string)$info->text_description_francais(),
-//            'text_description_english' => (string)$info->text_description_anglais()
         );
 
         $json['thesis'] = array();

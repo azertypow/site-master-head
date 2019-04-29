@@ -38,8 +38,6 @@ export interface IMediaDimensions {
 
 export interface IAllContentInfo {
     title: string;
-    // text_description_french: string;
-    // text_description_english: string;
 }
 
 export interface IGenericItem {

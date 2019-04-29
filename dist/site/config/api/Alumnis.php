@@ -18,8 +18,6 @@ class Alumnis
         $json['info'] = array(
             'url' => (string)$dataalumnis->url(),
             'title' => (string)$dataalumnis->title(),
-//            'text_description_french' => (string)$dataalumnis->text_description_francais(),
-//            'text_description_english' => (string)$dataalumnis->text_description_anglais()
         );
 
 
