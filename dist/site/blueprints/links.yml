@@ -5,6 +5,9 @@ icon: link
 options:
   preview: false
   status: false
+  url: false
+  template: false
+  delete: false
 
 pages:
   template:

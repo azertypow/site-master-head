@@ -11,10 +11,10 @@ files:
         placeholder: Mémoire de master, Félicien Goguey
 
 options:
-  preview: true
-  status: true
+  preview: false
+  status: false
   template: false
-  url: true
+  url: false
 
 fields:
   title_thesis_french:

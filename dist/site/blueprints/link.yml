@@ -7,6 +7,7 @@ options:
   preview: false
   status: false
   url: false
+  template: false
 
 fields:
   title:

@@ -5,7 +5,7 @@ pages: false
 files: false
 
 options:
-  preview: true
+  preview: false
   status: false
   template: false
   url: false

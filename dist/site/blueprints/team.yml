@@ -8,6 +8,12 @@ icon: user
 
 preview: parent
 
+options:
+  preview: false
+  status: false
+  template: false
+  url: false
+
 fields:
   name_team:
     label: Name

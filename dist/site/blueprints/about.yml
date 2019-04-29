@@ -9,10 +9,10 @@ pages:
 files: false
 
 options:
-  preview: true
+  preview: false
   status: false
   template: false
-  url: true
+  url: false
   delete: false
   
 fields:

@@ -6,7 +6,7 @@ pages:
   template: project
 
 options:
-  preview: true
+  preview: false
   template: false  
   status: false  
   url: false
@@ -16,11 +16,3 @@ fields:
   title:
     label: Title
     type:  text
-
-#  text_description_francais:
-#    label: Description français
-#    type:  textarea
-#
-#  text_description_anglais:
-#    label: Description anglais
-#    type:  textarea

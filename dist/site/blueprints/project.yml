@@ -14,6 +14,12 @@ files:
 
 pages: false
 
+options:
+  preview: false
+  status: false
+  template: false
+  url: false
+
 fields:
   content:
     label: Contenu du projet
