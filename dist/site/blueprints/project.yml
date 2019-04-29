@@ -66,6 +66,14 @@ fields:
       type: headline
       numbered: false
 
+  appears_projects:
+    label: Apparaît dans la page projets ?
+    type: radio
+    default: true
+    options:
+      true: "Oui"
+      false: "Non"
+
   appears_homepage:
     label: Apparaît sur la page home ?
     type: fieldtoggle
@@ -77,33 +85,6 @@ fields:
       true: workshop_pertinence seminar_pertinence event_pertinence
     hide:
       false: workshop_pertinence seminar_pertinence event_pertinence
-  event_pertinence:
-    label: Evénement section
-    type: radio
-    default: false
-    options:
-      header_position: Header position
-      middle_position: Middle position
-      bottom_position: Bottom position
-      false: N'apparaît pas dans événement
-  workshop_pertinence:
-    label: Workshop section
-    type: radio
-    default: false
-    options:
-      header_position: Header position
-      middle_position: Middle position
-      bottom_position: Bottom position
-      false: N'apparaît pas dans workshop
-  seminar_pertinence:
-      label: Séminaire section
-      type: radio
-      default: false
-      options:
-        header_position: Header position
-        middle_position: Middle position
-        bottom_position: Bottom position
-        false: N'apparaît pas dans séminaire
 
   appears_bandeau:
       label: Apparaît dans le bandeau de la page home ?
@@ -116,17 +97,10 @@ fields:
         true: text_bandeau_french text_bandeau_english
       hide:
         false: text_bandeau_french text_bandeau_english
+
   text_bandeau_french:
     label: Texte pour le bandeau - français
     type: textarea
   text_bandeau_english:
     label: Texte pour le bandeau - anglais
     type: textarea
-
-  appears_projects:
-      label: Apparaît dans la page projets ?
-      type: radio
-      default: true
-      options:
-        true: "Oui"
-        false: "Non"

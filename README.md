@@ -21,3 +21,11 @@ api link google doc à checker !
 ## generate ts interface from json
 
     curl http://localhost:8000/$api_url | ./node_modules/.bin/json-ts --stdin >> $file_name.ts
+    
+### info
+
+set variable environment for kirby cli with fish shell:
+
+```
+set PATH $PATH ~/.composer/vendor/bin
+```

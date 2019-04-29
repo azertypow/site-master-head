@@ -6,12 +6,6 @@ export type ImageOrientation = "landscape" | "portrait"
 
 export type MediaType = "image" | "document" | "archive" | "code" | "video" | "audio"
 
-export enum PERTINENCE_SECTION_NAME {
-    EVENT    = "event_pertinence",
-    WORKSHOP = "workshop_pertinence",
-    SEMINAR  = "seminar_pertinence",
-}
-
 export interface IStudentsItem {
     students_name: string;
 }
@@ -83,9 +77,6 @@ export interface IProjectItem extends IGenericItem {
     students: IStudentsItem[];
     tags: string;
     appear_homepage: BooleanInString;
-    [PERTINENCE_SECTION_NAME.EVENT]: PertinenceStatue;
-    [PERTINENCE_SECTION_NAME.WORKSHOP]: PertinenceStatue;
-    [PERTINENCE_SECTION_NAME.SEMINAR]: PertinenceStatue;
     appear_bandeau: BooleanInString;
     text_bandeau_french: string;
     text_bandeau_english: string;
