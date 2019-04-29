@@ -1,15 +1,10 @@
 <template>
     <section class="v-page-alumni">
-        <!--<header-with-text :data="data.header"></header-with-text>-->
-
-        <!--<section class="empty-header">-->
-        <!--</section>-->
-
         <HeaderWithImage
                 :hasMaxHeight="true"
                 class="alumni-header"
-                subtitleFr="alumni"
-                subtitle="alumni"
+                :subtitleFr="$allAlumni.info.title_fr"
+                :subtitle="$allAlumni.info.title_en"
                 jpgImageName="Diptyque2"
                 :isWhite="true" />
 
@@ -34,7 +29,6 @@
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
     import FilterSetting from "../../components/filter/FilterSetting"
-    import {IPageAlumniData} from "./IPageAlumniData"
     import {IAllAlumni, IAlumnisItem} from "../../../api/genericsApiTypesIntefaces"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
@@ -50,8 +44,6 @@
         }
     })
     export default class PageAlumni extends Vue {
-        @Prop({required: true}) data!: IPageAlumniData
-
         @Prop({required: true}) allAlumni!: IAllAlumni
         get $allAlumni() { return this.allAlumni }
 

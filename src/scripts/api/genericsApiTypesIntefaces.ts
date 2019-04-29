@@ -119,6 +119,8 @@ export interface IAllAlumni {
 
 export interface IAllAlumniInfos extends IAllContentInfo{
     url: string;
+    title_fr: string,
+    title_en: string
 }
 
 export interface IAlumnisItem extends IGenericItem {

@@ -25,22 +25,6 @@ let app = createVueApplication({
                 // },
             },
         },
-        alumni: {
-            header: {
-                title: {
-                    fr: "master<br>media design",
-                    en: "master<br>media design"
-                },
-                subtitle: {
-                    fr: "alumni",
-                    en: "alumni"
-                },
-                // text: {
-                //     fr: "",
-                //     en: "",
-                // },
-            },
-        },
         thesis: {
             header: {
                 title: {
@@ -83,6 +67,8 @@ let app = createVueApplication({
     allAlumni: {
         info: {
             title: "",
+            title_en: "",
+            title_fr: "",
             url: "",
         },
         alumnis: [],
