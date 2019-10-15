@@ -1,4 +1,5 @@
 <?php
+include("api/GlobalData.php");
 include("api/Projects.php");
 include("api/Thesis.php");
 include("api/Alumnis.php");
@@ -19,6 +20,16 @@ c::set('mmd.image.parameters', [
 ]);
 
 c::set('routes', array(
+
+
+    // clean
+    array(
+        'pattern' => 'api/get_pages_data',
+        'action' => function () {
+            echo GlobalData::getGlobalData();
+        }
+    ),
+    // end clean
 
     // ------------------------------------
     // ----------- PROJECTS ---------------

@@ -60,13 +60,14 @@ let app = createVueApplication({
     },
     allProjects: {
         info: {
-            title: "",
+            title_en: "",
+            title_fr: "",
+            url: ""
         },
         project: [],
     },
     allAlumni: {
         info: {
-            title: "",
             title_en: "",
             title_fr: "",
             url: "",
@@ -75,7 +76,9 @@ let app = createVueApplication({
     },
     allThesis: {
         info: {
-            title: "",
+            url: "",
+            title_fr: "",
+            title_en: ""
         },
         thesis: [],
         page: 0,

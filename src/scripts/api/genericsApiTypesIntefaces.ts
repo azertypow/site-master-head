@@ -37,7 +37,9 @@ export interface IMediaDimensions {
 }
 
 export interface IAllContentInfo {
-    title: string;
+    url: string;
+    title_fr: string,
+    title_en: string
 }
 
 export interface IGenericItem {
@@ -113,14 +115,8 @@ export interface IMetaProject {
 * */
 
 export interface IAllAlumni {
-    info: IAllAlumniInfos;
+    info: IAllContentInfo;
     alumnis: IAlumnisItem[];
-}
-
-export interface IAllAlumniInfos extends IAllContentInfo{
-    url: string;
-    title_fr: string,
-    title_en: string
 }
 
 export interface IAlumnisItem extends IGenericItem {

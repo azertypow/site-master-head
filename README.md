@@ -29,3 +29,11 @@ set variable environment for kirby cli with fish shell:
 ```
 set PATH $PATH ~/.composer/vendor/bin
 ```
+
+## api
+
+get all pages data
+
+```
+api/get_pages_data
+```

@@ -45,7 +45,6 @@
     import {Vue, Component, Prop} from "vue-property-decorator"
     import HeaderWithText from "../../components/header/HeaderWithText"
     import FilterSetting from "../../components/filter/FilterSetting"
-    import {IPageThesisData} from "./IPageThesisData"
     import {IAllThesis, IThesisItem} from "../../../api/genericsApiTypesIntefaces"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import Project from "../../components/project/Project.vue"
@@ -53,12 +52,13 @@
     import Thesis from "../../components/thesis/Thesis"
     import ProjetItem from "../../components/ProjetItem.vue"
     import HeaderWithImage from "../../components/header/HeaderWithImage.vue"
+    import {pageData} from "../../IAppData"
 
     @Component({
         components: {Thesis, Project, AppFooter, FilterSetting, HeaderWithText, ProjetItem, HeaderWithImage}
     })
     export default class PageThesis extends Vue {
-        @Prop({required: true}) data!: IPageThesisData
+        @Prop({required: true}) data!: pageData
         get pageThesisData() {return this.data}
 
         @Prop({required: true}) allThesis!: IAllThesis

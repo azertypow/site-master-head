@@ -74,7 +74,6 @@
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
     import FilterSetting from "../../components/filter/FilterSetting"
-    import {IPageProjectsData} from "./IPageProjectsData"
     import {getProjectsTags} from "../../../apiRequestes"
     import {IAllProjects, IMedia_generatedItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
     import Project from "../../components/project/Project"
@@ -82,6 +81,7 @@
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import HeaderWithImage from "../../components/header/HeaderWithImage.vue"
     import ProjetItem from "../../components/ProjetItem.vue"
+    import {pageData} from "../../IAppData"
 
     @Component({
         components: {
@@ -100,7 +100,7 @@
             })
         }
 
-        @Prop({required: true}) data!: IPageProjectsData
+        @Prop({required: true}) data!: pageData
         get $pageProjectsData() { return this.data }
 
         @Prop({required: true}) allProjects!: IAllProjects

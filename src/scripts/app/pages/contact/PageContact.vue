@@ -133,10 +133,10 @@
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
     import HeaderWithImage from '../../components/header/HeaderWithImage'
-    import {IPageContactData} from "./IPageContactData"
     import AppFooter from "../../components/appFooter/AppFooter.vue"
     import {LANG_LIST} from "../../../GLOBAL_ENUMS"
     import {IAllContacts, ILinkItem, ITeamItem} from "../../../api/genericsApiTypesIntefaces"
+    import {pageData} from "../../IAppData"
     @Component({
         components: {
             AppFooter,
@@ -144,7 +144,7 @@
         }
     })
     export default class PageContact extends Vue {
-        @Prop({required: true}) data!: IPageContactData
+        @Prop({required: true}) data!: pageData
         get pageContactData() {return this.data}
 
         @Prop({required: true}) $siteLang!: LANG_LIST

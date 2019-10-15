@@ -1,7 +1,4 @@
 import {IPageHomeData} from "./pages/home/IPageHomeData"
-import {IPageProjectsData} from "./pages/projects/IPageProjectsData"
-import {IPageThesisData} from "./pages/thesis/IPageThesisData"
-import {IPageContactData} from "./pages/contact/IPageContactData"
 import {IAllAlumni, IAllContacts, IAllProjects, IAllThesis} from "../api/genericsApiTypesIntefaces"
 
 export interface IAppData {
@@ -14,7 +11,14 @@ export interface IAppData {
 
 export interface IAllPagesData {
     home:       IPageHomeData,
-    projects:   IPageProjectsData,
-    contact:    IPageContactData,
-    thesis:     IPageThesisData,
+    projects:   pageData,
+    thesis:     pageData,
+    alumni:     pageData,
+    contact:    pageData,
+}
+
+export interface pageData {
+    url: "",
+    title_fr: "",
+    title_en: "",
 }

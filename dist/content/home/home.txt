@@ -38,7 +38,7 @@ Text-seminaire-english: séminaire english
 
 ----
 
-Project-to-show-in-home: projects/machine-learning-for-designers, projects/bootcamp, projects/advanced-selfie-machines
+Project-to-show-in-home: projects/advanced-selfie-machines, projects/machine-learning-for-designers, projects/bootcamp
 
 ----
 

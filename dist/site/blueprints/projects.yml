@@ -13,6 +13,9 @@ options:
   delete: false
 
 fields:
-  title:
-    label: Title
+  title_fr:
+    label: Titre français
+    type:  text
+  title_en:
+    label: Titre anglais
     type:  text

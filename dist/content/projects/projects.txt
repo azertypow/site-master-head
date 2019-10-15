@@ -7,3 +7,11 @@ Text-description-francais: Dans sa part artistique, il repose sur un travail des
 ----
 
 Text-description-anglais: In its artistic part, it is based on a work of forms reminiscent of artistic creation and which can concern both spatial forms (space design, interior architecture), volume (product design, industrial design), textiles ( fashion design, fashion design), graphics (graphic design, graphic design) or interactive (interactive design, interactive design, digital design). This work on shapes explains the importance of aesthetic considerations in the field of design, but should not obscure the equally important importance of functional, technical, environmental, biological, legal, economic, social, political and even philosophical considerations. which are at the heart of the work of the designer, considered as one of the great professions of the design, with those of the architect or the engineer.
+
+----
+
+Title-fr: project fr
+
+----
+
+Title-en: project en
