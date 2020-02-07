@@ -59,9 +59,9 @@
 <script lang="ts">
     import {Vue, Component, Prop} from "vue-property-decorator"
     import {EVENT_BUS_LIST, LANG_LIST} from "../../../GLOBAL_ENUMS"
-    import BtnShowDetails from "../btnShowDetails/BtnShowDetails"
+    import BtnShowDetails from "../btnShowDetails/BtnShowDetails.vue"
     import {IMedia_generatedItem, IMediaItem, IProjectItem} from "../../../api/genericsApiTypesIntefaces"
-    import MediaImage from "../image/MediaImage"
+    import MediaImage from "../image/MediaImage.vue"
     import secureIsNaNNumber from "../../../secureIsNaNNumber"
     import {getProjectsByUri} from "../../../apiRequestes"
     import ImageWithLoader from "../image/ImageWithLoader.vue"

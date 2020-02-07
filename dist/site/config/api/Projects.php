@@ -63,7 +63,7 @@ class Projects
         if($data) {
             $arrayOfImagesInProject = $data->files()->filter(function($file) {
                 return $file->type() == 'image';
-            })->toArray();
+            });
 
             $project = array(
                 'uri'                   => $data->uri(),
@@ -89,6 +89,8 @@ class Projects
         }
 
         return $project;
+
+//        return 'coucou';
     }
 
     public static function getAllProjectsAppearBandeau()
@@ -277,31 +279,36 @@ class Projects
     public static function getImagesGeneratedInProject($arrayOfImageInProject) {
         $arrayOfImagesGenerated = array();
 
-        foreach ($arrayOfImageInProject as $imageInProject) {
+//        foreach ($arrayOfImageInProject as $imageInProject) {
+//
+//            array_push($arrayOfImagesGenerated, [
+//                'origin'    => $imageInProject,
+//                'generated' => Projects::getImagesGeneratedOfImageInProject($imageInProject),
+//            ]);
+//        }
+//
+//        return $arrayOfImagesGenerated;
 
-            array_push($arrayOfImagesGenerated, [
-                'origin'    => $imageInProject,
-                'generated' => Projects::getImagesGeneratedOfImageInProject($imageInProject),
-            ]);
-        }
-
-        return $arrayOfImagesGenerated;
+        return $arrayOfImageInProject->nth(0)->scale(0.1)->dir();
     }
 
     public static function getImagesGeneratedOfImageInProject($imageInProject) {
-        $folderNameOfGeneratedImages    = c::get('mmd.image.folderName', 'generated');
-        $arrayOfImageParameters         = c::get('mmd.image.parameters', array());
 
-        $folderPathForGeneratedImages = $imageInProject['diruri'] . '/'. $folderNameOfGeneratedImages .'/';
+        return $imageInProject->diruri();
 
-        $arrayOfImagesGeneratedUrl = array();
-
-        foreach ($arrayOfImageParameters as $imageParametersName => $imageParameter) {
-            $urlOfImageGenerated = Projects::getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter);
-            $arrayOfImagesGeneratedUrl[$imageParametersName] = $urlOfImageGenerated;
-        }
-
-        return $arrayOfImagesGeneratedUrl;
+//        $folderNameOfGeneratedImages    = c::get('mmd.image.folderName', 'generated');
+//        $arrayOfImageParameters         = c::get('mmd.image.parameters', array());
+//
+//        $folderPathForGeneratedImages = $imageInProject['diruri'] . '/'. $folderNameOfGeneratedImages .'/';
+//
+//        $arrayOfImagesGeneratedUrl = array();
+//
+//        foreach ($arrayOfImageParameters as $imageParametersName => $imageParameter) {
+//            $urlOfImageGenerated = Projects::getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter);
+//            $arrayOfImagesGeneratedUrl[$imageParametersName] = $urlOfImageGenerated;
+//        }
+//
+//        return $arrayOfImagesGeneratedUrl;
     }
 
     public static function getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter) {

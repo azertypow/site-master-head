@@ -10,52 +10,24 @@ let app = createVueApplication({
             project_to_show_in_home: [],
         },
         projects: {
-            header: {
-                title: {
-                    fr: "master<br>media design",
-                    en: "master<br>media design"
-                },
-                subtitle: {
-                    fr: "projets",
-                    en: "projects"
-                },
-                // text: {
-                //     fr: "",
-                //     en: "",
-                // },
-            },
+            title_en: "",
+            title_fr: "",
+            url: "",
         },
         thesis: {
-            header: {
-                title: {
-                    fr: "master<br>media design",
-                    en: "master<br>media design"
-                },
-                subtitle: {
-                    fr: "mémoires",
-                    en: "thesis"
-                },
-                // text: {
-                //     fr: "",
-                //     en: "",
-                // },
-            },
+            title_en: "",
+            title_fr: "",
+            url: "",
         },
         contact: {
-            header: {
-                title: {
-                    fr: "master<br>media design",
-                    en: "master<br>media design"
-                },
-                subtitle: {
-                    fr: "contacts et informations",
-                    en: "contacts and informations"
-                },
-                // text: {
-                //     fr: "",
-                //     en: "",
-                // },
-            },
+            title_en: "",
+            title_fr: "",
+            url: "",
+        },
+        alumni: {
+            title_en: "",
+            title_fr: "",
+            url: "",
         }
     },
     allProjects: {
