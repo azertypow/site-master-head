@@ -84,7 +84,8 @@ export interface IProjectItem extends IGenericItem {
     text_bandeau_english: string;
     appears_projects: BooleanInString;
     media: IMediaItemProject[];
-    media_generated: IMedia_generatedItem[];
+    media_generated: IMediaItemProject[];
+    images_multi_size: IMediaItemProject[];
 }
 
 export type Url = string;

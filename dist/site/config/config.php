@@ -7,6 +7,7 @@ include("api/Contact.php");
 include("api/Other.php");
 include("api/Home.php");
 include("api/VUEApplication.php");
+include("api/tools/Tools.php");
 
 c::set('license', 'put your license key here');
 c::set('debug', true);
@@ -38,7 +39,10 @@ c::set('routes', array(
     array(
         'pattern' => 'api/projects',
         'action' => function () {
-            echo Projects::getAllProjects();
+            $allProject = Projects::getAllProjects();
+
+            echo json_encode($allProject);
+//            echo Projects::getAllProjects();
         }
     ),
     array(

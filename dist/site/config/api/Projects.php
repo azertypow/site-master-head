@@ -1,5 +1,7 @@
 <?php
 
+use function Tools\getImageMultiSizeDataFromArray;
+
 /**
  * Created by PhpStorm.
  * User: yann
@@ -49,8 +51,27 @@ class Projects
                 'media'                 => $oneproject->files()->toArray($callback = null),
                 'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
             );
+
+            $arrayTest =  $oneproject->files()->filter(function($file) {
+                return $file->type() == 'image';
+            });
+
+            foreach ($arrayTest as $imagesFile) {
+
+                return [
+                    "icon"  => $imagesFile->resize(50, 50)->toArray(),
+                    "small" => $imagesFile->resize(500, 500)->toArray(),
+                    "large" => $imagesFile->resize(2200, 2200)->toArray(),
+                ];
+            }
         }
-        return response::json($json);
+
+
+//        return response::json(
+//
+//            $oneproject->files()
+//
+//        );
     }
 
     public static function getJsonDataForProjectByUri($uri) {
@@ -61,9 +82,9 @@ class Projects
         $data = page("$uri");
 
         if($data) {
-            $arrayOfImagesInProject = $data->files()->filter(function($file) {
-                return $file->type() == 'image';
-            });
+
+            /** @var \Kirby\Panel\Collections\Files $files */
+            $files = $data->files();
 
             $project = array(
                 'uri'                   => $data->uri(),
@@ -82,7 +103,8 @@ class Projects
                 'text_bandeau_english'  => (string)$data->text_bandeau_english()->kirbytext(),
                 'appears_projects'      => (string)$data->appears_projects(),
                 'media'                 => $data->files()->toArray($callback = null),
-                'media_generated'       => Projects::getImagesGeneratedInProject($arrayOfImagesInProject),
+                'media_generated'       => Projects::getImagesGeneratedInProject($data->files()),
+                'images_multi_size'     => getImageMultiSizeDataFromArray( $files ),
             );
         } else {
             $project = null;
@@ -279,36 +301,15 @@ class Projects
     public static function getImagesGeneratedInProject($arrayOfImageInProject) {
         $arrayOfImagesGenerated = array();
 
-//        foreach ($arrayOfImageInProject as $imageInProject) {
-//
-//            array_push($arrayOfImagesGenerated, [
-//                'origin'    => $imageInProject,
-//                'generated' => Projects::getImagesGeneratedOfImageInProject($imageInProject),
-//            ]);
-//        }
-//
-//        return $arrayOfImagesGenerated;
+        foreach ($arrayOfImageInProject as $imageInProject) {
 
-        return $arrayOfImageInProject->nth(0)->scale(0.1)->dir();
-    }
+            array_push($arrayOfImagesGenerated, [
+                'origin'    => is_array($imageInProject) ? $imageInProject : $imageInProject->toArray(),
+                'generated' => is_array($imageInProject) ? $imageInProject : $imageInProject->toArray(),
+            ]);
+        }
 
-    public static function getImagesGeneratedOfImageInProject($imageInProject) {
-
-        return $imageInProject->diruri();
-
-//        $folderNameOfGeneratedImages    = c::get('mmd.image.folderName', 'generated');
-//        $arrayOfImageParameters         = c::get('mmd.image.parameters', array());
-//
-//        $folderPathForGeneratedImages = $imageInProject['diruri'] . '/'. $folderNameOfGeneratedImages .'/';
-//
-//        $arrayOfImagesGeneratedUrl = array();
-//
-//        foreach ($arrayOfImageParameters as $imageParametersName => $imageParameter) {
-//            $urlOfImageGenerated = Projects::getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter);
-//            $arrayOfImagesGeneratedUrl[$imageParametersName] = $urlOfImageGenerated;
-//        }
-//
-//        return $arrayOfImagesGeneratedUrl;
+        return $arrayOfImagesGenerated;
     }
 
     public static function getUrlOfImageGenerated($imageInProject, $folderPathForGeneratedImages, $imageParameter) {
