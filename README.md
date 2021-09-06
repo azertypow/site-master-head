@@ -1,5 +1,9 @@
 # site-master-head
 
+/!\ archive /!\
+this project is ok with php7.2
+/!\ archive /!\
+
 ## at first
 
 - install dependencies:
