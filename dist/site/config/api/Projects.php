@@ -332,7 +332,7 @@ class Projects
         $folderNameOfGeneratedImages    = c::get('mmd.image.folderName', 'generated');
         $arrayOfImageParameters         = c::get('mmd.image.parameters', array());
 
-        $folderPathForGeneratedImages = $imageInProject['diruri'] . '/'. $folderNameOfGeneratedImages .'/';
+        $folderPathForGeneratedImages = $imageInProject['dir'] . '/'. $folderNameOfGeneratedImages .'/';
 
         $arrayOfImagesGeneratedUrl = array();
 
