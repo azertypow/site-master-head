@@ -1,0 +1,33 @@
+Title-thesis-french: les sens du texte
+
+----
+
+Title-thesis-english: les sens du texte
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Rémi Opalinski
+
+----
+
+Tuteurs-thesis: Nicolas Nova
+
+----
+
+Tags-thesis: digital literature
+
+----
+
+Title: le[s] sens du texte

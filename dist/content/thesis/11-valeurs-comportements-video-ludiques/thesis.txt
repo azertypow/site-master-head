@@ -1,0 +1,33 @@
+Title-thesis-french: valeurs & comportements vidéo-ludiques
+
+----
+
+Title-thesis-english: valeurs & comportements vidéo-ludiques
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Mathias Hängärtner
+
+----
+
+Tuteurs-thesis: Daniel Pinkas
+
+----
+
+Tags-thesis: game design
+
+----
+
+Title: valeurs & comportements vidéo-ludiques

@@ -1,0 +1,79 @@
+Content: 
+
+----
+
+Title: advanced selfie machines
+
+----
+
+Year: 2018
+
+----
+
+Description-french: 
+
+Bien que le terme «Selfie» soit relativement nouveau - il est apparu pour la première fois sur Internet en 2012 et a culminé en 2014 * - les autoportraits ne le sont pas. Ils sont devenus populaires parmi les artistes au 15ème siècle. Les deux sont basés sur les progrès technologiques de leur temps, cependant. À la Renaissance, c’est la disponibilité de miroirs de meilleure qualité et moins chers qui a favorisé l’apparition des autoportraits et, à notre époque, ce sont les smartphones et les médias sociaux qui ont conduit à la grande popularité des selfies. Dans l’atelier «Advanced Selfie Machine», nous développerons des technologies qui nous permettront de réaliser des selfies encore plus élaborés que ce qui est possible avec les appareils actuellement disponibles. Nous allons construire des instruments photographiques spécialement conçus pour prendre des autoportraits peu communs et inventer de nouveaux supports pour nos smartphones, ce qui nous permettra de réaliser des selfies exceptionnels.
+
+Niklas Roy, Berlin, (link: niklasroy.com text: https://www.niklasroy.com/)
+
+----
+
+Description-english: 
+
+While the term “Selfie” is relatively new – it popped up for the first time on the Internet in 2012 and peaked in 2014* – self-portraits aren’t. They became popular amongst artists in the 15th century. Both are based on technological advancements of their time, though. During the Renaissance, it was the availability of better and cheaper mirrors, that boosted the appearance of self-portraits and in our time, it was smartphones and social media which led to the wide popularity of selfies.
+In the “Advanced Selfie Machine” workshop, we will develop technologies, which will allow us to take even more elaborated selfies than what’s possible with currently available devices. We will construct photographic instruments, which will be specifically designed to take uncommon self-portraits and we will invent novel support gear for our smartphones, which will enable us to take exceptional selfies.
+
+*According to Google Trends (https://trends.google.com/trends/explore?date=all&q=selfie)
+
+Niklas Roy lives in Berlin and is an installation artist and an educator.
+Through his work, he explores art, science and technology, often in the form of humorous installations and machines. He likes to make as much as possible by himself, because engineering, constructing and coding is a nice way to keep learning new things. This very hands-on DIY approach also produces many ideas, which inspire projects yet to come.
+Additionally, he is interested in the history and imaginary futures of technology, such as renewable energy and space travel. By working with different materials and techniques, he develops interactive media, through which he shares the unique and sometimes bizarre fruits of his contemplations.
+
+Niklas Roy, Berlin, (link: niklasroy.com text: https://www.niklasroy.com/)
+
+----
+
+Students: 
+
+- 
+  students_name: Niklas Roy
+
+----
+
+Tags: workshop
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: false
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: middle_position
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: kikooo
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true

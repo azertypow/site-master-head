@@ -1,0 +1,33 @@
+Title-thesis-french: hybrid public spaces
+
+----
+
+Title-thesis-english: hybrid public spaces
+
+----
+
+Year-thesis: 2018
+
+----
+
+Description-thesis-french: 
+
+----
+
+Description-thesis-english: 
+
+----
+
+Students-thesis: Juan Gomez
+
+----
+
+Tuteurs-thesis: Lysianne Lechot-Hirt
+
+----
+
+Tags-thesis: speculative design
+
+----
+
+Title: hybrid public spaces

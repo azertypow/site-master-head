@@ -1,0 +1,66 @@
+Content: 
+
+----
+
+Title: bootcamp
+
+----
+
+Year: 2018
+
+----
+
+Description-french: Ce workshop a pour objectif l’acquisition de méthodes et techniques de base (langages de programmation, électronique) utiles à la mise en œuvre de projets interactifs. Intensif, l’atelier alterne démonstrations, exercices, cours pratiques et prototype. Les composants les plus classiques (pixel, vecteur, couleur, bouton, circuit, …) des formes médiatiques actuelles (image, son, 3d, web, objet, mobile, …) sont re-visités afin de permettre d’appréhender la manière dont ces objets sont construits. Le programme permet de passer en revue les possibilités offertes par les nouvelles technologies afin de passer le plus rapidement possible à la conception, où vous approfondirez ces connaissances pendant le reste de vos études.
+
+----
+
+Description-english: The aim of this workshop is to acquire basic methods and techniques (programming languages, electronics) useful for the implementation of interactive projects. Intensive, the workshop alternates demonstrations, exercises, practical classes and prototypes. The most classic components (pixel, vector, color, button, circuit, ...) of the current media forms (image, sound, 3d, web, object, mobile, ...) are re-visited to make us understand how these objects are built. The program allows to review the possibilities offered by new technologies in the design process and practice that you will learn in detail during the rest of your studies.
+
+----
+
+Students: 
+
+- 
+  students_name: Douglas Edric Stanley
+- 
+  students_name: Félicien Goguey
+
+----
+
+Tags: workshop/bootcamp
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: false
+
+----
+
+Event-pertinence: false
+
+----
+
+Workshop-pertinence: bottom_position
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true

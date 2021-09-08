@@ -1,0 +1,122 @@
+Content: 
+
+----
+
+Title: Play Me A Story
+
+----
+
+Year: 2019
+
+----
+
+Description-french: 
+
+**Play Me A Story, nouvelles formes de narration**
+
+Play Me A Story est la dernière exposition conçue par les étudiantes et étudiants du Master Media Design. Cette exposition explore les nouvelles formes hybrides de la narration à l’ère du numérique. Chaque projet explore de nouvelles configurations pour la narration via
+des objets de notre quotidien : un jeu de cartes, un globe, une lanterne de lecture…
+
+Descriptifs des projets :
+
+**— The Reading Lantern, raconter une histoire par la lumière.**
+Par Vincent Belet, Tammara Leites et Jiajun Zheng, en collaboration avec Poppy Matigot. 
+
+La lanterne de lecture reconnaît les mots lus à haute voix et réponds avec des lumières de couleurs différentes pour révéler les personnages et le paysage de chaque page du leporello – créant ainsi une atmosphère particulière pour accompagner le moment magique de la lecture du conte entre parents et enfants au coucher. 
+
+
+**— A Midwinter Day’s Nightmare, un jeu de carte inspiré de Shakespeare**
+Par Catia Ferreira Barreiras, François Harik et Léa Lansiaux
+
+Un jeu de stratégie hybride utilisant les personnages de Shakespeare alors qu’ils se battent pour l'amour, le pouvoir, et la gloire. Les joueurs sélectionnent les meilleurs personnages pour completer une série d’ objectifs secrets. Une tablette centrale narre les interactions et les tragedies des héros, des rois et des amoureux. 
+
+**— Genèse, créer un monde virtuel sans casque VR.**
+Par Romain Graille et Théo Francart
+
+Genèse est un objet curieux qui sert aussi de globe interactif. Chaque rotation raconte l’histoire de la creation du monde en générant un paysage 3D. Les visiteurs peuvent interargir avec la tablette et pertuber le cycle naturel de création de montagnes, d'animaux, les humains, les rivières et les arbres.
+
+Enseignant : Douglas Eric Stanley
+Assistant : Laura Couto Rosado
+Etudiantes et Etudiants : Vincent Belet, Catia Ferreira Barreiras, Théo Brancart, Romain Graille, François Harik, Léa Lansiaux, Jiajun Zheng.
+Illustration : Poppy Matigo
+Photos : Bastien Gomez
+
+----
+
+Description-english: 
+
+**Play Me A Story, hybrid forms of narration**  
+
+Play Me A Story is the latest exhibition designed by Master Media Design students. The latter explores new hybrid forms of storytelling in the mobile age. Each project explores new configurations for storytelling via classical objects of discovery: a card game, a globe, a reading lantern…
+
+Project descriptions :
+
+**— The Reading Lantern, storytelling with light**
+By Vincent Belet, Tammara Leites and Jiajun Zheng, in collaboration with Poppy Matigot. 
+
+A 2600-year-old Chinese folktale is sent into the cloud of speech detection algorithms while a parent reads an illustrated book to their child. The Reading Lantern recognises the words as they are read out loud, animating its colours to reveal the characters and landscape of each page — creating a special atmosphere to accompany the magical moment of bedtime stories.
+
+**— A Midwinter Day’s Nightmare, a Shakespearean game of cards**
+By Catia Ferreira Barreiras, François Harik and Léa Lansiaux
+
+A hybrid strategy game using the characters of Shakespeare as they fight for love, power, and glory. Players select their best characters from The Bard as they complete a series of open and secret objectives. A central tablet watches over the interactions of these heroes, royalties and lovers as each encounter unfolds into new tragedies narrated by the tablet.
+
+**— Genèse, The creation of a virtual workd, no helmet required**
+By Romain Graille and Théo Francart
+
+Genèse is a curious object that doubles as a rotating globe. As it rotates an interactive tablet on its axis — one rotation per day — the tablet displays an offbeat retelling of the seven days of creation of the world. This generative landscape is altered and modified according to the interactions that people have with the tablet: a simple contact with the screen disrupts the natural cycle of creation of mountains, animals, humans, rivers, and trees.
+
+Professor : Douglas Eric Stanley 
+ Assistant : Laura Couto Rosado  
+Students : Vincent Belet, Catia Ferreira Barreira, Théo Brancart, Romain Graille, François Harik, Léa Lansiaux, Jiajun Zheng.
+ Illustration : Poppy Matigo 
+Photos : Bastien Gomez
+
+----
+
+Students: 
+
+- 
+  students_name: Douglas Edric Stanley
+- 
+  students_name: Laura Couto Rosado
+
+----
+
+Tags: workshop/exhibition
+
+----
+
+Pagesettings: 
+
+----
+
+Appears-homepage: true
+
+----
+
+Event-pertinence: header_position
+
+----
+
+Workshop-pertinence: false
+
+----
+
+Seminar-pertinence: false
+
+----
+
+Appears-bandeau: false
+
+----
+
+Text-bandeau-french: 
+
+----
+
+Text-bandeau-english: 
+
+----
+
+Appears-projects: true
